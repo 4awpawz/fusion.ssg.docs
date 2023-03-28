@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="4awpawz.github.io/fusion.ssg.io/css/libs/pico/pico.min.css">
+        <link rel="stylesheet" href="4awpawz.github.io/fusion.ssg.io/css/libs/highlight/github.min.css">
+        <link rel="stylesheet" href="4awpawz.github.io/fusion.ssg.io/css/fusion.css">
+        <script src="4awpawz.github.io/fusion.ssg.io/scripts/libs/highlight/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+        <title>Fusion SSG • Minimal Framework for Building Static Web Sites</title>
+    </head>
+    <body class="homepage">
+        <!-- ToDo = rename this file default-nv -->
+<nav class="container-fluid hero" style="position: fixed; z-indes: 99; top: 0; right: 0; left: 0; background: #11191f;;">
+    <ul>
+        <li><a class="contrast fixed" href="4awpawz.github.io/fusion.ssg.io/"><strong>Fusion</strong>.ssg</a></li>
+    </ul>
+    <ul>
+        <li><a class="secondary" href="4awpawz.github.io/fusion.ssg.io/#Examples">Examples</a></li>
+        <li><a class="secondary" href="4awpawz.github.io/fusion.ssg.io/docs">Docs</a></li>
+        <li><a class="secondary" href="4awpawz.github.io/fusion.ssg.io/posts">Blog</a></li>
+        <li><a class="secondary" href="4awpawz.github.io/fusion.ssg.io/team">Team</a></li>
+        <li><a aria-label="Fusion Github Repositroy" href="https://github.com/4awpawz/fusion.ssg" target="_blank">
+            <img src="4awpawz.github.io/fusion.ssg.io/media/github-mark-white.svg" alt="Github Icon">
+        </a></li>
+    </ul>
+</nav>
+
+        <!-- Home Page Hero -->
+<header class=hero>
+    <div align="center">
+        <hgroup>
+            <h1><b>Minimal&nbsp;SSG&nbsp;Framework For Static Websites</b></h1>
+            <p>Create static websites using <code>HTML</code>, <code>markdown</code>, <code>front matter</code> and Typescript <code>components</code>.</p>
+        </hgroup>
+        <p>
+            <a href="/docs" role="button" class="secondary" aria-label="Documentation" style="margin-right: 10px">Get Started</a>
+            <a href="/#Install Now" role="button" class="contrast outline">Install Now</a>
+        </p>
+    </div>
+</header>
+
+        <main>
+            <section id="Examples"class="container">
+                <article>
+                    <hgroup>
+                        <h2>Create HtML Document Using Constructs You May Already Be Familiar With</h2>
+                        <p>Start by creating an HTML document using <i>Pages, Templates, Includes, Front Matter and Tokens</i></p>
+                    </hgroup>
+                    <section>
+                        <hgroup>
+                            <h3>Pages</h3>
+                            <p>Pages provide the overall <i>layout</i> of your HTML documents. They also act as containers for the content provided by <i>Templates</i>, <i>Includes</i>, <i>Front Matter</i>, <i>Tokens</i> and <a href="#Typescript Components"><i>Typescript Components</i></a>.</p>
+                        </hgroup>
+                    </section>
+                    <section>
+                        <hgroup>
+                            <h3>Templates And Front Matter</h3>
+                            <p>Templates can provide addtional content to <i>Pages</i> in two ways:</p>
+                            <ul>
+                                <li>They can provide content specific to a document which replaces the document's template token, e.g. <i>&lt;body>&gt;&lt;main&gt;{template}&lt;main&gt;&lt;body&gt;</i>.</li>
+                                <li>They can declare tokens, e.g. <code>tokens: {pageTitle: All About Cats}</code> in their front matter whose values replace the document's matching tokens, e.g. <code>&lt;h1&gt;{pageTitle}&lt;h1&gt;</code>.</li>
+                            </ul>
+                        </hgroup>
+                        <p><mark><i>See examples below.</i></mark></p>
+                    </section>
+                    <section>
+                        <hgroup>
+                            <h2>Components</h2>
+                            <p>Use Typescript Components and JSON data sources for when your pages require more complex composition.</p>
+                        </hgroup>
+                    </section>
+                </article>
+            </section>
+            <section class="container">
+                <article>
+                    <h2 id="Typescript Components">All the poswer of <code>.tsx</code> Components</h2>
+                    <p>When your HTML documents require more dynamic content you can use Typescript <code>compoents</code> along with <code>JSON</code> data sources that return markup.</p>
+                    <p><mark><i>Fusion compiles and runs components in its own sandboxed Typescript environment!</i></mark></p>
+                    <p><i>Create a component...</i></p>
+                    <pre><code class="language-typescript">import { render } from &quot;preact-render-to-string&quot;;
+
+interface TeamMember {
+    &quot;name&quot;: {
+        &quot;first&quot;: string,
+        &quot;last&quot;: string
+    }
+}
+
+interface Props {
+    team: TeamMember[]
+}
+
+function formatHref(member: TeamMember): string {
+    return `/team/${member.name.first}-${member.name.last}`;
+}
+
+function formatName(member: TeamMember): string {
+    return `${member.name.first} ${member.name.last}`;
+}
+
+export const TeamList = function({ team }: Props): string {
+    return render(
+        &lt;ul&gt;
+            {team.map(member =&gt; {
+                return &lt;li&gt;
+                    &lt;span&gt;
+                        &lt;a href={formatHref(member)}&gt;{formatName(member)}&lt;/a&gt;
+                    &lt;/span&gt;
+                &lt;/li&gt;;
+            })}
+        &lt;/ul&gt;
+    );
+};
+</code></pre>
+
+                    <p>Add a <i>component tag</i> to your template or page or include.</p>
+                    <pre><code class="language-markdown">## Team
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate deleniti eum neque libero fugit fugiat quam illum non in? Asperiores, facilis praesentium. Iure maiores nisi nulla, sapiente adipisci facilis quisquam.
+
+## Contributors
+&lt;TeamList dataSources=&quot;team.json&quot; /&gt;
+</code></pre>
+
+                    <p><b>Fusion passes your JSON <i>data source</i> to your components</b></p>
+                    <pre><code class="language-json">[
+{ &quot;name&quot;: { &quot;first&quot;: &quot;John&quot;, &quot;last&quot;: &quot;Doe&quot; }},
+{&quot;name&quot;: { &quot;first&quot;: &quot;Jane&quot;, &quot;last&quot;: &quot;Doe&quot; }},
+{&quot;name&quot;: { &quot;first&quot;: &quot;Julia&quot;, &quot;last&quot;: &quot;Doe&quot; }}
+]
+</code></pre>
+
+                    <p>and replaces the markup's <i>component tag</i> wth the <i>HTML</i> returned from the component.</p>
+                    <pre><code class="language-html">&lt;h2 id=&quot;contributors&quot;&gt;Contributors&lt;/h2&gt;
+&lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;/team/Done-Doe&quot;&gt;John Doe&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;/team/Jane-Doe&quot;&gt;Jane Doe&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;/team/Julia-Doe&quot;&gt;Julia Doe&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+                </article>
+            </section>
+        </main>
+        <nav class="container">
+    <ul>
+        <li>Contact</li>
+        <li>About</li>
+    </ul>
+</nav>
+
+    </body>
+</html>
