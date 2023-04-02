@@ -32,55 +32,75 @@
 <header class=hero>
     <div align="center">
         <hgroup>
-            <h1><b>Minimal&nbsp;SSG&nbsp;Framework For Static Websites</b></h1>
-            <p>Create static websites using <code>HTML</code>, <code>markdown</code>, <code>front matter</code> and Typescript <code>components</code>.</p>
+            <h1><b>Minimal&nbsp;SSG&nbsp;Framework for Static Websites</b></h1>
+            <p>Fusion encapsulates various elements that many developers are already familiar with into an easy to use framework for creating static website.</p>
+            <p><code>HTML</code>, <code>markdown</code>, <code>front matter</code> and Typescript <code>components</code>.</p>
         </hgroup>
         <p>
-            <a href="/docs" role="button" class="secondary" aria-label="Documentation" style="margin-right: 10px">Get Started</a>
-            <a href="/#Install Now" role="button" class="contrast outline">Install Now</a>
+            <a href="/fusion.ssg.docs/docs" role="button" class="secondary" aria-label="Documentation" style="margin-right: 10px">Get Started</a>
+            <a href="/fusion.ssg.docs/docs#Install Now" role="button" class="contrast outline">Install Now</a>
         </p>
     </div>
 </header>
 
         <main>
-            <section id="Examples"class="container">
-                <article>
-                    <hgroup>
-                        <h2>Create HtML Document Using Constructs You May Already Be Familiar With</h2>
-                        <p>Start by creating an HTML document using <i>Pages, Templates, Includes, Front Matter and Tokens</i></p>
-                    </hgroup>
-                    <section>
-                        <hgroup>
-                            <h3>Pages</h3>
-                            <p>Pages provide the overall <i>layout</i> of your HTML documents. They also act as containers for the content provided by <i>Templates</i>, <i>Includes</i>, <i>Front Matter</i>, <i>Tokens</i> and <a href="#Typescript Components"><i>Typescript Components</i></a>.</p>
-                        </hgroup>
-                    </section>
-                    <section>
-                        <hgroup>
-                            <h3>Templates And Front Matter</h3>
-                            <p>Templates can provide addtional content to <i>Pages</i> in two ways:</p>
-                            <ul>
-                                <li>They can provide content specific to a document which replaces the document's template token, e.g. <i>&lt;body>&gt;&lt;main&gt;{template}&lt;main&gt;&lt;body&gt;</i>.</li>
-                                <li>They can declare tokens, e.g. <code>tokens: {pageTitle: All About Cats}</code> in their front matter whose values replace the document's matching tokens, e.g. <code>&lt;h1&gt;{pageTitle}&lt;h1&gt;</code>.</li>
-                            </ul>
-                        </hgroup>
-                        <p><mark><i>See examples below.</i></mark></p>
-                    </section>
-                    <section>
-                        <hgroup>
-                            <h2>Components</h2>
-                            <p>Use Typescript Components and JSON data sources for when your pages require more complex composition.</p>
-                        </hgroup>
-                    </section>
-                </article>
-            </section>
             <section class="container">
                 <article>
-                    <h2 id="Typescript Components">All the poswer of <code>.tsx</code> Components</h2>
-                    <p>When your HTML documents require more dynamic content you can use Typescript <code>compoents</code> along with <code>JSON</code> data sources that return markup.</p>
-                    <p><mark><i>Fusion compiles and runs components in its own sandboxed Typescript environment!</i></mark></p>
-                    <p><i>Create a component...</i></p>
-                    <pre><code class="language-typescript">import { render } from &quot;preact-render-to-string&quot;;
+                    <hgroup>
+                        <h2>The fusion.ssg Philosophy</h2>
+                        <p><q>It exists for one and only one purpose, which is to create HTML documents!</q></p>
+                    </hgroup>
+                    <hgroup>
+                        <h3>Keeping it minimal</h3>
+                        <p>Unlike many frameworks today, fusion.ssg was built from the ground up to do <i>just</i> that, without forcing developers to use extraneous technologies, such as those that are meant for creating reactive, single page applications.</p>
+                    </hgroup>
+                    <hgroup>
+                    <h3>Making it Powerful</h3>
+                        <section.container>
+                            <p>Fusion encapsulates various elements that many developers are already familiar with, such as HTML and markdown <i>templates</i>, and empowers them with the ability to be composed with additional content using custom .jsx and .tsx components and JSON, also very widely known by developers.</p>
+                            <p>fusion.ssg's engine comes with a built in TypeScript compiler and _fuses_ your HTML, markdown, front matter and custom components together to create your site's static HTML documents.</p>
+                        </section.container>
+                    </hgroup>
+                </article>
+            </section>
+            <!-- <section id="Examples"class="container"> -->
+            <!--     <article> -->
+            <!--         <hgroup> -->
+            <!--             <h2>Create HtML documents using various elements you may already be familiar with</h2> -->
+            <!--             <p>Start by creating an HTML document using <i>Pages, Templates, Includes, Front Matter and Tokens</i></p> -->
+            <!--         </hgroup> -->
+            <!--         <section> -->
+            <!--             <hgroup> -->
+            <!--                 <h3>Pages</h3> -->
+            <!--                 <p>Pages provide the overall <i>layout</i> of your HTML documents. They also act as containers for the content provided by <i>Templates</i>, <i>Includes</i>, <i>Front Matter</i>, <i>Tokens</i> and <a href="#Typescript Components"><i>Typescript Components</i></a>.</p> -->
+            <!--             </hgroup> -->
+            <!--         </section> -->
+            <!--         <section> -->
+            <!--             <hgroup> -->
+            <!--                 <h3>Templates And Front Matter</h3> -->
+            <!--                 <p>Templates can provide addtional content to <i>Pages</i> in two ways:</p> -->
+            <!--                 <ul> -->
+            <!--                     <li>They can provide content specific to a document which replaces the document's template token, e.g. <i>&lt;body>&gt;&lt;main&gt;{template}&lt;main&gt;&lt;body&gt;</i>.</li> -->
+            <!--                     <li>They can declare tokens, e.g. <code>tokens: {pageTitle: All About Cats}</code> in their front matter whose values replace the document's matching tokens, e.g. <code>&lt;h1&gt;{pageTitle}&lt;h1&gt;</code>.</li> -->
+            <!--                 </ul> -->
+            <!--             </hgroup> -->
+            <!--             <p><mark><i>See examples below.</i></mark></p> -->
+            <!--         </section> -->
+            <!--         <section> -->
+            <!--             <hgroup> -->
+            <!--                 <h2>Components</h2> -->
+            <!--                 <p>Use Typescript Components and JSON data sources for when your pages require more complex composition.</p> -->
+            <!--             </hgroup> -->
+            <!--         </section> -->
+            <!--     </article> -->
+            <!-- </section> -->
+            <!-- <section class="container"> -->
+            <!--     <article> -->
+            <!--         <h2 id="Typescript Components">All the poswer of <code>.tsx</code> Components</h2> -->
+            <!--         <p>When your HTML documents require more dynamic content you can use Typescript <code>compoents</code> along with <code>JSON</code> data sources that return markup.</p> -->
+            <!--         <p><mark><i>Fusion compiles and runs components in its own sandboxed Typescript environment!</i></mark></p> -->
+            <!--         <p><i>Create a component...</i></p> -->
+            <!--         <pre><code class="language-typescript">import { render } from &quot;preact-render-to-string&quot;;
 
 interface TeamMember {
     &quot;name&quot;: {
@@ -115,35 +135,35 @@ export const TeamList = function({ team }: Props): string {
     );
 };
 </code></pre>
-
-                    <p>Add a <i>component tag</i> to your template or page or include.</p>
-                    <pre><code class="language-markdown">## Team
+ -->
+            <!--         <p>Add a <i>component tag</i> to your template or page or include.</p> -->
+            <!--         <pre><code class="language-markdown">## Team
 
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate deleniti eum neque libero fugit fugiat quam illum non in? Asperiores, facilis praesentium. Iure maiores nisi nulla, sapiente adipisci facilis quisquam.
 
 ## Contributors
 &lt;TeamList dataSources=&quot;team.json&quot; /&gt;
 </code></pre>
-
-                    <p><b>Fusion passes your JSON <i>data source</i> to your components</b></p>
-                    <pre><code class="language-json">[
+ -->
+            <!--         <p><b>Fusion passes your JSON <i>data source</i> to your components</b></p> -->
+            <!--         <pre><code class="language-json">[
 { &quot;name&quot;: { &quot;first&quot;: &quot;John&quot;, &quot;last&quot;: &quot;Doe&quot; }},
 {&quot;name&quot;: { &quot;first&quot;: &quot;Jane&quot;, &quot;last&quot;: &quot;Doe&quot; }},
 {&quot;name&quot;: { &quot;first&quot;: &quot;Julia&quot;, &quot;last&quot;: &quot;Doe&quot; }}
 ]
 </code></pre>
-
-                    <p>and replaces the markup's <i>component tag</i> wth the <i>HTML</i> returned from the component.</p>
-                    <pre><code class="language-html">&lt;h2 id=&quot;contributors&quot;&gt;Contributors&lt;/h2&gt;
+ -->
+            <!--         <p>and replaces the markup's <i>component tag</i> wth the <i>HTML</i> returned from the component.</p> -->
+            <!--         <pre><code class="language-html">&lt;h2 id=&quot;contributors&quot;&gt;Contributors&lt;/h2&gt;
 &lt;ul&gt;
     &lt;li&gt;&lt;a href=&quot;/team/Done-Doe&quot;&gt;John Doe&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;/team/Jane-Doe&quot;&gt;Jane Doe&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;/team/Julia-Doe&quot;&gt;Julia Doe&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </code></pre>
-
-                </article>
-            </section>
+ -->
+            <!--     </article> -->
+            <!-- </section> -->
         </main>
         <nav class="container">
     <ul>
