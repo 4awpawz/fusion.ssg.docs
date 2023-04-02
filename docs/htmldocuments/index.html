@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/fusion.ssg.docs/css/libs/pico/pico.min.css">
+        <link rel="stylesheet" href="/fusion.ssg.docs/css/libs/highlight/github.min.css">
+        <link rel="stylesheet" href="/fusion.ssg.docs/css/fusion.css">
+        <script src="/fusion.ssg.docs/scripts/libs/highlight/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+        <title>fusion.ssg: Documentation - HTML Documents</title>
+    </head>
+    <body class="docpage">
+        <!-- ToDo = rename this file default-nv -->
+<nav class="container-fluid hero" style="position: fixed; z-indes: 99; top: 0; right: 0; left: 0; background: #11191f;;">
+    <ul>
+        <li><a class="contrast fixed" href="/fusion.ssg.docs/"><strong>Fusion</strong>.ssg</a></li>
+    </ul>
+    <ul>
+        <li><a class="secondary" href="/fusion.ssg.docs/#Examples">Examples</a></li>
+        <li><a class="secondary" href="/fusion.ssg.docs/docs">Docs</a></li>
+        <li><a class="secondary" href="/fusion.ssg.docs/posts">Blog</a></li>
+        <li><a class="secondary" href="/fusion.ssg.docs/team">Team</a></li>
+        <li><a aria-label="Fusion Github Repositroy" href="https://github.com/4awpawz/fusion.ssg" target="_blank">
+            <img src="/fusion.ssg.docs/media/github-mark-white.svg" alt="Github Icon">
+        </a></li>
+    </ul>
+</nav>
+
+        <main class="container">
+            <aside>
+                <nav class="closed-on-mobile">
+                    <ul>
+                        <details open>
+                            <summary>getting started</summary>
+                            <ul>
+                                <li><a class="secondary selected-nav-item" href="/fusion.ssg.docs/docs">Installation</a></li>
+                            </ul>
+                        </details>
+                        <details closed>
+                            <summary>html documents</summary>
+                            <ul>
+                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments">Introduction</a></li>
+                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/templates">Templates</a></li>
+                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/pages">Pages</a></li>
+                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/frontmatter">Front Matter</a></li>
+                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/includes">Includes</a></li>
+                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/tokens">Tokens</a></li>
+                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/components">Components</a></li>
+                            </ul>
+                        </details>
+                        <details closed>
+                            <summary>collections</summary>
+                            <ul>
+                                <li><a class="secondary" href="#">Introduction</a></li>
+                            </ul>
+                        </details>
+                        <details closed>
+                            <summary>posts</summary>
+                            <ul>
+                                <li><a class="secondary" href="#">Introduction</a></li>
+                            </ul>
+                        </details>
+                        <details closed>
+                            <summary>configuration</summary>
+                            <ul>
+                                <li><a class="secondary" href="#">fusion.json</a></li>
+                            </ul>
+                        </details>
+                    </ul>
+                </nav>
+            </aside>
+            <div>
+                <p><em>HTML DOCUMENTS</em></p>
+<h1 id="introduction">Introduction</h1>
+<h2 id="visualizing-how-fusionssg-creates-html-documents">Visualizing how fusion.ssg creates HTML documents</h2>
+<p>As a developer it is important to be able to visualize the processes that fusion.ssg performs to transform your project&#39;s files into HTML documents. As easy as fusion.ssg is to understand, this will make using fusion.ssg even easier. Therefore, imagine an assembly line that is responsible for creating a single HTML document. It has a beginning and an end. Along that assembly line there are numerous processes that operate on what is traveling on that assembly line.</p>
+<ol>
+<li><p>The first process on that assembly line accumulates all the necessary items that will be needed to start producing the finished products. In fusion.ssg&#39;s case, those items are the files of your project, but not all the files, only special ones called <i>templates</i>. You can think of templates as the DNA of a potential HTML document. In its DNA it carries almost all the information needed to build one HTML document. This process passes each template that it has found down the assembly line one at a time for further processing.</p>
+</li>
+<li><p>The second process on that assembly line analyzes the content of that template file, insuring that it contains the required YAML front matter and possibly also content in the form of HTML or markdown. In the template&#39;s front matter it expects to find a property called <em>page</em>, whose value is a path which points to another special kind of file called, you guessed it, a <em>page</em>. That page is composed entirely of HTML and it exists to provide the overall structure of your finished HTML document. Now that a page has been associated with the template, they both travel down the assembly line together to the next process.</p>
+</li>
+<li><p>The third process on that assembly line searches the page for something that it can recognize as a <em>template token</em>, which indicates where in the page to place any content that the template may contain. If it finds that token, it will replace it with any content it finds in the template. The third process is now complete and both the template and the page continue to travel down the assembly line together to the next process.</p>
+</li>
+<li><p>The fourth process on that assembly line is where things begin to get interesting, and it searches for any and all <em>custom component</em> tags in the page which, remember, now contains any content that the template may have contributed to it. If it finds any custom components, it analyzes their properties to discover if they declare their dependency on one or more JSON data sources. If they do declare their dependency on JSON data sources, these too are now acquired and each custom component is now called in turn, being passed any data source they may have declared as a dependency. As each custom component returns the markup that it created, the process replaces that component&#39;s tag in the page with that markup.</p>
+</li>
+</ol>
+<p><em>At this point you may be wondering why the template is still proceeding down the assembly line along with the page and asking yourself, &quot;What additional value can it provide to the future HTML document that will be created from the page&#39;s content?&quot; The next process on the assembly line will answer that!</em></p>
+<ol start="5">
+<li><p>The fifth process on the assembly line searches the template&#39;s front matter for any and all <em>front matter tokens</em> that it may declare and if found will use those tokens&#39; values to replace their matching tokens in the page&#39;s content, which now includes not only the content contributed by the template, if any, as well as the content contributed by all the custom components as well.</p>
+</li>
+<li><p>The sixth and last process on that assembly line writes the page&#39;s content out to an HTML file, then &quot;recycles&quot; the page so that it can be used again and finally &quot;trashes&quot; the template as templates can only be used to create one HTML document.</p>
+</li>
+</ol>
+<p>While the actual processes that fusion.ssg uses are quite a bit more complex than the previous high-level overview, you should now have a fairly good understanding of how things fit into place, so to speak. The remaining pages in this section of the documentation will go into greater detail, not only covering the items introduced here like pages, templates, etc., but all the other items that are available to you to use to create HTML documents.</p>
+
+                <nav class="container">
+    <ul>
+        <li>Contact</li>
+        <li>About</li>
+    </ul>
+</nav>
+
+            </div>
+        </main>
+    </body>
+</html>
