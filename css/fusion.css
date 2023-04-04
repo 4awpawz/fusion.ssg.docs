@@ -115,6 +115,10 @@ nav img {
 .hero h1 {
     max-width: 21ch;
 }
+.hero p:first-of-type{
+    max-width: 60ch;
+    margin: 0 1rem;
+}
 @media (min-width: 576px) {
     .hero h1 {
         --font-size: 2rem;
@@ -134,4 +138,18 @@ nav img {
     .hero h1 {
         --font-size: 400%;
     }
+}
+
+p.info {
+    font-style: italic;
+}
+p.info::before {
+    content: "i";
+    background-color: rgb(00,88,88, .65);
+    font-style: italic;
+    font-weight: bold;
+    padding: 0rem .25rem;
+    border: solid 1px blue;
+    border-radius: 20%;
+    margin-right: .5rem;
 }

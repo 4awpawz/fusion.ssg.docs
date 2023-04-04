@@ -35,34 +35,34 @@
                         <details open>
                             <summary>getting started</summary>
                             <ul>
-                                <li><a class="secondary selected-nav-item" href="/fusion.ssg.docs/docs">Installation</a></li>
+                                <!-- <li><a class="secondary selected-nav-item" href="/fusion.ssg.docs/docs">Installation</a></li> -->
+                                <li><a class="secondary" href="/fusion.ssg.docs/docs">Installation</a></li>
                             </ul>
                         </details>
-                        <details closed>
+                        <details open>
                             <summary>html documents</summary>
                             <ul>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments">Introduction</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/templates">Templates</a></li>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/pages">Pages</a></li>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/frontmatter">Front Matter</a></li>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/includes">Includes</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/tokens">Tokens</a></li>
+                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/pages">Pages</a></li>
+                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/includes">Includes</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/components">Components</a></li>
                             </ul>
                         </details>
-                        <details closed>
+                        <details open>
                             <summary>collections</summary>
                             <ul>
                                 <li><a class="secondary" href="#">Introduction</a></li>
                             </ul>
                         </details>
-                        <details closed>
+                        <details open>
                             <summary>posts</summary>
                             <ul>
                                 <li><a class="secondary" href="#">Introduction</a></li>
                             </ul>
                         </details>
-                        <details closed>
+                        <details open>
                             <summary>configuration</summary>
                             <ul>
                                 <li><a class="secondary" href="#">fusion.json</a></li>
@@ -72,7 +72,27 @@
                 </nav>
             </aside>
             <div>
-                <h1 id="tokens">Tokens</h1>
+                <p><em>HTML DOCUMENTS</em></p>
+<h1 id="tokens">Tokens</h1>
+<p>Tokens are declared in a <a href="/fusion.ssg.docs/docs/htmldocuments/templates">template</a>&#39;s front matter and their values replace all matching <em>token markers</em> that are found in the HTML document. Token marker syntax is the <em>name</em> of the token as declared in the template surrounded by single curly braces, as in <code>{</code><em>token name</em><code>}</code>.</p>
+<article>
+    <header>
+        <em>Example: A template with two tokens.</em>
+    </header>
+    <pre><code class="language-YAML">
+---
+page: cat
+tokens: {
+    doctitle: Felix,
+    breed: Persian
+}
+---
+# This is content
+    </code></pre>
+    <footer>
+    <p>This template declares two <em>tokens</em>, one named <em>doctitle</em> with a value of "<em>Felix</em>", and the other <em>breed</em> with a value of "<em>Persian</em>". All token markers in the HTML document that match <code>{doctitle}</code> and <code>{breed}</code> will be replaced with their respective token values.
+    </footer>
+</article>
 
                 <nav class="container">
     <ul>

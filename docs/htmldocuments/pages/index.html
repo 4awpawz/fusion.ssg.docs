@@ -35,34 +35,34 @@
                         <details open>
                             <summary>getting started</summary>
                             <ul>
-                                <li><a class="secondary selected-nav-item" href="/fusion.ssg.docs/docs">Installation</a></li>
+                                <!-- <li><a class="secondary selected-nav-item" href="/fusion.ssg.docs/docs">Installation</a></li> -->
+                                <li><a class="secondary" href="/fusion.ssg.docs/docs">Installation</a></li>
                             </ul>
                         </details>
-                        <details closed>
+                        <details open>
                             <summary>html documents</summary>
                             <ul>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments">Introduction</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/templates">Templates</a></li>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/pages">Pages</a></li>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/frontmatter">Front Matter</a></li>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/includes">Includes</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/tokens">Tokens</a></li>
+                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/pages">Pages</a></li>
+                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/includes">Includes</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/components">Components</a></li>
                             </ul>
                         </details>
-                        <details closed>
+                        <details open>
                             <summary>collections</summary>
                             <ul>
                                 <li><a class="secondary" href="#">Introduction</a></li>
                             </ul>
                         </details>
-                        <details closed>
+                        <details open>
                             <summary>posts</summary>
                             <ul>
                                 <li><a class="secondary" href="#">Introduction</a></li>
                             </ul>
                         </details>
-                        <details closed>
+                        <details open>
                             <summary>configuration</summary>
                             <ul>
                                 <li><a class="secondary" href="#">fusion.json</a></li>
@@ -72,7 +72,44 @@
                 </nav>
             </aside>
             <div>
-                <h1 id="pages">Pages</h1>
+                <p><em>HTML DOCUMENTS</em></p>
+<h1 id="pages">Pages</h1>
+<section class="container">
+    <div><small>Required: <em>Yes</em></small></div>
+    <div><small>Front Matter: <em>Never</em></small></div>
+    <div><small>Type: <em>.html</em></small></div>
+    <div><small>Project Location: <em>src/pages</em></small></div>
+</section>
+
+<p>Pages associated with <a href="/fusion.ssg.docs/docs/htmldocuments/templates">templates</a> create HTML documents and provide HTML documents their <em>structure</em>. Pages associated with templates with content will have their <em>template markers</em> replaced by that content.</p>
+<p class="info">A page can have only one template marker and it should be placed anywhere within the page's body tag that makes sense for the HTML document.</p>
+
+<p class="info">Pages without template markers are valid, provide their own content, and are convenient for <em>one-off</em> pages. Their associated template's content, if any, is ignored.</p>
+
+<article>
+    <header>
+        <em>Example: A page with a template marker.</em>
+    </header>
+    <pre><code class="language-HTML">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;title&gt;fusion.ssg: Documentation - Pages&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;main class="container"&gt;
+            &lbrace;&lbrace;template&rbrace;&rbrace;
+        &lt;/main&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+    </code></pre>
+    <footer>
+    <p>This page's template marker will be replaced by an associated template's content.</p>
+    </footer>
+</article>
 
                 <nav class="container">
     <ul>
