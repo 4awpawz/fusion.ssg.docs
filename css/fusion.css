@@ -1,3 +1,6 @@
+html {
+    scroll-padding-top: 160px; /* height of sticky header */
+}
 :root {
     --selected-nav-item: rgb(255, 255, 255, .09)
 }
@@ -24,6 +27,9 @@ details summary::after {
 }
 .docpage details li {
     margin-left: 0;
+}
+.docpage a {
+    font-style: italic;
 }
 @media (min-width: 992px) {
     .docpage aside {
@@ -145,7 +151,8 @@ p.info {
 }
 p.info::before {
     content: "i";
-    background-color: rgb(00,88,88, .65);
+    /* background-color: rgb(00,88,88, .65); */
+    background-color: var(--primary);
     font-style: italic;
     font-weight: bold;
     padding: 0rem .25rem;

@@ -15,14 +15,14 @@
         <!-- ToDo = rename this file default-nv -->
 <nav class="container-fluid hero" style="position: fixed; z-indes: 99; top: 0; right: 0; left: 0; background: #11191f;;">
     <ul>
-        <li><a class="contrast fixed" href="/fusion.ssg.docs/"><strong>Fusion</strong>.ssg</a></li>
+        <li><a class="contrast fixed" href="/fusion.ssg.docs/"><strong>fusion.ssg</strong>.ssg</a></li>
     </ul>
     <ul>
         <li><a class="secondary" href="/fusion.ssg.docs/#Examples">Examples</a></li>
         <li><a class="secondary" href="/fusion.ssg.docs/docs">Docs</a></li>
         <li><a class="secondary" href="/fusion.ssg.docs/posts">Blog</a></li>
         <li><a class="secondary" href="/fusion.ssg.docs/team">Team</a></li>
-        <li><a aria-label="Fusion Github Repositroy" href="https://github.com/4awpawz/fusion.ssg" target="_blank">
+        <li><a aria-label="fusion.ssg Github Repositroy" href="https://github.com/4awpawz/fusion.ssg" target="_blank">
             <img src="/fusion.ssg.docs/media/github-mark-white.svg" alt="Github Icon">
         </a></li>
     </ul>
@@ -37,6 +37,7 @@
                             <ul>
                                 <!-- <li><a class="secondary selected-nav-item" href="/fusion.ssg.docs/docs">Installation</a></li> -->
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs">Installation</a></li>
+                                <li><a class="secondary" href="/fusion.ssg.docs/docs/projects">Projects</a></li>
                             </ul>
                         </details>
                         <details open>
@@ -48,24 +49,21 @@
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/pages">Pages</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/includes">Includes</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/components">Components</a></li>
-                            </ul>
-                        </details>
-                        <details open>
-                            <summary>collections</summary>
-                            <ul>
-                                <li><a class="secondary" href="#">Introduction</a></li>
-                            </ul>
-                        </details>
-                        <details open>
-                            <summary>posts</summary>
-                            <ul>
-                                <li><a class="secondary" href="#">Introduction</a></li>
+                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/collections">Collections</a></li>
+                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/posts">Posts</a></li>
                             </ul>
                         </details>
                         <details open>
                             <summary>configuration</summary>
                             <ul>
                                 <li><a class="secondary" href="#">fusion.json</a></li>
+                            </ul>
+                        </details>
+                        <details open>
+                            <summary>Command Line</summary>
+                            <ul>
+                                <!-- <li><a class="secondary selected-nav-item" href="/fusion.ssg.docs/docs">Installation</a></li> -->
+                                <li><a class="secondary" href="/fusion.ssg.docs/docs/cli">CLI</a></li>
                             </ul>
                         </details>
                     </ul>
@@ -76,9 +74,110 @@
 <h1 id="components">Components</h1>
 <section class="container">
     <div><small>Required: <em>No</em></small></div>
-    <div><small>Type: <em>.tsx, .jsx </em></small></div>
+    <div><small>Type: <em>.tsx</em></small></div>
     <div><small>Project Location: <em>src/components</em></small></div>
 </section>
+
+
+<p>Components are compiled and called asynchronously and run in a sand-boxed environment.</p>
+<h2 id="properties">Properties</h2>
+<p>Components can reference their <em>properties</em> as <em><code>{[property name]}</code></em> (see code example below).</p>
+<article>
+    <header>There are two <em>special</em> properties that fusion.ssg recognizes:</header>
+    <ul>
+        <li>_isCollection_ indicates that this component should be called to generate a <a href="/fusion.ssg.docs/docs/htmldocuments/collections">collection</a> of HTML documents rather than rendering output for a single HTML document.</li>
+        <li>_dataSources_ is a comma separated lists of JSON file names that are located in your project's <em>src/data</em> folder. At runtime, fusion.ssg reads each data source, converting them to JavaScript objects and passes the converted data sources to your component along with <em>additional properties</em> (see below) that may be useful. Data sources passed to your components can be destructured from <em>props</em> using their JSON file naame minus the .json extension.</li>
+    </ul>
+</article>
+<article>
+    <header>In addition to your component's declared properties, fusion.ssg also passes two additional properties to your components:</header>
+    <ul>
+        <li>asset - the <em>metadata</em> that fusion.ssg has generated for the HTML document that this component is being called for.</li>
+        <li>assets - a <em>list</em> containing the metadata that fusion.ssg has generated for all HTML documents in your project.</li>
+    </ul>
+    <footer><p class="info">fusion.ssg serializes the metadata that it has generated for your project to a file named <em>assets.json</em> in your project's root folder.</p></footer>
+</article>
+<article>
+    <header>
+        <em>Example: A component that receives a data source that is returned as a list.</em>
+    </header>
+    <pre><code class="language-typescript">interface TeamMember {
+    &quot;name&quot;: {
+        &quot;first&quot;: string,
+        &quot;last&quot;: string
+    }
+}
+
+interface Props {
+    team: TeamMember[]
+}
+
+function formatHref(member: TeamMember): string {
+    return `/team/${member.name.first}-${member.name.last}`;
+}
+
+function formatName(member: TeamMember): string {
+    return `${member.name.first} ${member.name.last}`;
+}
+
+export const TeamList = function({ team }: Props): string {
+    return (
+        &lt;ul&gt;
+            {team.map(member =&gt; {
+                return &lt;li&gt;
+                    &lt;span&gt;
+                        &lt;a href={formatHref(member)}&gt;{formatName(member)}&lt;/a&gt;
+                    &lt;/span&gt;
+                &lt;/li&gt;;
+            })}
+        &lt;/ul&gt;
+    );
+};
+</code></pre>
+
+</article>
+<article>
+    <header>
+        <em>Example: A template that contains a component tag with a dataSources property.</em>
+    </header>
+    <pre><code class="language-html">&lt;h1&gt;Team&lt;/h1&gt;
+
+&lt;p&gt;Thanks to our team, our rollout has been a success.&lt;/p&gt;
+
+&lt;h2&gt;Contributors&lt;/h2&gt;
+&lt;TeamList dataSources=&quot;team.json&quot; /&gt;
+</code></pre>
+
+</article>
+<article>
+    <header>
+        <em>Example: The JSON data source declared in the component's tag that fusion.ssg passes to the component.</em>
+    </header>
+    <pre><code class="language-json">[
+{ &quot;name&quot;: { &quot;first&quot;: &quot;John&quot;, &quot;last&quot;: &quot;Doe&quot; }},
+{&quot;name&quot;: { &quot;first&quot;: &quot;Jane&quot;, &quot;last&quot;: &quot;Doe&quot; }},
+{&quot;name&quot;: { &quot;first&quot;: &quot;Julia&quot;, &quot;last&quot;: &quot;Doe&quot; }}
+]
+</code></pre>
+
+</article>
+<article>
+    <header>
+        <em>Example: The component tag is replaced wth the HTML returned from the component.</em>
+    </header>
+    <pre><code class="language-html">&lt;h1&gt;Team&lt;/h1&gt;
+
+&lt;p&gt;Thanks to our team, our rollout has been a success.&lt;/p&gt;
+
+&lt;h2 id=&quot;contributors&quot;&gt;Contributors&lt;/h2&gt;
+&lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;/team/Done-Doe&quot;&gt;John Doe&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;/team/Jane-Doe&quot;&gt;Jane Doe&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;/team/Julia-Doe&quot;&gt;Julia Doe&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+</article>
 
                 <nav class="container">
     <ul>

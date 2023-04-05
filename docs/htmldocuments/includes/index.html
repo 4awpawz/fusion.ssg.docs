@@ -15,14 +15,14 @@
         <!-- ToDo = rename this file default-nv -->
 <nav class="container-fluid hero" style="position: fixed; z-indes: 99; top: 0; right: 0; left: 0; background: #11191f;;">
     <ul>
-        <li><a class="contrast fixed" href="/fusion.ssg.docs/"><strong>Fusion</strong>.ssg</a></li>
+        <li><a class="contrast fixed" href="/fusion.ssg.docs/"><strong>fusion.ssg</strong>.ssg</a></li>
     </ul>
     <ul>
         <li><a class="secondary" href="/fusion.ssg.docs/#Examples">Examples</a></li>
         <li><a class="secondary" href="/fusion.ssg.docs/docs">Docs</a></li>
         <li><a class="secondary" href="/fusion.ssg.docs/posts">Blog</a></li>
         <li><a class="secondary" href="/fusion.ssg.docs/team">Team</a></li>
-        <li><a aria-label="Fusion Github Repositroy" href="https://github.com/4awpawz/fusion.ssg" target="_blank">
+        <li><a aria-label="fusion.ssg Github Repositroy" href="https://github.com/4awpawz/fusion.ssg" target="_blank">
             <img src="/fusion.ssg.docs/media/github-mark-white.svg" alt="Github Icon">
         </a></li>
     </ul>
@@ -37,6 +37,7 @@
                             <ul>
                                 <!-- <li><a class="secondary selected-nav-item" href="/fusion.ssg.docs/docs">Installation</a></li> -->
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs">Installation</a></li>
+                                <li><a class="secondary" href="/fusion.ssg.docs/docs/projects">Projects</a></li>
                             </ul>
                         </details>
                         <details open>
@@ -48,24 +49,21 @@
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/pages">Pages</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/includes">Includes</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/components">Components</a></li>
-                            </ul>
-                        </details>
-                        <details open>
-                            <summary>collections</summary>
-                            <ul>
-                                <li><a class="secondary" href="#">Introduction</a></li>
-                            </ul>
-                        </details>
-                        <details open>
-                            <summary>posts</summary>
-                            <ul>
-                                <li><a class="secondary" href="#">Introduction</a></li>
+                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/collections">Collections</a></li>
+                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/posts">Posts</a></li>
                             </ul>
                         </details>
                         <details open>
                             <summary>configuration</summary>
                             <ul>
                                 <li><a class="secondary" href="#">fusion.json</a></li>
+                            </ul>
+                        </details>
+                        <details open>
+                            <summary>Command Line</summary>
+                            <ul>
+                                <!-- <li><a class="secondary selected-nav-item" href="/fusion.ssg.docs/docs">Installation</a></li> -->
+                                <li><a class="secondary" href="/fusion.ssg.docs/docs/cli">CLI</a></li>
                             </ul>
                         </details>
                     </ul>
@@ -80,6 +78,36 @@
     <div><small>Type: <em>.html, .md </em></small></div>
     <div><small>Project Location: <em>src/includes</em></small></div>
 </section>
+
+<p>Like <a href="/fusion.ssg.docs/docs/htmldocuments/templates">templates</a>, includes contribute their content to the HTML document. Unlike templates whose content is generally more specific to the intention of the HTML document, such  as its subject matter, main topic, etc., includes are best used to encapsulate blocks of content that are used in multiple HTML documents, such as blocks of meta tags, navbars, footers, sidebars, .etc. Includes also allow you to leverage the benefit of using either markdown or HTML for a particular part of an HTML document.</p>
+<p>Both pages and templates can incorporate includes using include markers, whose syntax is the path to the include file, minus its file type, that resides in the src/includes folder surrounded by double curly braces, e.g. &lbrace;&lbrace;<em>path/to/include</em>&rbrace;&rbrace;.</p>
+<article>
+    <header>
+        <em>Example: A page with two include markers.</em>
+    </header>
+    <pre><code class="language-HTML">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;title&gt;fusion.ssg: Documentation - Includes&lt;/title&gt;
+    &lt;/head&gt;
+    &lbrace;&lbrace;nav/topnavbar&rbrace;nav/topnavbar&rbrace;
+    &lt;body&gt;
+        &lbrace;&lbrace;nav/topnavbar&rbrace;nav/topnavbar&rbrace;
+        &lt;main class="container"&gt;
+            &lbrace;&lbrace;template&rbrace;&rbrace;
+        &lt;/main&gt;
+        &lbrace;&lbrace;nav/bottomnavbar&rbrace;nav/topnavbar&rbrace;&rbrace;
+    &lt;/body&gt;
+&lt;/html&gt;
+    </code></pre>
+    <footer>
+    <p>This page's include markers will be replaced by the their respective include files' content.</p>
+    </footer>
+</article>
 
                 <nav class="container">
     <ul>

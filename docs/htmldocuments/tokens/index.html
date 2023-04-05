@@ -15,14 +15,14 @@
         <!-- ToDo = rename this file default-nv -->
 <nav class="container-fluid hero" style="position: fixed; z-indes: 99; top: 0; right: 0; left: 0; background: #11191f;;">
     <ul>
-        <li><a class="contrast fixed" href="/fusion.ssg.docs/"><strong>Fusion</strong>.ssg</a></li>
+        <li><a class="contrast fixed" href="/fusion.ssg.docs/"><strong>fusion.ssg</strong>.ssg</a></li>
     </ul>
     <ul>
         <li><a class="secondary" href="/fusion.ssg.docs/#Examples">Examples</a></li>
         <li><a class="secondary" href="/fusion.ssg.docs/docs">Docs</a></li>
         <li><a class="secondary" href="/fusion.ssg.docs/posts">Blog</a></li>
         <li><a class="secondary" href="/fusion.ssg.docs/team">Team</a></li>
-        <li><a aria-label="Fusion Github Repositroy" href="https://github.com/4awpawz/fusion.ssg" target="_blank">
+        <li><a aria-label="fusion.ssg Github Repositroy" href="https://github.com/4awpawz/fusion.ssg" target="_blank">
             <img src="/fusion.ssg.docs/media/github-mark-white.svg" alt="Github Icon">
         </a></li>
     </ul>
@@ -37,6 +37,7 @@
                             <ul>
                                 <!-- <li><a class="secondary selected-nav-item" href="/fusion.ssg.docs/docs">Installation</a></li> -->
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs">Installation</a></li>
+                                <li><a class="secondary" href="/fusion.ssg.docs/docs/projects">Projects</a></li>
                             </ul>
                         </details>
                         <details open>
@@ -48,18 +49,8 @@
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/pages">Pages</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/includes">Includes</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/components">Components</a></li>
-                            </ul>
-                        </details>
-                        <details open>
-                            <summary>collections</summary>
-                            <ul>
-                                <li><a class="secondary" href="#">Introduction</a></li>
-                            </ul>
-                        </details>
-                        <details open>
-                            <summary>posts</summary>
-                            <ul>
-                                <li><a class="secondary" href="#">Introduction</a></li>
+                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/collections">Collections</a></li>
+                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/posts">Posts</a></li>
                             </ul>
                         </details>
                         <details open>
@@ -68,31 +59,159 @@
                                 <li><a class="secondary" href="#">fusion.json</a></li>
                             </ul>
                         </details>
+                        <details open>
+                            <summary>Command Line</summary>
+                            <ul>
+                                <!-- <li><a class="secondary selected-nav-item" href="/fusion.ssg.docs/docs">Installation</a></li> -->
+                                <li><a class="secondary" href="/fusion.ssg.docs/docs/cli">CLI</a></li>
+                            </ul>
+                        </details>
                     </ul>
                 </nav>
             </aside>
             <div>
                 <p><em>HTML DOCUMENTS</em></p>
 <h1 id="tokens">Tokens</h1>
-<p>Tokens are declared in a <a href="/fusion.ssg.docs/docs/htmldocuments/templates">template</a>&#39;s front matter and their values replace all matching <em>token markers</em> that are found in the HTML document. Token marker syntax is the <em>name</em> of the token as declared in the template surrounded by single curly braces, as in <code>{</code><em>token name</em><code>}</code>.</p>
+<p><em>Tokens</em> serve as place holders that are eventually replaced by the content intended for the HTML document. fusion.ssg recognizes three different types of tokens:</p>
+<ol>
+    <li><a href="/fusion.ssg.docs/docs/htmldocuments/tokens#simple-tokens"><em>simple tokens</em></a></li>
+    <li><a href="/fusion.ssg.docs/docs/htmldocuments/tokens#template-tokens"><em>template tokens</em></a></li>
+    <li><a href="/fusion.ssg.docs/docs/htmldocuments/tokens#include-tokens"><em>include tokens</em></a></li>
+</ol>
+
+<h2 id="simple-tokens">Simple Tokens</h2>
+<p><em>syntax: {template token property name}</em></p>
+<p>Simple <em>token values</em> declared in a template&#39;s front matter, specifically in its <code>tokens</code> object, replace all matching simple tokens found in the HTML document.</p>
 <article>
     <header>
-        <em>Example: A template with two tokens.</em>
+        <em>Example: A template with three simple token values declared.</em>
     </header>
-    <pre><code class="language-YAML">
+<pre><code class="language-YAML">
 ---
 page: cat
 tokens: {
-    doctitle: Felix,
+    docTitle: Cats,
+    catName: Felix,
     breed: Persian
 }
 ---
 # This is content
-    </code></pre>
-    <footer>
-    <p>This template declares two <em>tokens</em>, one named <em>doctitle</em> with a value of "<em>Felix</em>", and the other <em>breed</em> with a value of "<em>Persian</em>". All token markers in the HTML document that match <code>{doctitle}</code> and <code>{breed}</code> will be replaced with their respective token values.
-    </footer>
+</code></pre>
+    This template declares three <em>simple token values</em>:
+    <ol>
+        <li><em>docTitle</em>, with a value of "<em>"Cats"</em>"</li>
+        <li><em>catName</em> with a value of "<em>"Felix"</em>"</li>
+        <li><em>breed</em> with a value of "<em>Persian</em>"</li>
+    </ol>
 </article>
+
+<article>
+    <header>
+        <em>Example: A page with three simple tokens declared.</em>
+    </header>
+<pre><code class="language-HTML">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;title&gt;&lbrace;docTitle&rbrace;-&lbrace;breed&rbrace;&lt/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;main&gt;
+            &lt;h1&gt;{catName}&lt;/h1&gt;
+            &lbrace;&lbrace;template&rbrace;&rbrace;
+        &lt;/main&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+    <p>All simple tokens in the HTML document that match the simple token values declared in the template will be replaced with their respective values.</p>
+</article>
+
+<article>
+    <header>
+        <em>Example: The resulting HTML document after three simple tokens have been applied.</em>
+    </header>
+<pre><code class="language-HTML">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;title&gt;Cats-Persian&lt/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;main&gt;
+            &lt;h1&gt;Felix&lt;/h1&gt;
+            &vellip;
+        &lt;/main&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+</article>
+
+<h2 id="template-tokens">Template Tokens</h2>
+<p><em>syntax: &lbrace;&lbrace;template&rbrace;&rbrace;</em></p>
+<p>Template tokens are only relevant in pages and they are replaced by the content, if any, of their associated templates.</p>
+<article>
+    <header>
+        <em>Example: A page with a template token declared.</em>
+    </header>
+<pre><code class="language-HTML">
+&lt;body&gt;
+    &lt;main&gt;
+        &lbrace;&lbrace;template&rbrace;&rbrace;
+    &lt;/main&gt;
+&lt;/body&gt;
+</code></pre>
+</article>
+
+<article>
+    <header>
+        <em>Example: The resulting HTML document after the template's content has been applied.</em>
+    </header>
+<pre><code class="language-HTML">
+&lt;body&gt;
+    &lt;main&gt;
+        &lt;p&gt;Cats are amazing!&lt;p&gt;
+    &lt;/main&gt;
+&lt;/body&gt;
+</code></pre>
+</article>
+
+<h2 id="include-tokens">Include Tokens</h2>
+<p><em>syntax: &lbrace;&lbrace;path/to/include&rbrace;&rbrace;</em></p>
+<p>Include tokens are relevant in pages and templates and are replaced by their respective include&#39;s content.</p>
+<article>
+    <header>
+        <em>Example: A page with two include tokens declared.</em>
+    </header>
+<pre><code class="language-HTML">
+&lbrace;&lbrace;header&rbrace;&rbrace;
+&lt;body&gt;
+    &lt;main&gt;
+        &vellip;
+    &lt;/main&gt;
+&lt;/body&gt;
+&lbrace;&lbrace;footer&rbrace;&rbrace;
+</code></pre>
+</article>
+
+<article>
+    <header>
+        <em>Example: The resulting HTML document after the two include files' content have been applied.</em>
+    </header>
+<pre><code class="language-HTML">
+header content...
+&lt;body&gt;
+    &lt;main&gt;
+        &vellip;
+    &lt;/main&gt;
+&lt;/body&gt;
+footer content...
+</code></pre>
 
                 <nav class="container">
     <ul>
