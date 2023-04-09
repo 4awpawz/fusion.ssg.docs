@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="/fusion.ssg.docs/css/fusion.css">
         <script src="/fusion.ssg.docs/scripts/libs/highlight/highlight.min.js"></script>
         <script>hljs.highlightAll();</script>
-        <title>fusion.ssg: documentation - posts</title>
+        <title>fusion.ssg: Documentation - Posts</title>
     </head>
     <body class="docpage">
         <!-- ToDo = rename this file default-nv -->
@@ -44,10 +44,12 @@
                             <summary>html documents</summary>
                             <ul>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments">Introduction</a></li>
+                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/frontmatter">Front Matter</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/templates">Templates</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/tokens">Tokens</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/pages">Pages</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/includes">Includes</a></li>
+                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/jsondatafiles">JSON Data Files</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/components">Components</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/collections">Collections</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/posts">Posts</a></li>
@@ -56,7 +58,7 @@
                         <details open>
                             <summary>configuration</summary>
                             <ul>
-                                <li><a class="secondary" href="#">fusion.json</a></li>
+                                <li><a class="secondary" href="/fusion.ssg.docs/docs/configuration">fusion.json</a></li>
                             </ul>
                         </details>
                         <details open>
@@ -70,8 +72,27 @@
                 </nav>
             </aside>
             <div>
-                <p><em>Posts</em></p>
+                <p><em>HTML DOCUMENTS</em></p>
 <h1 id="posts">Posts</h1>
+<section class="container">
+    <div><small>Required: <em>No</em></small></div>
+    <div><small>Front Matter: <em>Yes</em></small></div>
+    <div><small>Type: <em>.html, .md</em></small></div>
+    <div><small>Project Location: <em>src/templates/posts</em></small></div>
+</section>
+
+<p>Posts are <em>specialized</em> templates that can be useful for creating <em>article</em> and <em>blog</em> type HTML documents, or any type of HTML document that might benefit from the use of <em>tags</em> and <em>categories</em>.</p>
+<article>
+<header>Tags</header>
+<em>Tags</em> are useful for grouping <em>similar</em> posts to each other.
+<footer><em>Example</em>:</footer>
+</article>
+
+<article>
+<header>Categories</header>
+<em>Categories</em> allow you to <em>physically</em> group posts in folders. Multiple categories are supported, which results in a nested folder structure.
+<footer><em>Example</em>:</footer>
+</article>
 
                 <nav class="container">
     <ul>

@@ -44,10 +44,12 @@
                             <summary>html documents</summary>
                             <ul>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments">Introduction</a></li>
+                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/frontmatter">Front Matter</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/templates">Templates</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/tokens">Tokens</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/pages">Pages</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/includes">Includes</a></li>
+                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/jsondatafiles">JSON Data Files</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/components">Components</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/collections">Collections</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/posts">Posts</a></li>
@@ -56,7 +58,7 @@
                         <details open>
                             <summary>configuration</summary>
                             <ul>
-                                <li><a class="secondary" href="#">fusion.json</a></li>
+                                <li><a class="secondary" href="/fusion.ssg.docs/docs/configuration">fusion.json</a></li>
                             </ul>
                         </details>
                         <details open>
@@ -72,7 +74,7 @@
             <div>
                 <p><em>HTML DOCUMENTS</em></p>
 <h1 id="tokens">Tokens</h1>
-<p><em>Tokens</em> serve as place holders that are eventually replaced by the content intended for the HTML document. fusion.ssg recognizes three different types of tokens:</p>
+<p><em>Tokens</em> serve as place holders that are eventually replaced by content intended for the HTML document. fusion.ssg recognizes three different types of tokens:</p>
 <ol>
     <li><a href="/fusion.ssg.docs/docs/htmldocuments/tokens#simple-tokens"><em>simple tokens</em></a></li>
     <li><a href="/fusion.ssg.docs/docs/htmldocuments/tokens#template-tokens"><em>template tokens</em></a></li>
@@ -80,11 +82,11 @@
 </ol>
 
 <h2 id="simple-tokens">Simple Tokens</h2>
-<p><em>syntax: {template token property name}</em></p>
-<p>Simple <em>token values</em> declared in a template&#39;s front matter, specifically in its <code>tokens</code> object, replace all matching simple tokens found in the HTML document.</p>
+<p><em>syntax: {simple token property name}</em></p>
+<p>Simple token properties are defined in template front matter, specifically in the <code>tokens</code> object, and their property values replace all matching simple tokens found in the HTML document.</p>
 <article>
     <header>
-        <em>Example: A template with three simple token values declared.</em>
+        <em>Example: A template that defines three simple token properties.</em>
     </header>
 <pre><code class="language-YAML">
 ---
@@ -97,7 +99,7 @@ tokens: {
 ---
 # This is content
 </code></pre>
-    This template declares three <em>simple token values</em>:
+    This template defines the following three <em>simple token properties.</em>:
     <ol>
         <li><em>docTitle</em>, with a value of "<em>"Cats"</em>"</li>
         <li><em>catName</em> with a value of "<em>"Felix"</em>"</li>
@@ -126,7 +128,7 @@ tokens: {
     &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-    <p>All simple tokens in the HTML document that match the simple token values declared in the template will be replaced with their respective values.</p>
+    <p>All simple tokens declared in the HTML document that match the simple tokens defined in the template will be replaced by their respective values.</p>
 </article>
 
 <article>
@@ -154,7 +156,7 @@ tokens: {
 
 <h2 id="template-tokens">Template Tokens</h2>
 <p><em>syntax: &lbrace;&lbrace;template&rbrace;&rbrace;</em></p>
-<p>Template tokens are only relevant in pages and they are replaced by the content, if any, of their associated templates.</p>
+<p>Template tokens are only relevant in pages and are replaced by the content, if any, of their associated templates.</p>
 <article>
     <header>
         <em>Example: A page with a template token declared.</em>
@@ -183,7 +185,7 @@ tokens: {
 
 <h2 id="include-tokens">Include Tokens</h2>
 <p><em>syntax: &lbrace;&lbrace;path/to/include&rbrace;&rbrace;</em></p>
-<p>Include tokens are relevant in pages and templates and are replaced by their respective include&#39;s content.</p>
+<p>Include tokens are relevant in pages and templates and are replaced by their respective <a href="/fusion.ssg.docs/docs/htmldocuments/includes">include</a>&#39;s content.</p>
 <article>
     <header>
         <em>Example: A page with two include tokens declared.</em>

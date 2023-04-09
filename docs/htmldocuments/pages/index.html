@@ -44,10 +44,12 @@
                             <summary>html documents</summary>
                             <ul>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments">Introduction</a></li>
+                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/frontmatter">Front Matter</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/templates">Templates</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/tokens">Tokens</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/pages">Pages</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/includes">Includes</a></li>
+                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/jsondatafiles">JSON Data Files</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/components">Components</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/collections">Collections</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/posts">Posts</a></li>
@@ -56,7 +58,7 @@
                         <details open>
                             <summary>configuration</summary>
                             <ul>
-                                <li><a class="secondary" href="#">fusion.json</a></li>
+                                <li><a class="secondary" href="/fusion.ssg.docs/docs/configuration">fusion.json</a></li>
                             </ul>
                         </details>
                         <details open>
@@ -79,14 +81,14 @@
     <div><small>Project Location: <em>src/pages</em></small></div>
 </section>
 
-<p>Pages associated with <a href="/fusion.ssg.docs/docs/htmldocuments/templates">templates</a> create HTML documents and provide HTML documents their <em>structure</em>. Pages associated with templates with content will have their <em>template markers</em> replaced by that content.</p>
-<p class="info">A page can have only one template marker and it should be placed anywhere within the page's body tag that makes sense for the HTML document.</p>
+<p>Pages associated with <a href="/fusion.ssg.docs/docs/htmldocuments/templates">templates</a> create HTML documents and provide HTML documents their <em>structure</em>. Pages associated with templates with content will have their <em>template tokens</em> replaced by that content.</p>
+<p class="info">A page can have only one template token and it should be placed anywhere within the page's body tag that makes sense for the HTML document.</p>
 
-<p class="info">Pages without template markers are also valid, they provide their own content, and are convenient for <em>one-off</em> pages. Their associated template's content, if any, is ignored.</p>
+<p class="info">Pages without template tokens are also valid, they provide their own content, and are convenient for <em>one-off</em> pages. Their associated template's content, if any, is ignored.</p>
 
 <article>
     <header>
-        <em>Example: A page with a template marker.</em>
+        <em>Example: A page with a template token.</em>
     </header>
     <pre><code class="language-HTML">
 &lt;!DOCTYPE html&gt;
@@ -105,7 +107,7 @@
 &lt;/html&gt;
     </code></pre>
     <footer>
-    <p>This page's template marker will be replaced by an associated template's content.</p>
+    <p>This page's template token will be replaced by its associated template's content.</p>
     </footer>
 </article>
 

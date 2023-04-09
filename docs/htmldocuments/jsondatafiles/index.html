@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="/fusion.ssg.docs/css/fusion.css">
         <script src="/fusion.ssg.docs/scripts/libs/highlight/highlight.min.js"></script>
         <script>hljs.highlightAll();</script>
-        <title>fusion.ssg: Documentation - Templates</title>
+        <title>fusion.ssg: Documentation - JSON Data Files</title>
     </head>
     <body class="docpage">
         <!-- ToDo = rename this file default-nv -->
@@ -73,31 +73,14 @@
             </aside>
             <div>
                 <p><em>HTML DOCUMENTS</em></p>
-<h1 id="templates">Templates</h1>
+<h1 id="json-data-files">JSON Data Files</h1>
 <section class="container">
-    <div><small>Required: <em>Yes</em></small></div>
-    <div><small>Front Matter: <em>Yes</em></small></div>
-    <div><small>Type: <em>.html, .md </em></small></div>
-    <div><small>Project Location: <em>src/templates</em></small></div>
+    <div><small>Required: <em>No</em></small></div>
+    <div><small>Type: <em>.json</em></small></div>
+    <div><small>Project Location: <em>src/data</em></small></div>
 </section>
 
-<p>Every HTML document requires a template and every template associates with a <a href="/fusion.ssg.docs/docs/htmldocuments/pages">page</a> using the <em>page</em> <a href="/fusion.ssg.docs/docs/htmldocuments/frontmatter">front matter</a> property.
-If a template has its own content, its content will be inserted into the page that it associates with, replacing that page&#39;s <em>template token</em>.</p>
-<p class="info">When the front matter "page" property is omitted, fusion.ssg will associate the default page, i.e. src/pages/page.html, with the template. If the default.html page doesn't exist, fusion.ssg will display an error.</p>
-<article>
-    <header>
-        <em>Example: A template associated with a page.</em>
-    </header>
-    <pre><code class="language-YAML">
----
-page: main
----
-# This is content
-    </code></pre>
-    <footer>
-    <p>This template associates with the page found at src/pages/main.html.</p>
-    </footer>
-</article>
+<p>fusion.ssg supports the use of <em>JSON data source</em>, which you maintain in your project&#39;s <em>src/data</em> folder, in your project&#39;s components. Please see <a href="/fusion.ssg.docs/docs/htmldocuments/components">Components</a> for more information.</p>
 
                 <nav class="container">
     <ul>

@@ -44,10 +44,12 @@
                             <summary>html documents</summary>
                             <ul>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments">Introduction</a></li>
+                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/frontmatter">Front Matter</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/templates">Templates</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/tokens">Tokens</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/pages">Pages</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/includes">Includes</a></li>
+                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/jsondatafiles">JSON Data Files</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/components">Components</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/collections">Collections</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/posts">Posts</a></li>
@@ -56,7 +58,7 @@
                         <details open>
                             <summary>configuration</summary>
                             <ul>
-                                <li><a class="secondary" href="#">fusion.json</a></li>
+                                <li><a class="secondary" href="/fusion.ssg.docs/docs/configuration">fusion.json</a></li>
                             </ul>
                         </details>
                         <details open>
@@ -79,11 +81,11 @@
     <div><small>Project Location: <em>src/includes</em></small></div>
 </section>
 
-<p>Like <a href="/fusion.ssg.docs/docs/htmldocuments/templates">templates</a>, includes contribute their content to the HTML document. Unlike templates whose content is generally more specific to the intention of the HTML document, such  as its subject matter, main topic, etc., includes are best used to encapsulate blocks of content that are used in multiple HTML documents, such as blocks of meta tags, navbars, footers, sidebars, .etc. Includes also allow you to leverage the benefit of using either markdown or HTML for a particular part of an HTML document.</p>
-<p>Both pages and templates can incorporate includes using include markers, whose syntax is the path to the include file, minus its file type, that resides in the src/includes folder surrounded by double curly braces, e.g. &lbrace;&lbrace;<em>path/to/include</em>&rbrace;&rbrace;.</p>
+<p>Like <a href="/fusion.ssg.docs/docs/htmldocuments/templates">templates</a>, includes contribute their content to the HTML document. Unlike templates, whose content is generally more specific to the intention of the HTML document, such  as its subject matter, main topic, etc., includes are best used to encapsulate blocks of content that are used in multiple HTML documents, such as blocks of meta tags, navbars, footers, sidebars, .etc. Includes also allow you to leverage the benefit of using either markdown or HTML for a particular part of an HTML document.</p>
+<p>Both pages and templates can incorporate includes using <a href="/fusion.ssg.docs/docs/htmldocuments/tokens#include-tokens">include tokens</a>, whose syntax is the path to the include file, minus its file type, that resides in the src/includes folder surrounded by double curly braces, e.g. &lbrace;&lbrace;<em>path/to/include</em>&rbrace;&rbrace;.</p>
 <article>
     <header>
-        <em>Example: A page with two include markers.</em>
+        <em>Example: A page with two include tokens.</em>
     </header>
     <pre><code class="language-HTML">
 &lt;!DOCTYPE html&gt;
@@ -105,7 +107,7 @@
 &lt;/html&gt;
     </code></pre>
     <footer>
-    <p>This page's include markers will be replaced by the their respective include files' content.</p>
+    <p>This page's include token will be replaced by the their respective include files' content.</p>
     </footer>
 </article>
 

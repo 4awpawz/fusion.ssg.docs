@@ -44,10 +44,12 @@
                             <summary>html documents</summary>
                             <ul>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments">Introduction</a></li>
+                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/frontmatter">Front Matter</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/templates">Templates</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/tokens">Tokens</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/pages">Pages</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/includes">Includes</a></li>
+                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/jsondatafiles">JSON Data Files</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/components">Components</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/collections">Collections</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/posts">Posts</a></li>
@@ -56,7 +58,7 @@
                         <details open>
                             <summary>configuration</summary>
                             <ul>
-                                <li><a class="secondary" href="#">fusion.json</a></li>
+                                <li><a class="secondary" href="/fusion.ssg.docs/docs/configuration">fusion.json</a></li>
                             </ul>
                         </details>
                         <details open>
@@ -73,9 +75,9 @@
                 <p><em>HTML DOCUMENTS</em></p>
 <h1 id="components">Components</h1>
 <section class="container">
-    <div><small>Required: <em>No</em></small></div>
-    <div><small>Type: <em>.tsx</em></small></div>
-    <div><small>Project Location: <em>src/components</em></small></div>
+<div><small>Required: <em>No</em></small></div>
+<div><small>Type: <em>Typescript, i.e. .tsx</em></small></div>
+<div><small>Project Location: <em>src/components</em></small></div>
 </section>
 
 
@@ -83,25 +85,27 @@
 <h2 id="properties">Properties</h2>
 <p>Components can reference their <em>properties</em> as <em><code>{[property name]}</code></em> (see code example below).</p>
 <article>
-    <header>There are two <em>special</em> properties that fusion.ssg recognizes:</header>
-    <ul>
-        <li>_isCollection_ indicates that this component should be called to generate a <a href="/fusion.ssg.docs/docs/htmldocuments/collections">collection</a> of HTML documents rather than rendering output for a single HTML document.</li>
-        <li>_dataSources_ is a comma separated lists of JSON file names that are located in your project's <em>src/data</em> folder. At runtime, fusion.ssg reads each data source, converting them to JavaScript objects and passes the converted data sources to your component along with <em>additional properties</em> (see below) that may be useful. Data sources passed to your components can be destructured from <em>props</em> using their JSON file naame minus the .json extension.</li>
-    </ul>
+<header>There are two <em>predefined</em> component properties recognized by fusion.ssg:</header>
+<ul>
+<li><em>isCollection</em>: informs fusion.ssg that this component should be called to generate a <a href="/fusion.ssg.docs/docs/htmldocuments/collections">collection</a> of HTML documents rather than rendering output for a single HTML document.</li>
+<li><em>dataSources</em>: is a comma separated lists of JSON file names that are located in your project's <em>src/data</em> folder. At runtime, fusion.ssg reads each data source, converting them to JavaScript objects and passes the converted data sources to your component along with <em>two additional properties</em> (see below) that may be useful. Data sources passed to your components can be destructured from <em>props</em> using their JSON file naame minus the .json extension.</li>
+</ul>
 </article>
+
 <article>
-    <header>In addition to your component's declared properties, fusion.ssg also passes two additional properties to your components:</header>
-    <ul>
-        <li>asset - the <em>metadata</em> that fusion.ssg has generated for the HTML document that this component is being called for.</li>
-        <li>assets - a <em>list</em> containing the metadata that fusion.ssg has generated for all HTML documents in your project.</li>
-    </ul>
-    <footer><p class="info">fusion.ssg serializes the metadata that it has generated for your project to a file named <em>assets.json</em> in your project's root folder.</p></footer>
+<header>In addition to your component's declared properties, fusion.ssg also passes two additional properties to your components:</header>
+<ul>
+<li><em>asset</em>: the <em>metadata</em> that fusion.ssg has generated for the HTML document that this component is being called for.</li>
+<li><em>assets</em>: a <em>list</em> containing the metadata that fusion.ssg has generated for all HTML documents in your project.</li>
+</ul>
+<footer><p class="info">fusion.ssg serializes the metadata that it has generated for your project to a file named <em>assets.json</em> in your project's root folder.</p></footer>
 </article>
+
 <article>
-    <header>
-        <em>Example: A component that receives a data source that is returned as a list.</em>
-    </header>
-    <pre><code class="language-typescript">interface TeamMember {
+<header>
+<em>Example: A component that receives a data source that is returned as a list.</em>
+</header>
+<pre><code class="language-typescript">interface TeamMember {
     &quot;name&quot;: {
         &quot;first&quot;: string,
         &quot;last&quot;: string
@@ -136,11 +140,12 @@ export const TeamList = function({ team }: Props): string {
 </code></pre>
 
 </article>
+
 <article>
-    <header>
-        <em>Example: A template that contains a component tag with a dataSources property.</em>
-    </header>
-    <pre><code class="language-html">&lt;h1&gt;Team&lt;/h1&gt;
+<header>
+<em>Example: A template that contains a component tag with a dataSources property.</em>
+</header>
+<pre><code class="language-html">&lt;h1&gt;Team&lt;/h1&gt;
 
 &lt;p&gt;Thanks to our team, our rollout has been a success.&lt;/p&gt;
 
@@ -149,11 +154,12 @@ export const TeamList = function({ team }: Props): string {
 </code></pre>
 
 </article>
+
 <article>
-    <header>
-        <em>Example: The JSON data source declared in the component's tag that fusion.ssg passes to the component.</em>
-    </header>
-    <pre><code class="language-json">[
+<header>
+<em>Example: The JSON data source declared in the component's tag that fusion.ssg passes to the component.</em>
+</header>
+<pre><code class="language-json">[
 { &quot;name&quot;: { &quot;first&quot;: &quot;John&quot;, &quot;last&quot;: &quot;Doe&quot; }},
 {&quot;name&quot;: { &quot;first&quot;: &quot;Jane&quot;, &quot;last&quot;: &quot;Doe&quot; }},
 {&quot;name&quot;: { &quot;first&quot;: &quot;Julia&quot;, &quot;last&quot;: &quot;Doe&quot; }}
@@ -161,11 +167,12 @@ export const TeamList = function({ team }: Props): string {
 </code></pre>
 
 </article>
+
 <article>
-    <header>
-        <em>Example: The component tag is replaced wth the HTML returned from the component.</em>
-    </header>
-    <pre><code class="language-html">&lt;h1&gt;Team&lt;/h1&gt;
+<header>
+<em>Example: The component tag is replaced wth the HTML returned from the component.</em>
+</header>
+<pre><code class="language-html">&lt;h1&gt;Team&lt;/h1&gt;
 
 &lt;p&gt;Thanks to our team, our rollout has been a success.&lt;/p&gt;
 

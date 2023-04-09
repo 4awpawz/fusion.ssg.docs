@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="/fusion.ssg.docs/css/fusion.css">
         <script src="/fusion.ssg.docs/scripts/libs/highlight/highlight.min.js"></script>
         <script>hljs.highlightAll();</script>
-        <title>fusion.ssg: Documentation - Templates</title>
+        <title>fusion.ssg: Documentation - Configuration</title>
     </head>
     <body class="docpage">
         <!-- ToDo = rename this file default-nv -->
@@ -72,32 +72,61 @@
                 </nav>
             </aside>
             <div>
-                <p><em>HTML DOCUMENTS</em></p>
-<h1 id="templates">Templates</h1>
-<section class="container">
-    <div><small>Required: <em>Yes</em></small></div>
-    <div><small>Front Matter: <em>Yes</em></small></div>
-    <div><small>Type: <em>.html, .md </em></small></div>
-    <div><small>Project Location: <em>src/templates</em></small></div>
-</section>
+                
+<hgroup>
+    <h1>Configuration</h1>
+    <p>The following configuration options are available for you to override in your project's <em>src/fusion.json</em> file.</p>
+</hgroup>
 
-<p>Every HTML document requires a template and every template associates with a <a href="/fusion.ssg.docs/docs/htmldocuments/pages">page</a> using the <em>page</em> <a href="/fusion.ssg.docs/docs/htmldocuments/frontmatter">front matter</a> property.
-If a template has its own content, its content will be inserted into the page that it associates with, replacing that page&#39;s <em>template token</em>.</p>
-<p class="info">When the front matter "page" property is omitted, fusion.ssg will associate the default page, i.e. src/pages/page.html, with the template. If the default.html page doesn't exist, fusion.ssg will display an error.</p>
-<article>
-    <header>
-        <em>Example: A template associated with a page.</em>
-    </header>
-    <pre><code class="language-YAML">
----
-page: main
----
-# This is content
-    </code></pre>
-    <footer>
-    <p>This template associates with the page found at src/pages/main.html.</p>
-    </footer>
-</article>
+<artice>
+    <article>
+        <header>
+            <p><em>postsFolder</em>: The name to use for the folder that hosts your site's <em>posts</em>.</p>
+        </header>
+        <ul>
+            <li>default: "posts"</li>
+        </ul>
+        <footer>
+            <p><em>Example</em>:</p>
+            <pre><code class="language-JSON">"postsFolder": "blog""</code></pre>
+        </footer>
+    </article>
+    <article>
+        <header>
+            <p><em>baseURL</em>: If your site is served from a <em>subfloder</em>, such as is the case for sites hosted on <em>github.io</em>, prepend <em>&lbrace;baseURL&rbrace;</em> to your site's <a href="https://www.ibm.com/docs/en/eslm/10.0.4?topic=parameters-absolute-root-relative-url">root relative URLs</a> and they will be replaced with this value during release builds.</p>
+        </header>
+        <ul>
+            <li>default: ""</li>
+        </ul>
+        <footer>
+            <p><em>Example</em>:</p>
+            <p>Set <em>baseURL</em></p>
+<pre><code class="language-JSON">
+"baseURL": "fusion.ssg.docs"
+</code></pre>
+            <p>and prepend <em>baseURL</em> to your site's <em>root relative</em> URLs</p>
+<pre><code class="language-HTML">
+&lt;a href="&lbrace;baseURL&rbrace;/documentation"&gt;Docs&lt;/a&gt;
+</code></pre>
+            <p>and during release builds, &lbrace;baseURL&rbrace; will be replaced by its value.</p>
+<pre><code class="language-HTML">
+&lt;a href="fusion.ssg.docs/documentation"&gt;Docs&lt;/a&gt;
+</code></pre>
+        </footer>
+    </article>
+    <article>
+        <header>
+            <p><em>wips</em>: These are files and folders of templates that are to be ignored during release builds.</p>
+        </header>
+        <ul>
+            <li>default: []</li>
+        </ul>
+        <footer>
+            <pre><code class="language-JSON">"wips": ["src/templates/docs/next-version", "!src/templates/docs/next-version/index.md"]</code></pre>
+            <p class="info">Files and folders prepended with "!" are <em>negated.</em></p>
+        </footer>
+    </article>
+    </article>
 
                 <nav class="container">
     <ul>
