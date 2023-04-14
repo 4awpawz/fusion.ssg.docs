@@ -11,6 +11,9 @@ body {
 mark {
     padding: 0 2ch 0 2ch;
 }
+pre {
+    white-space: pre-wrap;
+}
 
 /* remove detail's widget */
 details summary::after {

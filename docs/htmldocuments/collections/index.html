@@ -18,11 +18,10 @@
         <li><a class="contrast fixed" href="/fusion.ssg.docs/"><strong>fusion.ssg</strong>.ssg</a></li>
     </ul>
     <ul>
-        <li><a class="secondary" href="/fusion.ssg.docs/#Examples">Examples</a></li>
         <li><a class="secondary" href="/fusion.ssg.docs/docs">Docs</a></li>
         <li><a class="secondary" href="/fusion.ssg.docs/posts">Blog</a></li>
         <li><a class="secondary" href="/fusion.ssg.docs/team">Team</a></li>
-        <li><a aria-label="fusion.ssg Github Repositroy" href="https://github.com/4awpawz/fusion.ssg" target="_blank">
+        <li><a aria-label="fusion.ssg Github Repositroy" href="https://github.com/4awpawz/fusion.ssg">
             <img src="/fusion.ssg.docs/media/github-mark-white.svg" alt="Github Icon">
         </a></li>
     </ul>
@@ -36,14 +35,14 @@
                             <summary>getting started</summary>
                             <ul>
                                 <!-- <li><a class="secondary selected-nav-item" href="/fusion.ssg.docs/docs">Installation</a></li> -->
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs">Installation</a></li>
+                                <li><a class="secondary" href="/fusion.ssg.docs/docs">Synopsis</a></li>
+                                <li><a class="secondary" href="/fusion.ssg.docs/docs/installation">Installation</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/projects">Projects</a></li>
                             </ul>
                         </details>
                         <details open>
                             <summary>html documents</summary>
                             <ul>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments">Introduction</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/frontmatter">Front Matter</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/templates">Templates</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/tokens">Tokens</a></li>
@@ -72,8 +71,120 @@
                 </nav>
             </aside>
             <div>
-                <p><em>Collections</em></p>
+                <p><em>HTML DOCUMENTS</em></p>
 <h1 id="collections">Collections</h1>
+<section class="container">
+<div><small>Required: <em>No</em></small></div>
+<div><small>Type: <em>Typescript, i.e. .tsx</em></small></div>
+<div><small>Return Type: <em>string</em></small></div>
+<div><small>Project Location: <em>src/components</em></small></div>
+</section>
+
+<p>Why would you want to create a <em>collection</em> of pages? Imagine you have a portfolio of one kind or another and you want to create pages for all the items contained in your portfolio. Imagine having to do that manually for each page. That would be quite tedious and laborious. fusion.ssg provides a much better solution.</p>
+<p><em>Collection templates and components</em> work together to provide an easy to understand and a simple to implement mechanism for creating collections of pages. Simply put, fusion.ssg calls collection components that return content, just like normal components do, but fusion.ssg calls these components repeatedly until they return no content. In addition, for each call, the component receives an index along with any of the other properties the component has declared as well as the default properties they normally receive, such as <em>asset</em> and <em>assets</em>. The value of this index is initially zero and is incremented for each subsequent invocation of the component. The index, for example, can be used to determine which item in a data source is to be used to produce the current HTML document and when the index value is greater than the number of items in the data source the component returns nothing, which signals to fusion.ssg that there are no more documents to be created.</p>
+<h2 id="collection-templates">Collection Templates</h2>
+<p>A <em>collection template</em> is any template that declares a front matter property named <code>isCollection</code> with a value of <code>true</code>.</p>
+<p class="info">fusion.ssg automatically adds this property with a value of <code>false</code> to all non collection templates.</p>
+
+<article>
+<header>
+<em>Example: A collection template.</em>
+</header>
+<pre><code class="language-html">
+---
+page: team-member
+&vellip;
+isCollection: true
+---
+&lt;h1&gt;team&lt;/h1&gt;
+
+&lt;p&gt;thanks to our team, our rollout has been a success.&lt;/p&gt;
+
+&lt;h2&gt;contributors&lt;/h2&gt;
+&vellip;
+</code></pre>
+
+</article>
+
+<p>A <em>collection component</em> is any component that declares a property named <code>isCollection</code>.</p>
+
+<article>
+<header>
+<em>Example: A collection template with  a collection component tag.</em>
+</header>
+<pre><code class="language-html">
+---
+page: team-member
+&vellip;
+isCollection: true
+---
+&lt;h1&gt;team&lt;/h1&gt;
+
+&lt;p&gt;thanks to our team, our rollout has been a success.&lt;/p&gt;
+
+&lt;h2&gt;contributors&lt;/h2&gt;
+&lt;TeamMember isCollection datasources="team.json" /&gt;
+&vellip;
+</code></pre>
+
+<footer>
+<p class="info">Collection component tags are applicable within <b>includes</b>, <b>templates</b> and <b>pages</b>.</p>
+</footer>
+</article>
+
+<h2 id="collection-components">Collection Components</h2>
+<h3 id="arguments">Arguments</h3>
+<p>Besides the properties declared by the component, it  will, like every component, also receive asset and assets.</p>
+<ul>
+<li>index: number, initially set to 0 and incremented by 1 for every subsequent invocation.</li>
+</ul>
+<h3 id="returns">Returns</h3>
+<p>When collection components have content to contribute to a page, they return an object with properties for the content, the title, and the name of the document:</p>
+<ul>
+<li>content: <em>string, the content to contribute to this HTML page.</em></li>
+<li>title: <em>string, will replace the simple title token in the HTML document&#39;s title tag, e.g. &lt;title&gt;&#123;title&#125;&lt;/title&gt;.</em></li>
+<li>htmlDocumentName: <em>string, the name for this HTML page.</em></li>
+</ul>
+<p>When collection components no longer have content to contribute to a page, they return nothing.</p>
+<article>
+<header>
+<em>Example: A collection component implementation.</em>
+</header>
+<pre><code class="language-typescript">interface TeamMember {
+    name: {
+        first: string,
+        last: string
+    },
+    address: {
+        street: string,
+        apt: string,
+        city: string,
+        state: string,
+        zip: number,
+    }
+}
+
+interface Props {
+    team: TeamMember[]
+}
+
+export const TeamMember = function(index: number, { team }: Props): { content: unknown, title: string, htmlDocumentName: string } | undefined {
+    if (index === team.length) return;
+    const content = (
+        &lt;&gt;
+            &lt;h2&gt;{team[index].name.first} {team[index].name.last}&lt;/h2&gt;
+            &lt;ul style=&quot;list-style: none&quot;&gt;
+                &lt;li&gt;&lt;span style=&quot;color: green&quot;&gt;{team[index].address.city}, {team[index].address.state}&lt;/span&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/&gt;
+    );
+    const title = `${team[index].name.first} ${team[index].name.last}`;
+    const htmlDocumentName = `${team[index].name.first}-${team[index].name.last}`;
+    return { content, title, htmlDocumentName };
+};
+</code></pre>
+
+</article>
 
                 <nav class="container">
     <ul>

@@ -18,11 +18,10 @@
         <li><a class="contrast fixed" href="/fusion.ssg.docs/"><strong>fusion.ssg</strong>.ssg</a></li>
     </ul>
     <ul>
-        <li><a class="secondary" href="/fusion.ssg.docs/#Examples">Examples</a></li>
         <li><a class="secondary" href="/fusion.ssg.docs/docs">Docs</a></li>
         <li><a class="secondary" href="/fusion.ssg.docs/posts">Blog</a></li>
         <li><a class="secondary" href="/fusion.ssg.docs/team">Team</a></li>
-        <li><a aria-label="fusion.ssg Github Repositroy" href="https://github.com/4awpawz/fusion.ssg" target="_blank">
+        <li><a aria-label="fusion.ssg Github Repositroy" href="https://github.com/4awpawz/fusion.ssg">
             <img src="/fusion.ssg.docs/media/github-mark-white.svg" alt="Github Icon">
         </a></li>
     </ul>
@@ -37,8 +36,8 @@
             <p><code>HTML</code>, <code>markdown</code>, <code>front matter</code> and Typescript <code>components</code></p>
         </hgroup>
         <p>
-            <a href="/fusion.ssg.docs/docs/htmldocuments/" role="button" class="secondary" aria-label="Documentation" style="margin-right: 10px">Get Started</a>
-            <a href="/fusion.ssg.docs/docs#Install Now" role="button" class="contrast outline">Install Now</a>
+            <a href="/fusion.ssg.docs/docs" role="button" class="secondary" aria-label="Documentation" style="margin-right: 10px">Get Started</a>
+            <a href="/fusion.ssg.docs/docs/installation" role="button" class="contrast outline">Install Now</a>
         </p>
     </div>
 </header>
@@ -76,6 +75,116 @@
                     <footer>
                         <p class="info">fusion.ssg's starter project should be all that's needed to get up and running quickly.</p>
                     </footer>
+                </article>
+            </section>
+            <section class="container">
+                <article>
+                    <h2 id="the-name">The Name</h2>
+<p><em>fusion</em> plays on the idea of <strong><em>fusing</em></strong> together various elements (HTML, Markdown, TypseScript components, JSON data, YAML front matter, etc.).</p>
+<h2 id="features">Features</h2>
+<ul>
+<li>Simple HTML document creation using Pages, Templates and Includes.</li>
+<li>Simple token replacement involving front matter property values and matching property names in HTML.</li>
+<li>TSX custom component compilation and sand-boxed execution.</li>
+<li>Document hydration using Typescript components and JSON data sources.</li>
+<li>Page collections using Typescript components and JSON data sources.</li>
+<li>Base URLs.</li>
+<li>Development and release builds.</li>
+<li>Content posting (e.g. Blogging).<ul>
+<li>Tags.</li>
+<li>Categories.</li>
+</ul>
+</li>
+<li>Works in progress.<ul>
+<li>Individual files.</li>
+<li>Folders.</li>
+<li>Ignored.</li>
+</ul>
+</li>
+</ul>
+<h2 id="project-development">Project Development</h2>
+<p>The project is written in <code> TypeScript</code> (no excuses, <em>it just works beautifully</em>) and runs on <code>Node</code>.</p>
+<h2 id="project-scope">Project Scope</h2>
+<p>The project&#39;s scope is limited to generating robust and resilient HTML documents and nothing else. It will not provide any other tooling other than what is absolutely necessary to accomplish that. Importantly, fusion.ssg requires no knowledge of front-end frameworks like React. This keeps the scope of the project focused, preventing feature creep, and benefits users who will be able to pick and chose their own tools.</p>
+<h2 id="current-status">Current Status</h2>
+<p>The project is still in its Alpha/prerelease stage. One or more <em>Beta releases</em> will follow and both Alpha and Beta releases should be considered <em>unstable</em> and <em>transient</em>. While in Beta, features and implementations might change dramatically and this should be considered the norm.</p>
+<h2 id="versioning">Versioning</h2>
+<p>fusion will use <a href="https://semver.org/">semantic versioning</a> and will distinguish between <em>development</em> builds and <em>release</em> builds by their major version numbers</p>
+<ol>
+<li>Odd major version number are to be considered development versions.</li>
+<li>Even major version number are to be considered release versions.</li>
+</ol>
+<h3 id="what-has-already-been-implemented">What Has Already Been Implemented</h3>
+<ul>
+<li><p><input checked="" disabled="" type="checkbox"> 
+Support for <em>simple HTML document creation</em> using <em>Pages, Templates and Includes</em>.</p>
+</li>
+<li><p><input checked="" disabled="" type="checkbox"> 
+Support for <em>simple token replacement</em> involving <em>front matter property values</em> and <em>matching property names</em> in HTML.</p>
+</li>
+<li><p><input checked="" disabled="" type="checkbox"> 
+Support for Typescript <em><code>.tsx</code> components</em>, <em>compilation</em> and <em>sand-boxed execution</em>.</p>
+</li>
+<li><p><input checked="" disabled="" type="checkbox"> 
+Support for <em>document hydration</em> using Typescript components and JSON data sources.</p>
+</li>
+<li><p><input checked="" disabled="" type="checkbox"> 
+Support for generating <em>collections of pages</em> using Typescript components and JSON data sources.</p>
+</li>
+<li><p><input checked="" disabled="" type="checkbox"> 
+Support for base URLs.</p>
+</li>
+<li><p><input checked="" disabled="" type="checkbox"> 
+Support for development and release builds.</p>
+</li>
+<li><p><input checked="" disabled="" type="checkbox"> 
+Support for content posting (e.g. Blogging)</p>
+<ul>
+<li><p><input checked="" disabled="" type="checkbox"> 
+Support for tags.</p>
+</li>
+<li><p><input checked="" disabled="" type="checkbox"> 
+Support for categories.</p>
+</li>
+</ul>
+</li>
+<li><p><input checked="" disabled="" type="checkbox"> 
+Work in progress templates.</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Individual files.</li>
+<li><input checked="" disabled="" type="checkbox"> Folders.</li>
+<li><input checked="" disabled="" type="checkbox"> Ignored.</li>
+</ul>
+</li>
+</ul>
+<h3 id="what-still-remains-to-be-done">What Still Remains To Be Done</h3>
+<ul>
+<li><p>Logo... fusion.ssg is desperately in need of a great logo.</p>
+</li>
+<li><p>End-User project generation - <em>currently under development</em>.</p>
+</li>
+<li><p>Project documentation website - <em>currently under development</em>.</p>
+</li>
+<li><p>Encourage early community involvement and adoption.</p>
+</li>
+<li><p>Provide sufficient testing to reduce the likelihood of introducing regressions.</p>
+</li>
+</ul>
+<h3 id="longer-term-goals">Longer Term Goals</h3>
+<ul>
+<li><p>Seek RFC.</p>
+</li>
+<li><p>Accept pull requests when the codebase is stable enough to receive them, which will probably coincide with the first major Alpha release.</p>
+</li>
+</ul>
+<h2 id="community">Community</h2>
+<p>For help, discussion about best practices, or any other conversation that would benefit from being searchable:</p>
+<p><a href="https://github.com/4awpawz/fusion.ssg/discussions">Discuss _fusion.ssg _on Github</a></p>
+<p>For casual conversation with others about using <em>fusion.ssg</em>:</p>
+<p><a href="https://twitter.com">Discuss _fusion.ssg on Twitter and other social media.</a>.</p>
+<h2 id="and-if-you-wouldnt-mind">And If You Wouldn&#39;t Mind</h2>
+<p>Please consider 👀watching and 🌟starring this <a href="https://github.com/4awpawz/fusion.ssg">repo</a> as these will provide the motivation to keep moving forward.</p>
+
                 </article>
             </section>
         </main>

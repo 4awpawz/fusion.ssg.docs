@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="/fusion.ssg.docs/css/fusion.css">
         <script src="/fusion.ssg.docs/scripts/libs/highlight/highlight.min.js"></script>
         <script>hljs.highlightAll();</script>
-        <title>fusion.ssg: Documentation - Includes</title>
+        <title>fusion.ssg: Documentation - Installation</title>
     </head>
     <body class="docpage">
         <!-- ToDo = rename this file default-nv -->
@@ -71,43 +71,14 @@
                 </nav>
             </aside>
             <div>
-                <p><em>HTML DOCUMENTS</em></p>
-<h1 id="includes">Includes</h1>
-<section class="container">
-    <div><small>Required: <em>No</em></small></div>
-    <div><small>Front Matter: <em>Never</em></small></div>
-    <div><small>Type: <em>.html, .md </em></small></div>
-    <div><small>Project Location: <em>src/includes</em></small></div>
-</section>
-
-<p>Like <a href="/fusion.ssg.docs/docs/htmldocuments/templates">templates</a>, includes contribute their content to the HTML document. Unlike templates, whose content is generally more specific to the intention of the HTML document, such  as its subject matter, main topic, etc., includes are best used to encapsulate blocks of content that are used in multiple HTML documents, such as blocks of meta tags, navbars, footers, sidebars, .etc. Includes also allow you to leverage the benefit of using either markdown or HTML for a particular part of an HTML document.</p>
-<p>Both pages and templates can incorporate includes using <a href="/fusion.ssg.docs/docs/htmldocuments/tokens#include-tokens">include tokens</a>, whose syntax is the path to the include file, minus its file type, that resides in the src/includes folder surrounded by double curly braces, e.g. &lbrace;&lbrace;<em>path/to/include</em>&rbrace;&rbrace;.</p>
+                <p><em>GETTING STARTED</em></p>
+<h1 id="installation">Installation</h1>
+<p class="info">fusion.ssg requires <a href="https://nodejs.org/en" target="_blank">Node.js</a> to be installed.</p>
 <article>
-    <header>
-        <em>Example: A page with two include tokens.</em>
-    </header>
-    <pre><code class="language-HTML">
-&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-    &lt;head&gt;
-        &lt;meta charset="UTF-8"&gt;
-        &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
-        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-        &lt;title&gt;fusion.ssg: Documentation - Includes&lt;/title&gt;
-    &lt;/head&gt;
-    &lbrace;&lbrace;nav/topnavbar&rbrace;nav/topnavbar&rbrace;
-    &lt;body&gt;
-        &lbrace;&lbrace;nav/topnavbar&rbrace;nav/topnavbar&rbrace;
-        &lt;main class="container"&gt;
-            &lbrace;&lbrace;template&rbrace;&rbrace;
-        &lt;/main&gt;
-        &lbrace;&lbrace;nav/bottomnavbar&rbrace;nav/topnavbar&rbrace;&rbrace;
-    &lt;/body&gt;
-&lt;/html&gt;
+    <header>Run the following in your terminal:</header>
+    <pre><code class="language-SHELL">
+npm i -g @4awpawa/fusion.ssg
     </code></pre>
-    <footer>
-    <p>This page's include token will be replaced by the their respective include files' content.</p>
-    </footer>
 </article>
 
                 <nav class="container">

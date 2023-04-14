@@ -18,11 +18,10 @@
         <li><a class="contrast fixed" href="/fusion.ssg.docs/"><strong>fusion.ssg</strong>.ssg</a></li>
     </ul>
     <ul>
-        <li><a class="secondary" href="/fusion.ssg.docs/#Examples">Examples</a></li>
         <li><a class="secondary" href="/fusion.ssg.docs/docs">Docs</a></li>
         <li><a class="secondary" href="/fusion.ssg.docs/posts">Blog</a></li>
         <li><a class="secondary" href="/fusion.ssg.docs/team">Team</a></li>
-        <li><a aria-label="fusion.ssg Github Repositroy" href="https://github.com/4awpawz/fusion.ssg" target="_blank">
+        <li><a aria-label="fusion.ssg Github Repositroy" href="https://github.com/4awpawz/fusion.ssg">
             <img src="/fusion.ssg.docs/media/github-mark-white.svg" alt="Github Icon">
         </a></li>
     </ul>
@@ -36,14 +35,14 @@
                             <summary>getting started</summary>
                             <ul>
                                 <!-- <li><a class="secondary selected-nav-item" href="/fusion.ssg.docs/docs">Installation</a></li> -->
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs">Installation</a></li>
+                                <li><a class="secondary" href="/fusion.ssg.docs/docs">Synopsis</a></li>
+                                <li><a class="secondary" href="/fusion.ssg.docs/docs/installation">Installation</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/projects">Projects</a></li>
                             </ul>
                         </details>
                         <details open>
                             <summary>html documents</summary>
                             <ul>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments">Introduction</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/frontmatter">Front Matter</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/templates">Templates</a></li>
                                 <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/tokens">Tokens</a></li>
@@ -77,33 +76,40 @@
 <section class="container">
 <div><small>Required: <em>No</em></small></div>
 <div><small>Type: <em>Typescript, i.e. .tsx</em></small></div>
+<div><small>Return Type: <em>string</em></small></div>
 <div><small>Project Location: <em>src/components</em></small></div>
 </section>
 
+<p>fusion.ssg compiles your project&#39;s components, which are located in the <em>src/components</em>, and runs them <em>asynchronously</em> in a sand-boxed environment that supports relative import paths, such as those that point to any sub-components and libraries that they may require.</p>
+<p class="info">Libraries that your components may require should also be placed in the src/components folder.</p>
 
-<p>Components are compiled and called asynchronously and run in a sand-boxed environment.</p>
-<h2 id="properties">Properties</h2>
-<p>Components can reference their <em>properties</em> as <em><code>{[property name]}</code></em> (see code example below).</p>
-<article>
-<header>There are two <em>predefined</em> component properties recognized by fusion.ssg:</header>
+<p>fusion.ssg supports two types of components:</p>
 <ul>
-<li><em>isCollection</em>: informs fusion.ssg that this component should be called to generate a <a href="/fusion.ssg.docs/docs/htmldocuments/collections">collection</a> of HTML documents rather than rendering output for a single HTML document.</li>
-<li><em>dataSources</em>: is a comma separated lists of JSON file names that are located in your project's <em>src/data</em> folder. At runtime, fusion.ssg reads each data source, converting them to JavaScript objects and passes the converted data sources to your component along with <em>two additional properties</em> (see below) that may be useful. Data sources passed to your components can be destructured from <em>props</em> using their JSON file naame minus the .json extension.</li>
+<li><em>components, also called simple components</em>: These components are expected to render output only for the HTML document in which they are declared.</li>
+<li><em>collection components</em>: These components are expected to render output for multiple HTML documents.</li>
 </ul>
-</article>
+<p class="info">Both types of components can consume data sources.</p>
 
-<article>
-<header>In addition to your component's declared properties, fusion.ssg also passes two additional properties to your components:</header>
+<h2 id="implementation">Implementation</h2>
+<h3 id="properties">Properties</h3>
+<p>Components can reference their individual properties using <em>destructuring</em>, as in <em><code>{[property name]}</code></em> (see code example below).</p>
+<h4 id="predefined-properties">Predefined Properties</h4>
+<p>fusion.ssg recognizes <em>two predefined properties</em> as having special significance:</p>
 <ul>
-<li><em>asset</em>: the <em>metadata</em> that fusion.ssg has generated for the HTML document that this component is being called for.</li>
-<li><em>assets</em>: a <em>list</em> containing the metadata that fusion.ssg has generated for all HTML documents in your project.</li>
+<li><em>isCollection</em>: Components that have this property are recognized as being <em>collection components</em>. Please see <a href="/fusion.ssg.docs/docs/htmldocuments/collections">Collections</a> for details.</li>
+<li><em>dataSources</em>: Components that have this property are recognized as being <em>consumers</em> of one or more data sources. This property is a comma separated lists of <em>JSON file names</em> that are located in your project&#39;s <em>src/data</em> folder. At runtime, fusion.ssg reads each data source, converting them to JavaScript objects, and passes the converted data sources to your component. Data sources passed to your components can be <em>destructured</em> from <em>props</em> using their JSON file name minus the .json extension.</li>
 </ul>
-<footer><p class="info">fusion.ssg serializes the metadata that it has generated for your project to a file named <em>assets.json</em> in your project's root folder.</p></footer>
-</article>
+<h4 id="additional-properties">Additional Properties</h4>
+<p>fusion.ssg also passes the following <em>two properties</em> to your components:</p>
+<ul>
+<li><em>asset</em>: the <em>metadata</em> that fusion.ssg has generated for the HTML document that this component is being called for. Components can use the data in this asset when rendering its output for the HTML document.</li>
+<li><em>assets</em>: a <em>list</em> containing the metadata that fusion.ssg has generated for all HTML documents in your project, i.e. <em>asset[]</em>. As with <em>asset</em>, components also can use this accumulated data when rendering its output for the HTML document, such as for generating lists whose items contain references to other HTML documents. See the example below.</li>
+</ul>
+<p class="info">fusion.ssg serializes the metadata that it has generated for your project to a file named <em>assets.json</em>, which is located in your project's root folder.</p>
 
 <article>
 <header>
-<em>Example: A component that receives a data source that is returned as a list.</em>
+<em>Example: A component that consumes a data source and returns a list.</em>
 </header>
 <pre><code class="language-typescript">interface TeamMember {
     &quot;name&quot;: {
@@ -143,14 +149,17 @@ export const TeamList = function({ team }: Props): string {
 
 <article>
 <header>
-<em>Example: A template that contains a component tag with a dataSources property.</em>
+<em>Example: A template that contains a simple component tag with a data source property.</em>
 </header>
-<pre><code class="language-html">&lt;h1&gt;Team&lt;/h1&gt;
+<pre><code class="language-html">
+&vellip;
+&lt;h1&gt;team&lt;/h1&gt;
 
-&lt;p&gt;Thanks to our team, our rollout has been a success.&lt;/p&gt;
+&lt;p&gt;thanks to our team, our rollout has been a success.&lt;/p&gt;
 
-&lt;h2&gt;Contributors&lt;/h2&gt;
-&lt;TeamList dataSources=&quot;team.json&quot; /&gt;
+&lt;h2&gt;contributors&lt;/h2&gt;
+&lt;Teamlist datasources="team.json" /&gt;
+&vellip;
 </code></pre>
 
 </article>
@@ -178,7 +187,7 @@ export const TeamList = function({ team }: Props): string {
 
 &lt;h2 id=&quot;contributors&quot;&gt;Contributors&lt;/h2&gt;
 &lt;ul&gt;
-    &lt;li&gt;&lt;a href=&quot;/team/Done-Doe&quot;&gt;John Doe&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;/team/John-Doe&quot;&gt;John Doe&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;/team/Jane-Doe&quot;&gt;Jane Doe&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;/team/Julia-Doe&quot;&gt;Julia Doe&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
