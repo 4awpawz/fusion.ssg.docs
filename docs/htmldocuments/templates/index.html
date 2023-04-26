@@ -4,12 +4,12 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>fusion.ssg: Documentation - Templates</title>
         <link rel="stylesheet" href="/fusion.ssg.docs/css/libs/pico/pico.min.css">
         <link rel="stylesheet" href="/fusion.ssg.docs/css/libs/highlight/github.min.css">
         <link rel="stylesheet" href="/fusion.ssg.docs/css/fusion.css">
         <script src="/fusion.ssg.docs/scripts/libs/highlight/highlight.min.js"></script>
         <script>hljs.highlightAll();</script>
-        <title>fusion.ssg: Documentation - Templates</title>
     </head>
     <body class="docpage">
         <!-- ToDo = rename this file default-nv -->
@@ -28,49 +28,20 @@
 </nav>
 
         <main class="container">
-            <aside>
-                <nav class="closed-on-mobile">
-                    <ul>
-                        <details open>
-                            <summary>getting started</summary>
-                            <ul>
-                                <!-- <li><a class="secondary selected-nav-item" href="/fusion.ssg.docs/docs">Installation</a></li> -->
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs">Synopsis</a></li>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/installation">Installation</a></li>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/projects">Projects</a></li>
-                            </ul>
-                        </details>
-                        <details open>
-                            <summary>html documents</summary>
-                            <ul>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/frontmatter">Front Matter</a></li>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/templates">Templates</a></li>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/tokens">Tokens</a></li>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/pages">Pages</a></li>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/includes">Includes</a></li>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/jsondatasources">JSON Data Sources</a></li>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/components">Components</a></li>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/collections">Collections</a></li>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/posts">Posts</a></li>
-                            </ul>
-                        </details>
-                        <details open>
-                            <summary>configuration</summary>
-                            <ul>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/configuration">fusion.json</a></li>
-                            </ul>
-                        </details>
-                        <details open>
-                            <summary>Command Line</summary>
-                            <ul>
-                                <!-- <li><a class="secondary selected-nav-item" href="/fusion.ssg.docs/docs">Installation</a></li> -->
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/cli">CLI</a></li>
-                            </ul>
-                        </details>
-                    </ul>
-                </nav>
-            </aside>
+            <aside><nav class="closed-on-mobile"><details><summary>getting started</summary><ul><li><a class="secondary" href="/fusion.ssg.docs/docs" aria-current="false">Synopsis</a></li><li><a class="secondary" href="/fusion.ssg.docs/docs/installation" aria-current="false">Installation &amp; Create Your First Project</a></li><li><a class="secondary" href="/fusion.ssg.docs/docs/projectstructure" aria-current="false">Project Structure</a></li></ul></details><details open><summary>html documents</summary><ul><li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/frontmatter" aria-current="false">Front Matter</a></li><li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/templates" aria-current="page">Templates</a></li><li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/tokens" aria-current="false">Tokens</a></li><li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/pages" aria-current="false">Pages</a></li><li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/includes" aria-current="false">Includes</a></li><li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/jsondatasources" aria-current="false">JSON Data Sources</a></li><li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/components" aria-current="false">Components</a></li><li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/collections" aria-current="false">Collections</a></li><li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/posts" aria-current="false">Posts</a></li></ul></details><details><summary>Metadata</summary><ul><li><a class="secondary" href="/fusion.ssg.docs/docs/metadata" aria-current="false">assets.json</a></li></ul></details><details><summary>configuration</summary><ul><li><a class="secondary" href="/fusion.ssg.docs/docs/configuration" aria-current="false">fusion.json</a></li></ul></details><details><summary>Command Line</summary><ul><li><a class="secondary" href="/fusion.ssg.docs/docs/cli" aria-current="false">CLI</a></li></ul></details></nav></aside>
             <div>
+                <p>
+    <mark>Documentation is currently still under development.</mark>
+</p>
+
+<p>
+    <mark>Please be patient with us.</mark>
+</p>
+
+<p>
+    <mark>We are working very hard to bring you the best documentation possible.</mark>
+</p>
+
                 <p><em>HTML DOCUMENTS</em></p>
 <h1 id="templates">Templates</h1>
 <section class="container">
@@ -80,12 +51,14 @@
     <div><small>Project Location: <em>src/templates</em></small></div>
 </section>
 
-<p>Every HTML document requires a template and every template associates with a <a href="/fusion.ssg.docs/docs/htmldocuments/pages">page</a> using the <em>page</em> <a href="/fusion.ssg.docs/docs/htmldocuments/frontmatter">front matter</a> property.
-If a template has its own content, its content will be inserted into the page that it associates with, replacing that page&#39;s <em>template token</em>.</p>
+<p class="info">Please note that familiarity with YAML Front Matter is required. Please see this handy guide that provides a <a href="https://support.typora.io/YAML/">deep dive into YAML Front Matter</a>.</p>
+
+<p>Every HTML document that fusion.ssg generates requires a template and every template <em>associates</em> with a <a href="/fusion.ssg.docs/docs/htmldocuments/pages">page</a> using the <em>page</em> <a href="/fusion.ssg.docs/docs/htmldocuments/frontmatter">front matter</a> property.
+If a template has its own content, its content will be <em>merged</em> into the page that it associates with, replacing that page&#39;s <a href="/fusion.ssg.docs/docs/htmldocuments/tokens#template-tokens">template token</a>.</p>
 <p class="info">When the front matter "page" property is omitted, fusion.ssg will associate the default page, i.e. src/pages/default.html, with the template. If the default.html page doesn't exist, fusion.ssg will display an error.</p>
 <article>
     <header>
-        <em>Example: A template associated with a page.</em>
+        <p class="example">A template associated with a page.</p>
     </header>
     <pre><code class="language-YAML">
 ---

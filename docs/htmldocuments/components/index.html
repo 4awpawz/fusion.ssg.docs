@@ -4,12 +4,12 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>fusion.ssg: Documentation - Components</title>
         <link rel="stylesheet" href="/fusion.ssg.docs/css/libs/pico/pico.min.css">
         <link rel="stylesheet" href="/fusion.ssg.docs/css/libs/highlight/github.min.css">
         <link rel="stylesheet" href="/fusion.ssg.docs/css/fusion.css">
         <script src="/fusion.ssg.docs/scripts/libs/highlight/highlight.min.js"></script>
         <script>hljs.highlightAll();</script>
-        <title>fusion.ssg: Documentation - Components</title>
     </head>
     <body class="docpage">
         <!-- ToDo = rename this file default-nv -->
@@ -28,49 +28,20 @@
 </nav>
 
         <main class="container">
-            <aside>
-                <nav class="closed-on-mobile">
-                    <ul>
-                        <details open>
-                            <summary>getting started</summary>
-                            <ul>
-                                <!-- <li><a class="secondary selected-nav-item" href="/fusion.ssg.docs/docs">Installation</a></li> -->
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs">Synopsis</a></li>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/installation">Installation</a></li>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/projects">Projects</a></li>
-                            </ul>
-                        </details>
-                        <details open>
-                            <summary>html documents</summary>
-                            <ul>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/frontmatter">Front Matter</a></li>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/templates">Templates</a></li>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/tokens">Tokens</a></li>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/pages">Pages</a></li>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/includes">Includes</a></li>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/jsondatasources">JSON Data Sources</a></li>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/components">Components</a></li>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/collections">Collections</a></li>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/posts">Posts</a></li>
-                            </ul>
-                        </details>
-                        <details open>
-                            <summary>configuration</summary>
-                            <ul>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/configuration">fusion.json</a></li>
-                            </ul>
-                        </details>
-                        <details open>
-                            <summary>Command Line</summary>
-                            <ul>
-                                <!-- <li><a class="secondary selected-nav-item" href="/fusion.ssg.docs/docs">Installation</a></li> -->
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/cli">CLI</a></li>
-                            </ul>
-                        </details>
-                    </ul>
-                </nav>
-            </aside>
+            <aside><nav class="closed-on-mobile"><details><summary>getting started</summary><ul><li><a class="secondary" href="/fusion.ssg.docs/docs" aria-current="false">Synopsis</a></li><li><a class="secondary" href="/fusion.ssg.docs/docs/installation" aria-current="false">Installation &amp; Create Your First Project</a></li><li><a class="secondary" href="/fusion.ssg.docs/docs/projectstructure" aria-current="false">Project Structure</a></li></ul></details><details open><summary>html documents</summary><ul><li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/frontmatter" aria-current="false">Front Matter</a></li><li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/templates" aria-current="false">Templates</a></li><li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/tokens" aria-current="false">Tokens</a></li><li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/pages" aria-current="false">Pages</a></li><li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/includes" aria-current="false">Includes</a></li><li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/jsondatasources" aria-current="false">JSON Data Sources</a></li><li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/components" aria-current="page">Components</a></li><li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/collections" aria-current="false">Collections</a></li><li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/posts" aria-current="false">Posts</a></li></ul></details><details><summary>Metadata</summary><ul><li><a class="secondary" href="/fusion.ssg.docs/docs/metadata" aria-current="false">assets.json</a></li></ul></details><details><summary>configuration</summary><ul><li><a class="secondary" href="/fusion.ssg.docs/docs/configuration" aria-current="false">fusion.json</a></li></ul></details><details><summary>Command Line</summary><ul><li><a class="secondary" href="/fusion.ssg.docs/docs/cli" aria-current="false">CLI</a></li></ul></details></nav></aside>
             <div>
+                <p>
+    <mark>Documentation is currently still under development.</mark>
+</p>
+
+<p>
+    <mark>Please be patient with us.</mark>
+</p>
+
+<p>
+    <mark>We are working very hard to bring you the best documentation possible.</mark>
+</p>
+
                 <p><em>HTML DOCUMENTS</em></p>
 <h1 id="components">Components</h1>
 <section class="container">
@@ -80,36 +51,78 @@
 <div><small>Project Location: <em>src/components</em></small></div>
 </section>
 
-<p>fusion.ssg compiles your project&#39;s components, which are located in the <em>src/components</em>, and runs them <em>asynchronously</em> in a sand-boxed environment that supports relative import paths, such as those that point to any sub-components and libraries that they may require.</p>
-<p class="info">Libraries that your components may require should also be placed in the src/components folder.</p>
+<h2 id="synopsis">Synopsis</h2>
+<p class="info">Please note that familiarity with TSX components (that's JSX components with TypeScript) is required. Please see this handy guide that provides a <a href="https://www.typescriptlang.org/docs/handbook/jsx.html">deep dive into JSX</a>.</p>
 
-<p>fusion.ssg supports two types of components:</p>
+
+<p>Components <em>render HTML</em> that replace their associated <em>component tags</em>. They are applicable in <a href="/fusion.ssg.docs/docs/htmldocuments/includes">includes</a>, <a href="/fusion.ssg.docs/docs/htmldocuments/templates">templates</a> and <a href="/fusion.ssg.docs/docs/htmldocuments/pages">pages</a>.</p>
+<p>fusion.ssg relieves you of the burden of having to configure TypeScript for your project&#39;s components. When building your project, fusion.ssg compiles your project&#39;s <em>TSX</em> components when they are stale and invokes them <em>asynchronously</em> in a <em>sand-boxed</em> environment that supports relative import paths to sub-components and libraries.</p>
+<h3 id="two-types-of-components">Two Types Of Components</h3>
+<p>fusion.ssg supports <em>two</em> types of components:</p>
 <ul>
-<li><em>components, also called simple components</em>: These components are expected to render output only for the HTML document in which they are declared.</li>
-<li><em>collection components</em>: These components are expected to render output for multiple HTML documents.</li>
+<li><em>components</em>, also called <em>simple components</em>: These components render content for a <em>single</em> HTML document.</li>
+<li><em>collection components</em>: These are <b><em>higher order</b></em> components that render <em>multiple</em> HTML documents, i.e. collections, along with their content.</li>
 </ul>
-<p class="info">Both types of components can consume data sources.</p>
+<p class="info">In this document we are only going to cover <b>simple components</b>. However, please also read about <a href="/fusion.ssg.docs/docs/htmldocuments/collections">collection components</a> too, because they  facilitate the generation of collections of pages, something that is very frequently needed in web sites.</p>
 
-<h2 id="implementation">Implementation</h2>
+<h2 id="component-implementation">Component Implementation</h2>
+<p>To use a component, add its component tag to some content, either <em>HTML</em> or <em>markdown</em>.</p>
+<article>
+<header>
+<p class="example">A component tag with a <b>dataSources</b> property.</p>
+</header>
+<pre><code class="language-html">## Contributors
+&lt;TeamList dataSources=&quot;team.json&quot; /&gt;
+</code></pre>
+
+</article>
+
 <h3 id="properties">Properties</h3>
-<p>Components can reference their individual properties using <em>destructuring</em>, as in <em><code>{[property name]}</code></em> (see code example below).</p>
+<p>Components can reference their individual properties using <em>destructuring</em>, as in <em><code>{[property name]}</code></em> (see <a href="#component-with-datasource">code example below</a>).</p>
 <h4 id="predefined-properties">Predefined Properties</h4>
 <p>fusion.ssg recognizes <em>two predefined properties</em> as having special significance:</p>
 <ul>
-<li><em>isCollection</em>: Components that have this property are recognized as being <em>collection components</em>. Please see <a href="/fusion.ssg.docs/docs/htmldocuments/collections">Collections</a> for details.</li>
-<li><em>dataSources</em>: Components that have this property are recognized as being <em>consumers</em> of one or more data sources. This property is a comma separated lists of <em>JSON file names</em> that are located in your project&#39;s <em>src/data</em> folder. At runtime, fusion.ssg reads each data source, converting them to JavaScript objects, and passes the converted data sources to your component. Data sources passed to your components can be <em>destructured</em> from <em>props</em> using their JSON file name minus the .json extension.</li>
+<li><em>isCollection</em>: boolean, defaults to <em>false</em> When set to <em>true</em> component are recognized as being <em>collection components</em>. Please see <a href="/fusion.ssg.docs/docs/htmldocuments/collections">Collections</a> for details.</li>
+<li><em>dataSources</em>: a comma separated list of JSON file names, defaults to <em>&quot;&quot;</em> Components that have this property are recognized as being <em>consumers</em> of data sources that are located in your project&#39;s <em>src/data</em> folder, and at runtime fusion.ssg reads each data source, converting them to JavaScript objects, and passes the converted data sources to your component. Data sources passed to your components can be <em>destructured</em> from <em>props</em> using their JSON file name minus the .json extension.</li>
 </ul>
-<h4 id="additional-properties">Additional Properties</h4>
-<p>fusion.ssg also passes the following <em>two properties</em> to your components:</p>
+<h4 id="metadata-properties">Metadata Properties</h4>
+<p>During each build cycle, fusion.ssg extracts <em>metadata</em> from your project that components can easily query using JavaScript&#39;s higher order Array methods, such as filter and map for example, and incorporate the data retrieved from these queries in HTML documents. For more information on this subject, please read <a href="/fusion.ssg.docs/docs/metadata">Metadata</a>.</p>
 <ul>
-<li><em>asset</em>: the <em>metadata</em> that fusion.ssg has generated for the HTML document that this component is being called for. Components can use the data in this asset when rendering its output for the HTML document.</li>
-<li><em>assets</em>: a <em>list</em> containing the metadata that fusion.ssg has generated for all HTML documents in your project, i.e. <em>asset[]</em>. As with <em>asset</em>, components also can use this accumulated data when rendering its output for the HTML document, such as for generating lists whose items contain references to other HTML documents. See the example below.</li>
+<li><em>asset</em>: object, the <em>metadata</em> for the HTML document that <em>this</em> component is being called for.</li>
+<li><em>assets</em>: array, a list of all the <em>metadata</em>, i.e. <em>asset[]</em>.</li>
 </ul>
-<p class="info">fusion.ssg serializes the metadata that it has generated for your project to a file named <em>assets.json</em>, which is located in your project's root folder.</p>
+<p class="info">After each build cycle, fusion.ssg serializes its metadata into a file named <b>project root/assets.json</b>. This file's content can be viewed and analyzed to determine <em>query strategies</em> for retrieving the data needed to satisfy each individual component's particular use case.</p>
 
 <article>
 <header>
-<em>Example: A component that consumes a data source and returns a list.</em>
+<p class="example">A template that contains a simple component tag with a dataSources property.</p>
+</header>
+<pre><code class="language-html">&lt;h1&gt;team&lt;/h1&gt;
+
+&lt;p&gt;thanks to our team, our rollout has been a success.&lt;/p&gt;
+
+&lt;h2&gt;contributors&lt;/h2&gt;
+&lt;Teamlist datasources=&quot;team.json&quot; /&gt;
+</code></pre>
+
+</article>
+
+<article>
+<header>
+<p class="example">The JSON data source declared in the component's tag that fusion.ssg passes to the component.</p>
+</header>
+<pre><code class="language-json">[
+{ &quot;name&quot;: { &quot;first&quot;: &quot;John&quot;, &quot;last&quot;: &quot;Doe&quot; }},
+{&quot;name&quot;: { &quot;first&quot;: &quot;Jane&quot;, &quot;last&quot;: &quot;Doe&quot; }},
+{&quot;name&quot;: { &quot;first&quot;: &quot;Julia&quot;, &quot;last&quot;: &quot;Doe&quot; }}
+]
+</code></pre>
+
+</article>
+
+<article id="component-with-datasource">
+<header>
+<p class="example">A component that consumes a data source and returns a list.</p>
 </header>
 <pre><code class="language-typescript">interface TeamMember {
     &quot;name&quot;: {
@@ -149,37 +162,7 @@ export const TeamList = function({ team }: Props): string {
 
 <article>
 <header>
-<em>Example: A template that contains a simple component tag with a data source property.</em>
-</header>
-<pre><code class="language-html">
-&vellip;
-&lt;h1&gt;team&lt;/h1&gt;
-
-&lt;p&gt;thanks to our team, our rollout has been a success.&lt;/p&gt;
-
-&lt;h2&gt;contributors&lt;/h2&gt;
-&lt;Teamlist datasources="team.json" /&gt;
-&vellip;
-</code></pre>
-
-</article>
-
-<article>
-<header>
-<em>Example: The JSON data source declared in the component's tag that fusion.ssg passes to the component.</em>
-</header>
-<pre><code class="language-json">[
-{ &quot;name&quot;: { &quot;first&quot;: &quot;John&quot;, &quot;last&quot;: &quot;Doe&quot; }},
-{&quot;name&quot;: { &quot;first&quot;: &quot;Jane&quot;, &quot;last&quot;: &quot;Doe&quot; }},
-{&quot;name&quot;: { &quot;first&quot;: &quot;Julia&quot;, &quot;last&quot;: &quot;Doe&quot; }}
-]
-</code></pre>
-
-</article>
-
-<article>
-<header>
-<em>Example: The component tag is replaced wth the HTML returned from the component.</em>
+<p class="example">The component tag is replaced wth the HTML returned from the component.</p>
 </header>
 <pre><code class="language-html">&lt;h1&gt;Team&lt;/h1&gt;
 

@@ -4,12 +4,12 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>fusion.ssg: Documentation - Configuration</title>
         <link rel="stylesheet" href="/fusion.ssg.docs/css/libs/pico/pico.min.css">
         <link rel="stylesheet" href="/fusion.ssg.docs/css/libs/highlight/github.min.css">
         <link rel="stylesheet" href="/fusion.ssg.docs/css/fusion.css">
         <script src="/fusion.ssg.docs/scripts/libs/highlight/highlight.min.js"></script>
         <script>hljs.highlightAll();</script>
-        <title>fusion.ssg: Documentation - Configuration</title>
     </head>
     <body class="docpage">
         <!-- ToDo = rename this file default-nv -->
@@ -28,105 +28,72 @@
 </nav>
 
         <main class="container">
-            <aside>
-                <nav class="closed-on-mobile">
-                    <ul>
-                        <details open>
-                            <summary>getting started</summary>
-                            <ul>
-                                <!-- <li><a class="secondary selected-nav-item" href="/fusion.ssg.docs/docs">Installation</a></li> -->
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs">Synopsis</a></li>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/installation">Installation</a></li>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/projects">Projects</a></li>
-                            </ul>
-                        </details>
-                        <details open>
-                            <summary>html documents</summary>
-                            <ul>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/frontmatter">Front Matter</a></li>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/templates">Templates</a></li>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/tokens">Tokens</a></li>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/pages">Pages</a></li>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/includes">Includes</a></li>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/jsondatasources">JSON Data Sources</a></li>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/components">Components</a></li>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/collections">Collections</a></li>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/posts">Posts</a></li>
-                            </ul>
-                        </details>
-                        <details open>
-                            <summary>configuration</summary>
-                            <ul>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/configuration">fusion.json</a></li>
-                            </ul>
-                        </details>
-                        <details open>
-                            <summary>Command Line</summary>
-                            <ul>
-                                <!-- <li><a class="secondary selected-nav-item" href="/fusion.ssg.docs/docs">Installation</a></li> -->
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/cli">CLI</a></li>
-                            </ul>
-                        </details>
-                    </ul>
-                </nav>
-            </aside>
+            <aside><nav class="closed-on-mobile"><details><summary>getting started</summary><ul><li><a class="secondary" href="/fusion.ssg.docs/docs" aria-current="false">Synopsis</a></li><li><a class="secondary" href="/fusion.ssg.docs/docs/installation" aria-current="false">Installation &amp; Create Your First Project</a></li><li><a class="secondary" href="/fusion.ssg.docs/docs/projectstructure" aria-current="false">Project Structure</a></li></ul></details><details><summary>html documents</summary><ul><li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/frontmatter" aria-current="false">Front Matter</a></li><li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/templates" aria-current="false">Templates</a></li><li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/tokens" aria-current="false">Tokens</a></li><li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/pages" aria-current="false">Pages</a></li><li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/includes" aria-current="false">Includes</a></li><li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/jsondatasources" aria-current="false">JSON Data Sources</a></li><li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/components" aria-current="false">Components</a></li><li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/collections" aria-current="false">Collections</a></li><li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/posts" aria-current="false">Posts</a></li></ul></details><details><summary>Metadata</summary><ul><li><a class="secondary" href="/fusion.ssg.docs/docs/metadata" aria-current="false">assets.json</a></li></ul></details><details open><summary>configuration</summary><ul><li><a class="secondary" href="/fusion.ssg.docs/docs/configuration" aria-current="page">fusion.json</a></li></ul></details><details><summary>Command Line</summary><ul><li><a class="secondary" href="/fusion.ssg.docs/docs/cli" aria-current="false">CLI</a></li></ul></details></nav></aside>
             <div>
-                
-<p><em>CONFIGURATION</em></p>
+                <p>
+    <mark>Documentation is currently still under development.</mark>
+</p>
 
-<h1>fusions.json</h1>
+<p>
+    <mark>Please be patient with us.</mark>
+</p>
 
-<p>The following configuration options are available for you to override in your project's <em>src/fusion.json</em> file.</p>
+<p>
+    <mark>We are working very hard to bring you the best documentation possible.</mark>
+</p>
 
-<artice>
-    <article>
-        <header>
-            <p><em>postsFolder</em>: The name to use for the folder that hosts your site's <em>posts</em>.</p>
-        </header>
-        <ul>
-            <li>default: "posts"</li>
-        </ul>
-        <footer>
-            <p><em>Example</em>:</p>
-            <pre><code class="language-JSON">"postsFolder": "blog""</code></pre>
-        </footer>
-    </article>
-    <article>
-        <header>
-            <p><em>baseURL</em>: If your site is served from a <em>subfloder</em>, such as is the case for sites hosted on <em>github.io</em>, prepend <em>&lbrace;baseURL&rbrace;</em> to your site's <a href="https://www.ibm.com/docs/en/eslm/10.0.4?topic=parameters-absolute-root-relative-url">root relative URLs</a> and they will be replaced with this value during release builds.</p>
-        </header>
-        <ul>
-            <li>default: ""</li>
-        </ul>
-        <footer>
-            <p><em>Example</em>:</p>
-            <p>Set <em>baseURL</em></p>
+                <p><em>CONFIGURATION</em></p>
+<h1 id="fusionsjson">fusions.json</h1>
+<p>The following configuration options are available for you to override in your project&#39;s <em>src/fusion.json</em> file:</p>
+<ol>
+<li><a href="#postsfolder">postsFolder</a></li>
+<li><a href="#baseurl">baseURL</a></li>
+<li><a href="#wips">wips</a></li>
+</ol>
+<h2 id="postsfolder">postsFolder</h2>
+<p>The name to use for the folder that hosts your site&#39;s <a href="/fusion.ssg.docs/docs/htmldocuments/posts">posts</a>.</p>
+<ul>
+<li>default: &quot;posts&quot;</li>
+</ul>
+<aside>
+<header>
+<p><em>Example</em>: Assigning "blog" as the name to use for the folder to host posts.</p>
+</header>
+<pre><code class="language-JSON">"postsFolder": "blog""</code></pre>
+</aside>
+
+<h2 id="baseurl">baseURL</h2>
+<p>If your site is served from a <em>subfloder</em>, such as is the case for sites hosted on <em>github.io</em>, prepend <em>&lbrace;baseURL&rbrace;</em> to your site&#39;s <a href="https://www.ibm.com/docs/en/eslm/10.0.4?topic=parameters-absolute-root-relative-url">root relative URLs</a> and they will be replaced with this value during <a href="/fusion.ssg.docs/docs/cli#npm-run-release">release builds</a>.</p>
+<ul>
+<li>default: &quot;&quot;</li>
+</ul>
+<aside>
+<header>
+<p><em>Example</em>: Assisgn the path of the subfolder to use</p>
+</header>
 <pre><code class="language-JSON">
 "baseURL": "fusion.ssg.docs"
 </code></pre>
-            <p>and prepend <em>baseURL</em> to your site's <em>root relative</em> URLs</p>
+<p>and prepend <em>baseURL</em> to your site's <em>root relative</em> URLs</p>
 <pre><code class="language-HTML">
 &lt;a href="&lbrace;baseURL&rbrace;/documentation"&gt;Docs&lt;/a&gt;
 </code></pre>
-            <p>and during release builds, &lbrace;baseURL&rbrace; will be replaced by its value.</p>
+<p>and during release builds, &lbrace;baseURL&rbrace; will be replaced by its value.</p>
 <pre><code class="language-HTML">
 &lt;a href="fusion.ssg.docs/documentation"&gt;Docs&lt;/a&gt;
 </code></pre>
-        </footer>
-    </article>
-    <article>
-        <header>
-            <p><em>wips</em>: These are files and folders of templates that are to be ignored during release builds.</p>
-        </header>
-        <ul>
-            <li>default: []</li>
-        </ul>
-        <footer>
-            <pre><code class="language-JSON">"wips": ["src/templates/docs/next-version", "!src/templates/docs/next-version/index.md"]</code></pre>
-            <p class="info">Files and folders prepended with "!" are <em>negated.</em></p>
-        </footer>
-    </article>
-    </article>
+</aside>
+
+<h2 id="wips">wips</h2>
+<p>These are files and folders of <a href="/fusion.ssg.docs/docs/htmldocuments/templates">templates</a> that are to be ignored during <a href="/fusion.ssg.docs/docs/cli#npm-run-release">release builds</a>.</p>
+<ul>
+<li>default: []</li>
+</ul>
+<aside>
+<pre><code class="language-JSON">"wips": ["src/templates/docs/next-version", "!src/templates/docs/next-version/index.md"]</code></pre>
+<p class="info">Files and folders prepended with "!" are <em>negated.</em></p>
+</footer>
+</aside>
 
                 <nav class="container">
     <ul>

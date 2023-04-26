@@ -4,12 +4,12 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>fusion.ssg: Documentation - CLI</title>
         <link rel="stylesheet" href="/fusion.ssg.docs/css/libs/pico/pico.min.css">
         <link rel="stylesheet" href="/fusion.ssg.docs/css/libs/highlight/github.min.css">
         <link rel="stylesheet" href="/fusion.ssg.docs/css/fusion.css">
         <script src="/fusion.ssg.docs/scripts/libs/highlight/highlight.min.js"></script>
         <script>hljs.highlightAll();</script>
-        <title>fusion.ssg: Documentation - CLI</title>
     </head>
     <body class="docpage">
         <!-- ToDo = rename this file default-nv -->
@@ -28,51 +28,101 @@
 </nav>
 
         <main class="container">
-            <aside>
-                <nav class="closed-on-mobile">
-                    <ul>
-                        <details open>
-                            <summary>getting started</summary>
-                            <ul>
-                                <!-- <li><a class="secondary selected-nav-item" href="/fusion.ssg.docs/docs">Installation</a></li> -->
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs">Synopsis</a></li>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/installation">Installation</a></li>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/projects">Projects</a></li>
-                            </ul>
-                        </details>
-                        <details open>
-                            <summary>html documents</summary>
-                            <ul>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/frontmatter">Front Matter</a></li>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/templates">Templates</a></li>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/tokens">Tokens</a></li>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/pages">Pages</a></li>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/includes">Includes</a></li>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/jsondatasources">JSON Data Sources</a></li>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/components">Components</a></li>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/collections">Collections</a></li>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/posts">Posts</a></li>
-                            </ul>
-                        </details>
-                        <details open>
-                            <summary>configuration</summary>
-                            <ul>
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/configuration">fusion.json</a></li>
-                            </ul>
-                        </details>
-                        <details open>
-                            <summary>Command Line</summary>
-                            <ul>
-                                <!-- <li><a class="secondary selected-nav-item" href="/fusion.ssg.docs/docs">Installation</a></li> -->
-                                <li><a class="secondary" href="/fusion.ssg.docs/docs/cli">CLI</a></li>
-                            </ul>
-                        </details>
-                    </ul>
-                </nav>
-            </aside>
+            <aside><nav class="closed-on-mobile"><details><summary>getting started</summary><ul><li><a class="secondary" href="/fusion.ssg.docs/docs" aria-current="false">Synopsis</a></li><li><a class="secondary" href="/fusion.ssg.docs/docs/installation" aria-current="false">Installation &amp; Create Your First Project</a></li><li><a class="secondary" href="/fusion.ssg.docs/docs/projectstructure" aria-current="false">Project Structure</a></li></ul></details><details><summary>html documents</summary><ul><li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/frontmatter" aria-current="false">Front Matter</a></li><li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/templates" aria-current="false">Templates</a></li><li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/tokens" aria-current="false">Tokens</a></li><li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/pages" aria-current="false">Pages</a></li><li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/includes" aria-current="false">Includes</a></li><li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/jsondatasources" aria-current="false">JSON Data Sources</a></li><li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/components" aria-current="false">Components</a></li><li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/collections" aria-current="false">Collections</a></li><li><a class="secondary" href="/fusion.ssg.docs/docs/htmldocuments/posts" aria-current="false">Posts</a></li></ul></details><details><summary>Metadata</summary><ul><li><a class="secondary" href="/fusion.ssg.docs/docs/metadata" aria-current="false">assets.json</a></li></ul></details><details><summary>configuration</summary><ul><li><a class="secondary" href="/fusion.ssg.docs/docs/configuration" aria-current="false">fusion.json</a></li></ul></details><details open><summary>Command Line</summary><ul><li><a class="secondary" href="/fusion.ssg.docs/docs/cli" aria-current="page">CLI</a></li></ul></details></nav></aside>
             <div>
+                <p>
+    <mark>Documentation is currently still under development.</mark>
+</p>
+
+<p>
+    <mark>Please be patient with us.</mark>
+</p>
+
+<p>
+    <mark>We are working very hard to bring you the best documentation possible.</mark>
+</p>
+
                 <p><em>COMMAND LINE</em></p>
-<h1 id="cli">CLI</h1>
+<h1 id="usage-from-the-command-line">Usage from the command line</h1>
+<p>The following commands are available through the command line.</p>
+<ul>
+<li><a href="#fusion-help">fusion help</a></li>
+<li><a href="#fusion-new">fusion new</a></li>
+<li><a href="#fusion-build">fusion build</a></li>
+<li><a href="#fusion-release">fusion release</a></li>
+<li><a href="#npm-run-development">npm run development</a></li>
+<li><a href="#npm-run-release">npm run release</a></li>
+</ul>
+<h2 id="commands-directly-supported-by-fusionssg">Commands directly supported by fusion.ssg</h2>
+<h3 id="fusion-help">fusion help</h3>
+<p>Prints help for a supported command, i.e. build, release, new.</p>
+<ul>
+<li>usage: fusion -h|--help &lt;command&gt;</li>
+</ul>
+<h3 id="fusion-new">fusion new</h3>
+<p>Creates a new fusion.ssg project in a folder named [project name] with <em>TypeScript</em> and <em>live server</em> support in the current folder.</p>
+<ul>
+<li>usage: fusion -n|--new [project name]</li>
+</ul>
+<p class="info">After creating a project. Run the following command in your terminal at the root of your project to install its dependencies:</p>
+
+<pre><code class="language-shell">npm i
+</code></pre>
+<p>Then, once you have installed the project&#39;s dependencies, run the following command in your terminal at the root of your project to build and run the new project:</p>
+<pre><code class="language-shell">npm run development
+</code></pre>
+<h3 id="fusion-build">fusion build</h3>
+<p>Directs fusion.ssg to run a one-off development build.</p>
+<ul>
+<li>usage: fusion build</li>
+</ul>
+<p class="info">
+must be run from project's root folder.
+</p>
+
+<h3 id="fusion-release">fusion release</h3>
+<p>Directs fusion.ssg to run a one-off release build.</p>
+<ul>
+<li>usage: fusion release</li>
+</ul>
+<p class="info">
+Files and folders included in your configuration's <a href="/fusion.ssg.docs/docs/configuration/#wips">wips</a> are ignored.
+</p>
+
+<p class="info">
+<a href="/fusion.ssg.docs/docs/configuration/#baseurl">&lbrace;baseURL&rbrace;</a> is applied to URLs.
+</p>
+
+<p class="info">
+must be run from project's root folder.
+</p>
+
+<h2 id="commands-supported-through-project-npm-scripts">Commands supported through project NPM scripts</h2>
+<h3 id="npm-run-development">npm run development</h3>
+<p>Watches project&#39;s root/src and root/fusion.json for changes, builds for development, launches live server.</p>
+<ul>
+<li>usage: npm run development</li>
+</ul>
+<p class="info">
+must be run from project's root folder.
+</p>
+
+<h3 id="npm-run-release">npm run release</h3>
+<p>Watches project&#39;s root/src and root/fusion.json for changes, builds for release, launches live server.</p>
+<ul>
+<li>usage: npm run development</li>
+</ul>
+<p class="info">
+Files and folders included in your configuration's <a href="/fusion.ssg.docs/docs/configuration/#wips">wips</a> are ignored.
+</p>
+
+<p class="info">
+<a href="/fusion.ssg.docs/docs/configuration/#baseurl">&lbrace;baseURL&rbrace;</a> is applied to URLs.
+</p>
+
+<p class="info">
+Must be run from project's root folder.
+</p>
 
                 <nav class="container">
     <ul>
