@@ -15,6 +15,25 @@ pre {
     white-space: pre-wrap;
 }
 
+/* site menu */
+.topnav {
+    position: fixed;
+    z-indes: 99;
+    top: 0;
+    right: 0;
+    left: 0;
+    background: #11191f;
+    border-bottom: 1px solid rgba(187,198,206, 0.2);
+}
+
+/* site footer */
+.bottomnav {
+    border-top: 1px solid rgba(187,198,206, 0.2);
+}
+.bottomnav li a {
+    font-size: var(--font-size);
+}
+
 /* remove detail's widget */
 .docpage details summary::after {
     display: none;
@@ -53,6 +72,9 @@ pre {
 .docpage aside nav [aria-current]:not([aria-current="false"]) {
     color: var(--primary-hover);
 }
+.docpage footer {
+    padding-top: var(--block-spacing-vertical);
+}
 @media (min-width: 992px) {
     /* .docpage aside { */
     /*     min-width: 0; */
@@ -77,10 +99,6 @@ pre {
     }
 }
 
-/* top navbar */
-nav {
-    border-bottom: 1px solid rgba(187,198,206, 0.2);
-}
 nav img {
     width: 20px;
     height: 20px;
