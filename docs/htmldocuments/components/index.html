@@ -73,10 +73,9 @@
 <p>To use a component, add its component tag to some content, either <em>HTML</em> or <em>markdown</em>.</p>
 <article>
 <header>
-<p class="example">A component tag with a <b>dataSources</b> property.</p>
+<p class="example">A simple component tag with a <b>dataSources</b> property.</p>
 </header>
-<pre><code class="language-html">## Contributors
-&lt;TeamList dataSources=&quot;team.json&quot; /&gt;
+<pre><code class="language-html">&lt;TeamList dataSources=&quot;team.json&quot; /&gt;
 </code></pre>
 
 </article>
@@ -102,11 +101,9 @@
 <p class="example">A template that contains a simple component tag with a dataSources property.</p>
 </header>
 <pre><code class="language-html">&lt;h1&gt;team&lt;/h1&gt;
-
-&lt;p&gt;thanks to our team, our rollout has been a success.&lt;/p&gt;
-
+&lt;p&gt;Thanks to our team our rollout has been a huge success.&lt;/p&gt;
 &lt;h2&gt;contributors&lt;/h2&gt;
-&lt;Teamlist datasources=&quot;team.json&quot; /&gt;
+&lt;TeamMembers datasources=&quot;team.json&quot; /&gt;
 </code></pre>
 
 </article>
@@ -147,7 +144,7 @@ function formatName(member: TeamMember): string {
     return `${member.name.first} ${member.name.last}`;
 }
 
-export const TeamList = function({ team }: Props): string {
+export const TeamMembers = function({ team }: Props): string {
     return (
         &lt;ul&gt;
             {team.map(member =&gt; {
@@ -169,9 +166,7 @@ export const TeamList = function({ team }: Props): string {
 <p class="example">The component tag is replaced wth the HTML returned from the component.</p>
 </header>
 <pre><code class="language-html">&lt;h1&gt;Team&lt;/h1&gt;
-
-&lt;p&gt;Thanks to our team, our rollout has been a success.&lt;/p&gt;
-
+&lt;p&gt;Thanks to our team our rollout has been a huge success.&lt;/p&gt;
 &lt;h2 id=&quot;contributors&quot;&gt;Contributors&lt;/h2&gt;
 &lt;ul&gt;
     &lt;li&gt;&lt;a href=&quot;/team/John-Doe&quot;&gt;John Doe&lt;/a&gt;&lt;/li&gt;
