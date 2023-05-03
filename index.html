@@ -14,7 +14,7 @@
         <script src="/scripts/libs/highlight/highlight.min.js"></script>
         <script>hljs.highlightAll();</script>
         <script async defer src="https://buttons.github.io/buttons.js"></script>
-        <title>fusion.ssg • Minimal Framework for Building Static Web Sites</title>
+        <title>fusion.ssg • Minimal Framework for Building Static Websites</title>
     </head>
     <body class="homepage">
         <!-- ToDo = rename this file default-nv -->
@@ -37,8 +37,8 @@
     <div align="center">
         <hgroup>
             <h1><b>Minimal&nbsp;SSG&nbsp;Framework for Static Websites</b></h1>
-            <p>fusion.ssg encapsulates concepts that many developers are already familiar with into a simple yet powerful framework for creating static website.</p>
-            <p><code>HTML</code>, <code>markdown</code>, <code>front matter</code> and Typescript <code>components</code></p>
+            <p>fusion.ssg propels your static website development to the next level by seamlessly fusing together familiar technologies into one cohesive development platform.</p>
+            <p><code>HTML</code>, <code>Markdown</code>, <code>TypeScript Components</code>, <code>JSON Data</code>, <code>YAML Front Matter</code>
         </hgroup>
         <p>
             <a href="/docs" role="button" class="secondary" aria-label="Documentation" style="margin-right: 10px">Get Started</a>
@@ -49,6 +49,31 @@
 
         <main>
             <section class="container">
+                <article>
+                    <header><h2 style="margin: 0; padding: 0;">Features</h2></header>
+                    <ul>
+<li>Simple HTML document creation using Pages, Templates and Includes.</li>
+<li>Simple token replacement involving front matter property values and matching property names in HTML.</li>
+<li>TypeScript component compilation and sand-boxed execution.</li>
+<li>Document hydration using Typescript components and JSON data sources.</li>
+<li>Multiple page generation (i.e. Collections) using Typescript components and JSON data sources.</li>
+<li>Base URLs.</li>
+<li>Development and release builds.</li>
+<li>Content posting (e.g. Blogging).<ul>
+<li>Tags.</li>
+<li>Categories.</li>
+</ul>
+</li>
+<li>Works in progress.<ul>
+<li>Individual files.</li>
+<li>Folders.</li>
+<li>Ignored.</li>
+</ul>
+</li>
+<li>End user project creation.</li>
+</ul>
+
+                </article>
                 <article>
                     <header><h2 style="margin: 0; padding: 0;">Why fusion.ssg?</h2></header>
                     <section class="grid">
@@ -70,7 +95,7 @@
                             <img src="/media/home-64.png" alt="Home">
                             <h3>Familiar</h3>
                             <section>
-                                <p>fusion.ssg has a very low "barrier to entry" because it employs concepts that you are already familiar with, like templates, pages, includes, markdown, tokens, and Typescript components.</p>
+                                <p>fusion.ssg has a very low "barrier to entry" because it seamlessly employs concepts that you are already familiar with, like templates, pages, includes, markdown, tokens, and Typescript components.</p>
                             </section.container>
                         </hgroup>
                         <hgroup>
@@ -134,7 +159,7 @@ tokens: {
                         <header><h3>Create An HTML Document From A Simple Component That Generates A List Of Team Members</h3></header>
                         <p>The team.json data source.</p>
 <pre><code class="language-json">[
-{ &quot;name&quot;: { &quot;first&quot;: &quot;John&quot;, &quot;last&quot;: &quot;Doe&quot; }},
+{&quot;name&quot;: { &quot;first&quot;: &quot;John&quot;, &quot;last&quot;: &quot;Doe&quot; }},
 {&quot;name&quot;: { &quot;first&quot;: &quot;Jane&quot;, &quot;last&quot;: &quot;Doe&quot; }},
 {&quot;name&quot;: { &quot;first&quot;: &quot;Julia&quot;, &quot;last&quot;: &quot;Doe&quot; }}
 ]
@@ -222,36 +247,13 @@ export const TeamMembers = function({ team }: Props): string {
             </section>
             <section class="container">
                 <article>
-                    <header><h2>Project Status</h2>
-                    <h3 id="the-name">The Name</h3>
-<p><em>fusion</em> plays on the idea of <strong><em>fusing</em></strong> together various technologies, e.g. HTML, Markdown, TypseScript Components, JSON Data, YAML Front Matter, etc., to seamlessly work together to simplify the creation of HTML documents and static websites.</p>
-<h3 id="features">Features</h3>
-<ul>
-<li>Simple HTML document creation using Pages, Templates and Includes.</li>
-<li>Simple token replacement involving front matter property values and matching property names in HTML.</li>
-<li>TypeScript component compilation and sand-boxed execution.</li>
-<li>Document hydration using Typescript components and JSON data sources.</li>
-<li>Page collections using Typescript components and JSON data sources.</li>
-<li>Base URLs.</li>
-<li>Development and release builds.</li>
-<li>Content posting (e.g. Blogging).<ul>
-<li>Tags.</li>
-<li>Categories.</li>
-</ul>
-</li>
-<li>Works in progress.<ul>
-<li>Individual files.</li>
-<li>Folders.</li>
-<li>Ignored.</li>
-</ul>
-</li>
-<li>End user project creation.</li>
-</ul>
-<h3 id="project-development">Project Development</h3>
+                    <h2 id="the-name">The Name</h2>
+<p><em>fusion</em> plays on the idea of seamlessly <strong><em>fusing</em></strong> together various technologies, e.g. HTML, Markdown, TypseScript Components, JSON Data, YAML Front Matter, etc., to seamlessly work together to simplify the creation of HTML documents and static websites.</p>
+<h2 id="project-development">Project Development</h2>
 <p>The project is written in <code> TypeScript</code> (no excuses, <em>it just works beautifully</em>) and runs on <code>Node</code>.</p>
-<h3 id="project-scope">Project Scope</h3>
+<h2 id="project-scope">Project Scope</h2>
 <p>The project&#39;s scope is limited to generating robust and resilient HTML documents and nothing else. It will not provide any other tooling other than what is absolutely necessary to accomplish that. Importantly, fusion.ssg requires no knowledge of front-end frameworks like React. This keeps the scope of the project focused, preventing feature creep, and benefits users who will be able to pick and chose their own tools.</p>
-<h3 id="current-status">Current Status</h3>
+<h2 id="current-status">Current Status</h2>
 <p>The project is still in its Alpha/prerelease stage. One or more <em>Beta releases</em> will follow and both Alpha and Beta releases should be considered <em>unstable</em> and <em>transient</em>. While in Beta, features and implementations might change dramatically and this should be considered the norm.</p>
 <h3 id="versioning">Versioning</h3>
 <p>fusion will use <a href="https://semver.org/">semantic versioning</a> and will distinguish between <em>development</em> builds and <em>release</em> builds by their major version numbers</p>
@@ -259,7 +261,7 @@ export const TeamMembers = function({ team }: Props): string {
 <li>Odd major version number are to be considered development versions.</li>
 <li>Even major version number are to be considered release versions.</li>
 </ol>
-<h4 id="what-has-already-been-implemented">What Has Already Been Implemented</h4>
+<h3 id="what-has-already-been-implemented">What Has Already Been Implemented</h3>
 <ul>
 <li><input checked="" disabled="" type="checkbox"> Support for <em>simple HTML document creation</em> using <em>Pages, Templates and Includes</em>.</li>
 <li><input checked="" disabled="" type="checkbox"> Support for <em>simple token replacement</em> involving <em>front matter property values</em> and <em>matching property names</em> in HTML.</li>
@@ -282,19 +284,19 @@ export const TeamMembers = function({ team }: Props): string {
 <li><input checked="" disabled="" type="checkbox"> End user project creation.</li>
 <li><input checked="" disabled="" type="checkbox"> Configure website domain.</li>
 </ul>
-<h4 id="what-still-remains-to-be-done">What Still Remains To Be Done</h4>
+<h3 id="what-still-remains-to-be-done">What Still Remains To Be Done</h3>
 <ul>
 <li>Logo, fusion.ssg is desperately in need of a great logo.</li>
-<li>Project documentation website - <em>currently under development</em>.</li>
+<li>fusionssg.com and documentation is <em>currently under development</em>.</li>
 <li>Encourage early community involvement and adoption.</li>
 <li>Provide sufficient testing to reduce the likelihood of introducing regressions.</li>
 </ul>
-<h4 id="longer-term-goals">Longer Term Goals</h4>
+<h3 id="longer-term-goals">Longer Term Goals</h3>
 <ul>
 <li>Seek RFC.</li>
 <li>Accept pull requests when the codebase is stable enough to receive them, which will probably coincide with the first major Alpha release.</li>
 </ul>
-<h3 id="community">Community</h3>
+<h2 id="community">Community</h2>
 <p>For help, discussion about best practices, or any other conversation that would benefit from being searchable:</p>
 <p><a href="https://github.com/4awpawz/fusion.ssg/discussions">Discuss _fusion.ssg _on Github</a></p>
 <p>For casual conversation with others about using <em>fusion.ssg</em>:</p>
