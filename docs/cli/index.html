@@ -56,17 +56,16 @@
 <li>usage: fusion -h|--help &lt;command&gt;</li>
 </ul>
 <h3 id="fusion-new">fusion new</h3>
-<p>Creates a new fusion.ssg project in a folder named [project name] with <em>TypeScript</em> and <em>live server</em> support in the current folder.</p>
+<p>Creates a new fusion.ssg project, including all dependencies, in a folder named [project name] with <em>TypeScript</em> and <em>live server</em> support in the current folder.</p>
 <ul>
 <li>usage: fusion -n|--new [project name]</li>
 </ul>
-<p class="info">After creating a project. Run the following command in your terminal at the root of your project to install its dependencies:</p>
-
-<pre><code class="language-shell">npm i
+<p>To create a new project, open your terminal and in a folder of your choice run the following commands:</p>
+<pre><code class="language-shell">fusion new [project name]
+cd [project name]
+npm run development
 </code></pre>
-<p>Then, once you have installed the project&#39;s dependencies, run the following command in your terminal at the root of your project to build and run the new project:</p>
-<pre><code class="language-shell">npm run development
-</code></pre>
+<p>The above will create the project, install its dependencies, build the project and serve it in the browser.</p>
 <h3 id="fusion-build">fusion build</h3>
 <p>Directs fusion.ssg to run a one-off development build.</p>
 <ul>

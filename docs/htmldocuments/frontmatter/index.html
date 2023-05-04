@@ -45,14 +45,26 @@
 <div><small>Project Location: <em>src/templates</em></small></div>
 </section>
 
-<p>Front matter is required at the top of every <a href="/docs/htmldocuments/templates">template</a>, even if  it is empty.</p>
+<p class="info">Front matter is integral to fusion.ssg's build process and it is required at the top of every <a href="/docs/htmldocuments/templates">template</a>, even when either or both the template and the front matter are empty.</p>
+<p class="info">fusion.ssg uses the library <a href="https://www.npmjs.com/package/gray-matter">gray-matter</a> to convert template front matter to JavaScript.</p>
+
 <article>
 <header><p class="example">A template with front matter.</p></header>
-<pre><code class="language-YAML">
+
+<pre><code class="language-YAML">---
+title: Hello
+slug: home
 ---
-page: main
----
-# This is content
+&lt;h1&gt;Hello world!&lt;/h1&gt;
+</code></pre>
+<p>is converted to this:</p>
+<pre><code class="language-JAVASCRIPT">{
+  content: &#39;&lt;h1&gt;Hello world!&lt;/h1&gt;&#39;,
+  data: {
+    title: &#39;Hello&#39;,
+    slug: &#39;home&#39;
+  }
+}
 </code></pre>
 </article>
 
