@@ -119,6 +119,16 @@ nav a {
 }
 
 /* hero home page header */
+.hero #version {
+    display: inline-block;
+    margin: 1rem;
+    padding: .5rem;
+    font-weight: 600;
+    font-size: var(--font-size);
+    border-radius: 0.25rem;
+    background-color: #fff;
+    color: #000;
+}
 .hero h1 {
     max-width: 21ch;
 }
