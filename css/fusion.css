@@ -99,7 +99,11 @@ pre {
     }
 }
 
-nav img {
+#navbar-sol {
+    width: 30px;
+    height: 30px;
+}
+#navbar-github {
     width: 20px;
     height: 20px;
 }
@@ -107,27 +111,23 @@ nav img {
     nav a {
         font-size: 20px;
     }
-    nav img {
-        width: 20px;
-        height: 20px;
+    #navbar-sol {
+        width: 38px;
+        height: 38px;
+    }
+    #navbar-github {
+        width: 28px;
+        height: 28px;
     }
 }
 @media (min-width: 768px) {
     nav a {
         font-size: 28px;
     }
-    nav img {
-        width: 28px;
-        height: 28px;
-    }
 }
 @media (min-width: 992px) {
     nav a {
         font-size: 29px;
-    }
-    nav img {
-        width: 29px;
-        height: 29px;
     }
 }
 @media (min-width: 1200px) {
