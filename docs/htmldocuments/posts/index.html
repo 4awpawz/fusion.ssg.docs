@@ -47,17 +47,47 @@
     <div><small>Project Location: <em>src/templates/posts</em></small></div>
 </section>
 
-<p>Posts are <a href="/docs/htmldocuments/templates">templates</a> that can be useful for creating <em>article</em> and <em>blog</em> type HTML documents, or any type of HTML document that might benefit from the use of <em>tags</em> and <em>categories</em>.</p>
-<article>
-<header>Tags</header>
-<em>Tags</em> are useful for grouping <em>similar</em> posts to each other.
-<footer><em>Example</em>:</footer>
-</article>
+<p>Posts are specialized <a href="/docs/htmldocuments/templates">templates</a> that can be useful for creating any <em>blog</em> type HTML documents, or any type of HTML document that would benefit from a chronologically ordered folder structure, <em>tags</em> and <em>categories</em>.</p>
+<p class="info">In metadata, posts can identified by their <b>"isPost": true</b> property.</p>
+
+<h2 id="naming-convention">Naming Convention</h2>
+<p>Unlike all other templates, post templates have a strict naming convention, e.g . 2023-02-28-upsidedown-cake.md, which allows fusion.ssg to structure your posts chronologically. Post template names must begin with the year, -, month, -, and day, i.e. YYYY-MM-DD, followed by a dash, i.e. -, and ending with the actual file name, including its type, i.e. [file name].md|html.</p>
+<p>For example, a post without categories (see below) named <em>2023-02-28-upsidedown-cake.md</em> would be rendered to the posts folder as 2003/02/28/upsidedown-cake/index.html, and a post with categories &quot;recipes, cakes&quot; named <em>2023-02-28-upsidedown-cake.md</em> would be rendered to the posts folder as recipes/cakes/2003/02/28/upsidedown-cake/index.html.</p>
+<h2 id="categories">Categories</h2>
+<p>Categories are strictly for rendering posts in a particular <em>folder hierarchy</em>. For example, a post with a single category, such as <em>&quot;recipes&quot;</em> would be rendered in the &quot;posts/recipes/&quot; folder and a post with two categories, such as <em>&quot;recipes, cakes and pies&quot;</em> would be rendered in the &quot;posts/recipes/cakes and pies&quot; folder/.</p>
+<p>Categories are declared in a post&#39;s front matter as shown below:</p>
+<pre><code class="laguage-HTML">
+post: {
+    categories: "category, ..."
+}
+</code></pre>
+
+<h2 id="tags">Tags</h2>
+<p>Tags are very useful for associating posts that have similar subject matter. <a href="/docs/htmldocuments/components">Components</a> can query <a href="/docs/htmldocuments/components#metadata-properties">metadata</a> using higher order array functions, such as <em>filter</em> for example, to find all posts with a particular tag.</p>
+<p>Tags are declared in a post&#39;s front matter as shown below:</p>
+<pre><code class="laguage-HTML">
+post: {
+    tags: "tag, ..."
+}
+</code></pre>
 
 <article>
-<header>Categories</header>
-<em>Categories</em> allow you to <em>physically</em> group posts in folders. Multiple categories are supported, which results in a nested folder structure.
-<footer><em>Example</em>:</footer>
+<header><p class="example">A post with multiple <em>tags</em> and categories.</p></header>
+<pre><code class="laguage-HTML">
+---
+page: blog
+tokens: {
+    title: "Yada Yada"
+}
+post: {
+    tags: "yada yada",
+    categories: "TV Series, Seinfeld, S8, E19"
+}
+---
+Yada yada...
+<!-- end -->
+Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus quo dolor dolorum, vel temporibus impedit quam animi, aliquam porro assumenda tenetur iure nemo voluptas voluptates quis distinctio, eveniet suscipit aliquid.
+</code></pre>
 </article>
 
                 <footer>
