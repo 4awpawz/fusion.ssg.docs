@@ -104,39 +104,17 @@ pre {
     height: 30px;
 }
 #navbar-github {
-    width: 20px;
-    height: 20px;
+    width: var(--font-size);
+    height: var(--font-size);
+    color: #fff;
+}
+nav a {
+    font-size: var(--font-size);
 }
 @media (min-width: 576px) {
-    nav a {
-        font-size: 20px;
-    }
     #navbar-sol {
         width: 38px;
         height: 38px;
-    }
-    #navbar-github {
-        width: 28px;
-        height: 28px;
-    }
-}
-@media (min-width: 768px) {
-    nav a {
-        font-size: 28px;
-    }
-}
-@media (min-width: 992px) {
-    nav a {
-        font-size: 29px;
-    }
-}
-@media (min-width: 1200px) {
-    nav a {
-        font-size: 30px;
-    }
-    nav img {
-        width: 30px;
-        height: 30px;
     }
 }
 
