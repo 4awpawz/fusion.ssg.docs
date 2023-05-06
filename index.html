@@ -17,8 +17,7 @@
         <title>fusion.ssg • Minimal Framework for Building Static Websites</title>
     </head>
     <body class="homepage">
-        <!-- ToDo = rename this file default-nv -->
-<nav class="container-fluid topnav" style="position: fixed; z-indes: 99; top: 0; right: 0; left: 0; background: #11191f;;">
+        <nav class="container-fluid topnav" style="position: fixed; z-indes: 99; top: 0; right: 0; left: 0; background: #11191f;;">
     <ul>
         <li><a class="contrast fixed" href="/"><img id="navbar-sol" src="/media/sol.png" alt="sol"></a></li>
         <li><a class="contrast fixed" href="/"><strong>fusion.ssg</strong></a></li>
@@ -307,12 +306,18 @@ export const TeamMembers = function({ team }: Props): string {
             </section>
         </main>
         <footer>
-    <nav class="container bottomnav">
+    <nav class="container bottomnav navigation">
         <ul>
             <li><a class="contrast" href="/docs">Documentation</a></li>
             <li><a class="contrast" href="https://github.com/4awpawz/fusion.ssg">GitHub</a></li>
-            <li><a class="contrast "href="https://twitter.com/4awpawz">Twitter</a></li> </ul> </nav>
-        </u>
+            <li><a class="contrast "href="https://twitter.com/4awpawz">Twitter</a></li>
+        </ul>
+    </nav>
+    <nav class="container bottomnav attribution">
+        <ul>
+            <li><small>Created by Jeffrey Schwartz</small></li>
+            <li><small>Code Licensed MIT</small></li>
+        </ul>
     </nav>
 </footer>
 

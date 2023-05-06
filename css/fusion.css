@@ -27,11 +27,19 @@ pre {
 }
 
 /* site footer */
-.bottomnav {
-    border-top: 1px solid rgba(187,198,206, 0.2);
-}
+
 .bottomnav li a {
     font-size: var(--font-size);
+}
+.bottomnav.navigation {
+    border-top: 1px solid rgba(187,198,206, 0.2);
+    padding: 0;
+}
+.bottomnav.navigation ul li {
+    padding-bottom: 0;
+}
+.bottomnav.attribution li {
+    color: var(--muted-color);
 }
 
 /* remove detail's widget */
