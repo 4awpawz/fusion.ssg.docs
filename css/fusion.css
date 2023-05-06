@@ -38,6 +38,9 @@ pre {
 .bottomnav.navigation ul li {
     padding-bottom: 0;
 }
+.bottomnav.attribution {
+    padding: 0;
+}
 .bottomnav.attribution li {
     color: var(--muted-color);
 }
