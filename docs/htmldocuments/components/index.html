@@ -142,9 +142,7 @@ export const TeamMembers = function({ team }: Props): string {
         &lt;ul&gt;
             {team.map(member =&gt; {
                 return &lt;li&gt;
-                    &lt;span&gt;
-                        &lt;a href={formatHref(member)}&gt;{formatName(member)}&lt;/a&gt;
-                    &lt;/span&gt;
+                    &lt;a href={formatHref(member)}&gt;{formatName(member)}&lt;/a&gt;
                 &lt;/li&gt;;
             })}
         &lt;/ul&gt;
