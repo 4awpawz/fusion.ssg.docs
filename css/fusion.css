@@ -46,6 +46,11 @@ pre {
 }
 
 /* remove detail's widget */
+.docpage aside .version {
+    font-size: calc(1rem - 4px);
+    margin-bottom: 1rem;
+    color: var(--muted-color);
+}
 .docpage details summary::after {
     display: none;
 }
@@ -173,7 +178,6 @@ p.info {
 }
 p.info::before {
     content: "i";
-    /* background-color: rgb(00,88,88, .65); */
     background-color: var(--primary);
     font-style: italic;
     font-weight: bold;
