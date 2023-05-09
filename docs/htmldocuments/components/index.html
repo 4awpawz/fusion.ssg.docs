@@ -69,8 +69,12 @@
 <h4 id="metadata-properties">Metadata Properties</h4>
 <p>During each build cycle, fusion.ssg extracts <em>metadata</em> from your project that components can easily query using JavaScript&#39;s higher order Array methods, such as filter and map for example, and incorporate the data retrieved from these queries in HTML documents. For more information on this subject, please read <a href="/docs/metadata">Metadata</a>.</p>
 <ul>
-<li><em>asset</em>: object, the <em>metadata</em> for the HTML document that <em>this</em> component is being called for.</li>
-<li><em>assets</em>: array, a list of all the <em>metadata</em>, i.e. <em>asset[]</em>.</li>
+<li><em>asset</em>: object, the <em>metadata</em> for the HTML document that <em>this</em> component is being called for. Properties that can be very useful for creating lists of posts or a list of members of a collection are:<ul>
+<li><em>isPost</em>: boolean, <code>true</code> if the asset is a post, can be used to filter for all posts</li>
+<li><em>memberOf</em>: <code>string</code>, found only on assets that are members of a collection, names the collection that this asset is a member of, can be used to filter for members of the named collection</li>
+</ul>
+</li>
+<li><em>assets</em>: array, a list of all the <em>metadata</em>, i.e. <em>asset[]</em></li>
 </ul>
 <p class="info">After each build cycle, fusion.ssg serializes its metadata into a file named <b>project root/.assets.json</b>. This file's content can be viewed and analyzed to determine <em>query strategies</em> for retrieving the data needed to satisfy each individual component's particular use case. In most cases, you want to limit your focus on those items that are <b>"assetType": "template"</b>.</p>
 
