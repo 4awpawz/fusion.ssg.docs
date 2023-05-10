@@ -1,43 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="fusion.ssg, a minimal framework for building static websites.">
-<meta name="author" content="4awpaws, Jeffrey Schwartz">
-<meta name="generator" content="fusion.ssg">
 
-        <title>fusion.ssg: Documentation - Collections</title>
-        <link rel="stylesheet" href="/css/libs/pico/pico.min.css">
-        <link rel="stylesheet" href="/css/libs/highlight/github.min.css">
-        <link rel="stylesheet" href="/css/fusion.css">
-        <script src="/scripts/libs/highlight/highlight.min.js"></script>
-        <script>hljs.highlightAll();</script>
-    </head>
-    <body class="docpage">
-        <nav class="container-fluid topnav"><ul><li><a class="contrast fixed" href="/"><img id="navbar-sol" src="/media/sol.png" alt="sol" /></a></li><li><a class="contrast fixed" href="/"><strong>fusion.ssg</strong></a></li></ul><ul><li><a class="contrast" href="/docs">Docs</a></li><li><a class="secondary" href="/news">News</a></li><li><a class="secondary" href="/team">Team</a></li><li><a aria-label="fusion.ssg Github Repositroy" href="https://github.com/4awpawz/fusion.ssg"><svg id="navbar-github" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" height="16px"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg></a></li></ul></nav>
-        <main class="container">
-            <aside><nav class="closed-on-mobile"><p class="version">v1.0.0-beta.1</p><details><summary>getting started</summary><ul><li><a class="secondary" href="/docs" aria-current="false">Synopsis</a></li><li><a class="secondary" href="/docs/installation" aria-current="false">Installation &amp; Create Your First Project</a></li><li><a class="secondary" href="/docs/projectstructure" aria-current="false">Project Structure</a></li></ul></details><details open><summary>html documents</summary><ul><li><a class="secondary" href="/docs/htmldocuments/frontmatter" aria-current="false">Front Matter</a></li><li><a class="secondary" href="/docs/htmldocuments/templates" aria-current="false">Templates</a></li><li><a class="secondary" href="/docs/htmldocuments/tokens" aria-current="false">Tokens</a></li><li><a class="secondary" href="/docs/htmldocuments/pages" aria-current="false">Pages</a></li><li><a class="secondary" href="/docs/htmldocuments/includes" aria-current="false">Includes</a></li><li><a class="secondary" href="/docs/htmldocuments/jsondatasources" aria-current="false">JSON Data Sources</a></li><li><a class="secondary" href="/docs/htmldocuments/components" aria-current="false">Components</a></li><li><a class="secondary" href="/docs/htmldocuments/collections" aria-current="page">Collections</a></li><li><a class="secondary" href="/docs/htmldocuments/posts" aria-current="false">Posts</a></li></ul></details><details><summary>Metadata</summary><ul><li><a class="secondary" href="/docs/metadata" aria-current="false">.assets.json</a></li></ul></details><details><summary>configuration</summary><ul><li><a class="secondary" href="/docs/configuration" aria-current="false">fusion.json</a></li></ul></details><details><summary>Command Line</summary><ul><li><a class="secondary" href="/docs/cli" aria-current="false">CLI</a></li></ul></details></nav></aside>
-            <div>
-                <p><mark>Documentation is currently still under development.</mark></p>
-<p><mark>Please be patient with us.</mark></p>
-<p><mark>We are working very hard to bring you the best documentation possible.</mark></p>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="fusion.ssg, a minimal framework for building static websites.">
+    <meta name="author" content="4awpaws, Jeffrey Schwartz">
+    <meta name="generator" content="fusion.ssg">
+    <title>fusion.ssg: Documentation - Collections</title>
+    <link rel="stylesheet" href="/css/libs/pico/pico.min.css">
+    <link rel="stylesheet" href="/css/libs/highlight/github.min.css">
+    <link rel="stylesheet" href="/css/fusion.css">
+    <script src="/scripts/libs/highlight/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</head>
 
-                <p><em>HTML DOCUMENTS</em></p>
-<h1 id="collections">Collections</h1>
-<p>A <em>collection</em> consists of <em>two or more</em> HTML documents created using a single <a href="#collection-templates">template</a> and a higher order <a href="#collection-components">component</a>.</p>
-<h2 id="synopsis">Synopsis</h2>
-<p>Imagine you have a portfolio of one kind or another and you want to create an HTML document for each of its items. Imagine how tedious and laborious that process would be if you had to do that manually. fusion.ssg provides a much better solution.</p>
-<p>Simply put, fusion.ssg invokes collection components just like it does <em>&quot;normal&quot;</em> <a href="/docs/htmldocuments/components">components</a>, but invokes them repeatedly until they return nothing. In addition, for each invocation, the component receives an <a href="#arguments">index</a> along with any of the other <a href="/docs/htmldocuments/components#properties">properties</a> it has declared, as well as <a href="/docs/htmldocuments/components#additional-properties"><em>asset</em> and <em>assets</em></a>. The value of this index is initially <em>0</em> and is incremented by <em>1</em> for each subsequent invocation, and can be used, for example, to <em>&quot;iterate&quot;</em> through a data source, one invocation at a time. When the index value is greater than the number of items in the data source, meaning there are no more HTML documents to be generated for this collection, the component returns nothing, which signals to fusion.ssg that it is to stop calling the component.</p>
-<h2 id="collection-templates">Collection Templates</h2>
-<p>A <em>collection template</em> is any template that declares a front matter property named <code>isCollection</code> with a value of <code>true</code>.</p>
-
-<article>
-<header>
-<p class="example">A collection template.</p>
-</header>
-<pre><code class="language-html">---
+<body class="docpage">
+    <nav class="container-fluid topnav">
+        <ul>
+            <li><a class="contrast fixed" href="/"><img id="navbar-sol" src="/media/sol.png" alt="sol" /></a></li>
+            <li><a class="contrast fixed" href="/"><strong>fusion.ssg</strong></a></li>
+        </ul>
+        <ul>
+            <li><a class="contrast" href="/docs">Docs</a></li>
+            <li><a class="secondary" href="/news">News</a></li>
+            <li><a class="secondary" href="/team">Team</a></li>
+            <li><a aria-label="fusion.ssg Github Repositroy" href="https://github.com/4awpawz/fusion.ssg"><svg id="navbar-github" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" height="16px">
+                        <path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path>
+                    </svg></a></li>
+        </ul>
+    </nav>
+    <main class="container">
+        <aside>
+            <nav class="closed-on-mobile">
+                <p class="version">v1.0.0-beta.6</p>
+                <details>
+                    <summary>getting started</summary>
+                    <ul>
+                        <li><a class="secondary" href="/docs" aria-current="false">Synopsis</a></li>
+                        <li><a class="secondary" href="/docs/installation" aria-current="false">Installation &amp; Create Your First Project</a></li>
+                        <li><a class="secondary" href="/docs/projectstructure" aria-current="false">Project Structure</a></li>
+                    </ul>
+                </details>
+                <details open>
+                    <summary>html documents</summary>
+                    <ul>
+                        <li><a class="secondary" href="/docs/htmldocuments/frontmatter" aria-current="false">Front Matter</a></li>
+                        <li><a class="secondary" href="/docs/htmldocuments/templates" aria-current="false">Templates</a></li>
+                        <li><a class="secondary" href="/docs/htmldocuments/tokens" aria-current="false">Tokens</a></li>
+                        <li><a class="secondary" href="/docs/htmldocuments/pages" aria-current="false">Pages</a></li>
+                        <li><a class="secondary" href="/docs/htmldocuments/includes" aria-current="false">Includes</a></li>
+                        <li><a class="secondary" href="/docs/htmldocuments/jsondatasources" aria-current="false">JSON Data Sources</a></li>
+                        <li><a class="secondary" href="/docs/htmldocuments/components" aria-current="false">Components</a></li>
+                        <li><a class="secondary" href="/docs/htmldocuments/collections" aria-current="page">Collections</a></li>
+                        <li><a class="secondary" href="/docs/htmldocuments/posts" aria-current="false">Posts</a></li>
+                    </ul>
+                </details>
+                <details>
+                    <summary>Metadata</summary>
+                    <ul>
+                        <li><a class="secondary" href="/docs/metadata" aria-current="false">.assets.json</a></li>
+                    </ul>
+                </details>
+                <details>
+                    <summary>configuration</summary>
+                    <ul>
+                        <li><a class="secondary" href="/docs/configuration" aria-current="false">fusion.json</a></li>
+                    </ul>
+                </details>
+                <details>
+                    <summary>Command Line</summary>
+                    <ul>
+                        <li><a class="secondary" href="/docs/cli" aria-current="false">CLI</a></li>
+                    </ul>
+                </details>
+            </nav>
+        </aside>
+        <div>
+            <p><mark>Documentation is currently still under development.</mark></p>
+            <p><mark>Please be patient with us.</mark></p>
+            <p><mark>We are working very hard to bring you the best documentation possible.</mark></p>
+            <p><em>HTML DOCUMENTS</em></p>
+            <h1 id="collections">Collections</h1>
+            <p>A <em>collection</em> consists of <em>two or more</em> HTML documents created using a single <a href="#collection-templates">template</a> and a higher order <a href="#collection-components">component</a>.</p>
+            <h2 id="synopsis">Synopsis</h2>
+            <p>Imagine you have a portfolio of one kind or another and you want to create an HTML document for each of its items. Imagine how tedious and laborious that process would be if you had to do that manually. fusion.ssg provides a much better solution.</p>
+            <p>Simply put, fusion.ssg invokes collection components just like it does <em>&quot;normal&quot;</em> <a href="/docs/htmldocuments/components">components</a>, but invokes them repeatedly until they return nothing. In addition, for each invocation, the component receives an <a href="#arguments">index</a> along with any of the other <a href="/docs/htmldocuments/components#properties">properties</a> it has declared, as well as <a href="/docs/htmldocuments/components#additional-properties"><em>asset</em> and <em>assets</em></a>. The value of this index is initially <em>0</em> and is incremented by <em>1</em> for each subsequent invocation, and can be used, for example, to <em>&quot;iterate&quot;</em> through a data source, one invocation at a time. When the index value is greater than the number of items in the data source, meaning there are no more HTML documents to be generated for this collection, the component returns nothing, which signals to fusion.ssg that it is to stop calling the component.</p>
+            <h2 id="collection-templates">Collection Templates</h2>
+            <p>A <em>collection template</em> is any template that declares a front matter property named <code>isCollection</code> with a value of <code>true</code>.</p>
+            <article>
+                <header>
+                    <p class="example">A collection template.</p>
+                </header>
+                <pre><code class="language-html">---
 page: team-member
 isCollection: true
 ---
@@ -47,16 +105,13 @@ isCollection: true
 
 &lt;h2&gt;contributors&lt;/h2&gt;
 </code></pre>
-
-</article>
-
-<p>A <em>collection component tag</em> is any component tag that declares a property named <code>isCollection</code>.</p>
-
-<article>
-<header>
-<p class="example">A collection template with a collection component tag.</p>
-</header>
-<pre><code class="language-html">---
+            </article>
+            <p>A <em>collection component tag</em> is any component tag that declares a property named <code>isCollection</code>.</p>
+            <article>
+                <header>
+                    <p class="example">A collection template with a collection component tag.</p>
+                </header>
+                <pre><code class="language-html">---
 page: team-member
 isCollection: true
 ---
@@ -67,36 +122,34 @@ isCollection: true
 &lt;h2&gt;contributors&lt;/h2&gt;
 &lt;TeamMember isCollection datasources=&quot;team.json&quot; /&gt;
 </code></pre>
-
-<footer>
-<p>The above collection component tag also declares a <em>dataSources</em> property whose value is a path to a JSON file that resides in the project's <em>src/data</em> folder.</p>
-<p class="info">Collection component tags are applicable within <b>includes</b>, <b>templates</b> and <b>pages</b>.</p>
-</footer>
-</article>
-
-<h2 id="collection-components">Collection Components</h2>
-<p>A collection components is a higher order component that produces the content for multiple HTML documents (i.e. a collection) and differ from <b><em>simple components</em></b>, which produce content for a single HTML document.</p>
-<p>The following discussion assumes that you have already read about simple <a href="/docs/htmldocuments/components">components</a>.</p>
-<h3 id="properties-passed-as-arguments">Properties Passed As Arguments</h3>
-<ul>
-<li><em>asset</em>: the <em>metadata</em> that fusion.ssg has generated for the HTML document that this component is being called for. Components can use the data in this asset when rendering its output for the HTML document.</li>
-<li><em>assets</em>: a <em>list</em> containing the metadata that fusion.ssg has generated for all HTML documents in your project, i.e. <em>asset[]</em>. As with <em>asset</em>, components also can use this accumulated data when rendering its output for the HTML document, such as for generating lists whose items contain references to other HTML documents. See the example below.</li>
-<li>index: number, initially set to 0 and incremented by 1 for every subsequent invocation.</li>
-<li><em>dataSources</em>: Components that have this property are recognized as being <em>consumers</em> of one or more data sources. This property is a comma separated lists of <em>JSON file names</em> that are located in your project&#39;s <em>src/data</em> folder. At runtime, fusion.ssg reads each data source, converting them to JavaScript objects, and passes the converted data sources to your component. Data sources passed to your components can be <em>destructured</em> from <em>props</em> using their JSON file name minus the .<em>json</em> extension.</li>
-</ul>
-<h3 id="returns">Returns</h3>
-<p>When collection components have content to contribute to an HTML document, they return an <em>object</em> with properties for the <em>content</em>, the <em>title</em>, and the <em>name</em> to apply to the HTML document:</p>
-<ul>
-<li>content: <em>string, the content to contribute to this HTML document.</em></li>
-<li>title: <em>string, will replace the simple title token in the HTML document&#39;s title tag, e.g. &lt;title&gt;&#123;title&#125;&lt;/title&gt;.</em></li>
-<li>htmlDocumentName: <em>string, the file name for this HTML document.</em></li>
-</ul>
-<p>When collection components no longer have content to contribute to an HTML document, they return nothing.</p>
-<article>
-<header>
-<p class="example">A collection component implementation.</p>
-</header>
-<pre><code class="language-typescript">interface TeamMember {
+                <footer>
+                    <p>The above collection component tag also declares a <em>dataSources</em> property whose value is a path to a JSON file that resides in the project's <em>src/data</em> folder.</p>
+                    <p class="info">Collection component tags are applicable within <b>includes</b>, <b>templates</b> and <b>pages</b>.</p>
+                </footer>
+            </article>
+            <h2 id="collection-components">Collection Components</h2>
+            <p>A collection components is a higher order component that produces the content for multiple HTML documents (i.e. a collection) and differ from <b><em>simple components</em></b>, which produce content for a single HTML document.</p>
+            <p>The following discussion assumes that you have already read about simple <a href="/docs/htmldocuments/components">components</a>.</p>
+            <h3 id="properties-passed-as-arguments">Properties Passed As Arguments</h3>
+            <ul>
+                <li><em>asset</em>: the <em>metadata</em> that fusion.ssg has generated for the HTML document that this component is being called for. Components can use the data in this asset when rendering its output for the HTML document.</li>
+                <li><em>assets</em>: a <em>list</em> containing the metadata that fusion.ssg has generated for all HTML documents in your project, i.e. <em>asset[]</em>. As with <em>asset</em>, components also can use this accumulated data when rendering its output for the HTML document, such as for generating lists whose items contain references to other HTML documents. See the example below.</li>
+                <li>index: number, initially set to 0 and incremented by 1 for every subsequent invocation.</li>
+                <li><em>dataSources</em>: Components that have this property are recognized as being <em>consumers</em> of one or more data sources. This property is a comma separated lists of <em>JSON file names</em> that are located in your project&#39;s <em>src/data</em> folder. At runtime, fusion.ssg reads each data source, converting them to JavaScript objects, and passes the converted data sources to your component. Data sources passed to your components can be <em>destructured</em> from <em>props</em> using their JSON file name minus the .<em>json</em> extension.</li>
+            </ul>
+            <h3 id="returns">Returns</h3>
+            <p>When collection components have content to contribute to an HTML document, they return an <em>object</em> with properties for the <em>content</em>, the <em>title</em>, and the <em>name</em> to apply to the HTML document:</p>
+            <ul>
+                <li>content: <em>string, the content to contribute to this HTML document.</em></li>
+                <li>title: <em>string, will replace the simple title token in the HTML document&#39;s title tag, e.g. &lt;title&gt;&#123;title&#125;&lt;/title&gt;.</em></li>
+                <li>htmlDocumentName: <em>string, the file name for this HTML document.</em></li>
+            </ul>
+            <p>When collection components no longer have content to contribute to an HTML document, they return nothing.</p>
+            <article>
+                <header>
+                    <p class="example">A collection component implementation.</p>
+                </header>
+                <pre><code class="language-typescript">interface TeamMember {
     name: {
         first: string,
         last: string
@@ -130,27 +183,25 @@ export const TeamMember = function({ team, index }: Props): { content: unknown, 
     return { content, title, htmlDocumentName };
 };
 </code></pre>
+                <footer>In the above example, the collection component <em>"iterates"</em> through its data source, one invocation at a time, using its <em>index</em> to reference the data source item applicable to the current HTML document that it was called for, and returns the appropriate information for the HTML document. If, on the other hand, there are no more HTML documents to be generated for the collection, the component returns nothing.</footer>
+            </article>
+            <footer>
+                <nav class="container bottomnav navigation">
+                    <ul>
+                        <li><a class="contrast" href="/docs">Documentation</a></li>
+                        <li><a class="contrast" href="https://github.com/4awpawz/fusion.ssg">GitHub</a></li>
+                        <li><a class="contrast " href="https://twitter.com/4awpawz">Twitter</a></li>
+                    </ul>
+                </nav>
+                <nav class="container bottomnav attribution">
+                    <ul>
+                        <li><small>Created by Jeffrey Schwartz</small></li>
+                        <li><small>Code Licensed MIT</small></li>
+                    </ul>
+                </nav>
+            </footer>
+        </div>
+    </main>
+</body>
 
-<footer>In the above example, the collection component <em>"iterates"</em> through its data source, one invocation at a time, using its <em>index</em> to reference the data source item applicable to the current HTML document that it was called for, and returns the appropriate information for the HTML document. If, on the other hand, there are no more HTML documents to be generated for the collection, the component returns nothing.</footer>
-</article>
-
-                <footer>
-    <nav class="container bottomnav navigation">
-        <ul>
-            <li><a class="contrast" href="/docs">Documentation</a></li>
-            <li><a class="contrast" href="https://github.com/4awpawz/fusion.ssg">GitHub</a></li>
-            <li><a class="contrast "href="https://twitter.com/4awpawz">Twitter</a></li>
-        </ul>
-    </nav>
-    <nav class="container bottomnav attribution">
-        <ul>
-            <li><small>Created by Jeffrey Schwartz</small></li>
-            <li><small>Code Licensed MIT</small></li>
-        </ul>
-    </nav>
-</footer>
-
-            </div>
-        </main>
-    </body>
 </html>

@@ -1,111 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="fusion.ssg, a minimal framework for building static websites.">
-<meta name="author" content="4awpaws, Jeffrey Schwartz">
-<meta name="generator" content="fusion.ssg">
 
-        <link rel="stylesheet" href="/css/libs/pico/pico.min.css">
-        <link rel="stylesheet" href="/css/libs/highlight/github.min.css">
-        <link rel="stylesheet" href="/css/fusion.css">
-        <script src="/scripts/libs/highlight/highlight.min.js"></script>
-        <script>hljs.highlightAll();</script>
-        <script async defer src="https://buttons.github.io/buttons.js"></script>
-        <title>fusion.ssg • Minimal Framework for Building Static Websites</title>
-    </head>
-    <body class="homepage">
-        <nav class="container-fluid topnav"><ul><li><a class="contrast fixed" href="/"><img id="navbar-sol" src="/media/sol.png" alt="sol" /></a></li><li><a class="contrast fixed" href="/"><strong>fusion.ssg</strong></a></li></ul><ul><li><a class="secondary" href="/docs">Docs</a></li><li><a class="secondary" href="/news">News</a></li><li><a class="secondary" href="/team">Team</a></li><li><a aria-label="fusion.ssg Github Repositroy" href="https://github.com/4awpawz/fusion.ssg"><svg id="navbar-github" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" height="16px"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg></a></li></ul></nav>
-        <!-- Home Page Hero -->
-<header class="hero">
-    <div align="center">
-        <hgroup>
-            <h1><b>Minimal&nbsp;SSG&nbsp;Framework for Static Websites</b></h1>
-            <p>fusion.ssg propels your static website development to the next level by seamlessly fusing together familiar technologies into one cohesive development platform.</p>
-            <p><code>HTML</code>, <code>Markdown</code>, <code>TypeScript Components</code>, <code>JSON Data</code>, <code>YAML Front Matter</code>
-        </hgroup>
-        <p>
-            <a href="/docs" role="button" class="secondary" aria-label="Documentation" style="margin-right: 10px">Get Started</a>
-            <a href="/docs/installation" role="button" class="contrast outline">Install Now</a>
-        </p>
-        <p id="version"><small>v1.0.0-beta.1</small></p>
-    </div>
-</header>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="fusion.ssg, a minimal framework for building static websites.">
+    <meta name="author" content="4awpaws, Jeffrey Schwartz">
+    <meta name="generator" content="fusion.ssg">
+    <link rel="stylesheet" href="/css/libs/pico/pico.min.css">
+    <link rel="stylesheet" href="/css/libs/highlight/github.min.css">
+    <link rel="stylesheet" href="/css/fusion.css">
+    <script src="/scripts/libs/highlight/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>fusion.ssg • Minimal Framework for Building Static Websites</title>
+</head>
 
-        <main>
-            <section class="container">
-                <article>
-                    <header><h2 style="margin: 0; padding: 0;">Why fusion.ssg?</h2></header>
-                    <section class="grid">
-                        <hgroup>
-                            <img src="/media/plato-64.png" alt="Plato">
-                            <h3>Philosophy</h3>
-                            <section class="container">
-                                <p>fusion.ssg creates resilient HTML documents and static websites and gets out of your way when you are using it.</p>
-                            </section>
-                        </hgroup>
-                        <hgroup>
-                            <img src="/media/tiny-64.png" alt="Home">
-                            <h3>Minimal</h3>
-                            <p>fusion.ssg is built from the ground up to be <i>just</i> that and very quick too.</p>
-                        </hgroup>
-                    </section>
-                    <section class="grid">
-                        <hgroup>
-                            <img src="/media/home-64.png" alt="Home">
-                            <h3>Familiar</h3>
-                            <section>
-                                <p>fusion.ssg has a very low "barrier to entry" because it seamlessly employs concepts that you are already familiar with, like templates, pages, includes, markdown, tokens, and Typescript components.</p>
+<body class="homepage">
+    <nav class="container-fluid topnav">
+        <ul>
+            <li><a class="contrast fixed" href="/"><img id="navbar-sol" src="/media/sol.png" alt="sol" /></a></li>
+            <li><a class="contrast fixed" href="/"><strong>fusion.ssg</strong></a></li>
+        </ul>
+        <ul>
+            <li><a class="secondary" href="/docs">Docs</a></li>
+            <li><a class="secondary" href="/news">News</a></li>
+            <li><a class="secondary" href="/team">Team</a></li>
+            <li><a aria-label="fusion.ssg Github Repositroy" href="https://github.com/4awpawz/fusion.ssg"><svg id="navbar-github" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" height="16px">
+                        <path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path>
+                    </svg></a></li>
+        </ul>
+    </nav>
+    <!-- Home Page Hero -->
+    <header class="hero">
+        <div align="center">
+            <hgroup>
+                <h1><b>Minimal&nbsp;SSG&nbsp;Framework for Static Websites</b></h1>
+                <p>fusion.ssg propels your static website development to the next level by seamlessly fusing together familiar technologies into one cohesive development platform.</p>
+                <p><code>HTML</code>, <code>Markdown</code>, <code>TypeScript Components</code>, <code>JSON Data</code>, <code>YAML Front Matter</code>
+            </hgroup>
+            <p>
+                <a href="/docs" role="button" class="secondary" aria-label="Documentation" style="margin-right: 10px">Get Started</a>
+                <a href="/docs/installation" role="button" class="contrast outline">Install Now</a>
+            </p>
+            <p id="version"><small>v1.0.0-beta.6</small></p>
+        </div>
+    </header>
+    <main>
+        <section class="container">
+            <article>
+                <header>
+                    <h2 style="margin: 0; padding: 0;">Why fusion.ssg?</h2>
+                </header>
+                <section class="grid">
+                    <hgroup>
+                        <img src="/media/plato-64.png" alt="Plato">
+                        <h3>Philosophy</h3>
+                        <section class="container">
+                            <p>fusion.ssg creates resilient HTML documents and static websites and gets out of your way when you are using it.</p>
+                        </section>
+                    </hgroup>
+                    <hgroup>
+                        <img src="/media/tiny-64.png" alt="Home">
+                        <h3>Minimal</h3>
+                        <p>fusion.ssg is built from the ground up to be <i>just</i> that and very quick too.</p>
+                    </hgroup>
+                </section>
+                <section class="grid">
+                    <hgroup>
+                        <img src="/media/home-64.png" alt="Home">
+                        <h3>Familiar</h3>
+                        <section>
+                            <p>fusion.ssg has a very low "barrier to entry" because it seamlessly employs concepts that you are already familiar with, like templates, pages, includes, markdown, tokens, and Typescript components.</p>
                             </section.container>
-                        </hgroup>
-                        <hgroup>
-                            <img src="/media/clock-64.png" alt="Home">
-                            <h3>Productive</h3>
-                            <section>
-                                <p> No complicated tooling and configuration. fusion.ssg's project generator gets you up and running quickly.</p>
+                    </hgroup>
+                    <hgroup>
+                        <img src="/media/clock-64.png" alt="Home">
+                        <h3>Productive</h3>
+                        <section>
+                            <p> No complicated tooling and configuration. fusion.ssg's project generator gets you up and running quickly.</p>
                             </section.container>
-                        </hgroup>
-                    </section>
-                </article>
+                    </hgroup>
+                </section>
+            </article>
+            <article>
+                <header>
+                    <h2 style="margin: 0; padding: 0;">Features</h2>
+                </header>
+                <ul>
+                    <li>Simple HTML document creation using Pages, Templates and Includes.</li>
+                    <li>Simple token replacement involving front matter property values and matching property names in HTML.</li>
+                    <li>TypeScript component compilation and sand-boxed execution.</li>
+                    <li>Document hydration using Typescript components and JSON data sources.</li>
+                    <li>Multiple page generation (i.e. Collections) using Typescript components and JSON data sources.</li>
+                    <li>Base URLs.</li>
+                    <li>Development and release builds.</li>
+                    <li>Content posting (e.g. Blogging).</li>
+                    <li>Tags.</li>
+                    <li>Categories.</li>
+                    <li>Works in progress.</li>
+                    <li>Individual files.</li>
+                    <li>Folders.</li>
+                    <li>Ignored.</li>
+                    <li>End user project creation.</li>
+                </ul>
+            </article>
+        </section>
+        <section class="container">
+            <article>
+                <header>
+                    <h2 style="margin: 0; padding: 0;">Examples</h2>
+                </header>
                 <article>
-                    <header><h2 style="margin: 0; padding: 0;">Features</h2></header>
-                    <ul>
-<li>Simple HTML document creation using Pages, Templates and Includes.</li>
-<li>Simple token replacement involving front matter property values and matching property names in HTML.</li>
-<li>TypeScript component compilation and sand-boxed execution.</li>
-<li>Document hydration using Typescript components and JSON data sources.</li>
-<li>Multiple page generation (i.e. Collections) using Typescript components and JSON data sources.</li>
-<li>Base URLs.</li>
-<li>Development and release builds.</li>
-<li>Content posting (e.g. Blogging).</li>
-<li>Tags.</li>
-<li>Categories.</li>
-<li>Works in progress.</li>
-<li>Individual files.</li>
-<li>Folders.</li>
-<li>Ignored.</li>
-<li>End user project creation.</li>
-</ul>
-
-                </article>
-            </section>
-            <section class="container">
-                <article>
-                    <header><h2 style="margin: 0; padding: 0;">Examples</h2></header>
-                    <article>
-                        <header><h3>Create A Simple HTML Document From A Template and a Page</h3></header>
-                        <p>A template with content and front matter that contains a simple token property.</p>
-<pre><code class="language-html">---
+                    <header>
+                        <h3>Create A Simple HTML Document From A Template and a Page</h3>
+                    </header>
+                    <p>A template with content and front matter that contains a simple token property.</p>
+                    <pre><code class="language-html">---
 tokens: {
     pageTitle: Greetings
 }
 ---
 &lt;h1&gt;Hello World&lt;/h1&gt;
 </code></pre>
-<p>A page with a simple token and a template token.</p>
-<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+                    <p>A page with a simple token and a template token.</p>
+                    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
     &lt;head&gt;
         &lt;meta charset=&quot;UTF-8&quot;&gt;
@@ -120,8 +142,8 @@ tokens: {
     &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-<p>The generated page.</p>
-<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+                    <p>The generated page.</p>
+                    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
     &lt;head&gt;
         &lt;meta charset=&quot;UTF-8&quot;&gt;
@@ -136,19 +158,20 @@ tokens: {
     &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-
-                    </article>
-                    <article>
-                        <header><h3>Create An HTML Document From A Simple Component That Generates A List Of Team Members</h3></header>
-                        <p>The team.json data source.</p>
-<pre><code class="language-json">[
+                </article>
+                <article>
+                    <header>
+                        <h3>Create An HTML Document From A Simple Component That Generates A List Of Team Members</h3>
+                    </header>
+                    <p>The team.json data source.</p>
+                    <pre><code class="language-json">[
 {&quot;name&quot;: { &quot;first&quot;: &quot;John&quot;, &quot;last&quot;: &quot;Doe&quot; }},
 {&quot;name&quot;: { &quot;first&quot;: &quot;Jane&quot;, &quot;last&quot;: &quot;Doe&quot; }},
 {&quot;name&quot;: { &quot;first&quot;: &quot;Julia&quot;, &quot;last&quot;: &quot;Doe&quot; }}
 ]
 </code></pre>
-<p>A template with a simple TeamMembers component tag that declares team.json as a data source.</p>
-<pre><code class="language-html">---
+                    <p>A template with a simple TeamMembers component tag that declares team.json as a data source.</p>
+                    <pre><code class="language-html">---
 tokens: {
     pageTitle: Team Members
 }
@@ -158,8 +181,8 @@ tokens: {
 &lt;h2&gt;contributors&lt;/h2&gt;
 &lt;TeamMembers datasources=&quot;team.json&quot; /&gt;
 </code></pre>
-<p>The simple TeamMembers component implementation.</p>
-<pre><code class="language-typescript">interface TeamMember {
+                    <p>The simple TeamMembers component implementation.</p>
+                    <pre><code class="language-typescript">interface TeamMember {
     &quot;name&quot;: {
         &quot;first&quot;: string,
         &quot;last&quot;: string
@@ -186,8 +209,8 @@ export const TeamMembers = function({ team }: Props): string {
     );
 };
 </code></pre>
-<p>The template&#39;s associated page.</p>
-<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+                    <p>The template&#39;s associated page.</p>
+                    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
     &lt;meta charset=&quot;UTF-8&quot;&gt;
@@ -202,8 +225,8 @@ export const TeamMembers = function({ team }: Props): string {
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-<p>The generated page.</p>
-<pre><code class="language-html">&lt;html lang=&quot;en&quot;&gt;
+                    <p>The generated page.</p>
+                    <pre><code class="language-html">&lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
     &lt;meta charset=&quot;UTF-8&quot;&gt;
     &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
@@ -224,88 +247,86 @@ export const TeamMembers = function({ team }: Props): string {
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-
-                    </article>
                 </article>
-            </section>
-            <section class="container">
-                <article>
-                    <h2 id="the-name">The Name</h2>
-<p><em>fusion</em> plays on the idea of seamlessly <strong><em>fusing</em></strong> together various technologies, e.g. HTML, Markdown, TypseScript Components, JSON Data, YAML Front Matter, etc., to seamlessly work together to simplify the creation of HTML documents and static websites.</p>
-<h2 id="project-development">Project Development</h2>
-<p>The project is written in <code> TypeScript</code> (no excuses, <em>it just works beautifully</em>) and runs on <code>Node</code>.</p>
-<h2 id="project-scope">Project Scope</h2>
-<p>The project&#39;s scope is limited to generating robust and resilient HTML documents and nothing else. It will not provide any other tooling other than what is absolutely necessary to accomplish that. Importantly, fusion.ssg requires no knowledge of front-end frameworks like React. This keeps the scope of the project focused, preventing feature creep, and benefits users who will be able to pick and chose their own tools.</p>
-<h2 id="current-status">Current Status</h2>
-<p>The project is still in its Alpha/prerelease stage. One or more <em>Beta releases</em> will follow and both Alpha and Beta releases should be considered <em>unstable</em> and <em>transient</em>. While in Beta, features and implementations might change dramatically and this should be considered the norm.</p>
-<h3 id="versioning">Versioning</h3>
-<p>fusion will use <a href="https://semver.org/">semantic versioning</a> and will distinguish between <em>development</em> builds and <em>release</em> builds by their major version numbers</p>
-<ol>
-<li>Odd major version number are to be considered development versions.</li>
-<li>Even major version number are to be considered release versions.</li>
-</ol>
-<h3 id="what-has-already-been-implemented">What Has Already Been Implemented</h3>
-<ul>
-<li><input checked="" disabled="" type="checkbox"> Support for <em>simple HTML document creation</em> using <em>Pages, Templates and Includes</em>.</li>
-<li><input checked="" disabled="" type="checkbox"> Support for <em>simple token replacement</em> involving <em>front matter property values</em> and <em>matching property names</em> in HTML.</li>
-<li><input checked="" disabled="" type="checkbox"> Support for Typescript <em><code>.tsx</code> components</em>, <em>compilation</em> and <em>sand-boxed execution</em>.</li>
-<li><input checked="" disabled="" type="checkbox"> Support for <em>document hydration</em> using Typescript components and JSON data sources.</li>
-<li><input checked="" disabled="" type="checkbox"> Support for generating <em>collections of pages</em> using Typescript components and JSON data sources.</li>
-<li><input checked="" disabled="" type="checkbox"> Support for base URLs.</li>
-<li><input checked="" disabled="" type="checkbox"> Support for development and release builds.</li>
-<li><input checked="" disabled="" type="checkbox"> Support for content posting (e.g. Blogging)<ul>
-<li><input checked="" disabled="" type="checkbox"> Support for tags.</li>
-<li><input checked="" disabled="" type="checkbox"> Support for categories.</li>
-</ul>
-</li>
-<li><input checked="" disabled="" type="checkbox"> Work in progress templates.<ul>
-<li><input checked="" disabled="" type="checkbox"> Individual files.</li>
-<li><input checked="" disabled="" type="checkbox"> Folders.</li>
-<li><input checked="" disabled="" type="checkbox"> Ignored.</li>
-</ul>
-</li>
-<li><input checked="" disabled="" type="checkbox"> End user project creation.</li>
-<li><input checked="" disabled="" type="checkbox"> Configure website domain.</li>
-</ul>
-<h3 id="what-still-remains-to-be-done">What Still Remains To Be Done</h3>
-<ul>
-<li>Logo, fusion.ssg is desperately in need of a great logo.</li>
-<li>fusionssg.com and documentation is <em>currently under development</em>.</li>
-<li>Encourage early community involvement and adoption.</li>
-<li>Provide sufficient testing to reduce the likelihood of introducing regressions.</li>
-</ul>
-<h3 id="longer-term-goals">Longer Term Goals</h3>
-<ul>
-<li>Seek RFC.</li>
-<li>Accept pull requests when the codebase is stable enough to receive them, which will probably coincide with the first major Alpha release.</li>
-</ul>
-<h2 id="community">Community</h2>
-<p>For help, discussion about best practices, or any other conversation that would benefit from being searchable:</p>
-<p><a href="https://github.com/4awpawz/fusion.ssg/discussions">Discuss _fusion.ssg _on Github</a></p>
-<p>For casual conversation with others about using <em>fusion.ssg</em>:</p>
-<p><a href="https://twitter.com">Discuss _fusion.ssg on Twitter and other social media.</a>.</p>
-<h3 id="show-your-appreciation">Show Your Appreciation</h3>
-<p><a class="github-button" href="https://github.com/4awpawz/fusion.ssg" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star 4awpawz/fusion.ssg on GitHub">Give us a star on GitHub</a></p>
-<p><a class="github-button" href="https://github.com/4awpawz/fusion.ssg/subscription" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-eye" data-size="large" data-show-count="true" aria-label="Watch 4awpawz/fusion.ssg on GitHub">Watch</a></p>
+            </article>
+        </section>
+        <section class="container">
+            <article>
+                <h2 id="the-name">The Name</h2>
+                <p><em>fusion</em> plays on the idea of seamlessly <strong><em>fusing</em></strong> together various technologies, e.g. HTML, Markdown, TypseScript Components, JSON Data, YAML Front Matter, etc., to seamlessly work together to simplify the creation of HTML documents and static websites.</p>
+                <h2 id="project-development">Project Development</h2>
+                <p>The project is written in <code> TypeScript</code> (no excuses, <em>it just works beautifully</em>) and runs on <code>Node</code>.</p>
+                <h2 id="project-scope">Project Scope</h2>
+                <p>The project&#39;s scope is limited to generating robust and resilient HTML documents and nothing else. It will not provide any other tooling other than what is absolutely necessary to accomplish that. Importantly, fusion.ssg requires no knowledge of front-end frameworks like React. This keeps the scope of the project focused, preventing feature creep, and benefits users who will be able to pick and chose their own tools.</p>
+                <h2 id="current-status">Current Status</h2>
+                <p>The project is still in its Alpha/prerelease stage. One or more <em>Beta releases</em> will follow and both Alpha and Beta releases should be considered <em>unstable</em> and <em>transient</em>. While in Beta, features and implementations might change dramatically and this should be considered the norm.</p>
+                <h3 id="versioning">Versioning</h3>
+                <p>fusion will use <a href="https://semver.org/">semantic versioning</a> and will distinguish between <em>development</em> builds and <em>release</em> builds by their major version numbers</p>
+                <ol>
+                    <li>Odd major version number are to be considered development versions.</li>
+                    <li>Even major version number are to be considered release versions.</li>
+                </ol>
+                <h3 id="what-has-already-been-implemented">What Has Already Been Implemented</h3>
+                <ul>
+                    <li><input checked="" disabled="" type="checkbox"> Support for <em>simple HTML document creation</em> using <em>Pages, Templates and Includes</em>.</li>
+                    <li><input checked="" disabled="" type="checkbox"> Support for <em>simple token replacement</em> involving <em>front matter property values</em> and <em>matching property names</em> in HTML.</li>
+                    <li><input checked="" disabled="" type="checkbox"> Support for Typescript <em><code>.tsx</code> components</em>, <em>compilation</em> and <em>sand-boxed execution</em>.</li>
+                    <li><input checked="" disabled="" type="checkbox"> Support for <em>document hydration</em> using Typescript components and JSON data sources.</li>
+                    <li><input checked="" disabled="" type="checkbox"> Support for generating <em>collections of pages</em> using Typescript components and JSON data sources.</li>
+                    <li><input checked="" disabled="" type="checkbox"> Support for base URLs.</li>
+                    <li><input checked="" disabled="" type="checkbox"> Support for development and release builds.</li>
+                    <li><input checked="" disabled="" type="checkbox"> Support for content posting (e.g. Blogging)<ul>
+                            <li><input checked="" disabled="" type="checkbox"> Support for tags.</li>
+                            <li><input checked="" disabled="" type="checkbox"> Support for categories.</li>
+                        </ul>
+                    </li>
+                    <li><input checked="" disabled="" type="checkbox"> Work in progress templates.<ul>
+                            <li><input checked="" disabled="" type="checkbox"> Individual files.</li>
+                            <li><input checked="" disabled="" type="checkbox"> Folders.</li>
+                            <li><input checked="" disabled="" type="checkbox"> Ignored.</li>
+                        </ul>
+                    </li>
+                    <li><input checked="" disabled="" type="checkbox"> End user project creation.</li>
+                    <li><input checked="" disabled="" type="checkbox"> Configure website domain.</li>
+                </ul>
+                <h3 id="what-still-remains-to-be-done">What Still Remains To Be Done</h3>
+                <ul>
+                    <li>Logo, fusion.ssg is desperately in need of a great logo.</li>
+                    <li>fusionssg.com and documentation is <em>currently under development</em>.</li>
+                    <li>Encourage early community involvement and adoption.</li>
+                    <li>Provide sufficient testing to reduce the likelihood of introducing regressions.</li>
+                </ul>
+                <h3 id="longer-term-goals">Longer Term Goals</h3>
+                <ul>
+                    <li>Seek RFC.</li>
+                    <li>Accept pull requests when the codebase is stable enough to receive them, which will probably coincide with the first major Alpha release.</li>
+                </ul>
+                <h2 id="community">Community</h2>
+                <p>For help, discussion about best practices, or any other conversation that would benefit from being searchable:</p>
+                <p><a href="https://github.com/4awpawz/fusion.ssg/discussions">Discuss _fusion.ssg _on Github</a></p>
+                <p>For casual conversation with others about using <em>fusion.ssg</em>:</p>
+                <p><a href="https://twitter.com">Discuss _fusion.ssg on Twitter and other social media.</a>.</p>
+                <h3 id="show-your-appreciation">Show Your Appreciation</h3>
+                <p><a class="github-button" href="https://github.com/4awpawz/fusion.ssg" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star 4awpawz/fusion.ssg on GitHub">Give us a star on GitHub</a></p>
+                <p><a class="github-button" href="https://github.com/4awpawz/fusion.ssg/subscription" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-eye" data-size="large" data-show-count="true" aria-label="Watch 4awpawz/fusion.ssg on GitHub">Watch</a></p>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <nav class="container bottomnav navigation">
+            <ul>
+                <li><a class="contrast" href="/docs">Documentation</a></li>
+                <li><a class="contrast" href="https://github.com/4awpawz/fusion.ssg">GitHub</a></li>
+                <li><a class="contrast " href="https://twitter.com/4awpawz">Twitter</a></li>
+            </ul>
+        </nav>
+        <nav class="container bottomnav attribution">
+            <ul>
+                <li><small>Created by Jeffrey Schwartz</small></li>
+                <li><small>Code Licensed MIT</small></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
 
-                </article>
-            </section>
-        </main>
-        <footer>
-    <nav class="container bottomnav navigation">
-        <ul>
-            <li><a class="contrast" href="/docs">Documentation</a></li>
-            <li><a class="contrast" href="https://github.com/4awpawz/fusion.ssg">GitHub</a></li>
-            <li><a class="contrast "href="https://twitter.com/4awpawz">Twitter</a></li>
-        </ul>
-    </nav>
-    <nav class="container bottomnav attribution">
-        <ul>
-            <li><small>Created by Jeffrey Schwartz</small></li>
-            <li><small>Code Licensed MIT</small></li>
-        </ul>
-    </nav>
-</footer>
-
-    </body>
 </html>
