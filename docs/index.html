@@ -94,7 +94,7 @@
                 <header>
                     <h2>Step 1 - Template + Page</h2>
                 </header>
-                <p>fusions parses the template file, insuring that it contains the required YAML front matter and possibly also content in the form of <em>HTML</em> or <em>markdown</em>. In the template&#39;s front matter, it looks for a property called <em>page</em> whose value is the path to a file located in the project&#39;s <em>src/pages</em> folder. The page file is composed entirely of HTML and it exists to provide the overall structure of your finished HTML document. If fusion.ssg doesn&#39;t find a page property, it defaults to using the <em>src/pages/default.html</em> page. If the template has content, fusion.ssg searches the page&#39;s content for a &quot;<em>&lbrace;&lbrace;template token&rbrace;&rbrace;</em>&quot;, and if it finds it, replaces it with the template&#39;s content. At this point, we have a developing HTML document.</p>
+                <p>fusions parses the template file, insuring that it contains the required YAML front matter and possibly also content in the form of <em>HTML</em> or <em>markdown</em>. In the template&#39;s front matter, it looks for a property called <em>page</em> whose value is the path to a file located in the project&#39;s <em>src/pages</em> folder. The page file is composed entirely of HTML and it exists to provide the overall structure of your finished HTML document. If fusion.ssg doesn&#39;t find a page property, it defaults to using the <em>src/pages/default.html</em> page. If the template has content, fusion.ssg searches the page&#39;s content for a <code>&lbrace;&lbrace;template&rbrace;&rbrace;</code> token, and if it finds it, replaces it with the template&#39;s content. At this point, we have a <em>developing HTML document</em>.</p>
             </article>
             <article>
                 <header>
@@ -106,7 +106,7 @@
                 <header>
                     <h2>Step 3 - Tokens</h2>
                 </header>
-                <p>fusion.ssg now checks if the template&#39;s front matter has declared any tokens and, if it has, replaces all matching tokens, e.g. <code>&lbrace;title&rbrace;</code>, found in the developing HTML document&#39;s content with their corresponding token values.</p>
+                <p>fusion.ssg now checks if the template&#39;s front matter has declared any tokens and, if it has, replaces all matching tokens, e.g. <code>&lbrace;title&rbrace;</code>, found in the developing HTML document&#39;s content with their corresponding token values from the template.</p>
             </article>
             <article>
                 <header>
