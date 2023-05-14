@@ -84,39 +84,37 @@
             <p><mark>We are working very hard to bring you the best documentation possible.</mark></p>
             <p><em>GETTING STARTED</em></p>
             <h1>Synopsis</h1>
-            <h2>Imagining fusion.ssg As An Assembly Line</h2>
-            <p>If you are new to fusion.ssg it will be advantageous for you to begin learning how to use it by having a conceptual understanding of the process that transforms your project&#39;s files into HTML documents. This will make learning fusion.ssg even easier. Therefore, let us begin your journey by imagining an assembly line that is responsible for creating a single HTML document. It has a beginning and an end. Along that assembly line there are numerous points where operations are performed on what is traveling on it. The following describes the operations at each point on that assembly line:</p>
+            <h2>HTML Document Creation - A High Level View</h2>
+            <img src="/media/HTML-Document-Creation-Workflow.png" alt="HTML Document Creation Workflow" />
+            <br>
+            <br>
+            <p>If you are new to working with fusion.ssg, it is advantageous to have a high altitude, conceptual understanding of how it seamlessly fuses together your project&#39;s templates + pages + components + tokens to create HTML documents.</p>
+            <p>The discussion below focuses on the creation of a single HTML document as all HTML documents are subject to the identical workflow.</p>
             <article>
                 <header>
-                    <h2>Gather All Templates</h2>
+                    <h2>Step 1 - Template + Page</h2>
                 </header>
-                <p>Accumulates all the necessary items that will be needed to start producing the finished products. These items are the files of your project, but not all the files, only the ones called <i>templates</i>, which are located in a project&#39;s <em>src/templates</em> folder. You can think of templates as the DNA of a potential HTML document. In its DNA it carries almost all the information needed to build one HTML document. This process passes each template that it has found down the assembly line, one at a time, for further processing.</p>
+                <p>fusions parses the template file, insuring that it contains the required YAML front matter and possibly also content in the form of <em>HTML</em> or <em>markdown</em>. In the template&#39;s front matter, it looks for a property called <em>page</em> whose value is the path to a file located in the project&#39;s <em>src/pages</em> folder. The page file is composed entirely of HTML and it exists to provide the overall structure of your finished HTML document. If fusion.ssg doesn&#39;t find a page property, it defaults to using the <em>src/pages/default.html</em> page. If the template has content, fusion.ssg searches the page&#39;s content for a &quot;<em>&lbrace;&lbrace;template token&rbrace;&rbrace;</em>&quot;, and if it finds it, replaces it with the template&#39;s content. At this point, we have a developing HTML document.</p>
             </article>
             <article>
                 <header>
-                    <h2>Create A Developing HTML Document</h2>
+                    <h2>Step 2 - Components</h2>
                 </header>
-                <p>Analyzes the content of the template file, insuring that it contains the required YAML front matter and possibly also content in the form of <em>HTML</em> or <em>markdown</em>. In the template&#39;s front matter it looks for a property called <em>page</em> whose value points to a file located in a project&#39;s <em>src/pages</em> folder which this template file is <em>associating</em> itself with. The page file is composed entirely of HTML and it exists to provide the overall structure of your finished HTML document. If fusion.ssg doesn&#39;t find a page property, it defaults to using the <em>src/pages/default.html</em> page. If the template has content, fusion.ssg searches the page&#39;s content for a &quot;<em>&lbrace;&lbrace;template token&rbrace;&rbrace;</em>&quot;, and if it finds it, replaces it with the template&#39;s content. At this point, we have a developing HTML document.</p>
+                <p>This is where it begins to get interesting. fusion.ssg searches for all the <em>component tags</em>, e.g. <em>&lt;MyComponent /&gt;</em>, in the developing HTML document&#39;s content. If it finds one or more component tags, fusion.ssg analyzes their <em>properties</em> to determine if they have a <code>dataSources</code> property, which declares their dependency on one or more <em>JSON data sources</em> residing in the project&#39;s <em>src/data</em> folder. If they do, these data sources are now acquired and each component is then called, being passed their data sources along with any other properties that the component tag may have. As each component returns its content in the form of HTML, fusion.ssg replaces the component&#39;s respective tag in the developing HTML document with their content.</p>
             </article>
             <article>
                 <header>
-                    <h2>Apply Component To The Developing HTML Document</h2>
-                </header>
-                <p>This is where things get interesting. fusion.ssg searches for all the <em>component tags</em>, e.g. <em>&lt;MyComponent /&gt;</em>, in the developing HTML document&#39;s content, which now contains the content contributed by the page and possibly by the template. If it finds one or more component tags, fusion.ssg analyzes their <em>properties</em> to discover if they declare their dependency on one or more <em>JSON data sources</em> residing in the project&#39;s <em>src/data</em> folder. If they do, these data sources are now acquired and each component is then called, being passed their data sources along with any other properties that the component tag may have. As each component returns its content in the form of HTML, fusion.ssg replaces the component&#39;s respective tag in the developing HTML document with that content.</p>
-            </article>
-            <article>
-                <header>
-                    <h2>Apply Template Tokens To The Developing HTML Document</h2>
+                    <h2>Step 3 - Tokens</h2>
                 </header>
                 <p>fusion.ssg now searches the template&#39;s front matter for any <em>tokens</em> that it may have declared and, if found, replaces any &quot;<em>&lbrace;simple token&rbrace;</em>&quot; s found in the developing HTML document&#39;s content with their respective values.</p>
             </article>
             <article>
                 <header>
-                    <h2>Serialize The HTML Document</h2>
+                    <h2>Step 4 - Serialize The HTML Document</h2>
                 </header>
-                <p>At this point the HTML document that has been under development is 100% complete. fusion.ssg now serializes it to its respective file in the project&#39;s <em>build</em> folder.</p>
+                <p>At this point the HTML document is now 100% complete. fusion.ssg now serializes it to its respective file in the project&#39;s <em>build</em> folder.</p>
             </article>
-            <p>While the actual process that fusion.ssg uses is quite a bit more complex than what this very high-level overview provides, you should now have a very good conceptual understanding of how fusion.ssg goes about its business of producing HTML documents.</p>
+            <p>While the actual process that fusion.ssg uses is quite a bit more complex than what this high altitude overview provides, you should now have a very good conceptual understanding of how fusion.ssg goes about its business of producing HTML documents.</p>
             <p class="info">The remaining documentation relies heavily on examples. It assumes that you already have some working knowledge of <b>HTML</b>, <b>markdown</b>, <b>YAML front matter</b> and <b>TypeScript components</b>.</p>
             <footer>
                 <nav class="container bottomnav navigation">
