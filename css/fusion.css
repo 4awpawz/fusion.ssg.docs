@@ -53,21 +53,22 @@ pre {
 
 /* site footer */
 
-.bottomnav li a {
-    font-size: var(--font-size);
-}
-.bottomnav.navigation {
+.bottomnav {
     border-top: 1px solid rgba(187,198,206, 0.2);
-    padding: 0;
 }
-.bottomnav.navigation ul li {
-    padding-bottom: 0;
+.bottomnav .navigation {
+    word-spacing: 1rem;
 }
-.bottomnav.attribution {
-    padding: 0;
-}
-.bottomnav.attribution li {
+.bottomnav .navigation a {
+    text-decoration: underline;
     color: var(--muted-color);
+}
+.bottomnav .attribution {
+    margin-top: 1rem;
+    color: var(--muted-color);
+}
+.bottomnav .attribution small:nth-child(2) {
+    margin-left: 1rem;
 }
 
 /* remove detail's widget */
