@@ -19,7 +19,7 @@
     <meta name="description" content="fusion.ssg, a minimal framework for building static websites.">
     <meta name="author" content="4awpaws, Jeffrey Schwartz">
     <meta name="generator" content="fusion.ssg">
-    <title>fusion.ssg: Documentation - projects</title>
+    <title>fusion.ssg: Documentation - Project Structure</title>
     <link rel="stylesheet" href="/css/libs/pico/pico.min.css">
     <link rel="stylesheet" href="/css/libs/highlight/github.min.css">
     <link rel="stylesheet" href="/css/fusion.css">
@@ -52,7 +52,8 @@
                     <summary>getting started</summary>
                     <ul>
                         <li><a class="secondary" href="/docs" aria-current="false">Synopsis</a></li>
-                        <li><a class="secondary" href="/docs/installation" aria-current="false">Installation &amp; Create Your First Project</a></li>
+                        <li><a class="secondary" href="/docs/installation" aria-current="false">Installation</a></li>
+                        <li><a class="secondary" href="/docs/projectgenerator" aria-current="false">Project Generator</a></li>
                         <li><a class="secondary" href="/docs/projectstructure" aria-current="page">Project Structure</a></li>
                     </ul>
                 </details>
@@ -96,31 +97,139 @@
             <p><mark>We are working very hard to bring you the best documentation possible.</mark></p>
             <p><em>GETTING STARTED</em></p>
             <h1 id="project-structure">Project Structure</h1>
+            <p>fusion.ssg projects will contain the files and folders that are depicted below.</p>
+            <p class="info">fusion.ssg's <a href="/docs/projectgenerator">project generator</a> relieves you of the burden of having to manually create and configure your projects.</p>
             <pre>
-my-app/
-├─ .git/
-├─ .meata/
-├─ build/
-├─ lib/
-├─ node_modules/
-├─ src/
-│  ├─ components/
-│  ├─ data/
-│  ├─ etc/
-│  ├─ includes/
-│  ├─ media/
-│  ├─ pages/
-│  ├─ scripts/
-│  ├─ templates/
-│     ├─ posts/
-├─ .eslintignore
-├─ .eslintrc.json
-├─ .gitignore
-├─ .assets.json
-├─ fusion.json
-├─ package.json
-├─ tsconfig.json
+
+  my-app/
+  ├─ .git/
+  ├─ .meta/
+  ├─ build/
+  ├─ lib/
+  ├─ node_modules/
+  ├─ src/
+  │  ├─ components/
+  │  ├─ data/
+  │  ├─ etc/
+  │  ├─ includes/
+  │  ├─ media/
+  │  ├─ pages/
+  │  ├─ scripts/
+  │  ├─ templates/
+  │     ├─ posts/
+  ├─ .eslintignore
+  ├─ .eslintrc.json
+  ├─ .gitignore
+  ├─ .assets.json
+  ├─ fusion.json
+  ├─ package-lock.json
+  ├─ package.json
+  ├─ tsconfig.json
+
 </pre>
+            <h2 id="project-structure-details">Project Structure Details</h2>
+            <table role="grid">
+                <thead>
+                    <tr>
+                        <th>Folder</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>.git</td>
+                        <td>Used by Git.</td>
+                    </tr>
+                    <tr>
+                        <td>.meta</td>
+                        <td>Contains metadata used internally by fusion.ssg during each build cycle.</td>
+                    </tr>
+                    <tr>
+                        <td>build</td>
+                        <td>Contains the output of each build cycle.</td>
+                    </tr>
+                    <tr>
+                        <td>lib</td>
+                        <td>Contains compiled components.</td>
+                    </tr>
+                    <tr>
+                        <td>node_modules</td>
+                        <td>Contains your project's Node packages.</td>
+                    </tr>
+                    <tr>
+                        <td>src</td>
+                        <td>Contains the folders and files used to build your project.</td>
+                    </tr>
+                    <tr>
+                        <td>src/components</td>
+                        <td>Contains components.</td>
+                    </tr>
+                    <tr>
+                        <td>src/data</td>
+                        <td>Contains JSON data sources used by components.</td>
+                    </tr>
+                    <tr>
+                        <td>src/etc</td>
+                        <td>Contains files that will be moved to the root of the build folder at the end of each build cycle, example 404.html.</td>
+                    </tr>
+                    <tr>
+                        <td>src/include</td>
+                        <td>Contains your projects include files.</td>
+                    </tr>
+                    <tr>
+                        <td>src/media</td>
+                        <td>Contains your project's media files.</td>
+                    </tr>
+                    <tr>
+                        <td>src/pages</td>
+                        <td>Contains your project's page files.</td>
+                    </tr>
+                    <tr>
+                        <td>src/scripts</td>
+                        <td>Contains your project's browser script files.</td>
+                    </tr>
+                    <tr>
+                        <td>src/templates</td>
+                        <td>Contains your project's template files.</td>
+                    </tr>
+                    <tr>
+                        <td>src/templates/posts</td>
+                        <td>Contains post markdown files.</td>
+                    </tr>
+                    <tr>
+                        <td>.eslintignore</td>
+                        <td>Contains folders and files to be ignored by eslint.</td>
+                    </tr>
+                    <tr>
+                        <td>.eslintrc.json</td>
+                        <td>eslint configuration file.</td>
+                    </tr>
+                    <tr>
+                        <td>.gitignore</td>
+                        <td>Contains folders and files to be ignored by Git.</td>
+                    </tr>
+                    <tr>
+                        <td>.assets.json</td>
+                        <td>Contains the meta data generated after each build cycle.</td>
+                    </tr>
+                    <tr>
+                        <td>fusion.json</td>
+                        <td>Project's configuration file.</td>
+                    </tr>
+                    <tr>
+                    <tr>
+                        <td>package-lock.json</td>
+                        <td>NPM lock manifest.</td>
+                    </tr>
+                    <td>package.json</td>
+                    <td>NPM package manifest.</td>
+                    </tr>
+                    <tr>
+                        <td>tsconfig.json</td>
+                        <td>Typescript configuration file.</td>
+                    </tr>
+                </tbody>
+            </table>
             <footer class="container bottomnav">
                 <div class="navigation">
                     <a href="/docs">Docs</a>

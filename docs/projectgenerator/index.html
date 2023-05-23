@@ -19,7 +19,7 @@
     <meta name="description" content="fusion.ssg, a minimal framework for building static websites.">
     <meta name="author" content="4awpaws, Jeffrey Schwartz">
     <meta name="generator" content="fusion.ssg">
-    <title>fusion.ssg: Documentation - Tokens</title>
+    <title>fusion.ssg: Documentation - Project Generator</title>
     <link rel="stylesheet" href="/css/libs/pico/pico.min.css">
     <link rel="stylesheet" href="/css/libs/highlight/github.min.css">
     <link rel="stylesheet" href="/css/fusion.css">
@@ -48,21 +48,21 @@
         <aside>
             <nav class="closed-on-mobile">
                 <p class="version">v1.0.0-beta.7</p>
-                <details>
+                <details open>
                     <summary>getting started</summary>
                     <ul>
                         <li><a class="secondary" href="/docs" aria-current="false">Synopsis</a></li>
                         <li><a class="secondary" href="/docs/installation" aria-current="false">Installation</a></li>
-                        <li><a class="secondary" href="/docs/projectgenerator" aria-current="false">Project Generator</a></li>
+                        <li><a class="secondary" href="/docs/projectgenerator" aria-current="page">Project Generator</a></li>
                         <li><a class="secondary" href="/docs/projectstructure" aria-current="false">Project Structure</a></li>
                     </ul>
                 </details>
-                <details open>
+                <details>
                     <summary>html documents</summary>
                     <ul>
                         <li><a class="secondary" href="/docs/htmldocuments/frontmatter" aria-current="false">Front Matter</a></li>
                         <li><a class="secondary" href="/docs/htmldocuments/templates" aria-current="false">Templates</a></li>
-                        <li><a class="secondary" href="/docs/htmldocuments/tokens" aria-current="page">Tokens</a></li>
+                        <li><a class="secondary" href="/docs/htmldocuments/tokens" aria-current="false">Tokens</a></li>
                         <li><a class="secondary" href="/docs/htmldocuments/pages" aria-current="false">Pages</a></li>
                         <li><a class="secondary" href="/docs/htmldocuments/includes" aria-current="false">Includes</a></li>
                         <li><a class="secondary" href="/docs/htmldocuments/jsondatasources" aria-current="false">JSON Data Sources</a></li>
@@ -95,140 +95,20 @@
             <p><mark>Documentation is currently still under development.</mark></p>
             <p><mark>Please be patient with us.</mark></p>
             <p><mark>We are working very hard to bring you the best documentation possible.</mark></p>
-            <p><em>HTML DOCUMENTS</em></p>
-            <h1 id="tokens">Tokens</h1>
-            <p><em>Tokens</em> serve as place holders that are <em>replaced</em> by content intended for the HTML document. fusion.ssg recognizes <em>three</em> types of tokens:</p>
-            <ol>
-                <li><a href="/docs/htmldocuments/tokens#simple-tokens"><em>simple tokens</em></a></li>
-                <li><a href="/docs/htmldocuments/tokens#template-tokens"><em>template tokens</em></a></li>
-                <li><a href="/docs/htmldocuments/tokens#include-tokens"><em>include tokens</em></a></li>
-            </ol>
-            <h2 id="simple-tokens">Simple Tokens</h2>
-            <p><em>syntax: {simple token property name}</em></p>
-            <p>Simple token properties are defined in template front matter, specifically in the <code>tokens</code> object, and their property values replace all matching simple tokens found in the HTML document.</p>
-            <article>
-                <header>
-                    <p class="example">A template that defines three simple token properties.</p>
-                </header>
-                <pre><code class="language-YAML">
----
-page: cat
-tokens: {
-    docTitle: Cats,
-    catName: Felix,
-    breed: Persian
-}
----
-# This is content
-</code></pre> This template defines the following three <em>simple token properties.</em>: <ol>
-                    <li><em>docTitle</em>, with a value of "<em>"Cats"</em>"</li>
-                    <li><em>catName</em> with a value of "<em>"Felix"</em>"</li>
-                    <li><em>breed</em> with a value of "<em>Persian</em>"</li>
-                </ol>
-            </article>
-            <article>
-                <header>
-                    <p class="example">A page with three simple tokens declared.</p>
-                </header>
-                <pre><code class="language-HTML">
-&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-    &lt;head&gt;
-        &lt;meta charset="UTF-8"&gt;
-        &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
-        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-        &lt;title&gt;&lbrace;docTitle&rbrace;-&lbrace;breed&rbrace;&lt/title&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-        &lt;main&gt;
-            &lt;h1&gt;{catName}&lt;/h1&gt;
-            &lbrace;&lbrace;template&rbrace;&rbrace;
-        &lt;/main&gt;
-    &lt;/body&gt;
-&lt;/html&gt;
+            <p><em>GETTING STARTED</em></p>
+            <h1 id="project-generator">Project Generator</h1>
+            <p>fusion.ssg&#39;s project generator relieves you of the burden of having to manually create and configure your projects. When run, it creates your project and also installs all the project&#39;s required dependencies. The most difficult task you will face when creating a new fusion.ssg project is deciding what to name it :).</p>
+            <h2 id="usage">Usage</h2>
+            <p>To create a new project, run the following in your terminal:</p>
+            <pre><code class="language-shell">fusion new [the name of your project]
 </code></pre>
-                <p>All simple tokens declared in the HTML document that match the simple tokens defined in the template will be replaced by their respective values.</p>
-            </article>
-            <article>
-                <header>
-                    <p class="example">The resulting HTML document after three simple tokens have been applied.</p>
-                </header>
-                <pre><code class="language-HTML">
-&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-    &lt;head&gt;
-        &lt;meta charset="UTF-8"&gt;
-        &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
-        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-        &lt;title&gt;Cats-Persian&lt/title&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-        &lt;main&gt;
-            &lt;h1&gt;Felix&lt;/h1&gt;
-            &vellip;
-        &lt;/main&gt;
-    &lt;/body&gt;
-&lt;/html&gt;
+            <p>When you run the above, fusion.ssg will, using the name that you provided, create a new project in a child folder of the current folder.</p>
+            <h2 id="building-and-serving-your-new-project">Building and Serving Your New Project</h2>
+            <p>To build and serve your project, run the following in your terminal:</p>
+            <pre><code class="language-shell">cd [the name of your project]
+npm run development
 </code></pre>
-            </article>
-            <h2 id="template-tokens">Template Tokens</h2>
-            <p><em>syntax: &lbrace;&lbrace;template&rbrace;&rbrace;</em></p>
-            <p>Template tokens are only relevant in <a href="/docs/htmldocuments/pages">pages</a> and are replaced by the content, if any, of their associated templates.</p>
-            <article>
-                <header>
-                    <p class="example">A page with a template token declared.</p>
-                </header>
-                <pre><code class="language-HTML">
-&lt;body&gt;
-    &lt;main&gt;
-        &lbrace;&lbrace;template&rbrace;&rbrace;
-    &lt;/main&gt;
-&lt;/body&gt;
-</code></pre>
-            </article>
-            <article>
-                <header>
-                    <p class="example">The resulting HTML document after the template's content has been applied.</p>
-                </header>
-                <pre><code class="language-HTML">
-&lt;body&gt;
-    &lt;main&gt;
-        &lt;p&gt;Cats are amazing!&lt;p&gt;
-    &lt;/main&gt;
-&lt;/body&gt;
-</code></pre>
-            </article>
-            <h2 id="include-tokens">Include Tokens</h2>
-            <p><em>syntax: &lbrace;&lbrace;path/to/include&rbrace;&rbrace;</em> minus file type</p>
-            <p>Include tokens are relevant in <a href="/docs/htmldocuments/pages">pages</a> and <a href="/docs/htmldocuments/templates">templates</a> and are replaced by their respective <a href="/docs/htmldocuments/includes">include</a>&#39;s content.</p>
-            <article>
-                <header>
-                    <p class="example">A page with two include tokens declared.</p>
-                </header>
-                <pre><code class="language-HTML">
-&lt;body&gt;
-    &lbrace;&lbrace;header&rbrace;&rbrace;
-    &lt;main&gt;
-        &vellip;
-    &lt;/main&gt;
-    &lbrace;&lbrace;footer&rbrace;&rbrace;
-&lt;/body&gt;
-</code></pre>
-            </article>
-            <article>
-                <header>
-                    <p class="example">The resulting HTML document after the two include files' content have been applied.</p>
-                </header>
-                <pre><code class="language-HTML">
-&lt;body&gt;
-    header content...
-    &lt;main&gt;
-        &vellip;
-    &lt;/main&gt;
-    footer content...
-&lt;/body&gt;
-</code></pre>
-            </article>
+            <p class="info">Now that you have created your project, open it in your editor and then read the documentation for <a href="/docs/projectstructure">project structure.</a></p>
             <footer class="container bottomnav">
                 <div class="navigation">
                     <a href="/docs">Docs</a>
