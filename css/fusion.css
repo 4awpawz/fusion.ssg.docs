@@ -224,6 +224,21 @@ p.info::before {
     margin-right: .5rem;
 }
 
+/* Youtube video sources */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+}
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 /* article header example */
 article header p.example::before {
     content: "Example: ";
