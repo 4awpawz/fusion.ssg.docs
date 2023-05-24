@@ -43,7 +43,7 @@ pre {
 /* site menu */
 .topnav {
     position: fixed;
-    z-indes: 99;
+    z-index: 99;
     top: 0;
     right: 0;
     left: 0;
@@ -55,16 +55,16 @@ pre {
 
 .bottomnav {
     border-top: 1px solid rgba(187,198,206, 0.2);
+    word-spacing: 1.5char;
 }
 .bottomnav .navigation {
-    word-spacing: 1rem;
+    margin-bottom: .5rem;
 }
 .bottomnav .navigation a {
     text-decoration: underline;
     color: var(--muted-color);
 }
 .bottomnav .attribution {
-    margin-top: 1rem;
     color: var(--muted-color);
 }
 .bottomnav .attribution small:nth-child(2) {
