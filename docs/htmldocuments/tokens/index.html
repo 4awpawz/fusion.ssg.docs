@@ -47,7 +47,7 @@
     <main class="container">
         <aside>
             <nav class="closed-on-mobile">
-                <p class="version">v1.0.0-beta.7</p>
+                <p class="version">v1.0.0-beta.8</p>
                 <details>
                     <summary>getting started</summary>
                     <ul>
@@ -92,8 +92,6 @@
             </nav>
         </aside>
         <div>
-            <p><mark>Documentation is currently still under development.</mark></p>
-            <p><mark>Please be patient with us.</mark></p>
             <p><mark>We are working very hard to bring you the best documentation possible.</mark></p>
             <p><em>HTML DOCUMENTS</em></p>
             <h1 id="tokens">Tokens</h1>
@@ -104,8 +102,14 @@
                 <li><a href="/docs/htmldocuments/tokens#include-tokens"><em>include tokens</em></a></li>
             </ol>
             <h2 id="simple-tokens">Simple Tokens</h2>
+            <p>fusion.ssg supports <em>two</em> types of simple tokens:</p>
+            <ol>
+                <li>Local simple tokens are defined in a <em>template&#39;s front matter</em></li>
+                <li>Global simple tokens are defined in <em>fusion.json</em>, the project <a href="/docs/configuration">configuration</a> file.</li>
+            </ol>
             <p><em>syntax: {simple token property name}</em></p>
-            <p>Simple token properties are defined in template front matter, specifically in the <code>tokens</code> object, and their property values replace all matching simple tokens found in the HTML document.</p>
+            <h3 id="local-simple-tokens">Local Simple Tokens</h3>
+            <p>Local simple token properties are defined in a template&#39;s front matter, specifically in the <code>tokens</code> object, and their property values replace all matching simple tokens declared in the HTML document. If both a local simple token and a global simple token have the same name <em>the local simple token takes precedence</em>.</p>
             <article>
                 <header>
                     <p class="example">A template that defines three simple token properties.</p>
@@ -171,6 +175,9 @@ tokens: {
 &lt;/html&gt;
 </code></pre>
             </article>
+            <h3 id="global-simple-tokens">Global Simple Tokens</h3>
+            <p class="ver">Introduced in v1.0.0-beta.8</p>
+            <p>Global simple token properties are defined in fusion.json, the project configuration file, specifically in the <code>tokens</code> object, and their property values replace all matching simple tokens declared in <em>all HTML documents</em>. If both a local simple token and a global simple token have the same name <em>the local simple token takes precedence</em>.</p>
             <h2 id="template-tokens">Template Tokens</h2>
             <p><em>syntax: &lbrace;&lbrace;template&rbrace;&rbrace;</em></p>
             <p>Template tokens are only relevant in <a href="/docs/htmldocuments/pages">pages</a> and are replaced by the content, if any, of their associated templates.</p>

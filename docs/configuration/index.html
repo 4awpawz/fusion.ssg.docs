@@ -47,7 +47,7 @@
     <main class="container">
         <aside>
             <nav class="closed-on-mobile">
-                <p class="version">v1.0.0-beta.7</p>
+                <p class="version">v1.0.0-beta.8</p>
                 <details>
                     <summary>getting started</summary>
                     <ul>
@@ -92,8 +92,6 @@
             </nav>
         </aside>
         <div>
-            <p><mark>Documentation is currently still under development.</mark></p>
-            <p><mark>Please be patient with us.</mark></p>
             <p><mark>We are working very hard to bring you the best documentation possible.</mark></p>
             <p><em>CONFIGURATION</em></p>
             <h1 id="fusionsjson">fusions.json</h1>
@@ -102,6 +100,7 @@
                 <li><a href="#postsfolder">postsFolder</a></li>
                 <li><a href="#baseurl">baseURL</a></li>
                 <li><a href="#wips">wips</a></li>
+                <li><a href="#tokens">tokens</a></li>
             </ol>
             <h2 id="postsfolder">postsFolder</h2>
             <p>The name to use for the folder that hosts your site&#39;s <a href="/docs/htmldocuments/posts">posts</a>.</p>
@@ -121,7 +120,7 @@
             </ul>
             <aside>
                 <header>
-                    <p><em>Example</em>: Assisgn the path of the subfolder to use</p>
+                    <p><em>Example</em>: Assign the path of the subfolder to use</p>
                 </header>
                 <pre><code class="language-JSON">
 "baseURL": "/fusion.ssg.docs"
@@ -143,6 +142,16 @@
             <aside>
                 <pre><code class="language-JSON">"wips": ["docs/next-version", "!docs/next-version/index.md"]</code></pre>
                 <p class="info">Files and folders prepended with "!" are <em>negated.</em></p>
+                </footer>
+            </aside>
+            <h2 id="tokens">Tokens</h2>
+            <p class="ver">Introduced in v1.0.0-beta.8</p>
+            <p>These property values replace all matching simple tokens declared in <em>all HTML documents</em>. Please see <a href="/docs/htmldocuments/tokens#simple-tokens">Simple Tokens</a> for more information.</p>
+            <ul>
+                <li>default: {}</li>
+            </ul>
+            <aside>
+                <pre><code class="language-JSON">"tokens": {"version": "v1.0.0"}</code></pre>
                 </footer>
             </aside>
             <footer class="container bottomnav">

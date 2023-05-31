@@ -30,20 +30,18 @@
 </head>
 
 <body>
-    <nav class="container-fluid topnav" style="position: fixed; z-indes: 99; top: 0; right: 0; left: 0; background: #11191f;;">
+    <nav class="container-fluid topnav">
         <ul>
-            <li><a class="contrast fixed" href="/"><img id="navbar-sol" src="/media/sol.png" alt="sol"></a></li>
+            <li><a class="contrast fixed" href="/"><img id="navbar-sol" src="/media/sol.png" alt="sol" /></a></li>
             <li><a class="contrast fixed" href="/"><strong>fusion.ssg</strong></a></li>
         </ul>
         <ul>
+            <li><a class="secondary" href="/#examples">Examples</a></li>
             <li><a class="secondary" href="/docs">Docs</a></li>
-            <li><a class="secondary" href="/posts">News</a></li>
-            <li><a class="secondary" href="/team">Team</a></li>
-            <li><a aria-label="fusion.ssg Github Repositroy" href="https://github.com/4awpawz/fusion.ssg">
-                    <svg id="navbar-github" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" height="16px">
+            <li><a class="secondary" href="/news">News</a></li>
+            <li><a aria-label="fusion.ssg Github Repositroy" href="https://github.com/4awpawz/fusion.ssg"><svg id="navbar-github" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" height="16px">
                         <path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path>
-                    </svg>
-                </a></li>
+                    </svg></a></li>
         </ul>
     </nav>
     <main class="container">
@@ -54,9 +52,9 @@
         <h2 id="project-scope">Project Scope</h2>
         <p>The project&#39;s scope is limited to generating robust and resilient HTML documents and nothing else. It will not provide any other tooling other than what is absolutely necessary to accomplish that. Importantly, fusion.ssg requires no knowledge of front-end frameworks like React. This keeps the scope of the project focused, preventing feature creep, and benefits users who will be able to pick and chose their own tools.</p>
         <h2 id="current-status">Current Status</h2>
-        <p>The project is still in its Alpha/prerelease stage. One or more <em>Beta releases</em> will follow and both Alpha and Beta releases should be considered <em>unstable</em> and <em>transient</em>. While in Beta, features and implementations might change dramatically and this should be considered the norm.</p>
+        <p>The project is still in its v1.0.0-beta stage. Beta releases should be considered <em>stable</em>. While in Beta, features and implementations might change dramatically and this should be considered the norm.</p>
         <h2 id="versioning">Versioning</h2>
-        <p>fusion will use <a href="https://semver.org/">semantic versioning</a> and will distinguish between <em>development</em> builds and <em>release</em> builds by their major version numbers</p>
+        <p>fusion.ssg will use <a href="https://semver.org/">semantic versioning</a> and will distinguish between <em>development</em> and <em>release</em> builds by their major version numbers</p>
         <ol>
             <li>Odd major version number are to be considered development versions.</li>
             <li>Even major version number are to be considered release versions.</li>
@@ -64,10 +62,11 @@
         <h2 id="what-has-already-been-implemented">What Has Already Been Implemented</h2>
         <ul>
             <li><input checked="" disabled="" type="checkbox"> Support for <em>simple HTML document creation</em> using <em>Pages, Templates and Includes</em>.</li>
-            <li><input checked="" disabled="" type="checkbox"> Support for <em>simple token replacement</em> involving <em>front matter property values</em> and <em>matching property names</em> in HTML.</li>
-            <li><input checked="" disabled="" type="checkbox"> Support for Typescript <em><code>.tsx</code> components</em>, <em>compilation</em> and <em>sand-boxed execution</em>.</li>
-            <li><input checked="" disabled="" type="checkbox"> Support for <em>document hydration</em> using Typescript components and JSON data sources.</li>
-            <li><input checked="" disabled="" type="checkbox"> Support for generating <em>collections of pages</em> using Typescript components and JSON data sources.</li>
+            <li><input checked="" disabled="" type="checkbox"> Support for <em>simple token replacement</em> involving property values_ and <em>matching property names</em> in HTML.</li>
+            <li><input checked="" disabled="" type="checkbox"> Support for <em><code>.tsx</code> and <code>.jsx</code> components</em>, <em>compilation</em> and <em>sand-boxed execution</em>.</li>
+            <li><input checked="" disabled="" type="checkbox"> Support for _<code>.ts</code> browser script compilation.</li>
+            <li><input checked="" disabled="" type="checkbox"> Support for <em>document hydration</em> using components and JSON data sources.</li>
+            <li><input checked="" disabled="" type="checkbox"> Support for generating <em>collections of pages</em> using components and JSON data sources.</li>
             <li><input checked="" disabled="" type="checkbox"> Support for base URLs.</li>
             <li><input checked="" disabled="" type="checkbox"> Support for development and release builds.</li>
             <li><input checked="" disabled="" type="checkbox"> Support for content posting (e.g. Blogging)<ul>
@@ -86,15 +85,15 @@
         </ul>
         <h2 id="what-still-remains-to-be-done">What Still Remains To Be Done</h2>
         <ul>
-            <li>Logo, fusion.ssg is desperately in need of a great logo.</li>
-            <li>fusionssg.com and documentation is <em>currently under development</em>.</li>
+            <li>fusion.ssg is desperately in need of a great logo.</li>
+            <li>Documentation is <em>continuously under development</em>.</li>
             <li>Encourage early community involvement and adoption.</li>
             <li>Provide sufficient testing to reduce the likelihood of introducing regressions.</li>
         </ul>
         <h2 id="longer-term-goals">Longer Term Goals</h2>
         <ul>
             <li>Seek RFC.</li>
-            <li>Accept pull requests when the codebase is stable enough to receive them, which will probably coincide with the first major Alpha release.</li>
+            <li>Accept pull requests when the codebase is stable enough to receive them, which will probably coincide with the first major release.</li>
         </ul>
         <h2 id="community">Community</h2>
         <p>For help, discussion about best practices, or any other conversation that would benefit from being searchable:</p>
