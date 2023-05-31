@@ -199,9 +199,8 @@ nav a {
 .hero div p, hero div hgroup p {
     text-align: center;
 }
-.hero #version {
+.hero #version a {
     display: inline-block;
-    margin: 1rem;
     padding: .25rem;
     font-weight: 600;
     font-size: var(--font-size);
