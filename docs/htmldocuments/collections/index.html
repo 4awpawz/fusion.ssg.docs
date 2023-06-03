@@ -95,29 +95,30 @@
             <p><mark>We are working very hard to bring you the best documentation possible.</mark></p>
             <p><em>HTML DOCUMENTS</em></p>
             <h1 id="collections">Collections</h1>
-            <p>A <em>collection</em> consists of <em>two or more</em> HTML documents created using a single <a href="#collection-templates">template</a> and a higher order <a href="#collection-components">component</a>.</p>
+            <section class="container">
+                <div><small>Required: <em>No</em></small></div>
+                <div><small>Type: <em>.tsx</em> and <em>.jsx</em></small></div>
+                <div><small>Return Type: <em>object</em></small></div>
+                <div><small>Project Location: <em>src/components</em></small></div>
+            </section>
+            <p>A <em>collection</em> consists of <em>one or more</em> HTML documents created using a single <a href="#collection-templates">template</a> and a higher order <a href="#collection-component-implementation">collection component</a>.</p>
             <p class="info"><a href="https://github.com/4awpawz/fusion.ssg-flags-of-the-world-demo/tree/development">View this example project that demonstrates using a collection to generate pages for all the flags of the world.</a></p>
+            <p class="info">The following discussion assumes that you have already read <a href="/docs/htmldocuments/components">simple components</a>.</p>
             <h2 id="synopsis">Synopsis</h2>
-            <p>Imagine you have a portfolio of one kind or another and you want to create an HTML document for each of its items. Imagine how tedious and laborious that process would be if you had to do that manually. fusion.ssg provides a much better solution.</p>
-            <p>Simply put, fusion.ssg invokes collection components just like it does <em>&quot;normal&quot;</em> <a href="/docs/htmldocuments/components">components</a>, but invokes them repeatedly until they return nothing. In addition, for each invocation, the component receives an <a href="#arguments">index</a> along with any of the other <a href="/docs/htmldocuments/components#properties">properties</a> it has declared, as well as <a href="/docs/htmldocuments/components#additional-properties"><em>asset</em> and <em>assets</em></a>. The value of this index is initially <em>0</em> and is incremented by <em>1</em> for each subsequent invocation, and can be used, for example, to <em>&quot;iterate&quot;</em> through a data source, one invocation at a time. When the index value is greater than the number of items in the data source, meaning there are no more HTML documents to be generated for this collection, the component returns nothing, which signals to fusion.ssg that it is to stop calling the component.</p>
-            <h2 id="collection-templates">Collection Templates</h2>
-            <p>A <em>collection template</em> is any template that declares a front matter property named <code>isCollection</code> with a value of <code>true</code>.</p>
+            <p>Imagine for the moment that you have a portfolio of one kind or another, and that you want to create an HTML document for each item in the portfolio. Imagine how tedious and laborious that process would be if you had to do that manually. fusion.ssg provides a much better solution.</p>
+            <p>Simply put, fusion.ssg can generate a &quot;collection&quot; of HTML documents using a single <a href="#collection-templates">template</a> and a <a href="#collection-component-implementation">collection component</a> that is called multiple times and that returns objects that define the <a href="#returns">properties</a> an HTML document.</p>
+            <h2 id="collection-component-tags">Collection Component Tags</h2>
+            <p>A <em>collection component tag</em> is any component tag that declares the property <code>isCollection</code>.</p>
             <article>
                 <header>
-                    <p class="example">A collection template.</p>
+                    <p class="example">A collection component tag.</p>
                 </header>
-                <pre><code class="language-html">---
-page: team-member
-isCollection: true
----
-&lt;h1&gt;team&lt;/h1&gt;
-
-&lt;p&gt;Thanks to our team, our rollout has been a success.&lt;/p&gt;
-
-&lt;h2&gt;contributors&lt;/h2&gt;
+                <pre><code class="language-html">&lt;MyComponent isCollection /&gt;
 </code></pre>
             </article>
-            <p>A <em>collection component tag</em> is any component tag that declares a property named <code>isCollection</code>.</p>
+            <p class="info">Collection component tags are applicable within <b>includes</b>, <b>templates</b> and <b>pages</b> but may only appear once in an HTML document.</p>
+            <h2 id="collection-templates">Collection Templates</h2>
+            <p>A <em>collection template</em> is any template that declares a front matter property named <code>isCollection</code> with a value of <code>true</code>.</p>
             <article>
                 <header>
                     <p class="example">A collection template with a collection component tag.</p>
@@ -126,36 +127,32 @@ isCollection: true
 page: team-member
 isCollection: true
 ---
-&lt;h1&gt;team&lt;/h1&gt;
+&lt;h1&gt;Team Member&lt;/h1&gt;
 
-&lt;p&gt;Thanks to our team, our rollout has been a success.&lt;/p&gt;
-
-&lt;h2&gt;contributors&lt;/h2&gt;
 &lt;TeamMember isCollection datasources=&quot;team.json&quot; /&gt;
 </code></pre>
-                <footer>
-                    <p>The above collection component tag also declares a <em>dataSources</em> property whose value is a path to a JSON file that resides in the project's <em>src/data</em> folder.</p>
-                    <p class="info">Collection component tags are applicable within <b>includes</b>, <b>templates</b> and <b>pages</b>.</p>
-                </footer>
             </article>
-            <h2 id="collection-components">Collection Components</h2>
-            <p>A collection component is a higher order component that produces the content for multiple HTML documents (i.e. a collection) and differ from <b><em>simple components</em></b>, which produce content for a single HTML document.</p>
-            <p>The following discussion assumes that you have already read about simple <a href="/docs/htmldocuments/components">components</a>.</p>
+            <h2 id="collection-component-implementation">Collection Component Implementation</h2>
+            <p>Collection components are higher order components that produce multiple HTML documents (i.e. A collection).</p>
+            <p>fusion.ssg repeatedly invokes collection components until they indicate that they shouldn&#39;t be invoked again.</p>
+            <p>For each invocation, the component receives arguments for an <em>index</em>, for <a href="/docs/htmldocuments/components#metadata-properties"><em>asset</em> and <em>assets</em></a>, and for any of the other <a href="/docs/htmldocuments/components#properties">properties</a> that it has declared, such as its data sources.</p>
+            <p>The value of the index is initially set to <em>0</em> and is incremented by <em>1</em> for each subsequent invocation, and can be used, for example, to <em>&quot;iterate&quot;</em> through one or more data sources, one invocation at a time.</p>
+            <p>When there are no more HTML documents to be generate for this collection, the component returns nothing which signals to fusion.ssg that it is to stop calling the component.</p>
             <h3 id="properties-passed-as-arguments">Properties Passed As Arguments</h3>
             <ul>
-                <li><em>asset</em>: the <em>metadata</em> that fusion.ssg has generated for the HTML document that this component is being called for. Components can use the data in this asset when rendering its output for the HTML document.</li>
-                <li><em>assets</em>: a <em>list</em> containing the metadata that fusion.ssg has generated for all HTML documents in your project, i.e. <em>asset[]</em>. As with <em>asset</em>, components also can use this accumulated data when rendering its output for the HTML document, such as for generating lists whose items contain references to other HTML documents. See the example below.</li>
-                <li>index: number, initially set to 0 and incremented by 1 for every subsequent invocation.</li>
+                <li><em>asset</em>: <code>object</code>. The <em>metadata</em> that fusion.ssg has generated for the HTML document that this component is being called for. Components can use the data in this asset when rendering its output for the HTML document.</li>
+                <li><em>assets</em>: <code>asset[]</code>. Contains the metadata that fusion.ssg has generated for all HTML documents in your project. As with <em>asset</em>, components also can use this accumulated data when rendering its output for the HTML document, such as for generating lists whose items contain references to other HTML documents. See the example below.</li>
+                <li>index: <code>number</code>. Initially set to 0 and incremented by 1 for every subsequent invocation.</li>
                 <li><em>dataSources</em>: Components that have this property are recognized as being <em>consumers</em> of one or more data sources. This property is a comma separated lists of <em>JSON file names</em> that are located in your project&#39;s <em>src/data</em> folder. At runtime, fusion.ssg reads each data source, converting them to JavaScript objects, and passes the converted data sources to your component. Data sources passed to your components can be <em>destructured</em> from <em>props</em> using their JSON file name minus the .<em>json</em> extension.</li>
             </ul>
             <h3 id="returns">Returns</h3>
-            <p>When collection components have content to contribute to an HTML document, they return an <em>object</em> with properties for the <em>content</em>, the <em>title</em>, and the <em>name</em> to apply to the HTML document:</p>
+            <p>To generate an HTML document, collection components should always return an <em>object</em> with the following properties:</p>
             <ul>
-                <li>content: <em>string, the content to contribute to this HTML document.</em></li>
-                <li>title: <em>string, will replace the simple title token in the HTML document&#39;s title tag, e.g. &lt;title&gt;&#123;title&#125;&lt;/title&gt;.</em></li>
-                <li>htmlDocumentName: <em>string, the file name for this HTML document.</em></li>
+                <li>content: <code>markdown</code>. This markdown will replace the <a href="/docs/htmldocuments/tokens#template-tokens">template token</a> in the associated page with this content.</li>
+                <li>title: <code>string</code>. Replaces the <a href="/docs/htmldocuments/tokens#simple-tokens">simple token</a> in this HTML document&#39;s title tag, e.g. &lt;title&gt;&#123;title&#125;&lt;/title&gt;.</li>
+                <li>htmlDocumentName: <code>string</code>. The <em>file name</em> for this HTML document.</li>
             </ul>
-            <p>When collection components no longer have content to contribute to an HTML document, they return nothing.</p>
+            <p class="info">When collection components no longer have content to contribute to an HTML document, they return nothing.</p>
             <article>
                 <header>
                     <p class="example">A collection component implementation.</p>

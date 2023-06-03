@@ -98,48 +98,61 @@
             <section class="container">
                 <div><small>Required: <em>No</em></small></div>
                 <div><small>Type: <em>.tsx</em> and <em>.jsx</em></small></div>
-                <div><small>Return Type: <em>string</em></small></div>
+                <div><small>Return Type: <em>markdown</em></small></div>
                 <div><small>Project Location: <em>src/components</em></small></div>
             </section>
-            <h2 id="synopsis">Synopsis</h2>
-            <p class="info">Please note that familiarity with JSX and TSX components is required. Please see these handy guides that provide a <a href="https://www.typescriptlang.org/docs/handbook/jsx.html">deep dive into JSX</a> and a <a href="https://www.typescriptlang.org/docs/handbook/react.html">deep dive into TSX</a>.</p>
-            <p>Components <em>render HTML</em> that replace their associated <em>component tags</em>. They are applicable in <a href="/docs/htmldocuments/includes">includes</a>, <a href="/docs/htmldocuments/templates">templates</a> and <a href="/docs/htmldocuments/pages">pages</a>.</p>
-            <p>fusion.ssg relieves you of the burden of having to configure TypeScript for your project&#39;s components. When building your project, fusion.ssg compiles your project&#39;s <em>TSX</em> components when they are stale and invokes them <em>asynchronously</em> in a <em>sand-boxed</em> environment that supports relative import paths to sub-components and libraries.</p>
-            <h3 id="two-types-of-components">Two Types Of Components</h3>
-            <p>fusion.ssg supports <em>two</em> types of components:</p>
-            <ul>
-                <li><em>components</em>, also called <em>simple components</em>: These components render content for a <em>single</em> HTML document.</li>
-                <li><em>collection components</em>: These are <b><em>higher order</b></em> components that render <em>multiple</em> HTML documents, i.e. Collections, along with their content.</li>
-            </ul>
-            <p class="info">In this document we are only going to cover <b>simple components</b>. However, please also read about <a href="/docs/htmldocuments/collections">collection components</a> too, because they facilitate the generation of collections of pages, something that is very frequently needed in websites.</p>
-            <h2 id="component-implementation">Component Implementation</h2>
-            <p>To use a component, add its component tag to some content, either <em>HTML</em> or <em>markdown</em>.</p>
+            <p class="info">The following assumes you have a familiarity with JSX and TSX components. Please see these handy guides that provide a <a href="https://www.typescriptlang.org/docs/handbook/jsx.html">deep dive into JSX</a> and a <a href="https://www.typescriptlang.org/docs/handbook/react.html">deep dive into TSX</a>.</p>
+            <p>Components are TypeScript or JavaScript functions that <em>return markup</em> which replaces their <em>component tags</em> in HTML documents, and are applicable in <a href="/docs/htmldocuments/includes">includes</a>, <a href="/docs/htmldocuments/templates">templates</a> and <a href="/docs/htmldocuments/pages">pages</a>.</p>
             <article>
                 <header>
-                    <p class="example">A simple component tag with a <b>dataSources</b> property.</p>
+                    <p class="example">A simple component.</p>
                 </header>
-                <pre><code class="language-html">&lt;TeamList dataSources=&quot;team.json&quot; /&gt;
+                <pre><code class="language-javascript">export const HelloWorld = function() {
+    return (
+        &lt;p&gt;Hello World!&lt;/p&gt;
+    );
+};
 </code></pre>
             </article>
-            <h3 id="properties">Properties</h3>
-            <p>Components can reference their individual properties using <em>destructuring</em>, as in <em><code>{[property name]}</code></em> (see <a href="#component-with-datasource">code example below</a>).</p>
-            <h4 id="predefined-properties">Predefined Properties</h4>
-            <p>fusion.ssg recognizes <em>two predefined properties</em> as having special significance:</p>
+            <h3 id="types-of-components">Types Of Components</h3>
+            <p>fusion.ssg supports <em>two</em> types of components:</p>
             <ul>
-                <li><em>isCollection</em>: boolean, defaults to <em>false</em> When set to <em>true</em> component are recognized as being <em>collection components</em>. Please see <a href="/docs/htmldocuments/collections">Collections</a> for details.</li>
-                <li><em>dataSources</em>: a comma separated list of JSON file names, defaults to <em>&quot;&quot;</em> Components that have this property are recognized as being <em>consumers</em> of data sources that are located in your project&#39;s <em>src/data</em> folder, and at runtime fusion.ssg reads each data source, converting them to JavaScript objects, and passes the converted data sources to your component. Data sources passed to your components can be <em>destructured</em> from <em>props</em> using their JSON file name minus the .json extension.</li>
+                <li><em>Simple components</em>, also just called &quot;components&quot;, render markup for a <em>single</em> HTML document.</li>
+                <li><em><a href="/docs/htmldocuments/collections">Collection components</a></em> are <b><em>higher order</b></em> components that are called to render <em>multiple</em> HTML documents.</li>
+            </ul>
+            <p class="info">This document mainly covers simple components.</p>
+            <h2 id="component-tags">Component Tags</h2>
+            <article>
+                <header>
+                    <p class="example">A simple component tag.</p>
+                </header>
+                <pre><code class="language-html">&lt;HelloWorld /&gt;
+</code></pre>
+            </article>
+            <h2 id="component-implementation">Component Implementation</h2>
+            <p class="info">fusion.ssg relieves you of the burden of having to configure TypeScript for your project. When building your project, fusion.ssg compiles your project's components when they are stale and invokes them asynchronously in a sand-boxed environment that supports relative import paths to sub-components and libraries.</p>
+            <h3 id="properties">Properties</h3>
+            <p>Component can reference their individual properties using <em>destructuring</em>, as in <em><code>{[property name]}</code></em> (see <a href="#component-with-datasource">example</a> below).</p>
+            <h4 id="predefined-properties">Predefined Properties</h4>
+            <p>fusion.ssg recognizes <em>two predefined component tag properties</em> as having special significance:</p>
+            <ul>
+                <li><em>isCollection</em>: <code>boolean</code>, default <code>false</code>. When set to <em>true</em> component are recognized as being <em>collection components</em>. Please see <a href="/docs/htmldocuments/collections">Collections</a> for details.</li>
+                <li><em>dataSources</em>: <code>string</code>, default <code>&quot;&quot;</code>. A comma separated list of JSON file names. Components that have this property are recognized as being <em>consumers</em> of data sources that are located in your project&#39;s <em>src/data</em> folder, and at runtime fusion.ssg reads each data source, converting them to JavaScript objects, and passes the converted data sources to your component. Data sources passed to your components can be <em>destructured</em> from <em>props</em> using their JSON file name minus the .json extension. Please see <a href="/docs/htmldocuments/jsondatasources">JSON Datasources</a> for details.</li>
             </ul>
             <h4 id="metadata-properties">Metadata Properties</h4>
+            <p class="info">After each build cycle, fusion.ssg serializes its metadata into a file named <b>project root/.assets.json</b>. This file's content can be viewed and analyzed to determine <em>query strategies</em> for retrieving the data needed to satisfy each individual component's particular use case. In most cases, you want to limit your focus on those items that are <b>"assetType": "template"</b>.</p>
             <p>During each build cycle, fusion.ssg extracts <em>metadata</em> from your project that components can easily query using JavaScript&#39;s higher order Array methods, such as filter and map for example, and incorporate the data retrieved from these queries in HTML documents. For more information on this subject, please read <a href="/docs/metadata">Metadata</a>.</p>
             <ul>
-                <li><em>asset</em>: object, the <em>metadata</em> for the HTML document that <em>this</em> component is being called for. Properties that can be very useful for creating lists of posts or a list of members of a collection are:<ul>
-                        <li><em>isPost</em>: boolean, <code>true</code> if the asset is a post, can be used to filter for all posts</li>
-                        <li><em>memberOf</em>: <code>string</code>, found only on assets that are members of a collection, names the collection that this asset is a member of, can be used to filter for members of the named collection</li>
+                <li><em>asset</em>: <code>object</code>. The <em>metadata</em> that fusion.ssg has generated for the HTML document that this component is being called for. Components can use the data in this asset when rendering its output for the HTML document. For example, the following properties can be useful for creating lists of posts or lists of members of a collection:<ul>
+                        <li><em>isPost</em>: <code>boolean</code>. If present, it identifies this asset as a post, and can be used to filter for all posts.</li>
+                        <li><em>memberOf</em>: <code>string</code>. If present, it identifies this asset as being a member of a collection, and names the collection that this asset is a member of, and can be used to filter for members of the named collection.</li>
                     </ul>
                 </li>
-                <li><em>assets</em>: array, a list of all the <em>metadata</em>, i.e. <em>asset[]</em></li>
+                <li><em>assets</em>: <code>asset[]</code>.</li>
             </ul>
-            <p class="info">After each build cycle, fusion.ssg serializes its metadata into a file named <b>project root/.assets.json</b>. This file's content can be viewed and analyzed to determine <em>query strategies</em> for retrieving the data needed to satisfy each individual component's particular use case. In most cases, you want to limit your focus on those items that are <b>"assetType": "template"</b>.</p>
+            <h3 id="returns">Returns</h3>
+            <p>Components should always return markdown.</p>
+            <h2 id="a-complete-implementation-example">A Complete Implementation Example</h2>
             <article>
                 <header>
                     <p class="example">A template that contains a simple component tag with a dataSources property.</p>
@@ -163,7 +176,7 @@
             </article>
             <article id="component-with-datasource">
                 <header>
-                    <p class="example">A component that consumes a data source and returns a list.</p>
+                    <p class="example">A component implementation that consumes a data source and returns a list.</p>
                 </header>
                 <pre><code class="language-typescript">interface TeamMember {
     &quot;name&quot;: {
@@ -199,7 +212,7 @@ export const TeamMembers = function({ team }: Props): string {
             </article>
             <article>
                 <header>
-                    <p class="example">The component tag is replaced with the HTML returned from the component.</p>
+                    <p class="example">The component tag is replaced with the markdown returned from the component.</p>
                 </header>
                 <pre><code class="language-html">&lt;h1&gt;Team&lt;/h1&gt;
 &lt;p&gt;Thanks to our team our rollout has been a huge success.&lt;/p&gt;
