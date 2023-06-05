@@ -94,7 +94,7 @@
         <div>
             <p><mark>We are working very hard to bring you the best documentation possible.</mark></p>
             <p><em>COMMAND LINE</em></p>
-            <h1 id="usage-from-the-command-line">Usage From The Command Line</h1>
+            <h1 id="cli">CLI</h1>
             <p>The following commands are available through the command line.</p>
             <ul>
                 <li><a href="#fusion-help">fusion help</a></li>
@@ -106,15 +106,23 @@
             </ul>
             <h2 id="commands-directly-supported-by-fusionssg">Commands Directly Supported By fusion.ssg</h2>
             <h3 id="fusion-help">fusion help</h3>
-            <p>Prints help for a supported command, i.e. build, release, new.</p>
+            <p>Prints <em>help</em> for a supported command, i.e. build, release, new.</p>
             <ul>
-                <li>usage: fusion -h|--help &lt;command&gt;</li>
+                <li>usage:</li>
             </ul>
+            <aside>
+                <pre><code class="language-shell">fusion -h | --help [command]</code></pre>
+                </footer>
+            </aside>
             <h3 id="fusion-new">fusion new</h3>
-            <p>Creates a new fusion.ssg project, including all dependencies, in a folder named [project name] with <em>TypeScript</em> and <em>live server</em> support in the current folder.</p>
+            <p>Creates a <em>new</em> fusion.ssg project in a folder named <em>[project name]</em> with <em>TypeScript</em> and <em>live server</em> support in the current folder and installs all project dependencies.</p>
             <ul>
-                <li>usage: fusion -n|--new [project name]</li>
+                <li>usage:</li>
             </ul>
+            <aside>
+                <pre><code class="language-shell">fusion -n|--new [project name]</code></pre>
+                </footer>
+            </aside>
             <p>To create a new project, open your terminal and in a folder of your choice run the following commands:</p>
             <pre><code class="language-shell">fusion new [project name]
 cd [project name]
@@ -122,16 +130,24 @@ npm run development
 </code></pre>
             <p>The above will create the project, install its dependencies, build the project and serve it in the browser.</p>
             <h3 id="fusion-build">fusion build</h3>
-            <p>Directs fusion.ssg to run a one-off development build.</p>
+            <p>Directs fusion.ssg to run a one-off <em>development</em> build.</p>
             <ul>
-                <li>usage: fusion build</li>
+                <li>usage:</li>
             </ul>
+            <aside>
+                <pre><code class="language-shell">fusion build</code></pre>
+                </footer>
+            </aside>
             <p class="info"> must be run from project's root folder. </p>
             <h3 id="fusion-release">fusion release</h3>
-            <p>Directs fusion.ssg to run a one-off release build.</p>
+            <p>Directs fusion.ssg to run a one-off <em>release</em> build.</p>
             <ul>
-                <li>usage: fusion release</li>
+                <li>usage:</li>
             </ul>
+            <aside>
+                <pre><code class="language-shell">fusion release</code></pre>
+                </footer>
+            </aside>
             <p class="info"> Files and folders included in your configuration's <a href="/docs/configuration/#wips">wips</a> are ignored. </p>
             <p class="info">
                 <a href="/docs/configuration/#baseurl">&lbrace;baseURL&rbrace;</a> is applied to URLs.
@@ -139,16 +155,24 @@ npm run development
             <p class="info"> must be run from project's root folder. </p>
             <h2 id="commands-supported-through-project-npm-scripts">Commands Supported Through Project NPM Scripts</h2>
             <h3 id="npm-run-development">npm run development</h3>
-            <p>Watches project&#39;s root/src and root/fusion.json for changes, builds for development, launches live server.</p>
+            <p>Watches project&#39;s <em>root/src</em> and <em>root/fusion.json</em> for changes, builds for <em>development</em>, launches live server.</p>
             <ul>
-                <li>usage: npm run development</li>
+                <li>usage:</li>
             </ul>
+            <aside>
+                <pre><code class="language-shell">npm run development</code></pre>
+                </footer>
+            </aside>
             <p class="info"> must be run from project's root folder. </p>
             <h3 id="npm-run-release">npm run release</h3>
             <p>Watches project&#39;s root/src and root/fusion.json for changes, builds for release, launches live server.</p>
             <ul>
-                <li>usage: npm run release</li>
+                <li>usage:</li>
             </ul>
+            <aside>
+                <pre><code class="language-shell">npm run release</code></pre>
+                </footer>
+            </aside>
             <p class="info"> Files and folders included in your configuration's <a href="/docs/configuration/#wips">wips</a> are ignored. </p>
             <p class="info">
                 <a href="/docs/configuration/#baseurl">&lbrace;baseURL&rbrace;</a> is applied to URLs.
