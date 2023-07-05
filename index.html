@@ -62,7 +62,7 @@
                 <a href="/docs" role="button" class="secondary" aria-label="Documentation" style="margin-right: 10px">Get Started</a>
                 <a href="/docs/installation" role="button" class="contrast outline">Install Now</a>
             </p>
-            <p id="version"><a role="button" class="secondary" href="/news/release/2023/05/31/second public beta/"><small>v1.0.0-beta.8</small></a></p>
+            <p id="version"><a role="button" class="secondary" href="/news/release/v1/2023/07/05/v1.0.0/"><small>New in v1.0.0</small></a></p>
         </div>
     </header>
     <main>
@@ -81,23 +81,23 @@
                     <hgroup>
                         <img src="/media/plato-64.png" alt="Plato">
                         <h3>Philosophy</h3>
-                        <p>A static website generator should enable users to quickly and easily create resilient HTML documents and static websites, shouldn't require its users to to use frameworks that target web apps, and it should get out of your way when you are using it.</p>
+                        <p>The most useful tools are those whose form follows their function and embrace metaphors that directly mirror their utility, excluding those that don't provide additional value to their intended purpose.</p>
                     </hgroup>
                     <hgroup>
                         <img src="/media/home-64.png" alt="Home">
-                        <h3>Familiar</h3>
+                        <h3>Familiarity</h3>
                         <p>fusion.ssg has a very low "barrier to entry" because it seamlessly fuses together concepts that many of you are already familiar with, such as templates, pages, includes, markdown, tokens, and JSX/TSX components.</p>
                     </hgroup>
                 </section>
                 <section class="grid">
                     <hgroup>
                         <img src="/media/tiny-64.png" alt="Home">
-                        <h3>Minimal</h3>
+                        <h3>Minimalistic</h3>
                         <p>fusion.ssg is built from the ground up to be <i>just</i> that and very quick too.</p>
                     </hgroup>
                     <hgroup>
                         <img src="/media/clock-64.png" alt="Home">
-                        <h3>Productive</h3>
+                        <h3>Productivity</h3>
                         <p> No complicated tooling and configuration. fusion.ssg's project generator gets you up and running quickly.</p>
                     </hgroup>
                 </section>
@@ -108,15 +108,15 @@
                 </header>
                 <ul>
                     <li>No initial project configuration is required.</li>
-                    <li>DOMless and serverless, so builds are really very quick.</li>
-                    <li>Create HTML documents using markdown, HTML, tokens, components, JSON data sources and meta data.</li>
+                    <li>DOMless and serverless results in very quick build times.</li>
+                    <li>HTML documents from markdown, HTML, tokens, components, JSON data sources and meta data.</li>
                     <li>Support for .tsx and .jsx components, including sand-boxed execution, and for .ts browser scripts.</li>
                     <li>Portfolio generation via collections.</li>
                     <li>package.json scripts provided for development and release builds.</li>
                     <li>CLI for one-off development and one-off release builds.</li>
                     <li>Base URL support for sites hosted in sub folders.</li>
                     <li>Works in progress for HTML documents that need to be ignored during release builds.</li>
-                    <li>Blogging support, including categories and tags.</li>
+                    <li>Blogging support, including multiple categories and tags.</li>
                     <li>Beautified HTML documents.</li>
                 </ul>
             </article>
@@ -193,7 +193,7 @@ tokens: {
 &lt;h2&gt;Contributors&lt;/h2&gt;
 &lt;TeamMembers datasources=&quot;team.json&quot; /&gt;
 </code></pre>
-                    <p>The simple TeamMembers component implementation.</p>
+                    <p>The simple TeamMembers component implementation in TypeScript.</p>
                     <pre><code class="language-typescript">interface TeamMember {
     &quot;name&quot;: {
         &quot;first&quot;: string,
@@ -210,6 +210,23 @@ function formatName(member: TeamMember): string {
 }
 
 export const TeamMembers = function({ team }: Props): string {
+    return (
+        &lt;ul&gt;
+            {team.map(member =&gt; {
+                return &lt;li&gt;
+                    &lt;p&gt;&lt;{formatName(member)}&lt;/p&gt;
+                &lt;/li&gt;;
+            })}
+        &lt;/ul&gt;
+    );
+};
+</code></pre>
+                    <p>The same simple TeamMembers component but implemented in plain old JavaScript.</p>
+                    <pre><code class="language-javascript">function formatName(member) {
+    return `${member.name.first} ${member.name.last}`;
+}
+
+export const TeamMembers = function({ team } {
     return (
         &lt;ul&gt;
             {team.map(member =&gt; {
@@ -273,12 +290,13 @@ export const TeamMembers = function({ team }: Props): string {
     </main>
     <footer class="container bottomnav">
         <div class="navigation">
-            <a href="/docs">Docs</a>
+            <a href="/docs">Docs | </a>
             <a href="/development">Development</a>
         </div>
         <div class="navigation">
-            <a href="https://github.com/4awpawz/fusion.ssg">GitHub</a>
-            <a href="https://twitter.com/4awpawz">Twitter</a>
+            <a href="https://github.com/4awpawz/fusion.ssg">GitHub | </a>
+            <a href="https://twitter.com/4awpawz">4awpawz.ssg @ Twitter | </a>
+            <a href="https://twitter.com/fusionssg">fusion.ssg @ Twitter | </a>
             <a href="https://www.youtube.com/channel/UCzGhKoH-7wbNoFY_adCYvnA">YouTube</a>
         </div>
         <div class="attribution"><small>Created by <b>Jeffrey Schwartz</b></small></div>

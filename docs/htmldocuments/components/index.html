@@ -47,7 +47,7 @@
     <main class="container">
         <aside>
             <nav class="closed-on-mobile">
-                <p class="version">v1.0.0-beta.8</p>
+                <p class="version">v1.0.0</p>
                 <details>
                     <summary>getting started</summary>
                     <ul>
@@ -69,6 +69,7 @@
                         <li><a class="secondary" href="/docs/htmldocuments/components" aria-current="page">Components</a></li>
                         <li><a class="secondary" href="/docs/htmldocuments/collections" aria-current="false">Collections</a></li>
                         <li><a class="secondary" href="/docs/htmldocuments/posts" aria-current="false">Posts</a></li>
+                        <li><a class="secondary" href="/docs/htmldocuments/404-pages" aria-current="false">404.html</a></li>
                     </ul>
                 </details>
                 <details>
@@ -80,7 +81,8 @@
                 <details>
                     <summary>configuration</summary>
                     <ul>
-                        <li><a class="secondary" href="/docs/configuration" aria-current="false">fusion.json</a></li>
+                        <li><a class="secondary" href="/docs/configuration/fusionssg-configuration" aria-current="false">fusion.ssg</a></li>
+                        <li><a class="secondary" href="/docs/configuration/browsersync-configuration" aria-current="false">Browsersync</a></li>
                     </ul>
                 </details>
                 <details>
@@ -130,14 +132,14 @@
 </code></pre>
             </article>
             <h2 id="component-implementation">Component Implementation</h2>
-            <p class="info">fusion.ssg relieves you of the burden of having to configure TypeScript for your project. When building your project, fusion.ssg compiles your project's components when they are stale and invokes them asynchronously in a sand-boxed environment that supports relative import paths to sub-components and libraries.</p>
+            <p class="info">fusion.ssg relieves you of the burden of having to configure TypeScript for your project. When building your project, fusion.ssg compiles your project's components when they are stale and invokes them asynchronously in a sand-boxed environment.</p>
             <h3 id="properties">Properties</h3>
-            <p>Component can reference their individual properties using <em>destructuring</em>, as in <em><code>{[property name]}</code></em> (see <a href="#component-with-datasource">example</a> below).</p>
+            <p>Component can reference their individual properties using <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment">destructuring</a>, as in <em><code>{[property name]}</code></em> (see <a href="#component-with-datasource">example</a> below).</p>
             <h4 id="predefined-properties">Predefined Properties</h4>
             <p>fusion.ssg recognizes <em>two predefined component tag properties</em> as having special significance:</p>
             <ul>
-                <li><em>isCollection</em>: <code>boolean</code>, default <code>false</code>. When set to <em>true</em> component are recognized as being <em>collection components</em>. Please see <a href="/docs/htmldocuments/collections">Collections</a> for details.</li>
-                <li><em>dataSources</em>: <code>string</code>, default <code>&quot;&quot;</code>. A comma separated list of JSON file names. Components that have this property are recognized as being <em>consumers</em> of data sources that are located in your project&#39;s <em>src/data</em> folder, and at runtime fusion.ssg reads each data source, converting them to JavaScript objects, and passes the converted data sources to your component. Data sources passed to your components can be <em>destructured</em> from <em>props</em> using their JSON file name minus the .json extension. Please see <a href="/docs/htmldocuments/jsondatasources">JSON Datasources</a> for details.</li>
+                <li><em>isCollection</em>: <code>boolean</code>, default <code>false</code>. When set to <em>true</em>, component are recognized as being <em>collection components</em>. Please see <a href="/docs/htmldocuments/collections">Collections</a> for details.</li>
+                <li><em>dataSources</em>: <code>string</code>, default <code>&quot;&quot;</code>. A comma separated list of JSON file names. Components that have this property are recognized as being <em>consumers</em> of data sources that are located in your project&#39;s <em>src/data</em> folder. At runtime, fusion.ssg reads each data source, converting them to JavaScript objects, and passes the converted data sources to your component. Data sources passed to your components can be <em>destructured</em> from <em>props</em> using their JSON file name minus the .json extension. Please see <a href="/docs/htmldocuments/jsondatasources">JSON Datasources</a> for details.</li>
             </ul>
             <h4 id="metadata-properties">Metadata Properties</h4>
             <p class="info">After each build cycle, fusion.ssg serializes its metadata into a file named <b>project root/.assets.json</b>. This file's content can be viewed and analyzed to determine <em>query strategies</em> for retrieving the data needed to satisfy each individual component's particular use case. In most cases, you want to limit your focus on those items that are <b>"assetType": "template"</b>.</p>
@@ -226,12 +228,13 @@ export const TeamMembers = function({ team }: Props): string {
             </article>
             <footer class="container bottomnav">
                 <div class="navigation">
-                    <a href="/docs">Docs</a>
+                    <a href="/docs">Docs | </a>
                     <a href="/development">Development</a>
                 </div>
                 <div class="navigation">
-                    <a href="https://github.com/4awpawz/fusion.ssg">GitHub</a>
-                    <a href="https://twitter.com/4awpawz">Twitter</a>
+                    <a href="https://github.com/4awpawz/fusion.ssg">GitHub | </a>
+                    <a href="https://twitter.com/4awpawz">4awpawz.ssg @ Twitter | </a>
+                    <a href="https://twitter.com/fusionssg">fusion.ssg @ Twitter | </a>
                     <a href="https://www.youtube.com/channel/UCzGhKoH-7wbNoFY_adCYvnA">YouTube</a>
                 </div>
                 <div class="attribution"><small>Created by <b>Jeffrey Schwartz</b></small></div>

@@ -47,7 +47,7 @@
     <main class="container">
         <aside>
             <nav class="closed-on-mobile">
-                <p class="version">v1.0.0-beta.8</p>
+                <p class="version">v1.0.0</p>
                 <details>
                     <summary>getting started</summary>
                     <ul>
@@ -69,6 +69,7 @@
                         <li><a class="secondary" href="/docs/htmldocuments/components" aria-current="false">Components</a></li>
                         <li><a class="secondary" href="/docs/htmldocuments/collections" aria-current="false">Collections</a></li>
                         <li><a class="secondary" href="/docs/htmldocuments/posts" aria-current="false">Posts</a></li>
+                        <li><a class="secondary" href="/docs/htmldocuments/404-pages" aria-current="false">404.html</a></li>
                     </ul>
                 </details>
                 <details>
@@ -80,7 +81,8 @@
                 <details>
                     <summary>configuration</summary>
                     <ul>
-                        <li><a class="secondary" href="/docs/configuration" aria-current="false">fusion.json</a></li>
+                        <li><a class="secondary" href="/docs/configuration/fusionssg-configuration" aria-current="false">fusion.ssg</a></li>
+                        <li><a class="secondary" href="/docs/configuration/browsersync-configuration" aria-current="false">Browsersync</a></li>
                     </ul>
                 </details>
                 <details open>
@@ -95,67 +97,57 @@
             <p><mark>We are working very hard to bring you the best documentation possible.</mark></p>
             <p><em>COMMAND LINE</em></p>
             <h1 id="cli">CLI</h1>
+            <p class="info">Beginning with v1.0.0, fusion.ssg no longer includes a project generator in its package and no longer provides the ability to create new projects directly through its CLI. Please read <a href="/docs/projectgenerator">Project Generator</a> for more information about the new project generator, fpg.</p>
             <p>The following commands are available through the command line.</p>
             <ul>
+                <li><a href="#fusion-version">fusion version</a></li>
                 <li><a href="#fusion-help">fusion help</a></li>
-                <li><a href="#fusion-new">fusion new</a></li>
                 <li><a href="#fusion-build">fusion build</a></li>
                 <li><a href="#fusion-release">fusion release</a></li>
                 <li><a href="#npm-run-development">npm run development</a></li>
                 <li><a href="#npm-run-release">npm run release</a></li>
             </ul>
             <h2 id="commands-directly-supported-by-fusionssg">Commands Directly Supported By fusion.ssg</h2>
+            <h3 id="fusion-version">fusion version</h3>
+            <p>Displays the version.</p>
+            <ul>
+                <li>usage:</li>
+            </ul>
+            <aside>
+                <pre><code class="language-shell">fusion -v | --version</code></pre>
+            </aside>
             <h3 id="fusion-help">fusion help</h3>
-            <p>Prints <em>help</em> for a supported command, i.e. build, release, new.</p>
+            <p>Displays general and command specific <em>help</em>.</p>
             <ul>
                 <li>usage:</li>
             </ul>
             <aside>
-                <pre><code class="language-shell">fusion -h | --help [command]</code></pre>
-                </footer>
+                <pre><code class="language-shell">fusion -h [optional command] | --help [optional command]</code></pre>
             </aside>
-            <h3 id="fusion-new">fusion new</h3>
-            <p>Creates a <em>new</em> fusion.ssg project in a folder named <em>[project name]</em> with <em>TypeScript</em> and <em>live server</em> support in the current folder and installs all project dependencies.</p>
-            <ul>
-                <li>usage:</li>
-            </ul>
-            <aside>
-                <pre><code class="language-shell">fusion -n|--new [project name]</code></pre>
-                </footer>
-            </aside>
-            <p>To create a new project, open your terminal and in a folder of your choice run the following commands:</p>
-            <pre><code class="language-shell">fusion new [project name]
-cd [project name]
-npm run development
-</code></pre>
-            <p>The above will create the project, install its dependencies, build the project and serve it in the browser.</p>
             <h3 id="fusion-build">fusion build</h3>
             <p>Directs fusion.ssg to run a one-off <em>development</em> build.</p>
+            <p>When building for <em>development</em>, the files and folders included in your configuration&#39;s <a href="/docs/configuration/fusionssg-configuration/#wips">wips</a> property are not ignored, and the <a href="/docs/configuration/fusionssg-configuration#baseurl">baseURL</a> property value declared in your project&#39;s configuration file is not applied to all URLs that contain a <em>&lbrace;baseURL&rbrace;</em> token.</p>
             <ul>
                 <li>usage:</li>
             </ul>
             <aside>
-                <pre><code class="language-shell">fusion build</code></pre>
-                </footer>
+                <pre><code class="language-shell">fusion b | build</code></pre>
             </aside>
-            <p class="info"> must be run from project's root folder. </p>
+            <p class="info"> Must be run from project's root folder. </p>
             <h3 id="fusion-release">fusion release</h3>
             <p>Directs fusion.ssg to run a one-off <em>release</em> build.</p>
+            <p>When building for <em>release</em>, the files and folders included in your configuration&#39;s <a href="/docs/configuration/fusionssg-configuration/#wips">wips</a> property are ignored, and the <a href="/docs/configuration/fusionssg-configuration#baseurl">baseURL</a> property value declared in your project&#39;s configuration file is applied to all URLs that contain a <em>&lbrace;baseURL&rbrace;</em> token.</p>
             <ul>
                 <li>usage:</li>
             </ul>
             <aside>
-                <pre><code class="language-shell">fusion release</code></pre>
-                </footer>
+                <pre><code class="language-shell">fusion r | release</code></pre>
             </aside>
-            <p class="info"> Files and folders included in your configuration's <a href="/docs/configuration/#wips">wips</a> are ignored. </p>
-            <p class="info">
-                <a href="/docs/configuration/#baseurl">&lbrace;baseURL&rbrace;</a> is applied to URLs.
-            </p>
-            <p class="info"> must be run from project's root folder. </p>
+            <p class="info"> Must be run from project's root folder. </p>
             <h2 id="commands-supported-through-project-npm-scripts">Commands Supported Through Project NPM Scripts</h2>
             <h3 id="npm-run-development">npm run development</h3>
-            <p>Watches project&#39;s <em>root/src</em> and <em>root/fusion.json</em> for changes, builds for <em>development</em>, launches live server.</p>
+            <p>Watches your project&#39;s <em>root/src</em> and <em>root/fusion.json</em> for changes, and runs <a href="#fusion-build">fusion build</a> for <em>development</em>, and launches Browsersync.</p>
+            <p>When building for <em>development</em>, the files and folders included in your configuration&#39;s <a href="/docs/configuration/fusionssg-configuration/#wips">wips</a> property are not ignored, and the <a href="/docs/configuration/fusionssg-configuration#baseurl">baseURL</a> property value declared in your project&#39;s configuration file is not applied to all URLs that contain a <em>&lbrace;baseURL&rbrace;</em> token.</p>
             <ul>
                 <li>usage:</li>
             </ul>
@@ -163,9 +155,10 @@ npm run development
                 <pre><code class="language-shell">npm run development</code></pre>
                 </footer>
             </aside>
-            <p class="info"> must be run from project's root folder. </p>
+            <p class="info"> Must be run from project's root folder. </p>
             <h3 id="npm-run-release">npm run release</h3>
-            <p>Watches project&#39;s root/src and root/fusion.json for changes, builds for release, launches live server.</p>
+            <p>Watches your project&#39;s root/src and root/fusion.json for changes, and runs <a href="#fusion-release">fusion release</a> for <em>release</em>, and launches Browsersync.</p>
+            <p>When building for <em>release</em>, the files and folders included in your configuration&#39;s <a href="/docs/configuration/fusionssg-configuration#wips">wips</a> property are ignored, and the <a href="/docs/configuration/fusionssg-configuration#baseurl">baseURL</a> property value declared in your project&#39;s configuration file is applied to all URLs that contain a <em>&lbrace;baseURL&rbrace;</em> token.</p>
             <ul>
                 <li>usage:</li>
             </ul>
@@ -173,19 +166,16 @@ npm run development
                 <pre><code class="language-shell">npm run release</code></pre>
                 </footer>
             </aside>
-            <p class="info"> Files and folders included in your configuration's <a href="/docs/configuration/#wips">wips</a> are ignored. </p>
-            <p class="info">
-                <a href="/docs/configuration/#baseurl">&lbrace;baseURL&rbrace;</a> is applied to URLs.
-            </p>
             <p class="info"> Must be run from project's root folder. </p>
             <footer class="container bottomnav">
                 <div class="navigation">
-                    <a href="/docs">Docs</a>
+                    <a href="/docs">Docs | </a>
                     <a href="/development">Development</a>
                 </div>
                 <div class="navigation">
-                    <a href="https://github.com/4awpawz/fusion.ssg">GitHub</a>
-                    <a href="https://twitter.com/4awpawz">Twitter</a>
+                    <a href="https://github.com/4awpawz/fusion.ssg">GitHub | </a>
+                    <a href="https://twitter.com/4awpawz">4awpawz.ssg @ Twitter | </a>
+                    <a href="https://twitter.com/fusionssg">fusion.ssg @ Twitter | </a>
                     <a href="https://www.youtube.com/channel/UCzGhKoH-7wbNoFY_adCYvnA">YouTube</a>
                 </div>
                 <div class="attribution"><small>Created by <b>Jeffrey Schwartz</b></small></div>

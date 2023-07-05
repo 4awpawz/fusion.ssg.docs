@@ -47,7 +47,7 @@
     <main class="container">
         <aside>
             <nav class="closed-on-mobile">
-                <p class="version">v1.0.0-beta.8</p>
+                <p class="version">v1.0.0</p>
                 <details open>
                     <summary>getting started</summary>
                     <ul>
@@ -69,6 +69,7 @@
                         <li><a class="secondary" href="/docs/htmldocuments/components" aria-current="false">Components</a></li>
                         <li><a class="secondary" href="/docs/htmldocuments/collections" aria-current="false">Collections</a></li>
                         <li><a class="secondary" href="/docs/htmldocuments/posts" aria-current="false">Posts</a></li>
+                        <li><a class="secondary" href="/docs/htmldocuments/404-pages" aria-current="false">404.html</a></li>
                     </ul>
                 </details>
                 <details>
@@ -80,7 +81,8 @@
                 <details>
                     <summary>configuration</summary>
                     <ul>
-                        <li><a class="secondary" href="/docs/configuration" aria-current="false">fusion.json</a></li>
+                        <li><a class="secondary" href="/docs/configuration/fusionssg-configuration" aria-current="false">fusion.ssg</a></li>
+                        <li><a class="secondary" href="/docs/configuration/browsersync-configuration" aria-current="false">Browsersync</a></li>
                     </ul>
                 </details>
                 <details>
@@ -105,19 +107,19 @@
                 <header>
                     <h2>Step 1 - Template + Page</h2>
                 </header>
-                <p>fusions parses the template file, insuring that it contains the required YAML front matter and possibly also content in the form of <em>HTML</em> or <em>markdown</em>. In the template&#39;s front matter, it looks for a property called <em>page</em> whose value is the path to a file located in the project&#39;s <em>src/pages</em> folder. The page file is composed entirely of HTML and it exists to provide the overall structure of your finished HTML document. If fusion.ssg doesn&#39;t find a page property, it defaults to using the <em>src/pages/default.html</em> page. If the template has content, fusion.ssg searches the page&#39;s content for a <code>&lbrace;&lbrace;template&rbrace;&rbrace;</code> token, and if it finds it, replaces it with the template&#39;s content. At this point, we have a <em>developing HTML document</em>.</p>
+                <p>fusion.ssg parses the template file, insuring that it contains the required YAML front matter and possibly also content in the form of <em>HTML</em> or <em>markdown</em>. In the template&#39;s front matter, it looks for a property called <em>page</em> whose value is the path to a file located in the project&#39;s <em>src/pages</em> folder. The page file is composed entirely of HTML and it exists to provide the overall structure of your finished HTML document. If fusion.ssg doesn&#39;t find a page property, it defaults to using the <em>src/pages/default.html</em> page. If the template has content, fusion.ssg searches the page&#39;s content for a <code>&lbrace;&lbrace;template&rbrace;&rbrace;</code> token, and if it finds it, replaces it with the template&#39;s content. At this point, we have a <em>developing HTML document</em>.</p>
             </article>
             <article>
                 <header>
                     <h2>Step 2 - Components</h2>
                 </header>
-                <p>This is where it begins to get interesting. fusion.ssg searches for all the <em>component tags</em>, e.g. <em>&lt;MyComponent /&gt;</em>, in the developing HTML document&#39;s content. If it finds one or more component tags, fusion.ssg analyzes their <em>properties</em> to determine if they have a <code>dataSources</code> property, which declares their dependency on one or more <em>JSON data sources</em> residing in the project&#39;s <em>src/data</em> folder. If they do, these data sources are now acquired and each component is then called, being passed their data sources along with any other properties that the component tag may have. As each component returns its content in the form of HTML, fusion.ssg replaces the component&#39;s respective tag in the developing HTML document with their content.</p>
+                <p>This is where it begins to get interesting. fusion.ssg searches for all the <em>component tags</em> (e.g., <em>&lt;MyComponent /&gt;</em>) in the developing HTML document&#39;s content. If it finds one or more component tags, fusion.ssg analyzes their <em>properties</em> to determine if they have a <code>dataSources</code> property, which declares their dependency on one or more <em>JSON data sources</em> residing in the project&#39;s <em>src/data</em> folder. If they do, these data sources are now acquired and each component is then called, being passed their data sources along with any other properties that the component tag may have. As each component returns its content in the form of HTML, fusion.ssg replaces the component&#39;s respective tag in the developing HTML document with their content.</p>
             </article>
             <article>
                 <header>
                     <h2>Step 3 - Tokens</h2>
                 </header>
-                <p>fusion.ssg now checks if the template&#39;s front matter has declared any tokens and, if it has, replaces all matching tokens, e.g. <code>&lbrace;title&rbrace;</code>, found in the developing HTML document&#39;s content with their corresponding token values from the template.</p>
+                <p>fusion.ssg now checks if the template&#39;s front matter and fusion.json, the project&#39;s configuration file, has declared any tokens and, if they have, replaces all matching tokens (e.g., <code>&lbrace;title&rbrace;</code>) found in the developing HTML document&#39;s content with their corresponding token values.</p>
             </article>
             <article>
                 <header>
@@ -126,15 +128,16 @@
                 <p>At this point the HTML document is now 100% complete. fusion.ssg now serializes it to its respective file in the project&#39;s <em>build</em> folder.</p>
             </article>
             <p>While the actual process that fusion.ssg uses is quite a bit more complex than what this high level overview provides, you should now have a very good conceptual understanding of how fusion.ssg goes about its business of producing HTML documents.</p>
-            <p class="info">The remaining documentation relies heavily on examples. It assumes that you already have some working knowledge of <b>HTML</b>, <b>markdown</b>, <b>YAML front matter</b> and <b>TypeScript components</b>.</p>
+            <p class="info">The remaining documentation relies heavily on examples. It assumes that you have some working knowledge of <b>HTML</b>, <b>markdown</b>, <b>YAML front matter</b> and <b>JavaScript</b> or <b>TypeScript components</b>.</p>
             <footer class="container bottomnav">
                 <div class="navigation">
-                    <a href="/docs">Docs</a>
+                    <a href="/docs">Docs | </a>
                     <a href="/development">Development</a>
                 </div>
                 <div class="navigation">
-                    <a href="https://github.com/4awpawz/fusion.ssg">GitHub</a>
-                    <a href="https://twitter.com/4awpawz">Twitter</a>
+                    <a href="https://github.com/4awpawz/fusion.ssg">GitHub | </a>
+                    <a href="https://twitter.com/4awpawz">4awpawz.ssg @ Twitter | </a>
+                    <a href="https://twitter.com/fusionssg">fusion.ssg @ Twitter | </a>
                     <a href="https://www.youtube.com/channel/UCzGhKoH-7wbNoFY_adCYvnA">YouTube</a>
                 </div>
                 <div class="attribution"><small>Created by <b>Jeffrey Schwartz</b></small></div>

@@ -19,7 +19,7 @@
     <meta name="description" content="fusion.ssg, a minimal framework for building static websites.">
     <meta name="author" content="4awpaws, Jeffrey Schwartz">
     <meta name="generator" content="fusion.ssg">
-    <title>fusion.ssg: Documentation - Project Structure</title>
+    <title>fusion.ssg: Documentation - Collections</title>
     <link rel="stylesheet" href="/css/libs/pico/pico.min.css">
     <link rel="stylesheet" href="/css/libs/highlight/github-dark.min.css">
     <link rel="stylesheet" href="/css/fusion.css">
@@ -48,16 +48,16 @@
         <aside>
             <nav class="closed-on-mobile">
                 <p class="version">v1.0.0</p>
-                <details open>
+                <details>
                     <summary>getting started</summary>
                     <ul>
                         <li><a class="secondary" href="/docs" aria-current="false">Synopsis</a></li>
                         <li><a class="secondary" href="/docs/installation" aria-current="false">Installation</a></li>
                         <li><a class="secondary" href="/docs/projectgenerator" aria-current="false">Project Generator</a></li>
-                        <li><a class="secondary" href="/docs/projectstructure" aria-current="page">Project Structure</a></li>
+                        <li><a class="secondary" href="/docs/projectstructure" aria-current="false">Project Structure</a></li>
                     </ul>
                 </details>
-                <details>
+                <details open>
                     <summary>html documents</summary>
                     <ul>
                         <li><a class="secondary" href="/docs/htmldocuments/frontmatter" aria-current="false">Front Matter</a></li>
@@ -69,7 +69,7 @@
                         <li><a class="secondary" href="/docs/htmldocuments/components" aria-current="false">Components</a></li>
                         <li><a class="secondary" href="/docs/htmldocuments/collections" aria-current="false">Collections</a></li>
                         <li><a class="secondary" href="/docs/htmldocuments/posts" aria-current="false">Posts</a></li>
-                        <li><a class="secondary" href="/docs/htmldocuments/404-pages" aria-current="false">404.html</a></li>
+                        <li><a class="secondary" href="/docs/htmldocuments/404-pages" aria-current="page">404.html</a></li>
                     </ul>
                 </details>
                 <details>
@@ -95,155 +95,14 @@
         </aside>
         <div>
             <p><mark>We are working very hard to bring you the best documentation possible.</mark></p>
-            <p><em>GETTING STARTED</em></p>
-            <h1 id="project-structure">Project Structure</h1>
-            <p>fusion.ssg projects will contain the files and folders that are depicted below.</p>
-            <p class="info">fusion.ssg's <a href="/docs/projectgenerator">project generator</a> relieves you of the burden of having to manually create and configure your projects.</p>
-            <pre>
-
-  my-app/
-  ├─ .git/
-  ├─ .meta/
-  ├─ build/
-  │  ├─ &lbrace;baseURL&rbrace;/
-  ├─ lib/
-  ├─ node_modules/
-  ├─ src/
-  │  ├─ components/
-  │  ├─ data/
-  │  ├─ etc/
-  │  ├─ includes/
-  │  ├─ media/
-  │  ├─ pages/
-  │  ├─ scripts/
-  │  ├─ templates/
-  │     ├─ posts/
-  ├─ .eslintignore
-  ├─ .eslintrc.json
-  ├─ .gitignore
-  ├─ .assets.json
-  ├─ browsersync-options.json
-  ├─ browsersync.js
-  ├─ fusion.json
-  ├─ package-lock.json
-  ├─ package.json
-  ├─ tsconfig.json
-
-</pre>
-            <h2 id="project-structure-details">Project Structure Details</h2>
-            <table role="grid">
-                <thead>
-                    <tr>
-                        <th>Folder</th>
-                        <th>Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="lighter-text">.git</td>
-                        <td>Created and used by Git.</td>
-                    </tr>
-                    <tr>
-                        <td class="lighter-text">.meta</td>
-                        <td>Used internally by fusion.ssg during each build cycle.</td>
-                    </tr>
-                    <tr>
-                        <td>build</td>
-                        <td>Contains the output of each development build cycle and is used to host your site during development.</td>
-                    </tr>
-                    <tr>
-                        <td>build/&lbrace;baseURL&rbrace;</td>
-                        <td>Like <em>build</em>, but only for release builds served from a base URL.</td>
-                    </tr>
-                    <tr>
-                        <td>lib</td>
-                        <td>Contains your project's compiled components.</td>
-                    </tr>
-                    <tr>
-                        <td class="lighter-text">node_modules</td>
-                        <td>Contains your project's Node packages.</td>
-                    </tr>
-                    <tr>
-                        <td>src</td>
-                        <td>Contains the files and folders that fusion.ssg reads and processes to generate your static website.</td>
-                    </tr>
-                    <tr>
-                        <td>src/components</td>
-                        <td>Contains .tsx and .jsx components.</td>
-                    </tr>
-                    <tr>
-                        <td>src/data</td>
-                        <td>Contains .json data sources used by components.</td>
-                    </tr>
-                    <tr>
-                        <td>src/etc</td>
-                        <td>Contains files that fusion.ssg will move to the root of the build folder at the end of each build cycle, examples CNAME, favicon.ico, etc.</td>
-                    </tr>
-                    <tr>
-                        <td>src/include</td>
-                        <td>Contains include files, both HTML and markdown.</td>
-                    </tr>
-                    <tr>
-                        <td>src/media</td>
-                        <td>Contains media files.</td>
-                    </tr>
-                    <tr>
-                        <td>src/pages</td>
-                        <td>Contains HTML page files.</td>
-                    </tr>
-                    <tr>
-                        <td>src/scripts</td>
-                        <td>Contains browser script files, both .js and .ts.</td>
-                    </tr>
-                    <tr>
-                        <td>src/templates</td>
-                        <td>Contains HTML and markdown template files.</td>
-                    </tr>
-                    <tr>
-                        <td>src/templates/posts</td>
-                        <td>Contains post markdown files.</td>
-                    </tr>
-                    <tr>
-                        <td class="lighter-text">.eslintignore</td>
-                        <td>Lists the files and folders that eslint is to ignore.</td>
-                    </tr>
-                    <tr>
-                        <td class="lighter-text">.eslintrc.json</td>
-                        <td>Your project's eslint configuration file.</td>
-                    </tr>
-                    <tr>
-                        <td class="lighter-text">.gitignore</td>
-                        <td>Lists the files and folders that Git is to ignore.</td>
-                    </tr>
-                    <tr>
-                        <td>.assets.json</td>
-                        <td>Contains the meta data generated by fusion.ssg during each build cycle.</td>
-                    </tr>
-                    <tr>
-                        <td>browsersync-options.json</td>
-                        <td>Browsersync configuration file for adding and overriding default options for both development and release.</td>
-                    </tr>
-                    <tr>
-                        <td>browsersync.js</td>
-                        <td>Browsersync runtime script.</td>
-                    </tr>
-                    <tr>
-                        <td>fusion.json</td>
-                        <td>Your project's configuration file.</td>
-                    </tr>
-                    <tr>
-                        <td class="lighter-text">package-lock.json</td>
-                        <td>NPM lock manifest.</td>
-                    </tr>
-                    <td class="lighter-text">package.json</td>
-                    <td>NPM package manifest.</td>
-                    </tr>
-                    <tr>
-                        <td class="lighter-text">tsconfig.json</td>
-                        <td>Your project's TypeScript configuration file.</td>
-                    </tr>
-                </tbody>
-            </table>
+            <p><em>HTML DOCUMENTS</em></p>
+            <h1 id="404html">404.html</h1>
+            <p class="ver">Introduced in v1.0.0</p>
+            <section class="container">
+                <div><small>Required: <em>No, but highly suggested.</em></small></div>
+            </section>
+            <p>fusion.ssg supports the generation and correct placement of <em>404.html documents</em>.</p>
+            <p>During each build cycle, when fusion.ssg finds a <a href="/docs/htmldocuments/templates">template</a> named <em>404.md</em> or <em>404.html</em>, it will serialize the generated 404.html document into the root of the <em>build folder</em> for development builds, and into the root of the <em>build/&lbrace;baseURL&rbrace;</em> folder for release builds when <a href="/docs/configuration/fusionssg-configuration#baseurl">baseURL</a> is defined in the project&#39;s configuration file, fusion.json.</p>
             <footer class="container bottomnav">
                 <div class="navigation">
                     <a href="/docs">Docs | </a>

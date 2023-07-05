@@ -47,7 +47,7 @@
     <main class="container">
         <aside>
             <nav class="closed-on-mobile">
-                <p class="version">v1.0.0-beta.8</p>
+                <p class="version">v1.0.0</p>
                 <details>
                     <summary>getting started</summary>
                     <ul>
@@ -69,6 +69,7 @@
                         <li><a class="secondary" href="/docs/htmldocuments/components" aria-current="false">Components</a></li>
                         <li><a class="secondary" href="/docs/htmldocuments/collections" aria-current="false">Collections</a></li>
                         <li><a class="secondary" href="/docs/htmldocuments/posts" aria-current="false">Posts</a></li>
+                        <li><a class="secondary" href="/docs/htmldocuments/404-pages" aria-current="false">404.html</a></li>
                     </ul>
                 </details>
                 <details>
@@ -80,7 +81,8 @@
                 <details>
                     <summary>configuration</summary>
                     <ul>
-                        <li><a class="secondary" href="/docs/configuration" aria-current="false">fusion.json</a></li>
+                        <li><a class="secondary" href="/docs/configuration/fusionssg-configuration" aria-current="false">fusion.ssg</a></li>
+                        <li><a class="secondary" href="/docs/configuration/browsersync-configuration" aria-current="false">Browsersync</a></li>
                     </ul>
                 </details>
                 <details>
@@ -102,11 +104,10 @@
                 <div><small>Project Location: <em>src/templates</em></small></div>
             </section>
             <p class="info">Please note that familiarity with YAML Front Matter is required. Please see this handy guide that provides a <a href="https://support.typora.io/YAML/">deep dive into YAML Front Matter</a>.</p>
-            <p>Every HTML document that fusion.ssg generates requires a template and every template <em>associates</em> with a <a href="/docs/htmldocuments/pages">page</a> using the <em>page</em> <a href="/docs/htmldocuments/frontmatter">front matter</a> property. If a template has its own content, its content will be <em>merged</em> into the page that it associates with, replacing that page&#39;s <a href="/docs/htmldocuments/tokens#template-tokens">template token</a>.</p>
-            <p class="info">When the front matter "page" property is omitted, fusion.ssg will associate the default page, i.e. src/pages/default.html, with the template. If the default.html page doesn't exist, fusion.ssg will display an error.</p>
+            <p>Every HTML document that fusion.ssg generates requires a template and every template <em>associates</em> with a <a href="/docs/htmldocuments/pages">page</a> using the <a href="/docs/htmldocuments/frontmatter">front matter</a> <em>&quot;page&quot;</em> property. If a template has its own content, its content will be <em>merged</em> into the page that it associates with, replacing that page&#39;s <a href="/docs/htmldocuments/tokens#template-tokens">template token</a>. When the front matter &quot;page&quot; property is omitted, fusion.ssg will associate the default page (i.e., src/pages/default.html) with the template. If the default.html page doesn&#39;t exist, fusion.ssg will display an error.</p>
             <article>
                 <header>
-                    <p class="example">A template associated with a page.</p>
+                    <p class="example">A template associated with the page found at src/pages/main.html.</p>
                 </header>
                 <pre><code class="language-YAML">
 ---
@@ -114,18 +115,16 @@ page: main
 ---
 # This is content
     </code></pre>
-                <footer>
-                    <p>This template associates with the page found at src/pages/main.html.</p>
-                </footer>
             </article>
             <footer class="container bottomnav">
                 <div class="navigation">
-                    <a href="/docs">Docs</a>
+                    <a href="/docs">Docs | </a>
                     <a href="/development">Development</a>
                 </div>
                 <div class="navigation">
-                    <a href="https://github.com/4awpawz/fusion.ssg">GitHub</a>
-                    <a href="https://twitter.com/4awpawz">Twitter</a>
+                    <a href="https://github.com/4awpawz/fusion.ssg">GitHub | </a>
+                    <a href="https://twitter.com/4awpawz">4awpawz.ssg @ Twitter | </a>
+                    <a href="https://twitter.com/fusionssg">fusion.ssg @ Twitter | </a>
                     <a href="https://www.youtube.com/channel/UCzGhKoH-7wbNoFY_adCYvnA">YouTube</a>
                 </div>
                 <div class="attribution"><small>Created by <b>Jeffrey Schwartz</b></small></div>

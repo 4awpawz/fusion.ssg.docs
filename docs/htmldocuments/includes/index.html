@@ -47,7 +47,7 @@
     <main class="container">
         <aside>
             <nav class="closed-on-mobile">
-                <p class="version">v1.0.0-beta.8</p>
+                <p class="version">v1.0.0</p>
                 <details>
                     <summary>getting started</summary>
                     <ul>
@@ -69,6 +69,7 @@
                         <li><a class="secondary" href="/docs/htmldocuments/components" aria-current="false">Components</a></li>
                         <li><a class="secondary" href="/docs/htmldocuments/collections" aria-current="false">Collections</a></li>
                         <li><a class="secondary" href="/docs/htmldocuments/posts" aria-current="false">Posts</a></li>
+                        <li><a class="secondary" href="/docs/htmldocuments/404-pages" aria-current="false">404.html</a></li>
                     </ul>
                 </details>
                 <details>
@@ -80,7 +81,8 @@
                 <details>
                     <summary>configuration</summary>
                     <ul>
-                        <li><a class="secondary" href="/docs/configuration" aria-current="false">fusion.json</a></li>
+                        <li><a class="secondary" href="/docs/configuration/fusionssg-configuration" aria-current="false">fusion.ssg</a></li>
+                        <li><a class="secondary" href="/docs/configuration/browsersync-configuration" aria-current="false">Browsersync</a></li>
                     </ul>
                 </details>
                 <details>
@@ -101,11 +103,11 @@
                 <div><small>Type: <em>.html, .md </em></small></div>
                 <div><small>Project Location: <em>src/includes</em></small></div>
             </section>
-            <p>An <em>include</em>, like <a href="/docs/htmldocuments/templates">templates</a> and <a href="/docs/htmldocuments/pages">pages</a>, contributes its content to the HTML document. But unlike those, whose content are generally more specific to the intention of the HTML document, such as its subject matter, main topic, etc., includes are intended to be used to encapsulate blocks of content that are used in multiple HTML documents, such as blocks of meta tags, navbars, footers, sidebars, .etc. Includes also allow you to leverage the benefit of using either markdown or HTML for a particular part of an HTML document.</p>
-            <p>Both pages and templates can incorporate includes using <a href="/docs/htmldocuments/tokens#include-tokens">include tokens</a>, whose syntax is the path to the include file, minus its file type, that resides in the src/includes folder surrounded by double curly braces, e.g. &lbrace;&lbrace;<em>path/to/include</em>&rbrace;&rbrace;.</p>
+            <p>An <em>include</em>, like <a href="/docs/htmldocuments/templates">templates</a> and <a href="/docs/htmldocuments/pages">pages</a>, contributes its content to the HTML document. But unlike those, whose content is generally more specific to the HTML document, such as its subject matter, main topic, etc., includes are intended to be used to encapsulate blocks of content that are used in multiple HTML documents, such as blocks of meta tags, navbars, footers, sidebars, .etc. Includes also allow you to leverage the benefit of using either markdown or HTML for a particular part of an HTML document.</p>
+            <p>Both <em>pages</em> and <em>templates</em> can declare <em>one or more</em> <a href="/docs/htmldocuments/tokens#include-tokens">include tokens</a> that declare the paths, minus their file type, to their respective include files that reside in the src/includes folder.</p>
             <article>
                 <header>
-                    <p class="example">A page with two include tokens.</p>
+                    <p class="example">A page with two include tokens, &lbrace;&lbrace;navbar&rbrace;&rbrace; and &lbrace;&lbrace;footer&rbrace;&rbrace;.</p>
                 </header>
                 <pre><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
@@ -125,17 +127,18 @@
 &lt;/html&gt;
 </code></pre>
                 <footer>
-                    <p>This page's include tokens will be replaced by the their respective include files' content.</p>
+                    <p>This page's include tokens will be replaced by the content from their respective include files'.</p>
                 </footer>
             </article>
             <footer class="container bottomnav">
                 <div class="navigation">
-                    <a href="/docs">Docs</a>
+                    <a href="/docs">Docs | </a>
                     <a href="/development">Development</a>
                 </div>
                 <div class="navigation">
-                    <a href="https://github.com/4awpawz/fusion.ssg">GitHub</a>
-                    <a href="https://twitter.com/4awpawz">Twitter</a>
+                    <a href="https://github.com/4awpawz/fusion.ssg">GitHub | </a>
+                    <a href="https://twitter.com/4awpawz">4awpawz.ssg @ Twitter | </a>
+                    <a href="https://twitter.com/fusionssg">fusion.ssg @ Twitter | </a>
                     <a href="https://www.youtube.com/channel/UCzGhKoH-7wbNoFY_adCYvnA">YouTube</a>
                 </div>
                 <div class="attribution"><small>Created by <b>Jeffrey Schwartz</b></small></div>

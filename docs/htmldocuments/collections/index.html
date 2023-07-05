@@ -47,7 +47,7 @@
     <main class="container">
         <aside>
             <nav class="closed-on-mobile">
-                <p class="version">v1.0.0-beta.8</p>
+                <p class="version">v1.0.0</p>
                 <details>
                     <summary>getting started</summary>
                     <ul>
@@ -69,6 +69,7 @@
                         <li><a class="secondary" href="/docs/htmldocuments/components" aria-current="false">Components</a></li>
                         <li><a class="secondary" href="/docs/htmldocuments/collections" aria-current="page">Collections</a></li>
                         <li><a class="secondary" href="/docs/htmldocuments/posts" aria-current="false">Posts</a></li>
+                        <li><a class="secondary" href="/docs/htmldocuments/404-pages" aria-current="false">404.html</a></li>
                     </ul>
                 </details>
                 <details>
@@ -80,7 +81,8 @@
                 <details>
                     <summary>configuration</summary>
                     <ul>
-                        <li><a class="secondary" href="/docs/configuration" aria-current="false">fusion.json</a></li>
+                        <li><a class="secondary" href="/docs/configuration/fusionssg-configuration" aria-current="false">fusion.ssg</a></li>
+                        <li><a class="secondary" href="/docs/configuration/browsersync-configuration" aria-current="false">Browsersync</a></li>
                     </ul>
                 </details>
                 <details>
@@ -133,7 +135,7 @@ isCollection: true
 </code></pre>
             </article>
             <h2 id="collection-component-implementation">Collection Component Implementation</h2>
-            <p>Collection components are higher order components that produce multiple HTML documents (i.e. A collection).</p>
+            <p>Collection components are higher order components that produce multiple HTML documents.</p>
             <p>fusion.ssg repeatedly invokes collection components until they indicate that they shouldn&#39;t be invoked again.</p>
             <p>For each invocation, the component receives arguments for an <em>index</em>, for <a href="/docs/htmldocuments/components#metadata-properties"><em>asset</em> and <em>assets</em></a>, and for any of the other <a href="/docs/htmldocuments/components#properties">properties</a> that it has declared, such as its data sources.</p>
             <p>The value of the index is initially set to <em>0</em> and is incremented by <em>1</em> for each subsequent invocation, and can be used, for example, to <em>&quot;iterate&quot;</em> through one or more data sources, one invocation at a time.</p>
@@ -149,7 +151,7 @@ isCollection: true
             <p>To generate an HTML document, collection components should always return an <em>object</em> with the following properties:</p>
             <ul>
                 <li>content: <code>markdown</code>. This markdown will replace the <a href="/docs/htmldocuments/tokens#template-tokens">template token</a> in the associated page with this content.</li>
-                <li>title: <code>string</code>. Replaces the <a href="/docs/htmldocuments/tokens#simple-tokens">simple token</a> in this HTML document&#39;s title tag, e.g. &lt;title&gt;&#123;title&#125;&lt;/title&gt;.</li>
+                <li>title: <code>string</code>. Replaces the <a href="/docs/htmldocuments/tokens#simple-tokens">simple token</a> in this HTML document&#39;s title tag (e.g., &lt;title&gt;&#123;title&#125;&lt;/title&gt;).</li>
                 <li>htmlDocumentName: <code>string</code>. The <em>file name</em> for this HTML document.</li>
             </ul>
             <p class="info">When collection components no longer have content to contribute to an HTML document, they return nothing.</p>
@@ -195,12 +197,13 @@ export const TeamMember = function({ team, index }: Props): { content: unknown, 
             </article>
             <footer class="container bottomnav">
                 <div class="navigation">
-                    <a href="/docs">Docs</a>
+                    <a href="/docs">Docs | </a>
                     <a href="/development">Development</a>
                 </div>
                 <div class="navigation">
-                    <a href="https://github.com/4awpawz/fusion.ssg">GitHub</a>
-                    <a href="https://twitter.com/4awpawz">Twitter</a>
+                    <a href="https://github.com/4awpawz/fusion.ssg">GitHub | </a>
+                    <a href="https://twitter.com/4awpawz">4awpawz.ssg @ Twitter | </a>
+                    <a href="https://twitter.com/fusionssg">fusion.ssg @ Twitter | </a>
                     <a href="https://www.youtube.com/channel/UCzGhKoH-7wbNoFY_adCYvnA">YouTube</a>
                 </div>
                 <div class="attribution"><small>Created by <b>Jeffrey Schwartz</b></small></div>

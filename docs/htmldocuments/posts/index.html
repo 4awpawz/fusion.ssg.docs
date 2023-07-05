@@ -47,7 +47,7 @@
     <main class="container">
         <aside>
             <nav class="closed-on-mobile">
-                <p class="version">v1.0.0-beta.8</p>
+                <p class="version">v1.0.0</p>
                 <details>
                     <summary>getting started</summary>
                     <ul>
@@ -69,6 +69,7 @@
                         <li><a class="secondary" href="/docs/htmldocuments/components" aria-current="false">Components</a></li>
                         <li><a class="secondary" href="/docs/htmldocuments/collections" aria-current="false">Collections</a></li>
                         <li><a class="secondary" href="/docs/htmldocuments/posts" aria-current="page">Posts</a></li>
+                        <li><a class="secondary" href="/docs/htmldocuments/404-pages" aria-current="false">404.html</a></li>
                     </ul>
                 </details>
                 <details>
@@ -80,7 +81,8 @@
                 <details>
                     <summary>configuration</summary>
                     <ul>
-                        <li><a class="secondary" href="/docs/configuration" aria-current="false">fusion.json</a></li>
+                        <li><a class="secondary" href="/docs/configuration/fusionssg-configuration" aria-current="false">fusion.ssg</a></li>
+                        <li><a class="secondary" href="/docs/configuration/browsersync-configuration" aria-current="false">Browsersync</a></li>
                     </ul>
                 </details>
                 <details>
@@ -104,10 +106,10 @@
             <p>Posts are specialized <a href="/docs/htmldocuments/templates">templates</a> that can be useful for creating any <em>blog</em> type HTML documents, or any type of HTML document that would benefit from a chronologically ordered folder structure, <em>tags</em> and <em>categories</em>.</p>
             <p class="info">In metadata, posts can identified by their <b>"isPost": true</b> property.</p>
             <h2 id="naming-convention">Naming Convention</h2>
-            <p>Unlike all other templates, post templates have a strict naming convention, e.g . 2023-02-28-upsidedown-cake.md, which allows fusion.ssg to structure your posts chronologically. Post template names must begin with the year, -, month, -, and day, i.e. YYYY-MM-DD, followed by a dash, i.e. -, and ending with the actual file name, including its type, i.e. [file name].md|html.</p>
+            <p>Unlike all other templates, post templates have a strict naming convention, e.g . 2023-02-28-upsidedown-cake.md, which allows fusion.ssg to structure your posts chronologically. Post template names must begin with the year, -, month, -, and day (i.e., YYYY-MM-DD), followed by a dash (i.e., -), and ending with the actual file name, including its type, i.e. [file name].md|html.</p>
             <p>For example, a post without categories (see below) named <em>2023-02-28-upsidedown-cake.md</em> would be rendered to the posts folder as 2003/02/28/upsidedown-cake/index.html, and a post with categories &quot;recipes, cakes&quot; named <em>2023-02-28-upsidedown-cake.md</em> would be rendered to the posts folder as recipes/cakes/2003/02/28/upsidedown-cake/index.html.</p>
             <h2 id="categories">Categories</h2>
-            <p>Categories are strictly for rendering posts in a particular <em>folder hierarchy</em>. For example, a post with a single category, such as <em>&quot;recipes&quot;</em> would be rendered in the &quot;posts/recipes/&quot; folder and a post with two categories, such as <em>&quot;recipes, cakes and pies&quot;</em> would be rendered in the &quot;posts/recipes/cakes and pies&quot; folder/.</p>
+            <p>Categories are strictly for rendering posts in a particular <em>folder hierarchy</em>. For example, a post with a single category, such as <em>&quot;recipes&quot;</em>, would be rendered in the &quot;posts/recipes/&quot; folder and a post with two categories, such as <em>&quot;recipes, cakes and pies&quot;</em>, would be rendered in the &quot;posts/recipes/cakes and pies&quot; folder/.</p>
             <p>Categories are declared in a post&#39;s front matter as shown below:</p>
             <pre><code class="laguage-HTML">
 post: {
@@ -124,7 +126,7 @@ post: {
 </code></pre>
             <article>
                 <header>
-                    <p class="example">A post with multiple <em>tags</em> and categories.</p>
+                    <p class="example">A post with a <em>tag</em> and multiple categories.</p>
                 </header>
                 <pre><code class="laguage-HTML">
 ---
@@ -144,12 +146,13 @@ Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus quo dolor dol
             </article>
             <footer class="container bottomnav">
                 <div class="navigation">
-                    <a href="/docs">Docs</a>
+                    <a href="/docs">Docs | </a>
                     <a href="/development">Development</a>
                 </div>
                 <div class="navigation">
-                    <a href="https://github.com/4awpawz/fusion.ssg">GitHub</a>
-                    <a href="https://twitter.com/4awpawz">Twitter</a>
+                    <a href="https://github.com/4awpawz/fusion.ssg">GitHub | </a>
+                    <a href="https://twitter.com/4awpawz">4awpawz.ssg @ Twitter | </a>
+                    <a href="https://twitter.com/fusionssg">fusion.ssg @ Twitter | </a>
                     <a href="https://www.youtube.com/channel/UCzGhKoH-7wbNoFY_adCYvnA">YouTube</a>
                 </div>
                 <div class="attribution"><small>Created by <b>Jeffrey Schwartz</b></small></div>
