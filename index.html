@@ -81,24 +81,24 @@
                     <hgroup>
                         <img src="/media/plato-64.png" alt="Plato">
                         <h3>Philosophy</h3>
-                        <p>The most useful tools are those whose form follows their function and embrace metaphors that directly mirror their utility, excluding those that don't provide additional value to their intended purpose.</p>
+                        <p>The most useful tools are those that embrace only those metaphors that directly reflect their utility.</p>
                     </hgroup>
                     <hgroup>
                         <img src="/media/home-64.png" alt="Home">
                         <h3>Familiarity</h3>
-                        <p>fusion.ssg has a very low "barrier to entry" because it seamlessly fuses together concepts that many of you are already familiar with, such as templates, pages, includes, markdown, tokens, and JSX/TSX components.</p>
+                        <p>fusion.ssg seamlessly fuses together familiar concepts, such as templates, pages, includes, markdown, tokens, and JSX/TSX components.</p>
                     </hgroup>
                 </section>
                 <section class="grid">
                     <hgroup>
+                        <img src="/media/clock-64.png" alt="Home">
+                        <h3>Productivity</h3>
+                        <p> No complicated tooling and configuration to stand in the way of your creativity, and the project generator gets you up and creating quickly.</p>
+                    </hgroup>
+                    <hgroup>
                         <img src="/media/tiny-64.png" alt="Home">
                         <h3>Minimalistic</h3>
                         <p>fusion.ssg is built from the ground up to be <i>just</i> that and very quick too.</p>
-                    </hgroup>
-                    <hgroup>
-                        <img src="/media/clock-64.png" alt="Home">
-                        <h3>Productivity</h3>
-                        <p> No complicated tooling and configuration. fusion.ssg's project generator gets you up and running quickly.</p>
                     </hgroup>
                 </section>
             </article>
@@ -128,17 +128,17 @@
                 </header>
                 <article>
                     <header>
-                        <h3>HTML Document Creation Using A Template and a Page</h3>
+                        <h3>HTML Document From A Template And Page</h3>
                     </header>
-                    <p>A template with content and front matter that contains a simple token property.</p>
-                    <pre><code class="language-html">---
+                    <p>Template with front matter with two token values:</p>
+                    <pre><code class="language-markdown">---
 tokens: {
-    pageTitle: Greetings
+    pageTitle: Greetings,
+    greeting: Hello World
 }
 ---
-&lt;h1&gt;Hello World&lt;/h1&gt;
 </code></pre>
-                    <p>A page with a simple token and a template token.</p>
+                    <p>Page with two tokens:</p>
                     <pre><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
     &lt;head&gt;
@@ -149,12 +149,12 @@ tokens: {
     &lt;/head&gt;
     &lt;body&gt;
         &lt;main&gt;
-            {{template}}
+            &lt;h1&gt;{greeting}&lt;/h1&gt;
         &lt;/main&gt;
     &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-                    <p>The generated page.</p>
+                    <p>Generated HTML Document:</p>
                     <pre><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
     &lt;head&gt;
@@ -173,27 +173,44 @@ tokens: {
                 </article>
                 <article>
                     <header>
-                        <h3>HTML Document Creation Using A Simple Component That Generates A List Of Team Members</h3>
+                        <h3>HTML Document Using A Component To Generates A List</h3>
                     </header>
-                    <p>The team.json data source.</p>
+                    <p>team.json data source:</p>
                     <pre><code class="language-json">[
 {&quot;name&quot;: { &quot;first&quot;: &quot;John&quot;, &quot;last&quot;: &quot;Doe&quot; }},
 {&quot;name&quot;: { &quot;first&quot;: &quot;Jane&quot;, &quot;last&quot;: &quot;Doe&quot; }},
 {&quot;name&quot;: { &quot;first&quot;: &quot;Julia&quot;, &quot;last&quot;: &quot;Doe&quot; }}
 ]
 </code></pre>
-                    <p>A template with a simple TeamMembers component tag that declares team.json as a data source.</p>
+                    <p>Template with a TeamMembers component tag that declares team.json as a data source:</p>
                     <pre><code class="language-html">---
 tokens: {
     pageTitle: Team Members
 }
 ---
-&lt;h1&gt;team&lt;/h1&gt;
+&lt;h1&gt;Team&lt;/h1&gt;
 &lt;p&gt;Thanks to our team our rollout has been a huge success.&lt;/p&gt;
 &lt;h2&gt;Contributors&lt;/h2&gt;
 &lt;TeamMembers datasources=&quot;team.json&quot; /&gt;
 </code></pre>
-                    <p>The simple TeamMembers component implementation in TypeScript.</p>
+                    <p>TeamMembers component implemented in <strong>JavaScript</strong>:</p>
+                    <pre><code class="language-javascript">function formatName(member) {
+    return `${member.name.first} ${member.name.last}`;
+}
+
+export const TeamMembers = function({ team } {
+    return (
+        &lt;ul&gt;
+            {team.map(member =&gt; {
+                return &lt;li&gt;
+                    &lt;p&gt;&lt;{formatName(member)}&lt;/p&gt;
+                &lt;/li&gt;;
+            })}
+        &lt;/ul&gt;
+    );
+};
+</code></pre>
+                    <p>TeamMembers component implementation in <strong>TypeScript</strong>:</p>
                     <pre><code class="language-typescript">interface TeamMember {
     &quot;name&quot;: {
         &quot;first&quot;: string,
@@ -221,24 +238,7 @@ export const TeamMembers = function({ team }: Props): string {
     );
 };
 </code></pre>
-                    <p>The same simple TeamMembers component but implemented in plain old JavaScript.</p>
-                    <pre><code class="language-javascript">function formatName(member) {
-    return `${member.name.first} ${member.name.last}`;
-}
-
-export const TeamMembers = function({ team } {
-    return (
-        &lt;ul&gt;
-            {team.map(member =&gt; {
-                return &lt;li&gt;
-                    &lt;p&gt;&lt;{formatName(member)}&lt;/p&gt;
-                &lt;/li&gt;;
-            })}
-        &lt;/ul&gt;
-    );
-};
-</code></pre>
-                    <p>The template&#39;s associated page.</p>
+                    <p>Page:</p>
                     <pre><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
@@ -254,7 +254,7 @@ export const TeamMembers = function({ team } {
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-                    <p>The generated page.</p>
+                    <p>Generated HTML Document:</p>
                     <pre><code class="language-html">&lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
     &lt;meta charset=&quot;UTF-8&quot;&gt;
