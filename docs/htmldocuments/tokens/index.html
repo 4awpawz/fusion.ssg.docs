@@ -47,7 +47,7 @@
     <main class="container">
         <aside>
             <nav class="closed-on-mobile">
-                <p class="version">v1.0.0</p>
+                <p class="version">v1.1.0</p>
                 <details>
                     <summary>getting started</summary>
                     <ul>
@@ -164,6 +164,9 @@ tokens: {
 &lt;/html&gt;
 </code></pre>
             </article>
+            <h3 id="unresolved-simple-token-reporting">Unresolved Simple Token Reporting</h3>
+            <p class="ver">Introduced in v1.1.0</p>
+            <p>At the end of each build cycle, fusion.ssg will report any unresolved simple tokens that it finds in your project&#39;s generated HTML documents. These warnings indicate that either the token name has been misspelled or that its value has not been declared.</p>
             <h2 id="template-tokens">Template Tokens</h2>
             <p><em>syntax: &lbrace;&lbrace;template&rbrace;&rbrace;</em></p>
             <p>Template tokens are only relevant in <a href="/docs/htmldocuments/pages">pages</a> and are replaced by the content of their associated <a href="/docs/htmldocuments/templates">templates</a>.</p>
