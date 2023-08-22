@@ -19,6 +19,12 @@
     <meta name="description" content="fusion.ssg, a minimal framework for building static websites.">
     <meta name="author" content="4awpaws, Jeffrey Schwartz">
     <meta name="generator" content="fusion.ssg">
+    <meta property="og:title" content="A Minimal Framework for Static Websites">
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="fusion.ssg propels your static website development to a whole new level!">
+    <meta property="og:image" content="https://fusionssg.com/media/social/640x569-solar-energy.png">
+    <meta property="og:url" content="https://fusionssg.com">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="/css/libs/pico/pico.min.css">
     <link rel="stylesheet" href="/css/libs/highlight/github-dark.min.css">
     <link rel="stylesheet" href="/css/fusion.css">
@@ -26,7 +32,7 @@
     <script>
         hljs.highlightAll();
     </script>
-    <title>News</title>
+    <title>What's Coming in the next release</title>
 </head>
 
 <body>
@@ -45,18 +51,46 @@
         </ul>
     </nav>
     <main class="container">
-        <h1>News</h1>
+        <hgroup>
+            <h1>What's Coming in the next release</h1>
+            <p>Posted <span style="color: #fff;">8/22/2023</span></p>
+        </hgroup>
         <article>
-            <h1 id="articles">Articles</h1>
+            <p>In our pursuit to provide you with the best tools for creating resilient static HTML documents and web sites, the next release of fusion.ssg will feature numerous enhancements (please see below for details).</p>
+            <!-- end -->
+            <p>We are so thrilled to see fusion.ssg being adopted by creators from all over the world ❤️.</p>
+            <p>Sincerely,</p>
+            <p>The Team</p>
+            <h3 id="conditional-includes">Conditional Includes</h3>
+            <p>Conditional includes will allow you to designate that an include&#39;s content is relevant for <em>release builds only</em> or is relevant for <em>development builds only</em>.</p>
+            <p>To support this feature, includes will now support the use of <em>front matter</em> in which <em>one</em> of the following declarations may be used but <em>not</em> both:</p>
             <ul>
-                <li style="list-style: none;"><a href="/news/release/v1/2023/08/22/what-is-coming-in-the-next-release/" style="display: block;"><span style="font-size: calc(var(--font-size) * 1.2)">What's Coming in the next release</span><br /><small>Posted on <span style="color: #fff;">8/22/2023</span> to release/v1</small><br /><small style="color: #fff;">In our pursuit to provide you with the best tools for creating resilient static HTML documents and web sites, the next release of fusion.ssg will feature numerous enhancements (please see below for details). </small></a></li>
-                <li style="list-style: none;"><a href="/news/release/v1/2023/08/03/v1.1.0/" style="display: block;"><span style="font-size: calc(var(--font-size) * 1.2)">v1.1.0</span><br /><small>Posted on <span style="color: #fff;">8/3/2023</span> to release/v1</small><br /><small style="color: #fff;">We are very pleased to announce the release of fusion.ssg v1.1.0. </small></a></li>
-                <li style="list-style: none;"><a href="/news/release/v1/2023/07/05/v1.0.0/" style="display: block;"><span style="font-size: calc(var(--font-size) * 1.2)">v1.0.0</span><br /><small>Posted on <span style="color: #fff;">7/5/2023</span> to release/v1</small><br /><small style="color: #fff;">It is with great pleasure that we announce our first production release, fusion.ssg v1.0.0. </small></a></li>
-                <li style="list-style: none;"><a href="/news/release/2023/06/28/v1.0.0-progress-report/" style="display: block;"><span style="font-size: calc(var(--font-size) * 1.2)">v1.0.0 Development Progress Report</span><br /><small>Posted on <span style="color: #fff;">6/28/2023</span> to release</small><br /><small style="color: #fff;">There are numerous tasks that still need to be addressed. </small></a></li>
-                <li style="list-style: none;"><a href="/news/release/2023/06/05/changes to semantic versioning/" style="display: block;"><span style="font-size: calc(var(--font-size) * 1.2)">Changes To Semantic Versioning</span><br /><small>Posted on <span style="color: #fff;">6/5/2023</span> to release</small><br /><small style="color: #fff;">We are changing how we use semantic versioning for development builds. </small></a></li>
-                <li style="list-style: none;"><a href="/news/release/2023/05/31/second public beta/" style="display: block;"><span style="font-size: calc(var(--font-size) * 1.2)">Second Public Beta Release</span><br /><small>Posted on <span style="color: #fff;">5/31/2023</span> to release</small><br /><small style="color: #fff;">We are very pleased to announce the second public release of fusion.ssg, v1.0.0-beta.8. </small></a></li>
-                <li style="list-style: none;"><a href="/news/release/2023/05/17/first public beta/" style="display: block;"><span style="font-size: calc(var(--font-size) * 1.2)">First Public Beta Release</span><br /><small>Posted on <span style="color: #fff;">5/17/2023</span> to release</small><br /><small style="color: #fff;">We are very pleased to announce the first public release of fusion.ssg, v1.0.0-beta.7. </small></a></li>
+                <li><code>developmentOnly: true</code>, designates that this include&#39;s content is relevant for development builds only .</li>
             </ul>
+            <pre><code class="language-html">---
+developmentOnly: true
+---
+</code></pre>
+            <ul>
+                <li><code>releaseOnly: true</code>, designates that this include&#39;s content is relevant for release builds only.</li>
+            </ul>
+            <pre><code class="language-html">---
+releaseOnly: true
+---
+</code></pre>
+            <p>So, for example, should your site include some content that is only relevant in a release build, such as when adding Google analytics to your site&#39;s HTML documents for example, you will now be able to exclude generating analytics tags when building your site for development.</p>
+            <h3 id="wips-reporting-during-release-builds">WIPS Reporting During Release Builds</h3>
+            <p>fusion.ssg will now report all WIPS for each release build cycle. These warnings will serve to prevent the <em>unintended</em> updating of web sites with missing HTML documents that should have been included but aren&#39;t because they are still marked as WIPS.</p>
+            <img src="/media/posts/WIPS-reporting.png" alt="imgage">
+            <h3 id="exposing-more-post-metadata-as-simple-token-values">Exposing More Post Metadata As Simple Token Values</h3>
+            <p>When tokenizing a post, fusion.ssg will now expose a post&#39;s <em>post date</em>, <em>categories</em>, and <em>tags</em> as simple token values, allowing them to be used as simple tokens in your templates, pages and includes. This will serve to mitigate the need of having to use a component just to include these in your HTML documents.</p>
+            <ul>
+                <li>&lbrace;postDate&rbrace;: the post&#39;s post date, derived from its file name, transformed to a locale date string.</li>
+                <li>&lbrace;categories&rbrace;: the post&#39;s categories, declared in the post&#39;s front matter, transformed to a path where each categories are separated from each other using &quot;/&quot;.</li>
+                <li>&lbrace;tags&rbrace;: the post&#39;s tags, declared in the post&#39;s front matter, as a comma separated list.</li>
+            </ul>
+            <h3 id="tokenization-metric-reporting">Tokenization Metric Reporting</h3>
+            <p>fusion.ssg will now include metrics for tokenization.</p>
         </article>
     </main>
     <footer class="container bottomnav">
