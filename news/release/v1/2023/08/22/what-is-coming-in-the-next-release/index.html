@@ -53,7 +53,7 @@
     <main class="container">
         <hgroup>
             <h1>What's Coming in the next release</h1>
-            <p>Posted <span style="color: #fff;">8/22/2023</span></p>
+            <p>Posted on 8/22/2023 to release/v1</p>
         </hgroup>
         <article>
             <p>In our pursuit to provide you with the best tools for creating resilient static HTML documents and web sites, the next release of fusion.ssg will feature numerous enhancements (please see below for details).</p>
@@ -86,7 +86,7 @@ releaseOnly: true
             <p>When tokenizing a post, fusion.ssg will now expose a post&#39;s <em>post date</em>, <em>categories</em>, and <em>tags</em> as simple token values, allowing them to be used as simple tokens in your templates, pages and includes. This will serve to mitigate the need of having to use a component just to include these in your HTML documents.</p>
             <ul>
                 <li>&lbrace;postDate&rbrace;: the post&#39;s post date, derived from its file name, transformed to a locale date string.</li>
-                <li>&lbrace;categories&rbrace;: the post&#39;s categories, declared in the post&#39;s front matter, transformed to a path where each categories are separated from each other using &quot;/&quot;.</li>
+                <li>&lbrace;categories&rbrace;: the post&#39;s categories, declared in the post&#39;s front matter, transformed to a path where multiple categories are separated from each other using &quot;/&quot;.</li>
                 <li>&lbrace;tags&rbrace;: the post&#39;s tags, declared in the post&#39;s front matter, as a comma separated list.</li>
             </ul>
             <h3 id="tokenization-metric-reporting">Tokenization Metric Reporting</h3>
