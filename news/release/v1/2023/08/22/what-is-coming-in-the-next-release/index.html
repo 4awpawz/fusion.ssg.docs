@@ -56,12 +56,12 @@
             <p>Posted on <i style="color: #fff; opacity: 0.555;">8/22/2023</i> to <i style="color: #fff; opacity: 0.555;">release/v1</i></p>
         </hgroup>
         <article>
-            <p class="info">This page has been amended on 9/2/2023 to include the notice that the feature cache busting will be included in the next release.</p>
             <p>In our pursuit to provide you with the best tools for creating resilient static HTML documents and web sites, the next release of fusion.ssg will feature numerous enhancements (please see below for details).</p>
             <!-- end -->
             <p>We are so thrilled to see fusion.ssg being adopted by creators from all over the world ❤️.</p>
             <p>Sincerely,</p>
             <p>The Team</p>
+            <p class="info">This page has been amended on 9/2/2024 to include the notice that the feature cache busting will be included in the next release.</p>
             <h3 id="cache-busting">Cache Busting</h3>
             <img style="float: left; border-radius: 50%; shape-outside: circle(); margin-right: 10px;" src="/media/posts/buster.bb8f8cfb12c191dc1fed61aadc5e152e.png" alt="image" width="100">
             <p>The next release of fusion.ssg will make cache busting your web sites a snap 🫰🏼. When building for release, fusion.ssg will now <em>optionally</em> cache bust your site's assets (e.g. css, media, scripts, .etc), allowing your site's visitors to immediately experience its latest changes. Specifically, to <em>opt in to cache busting your release builds</em>, you will need to append <code>--cache-bust</code> to the <em>release:fusion</em> script located in your project's <em>package.json</em> file. Once appended, the release:fusion script should look exactly like the following:</p>
