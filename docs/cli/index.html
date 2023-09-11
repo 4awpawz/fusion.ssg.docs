@@ -47,7 +47,7 @@
     <main class="container">
         <aside>
             <nav class="closed-on-mobile">
-                <p class="version">v1.1.0</p>
+                <p class="version">v1.2.0</p>
                 <details>
                     <summary>getting started</summary>
                     <ul>
@@ -97,18 +97,74 @@
             <p><mark>We are working very hard to bring you the best documentation possible.</mark></p>
             <p><em>COMMAND LINE</em></p>
             <h1 id="cli">CLI</h1>
-            <p class="info">Beginning with v1.0.0, fusion.ssg no longer includes a project generator in its package and no longer provides the ability to create new projects directly through its CLI. Please read <a href="/docs/projectgenerator">Project Generator</a> for more information about the new project generator, fpg.</p>
-            <p>The following commands are available through the command line.</p>
+            <p class="info">Beginning with v1.0.0, fusion.ssg no longer includes a project generator in its package and no longer provides the ability to create new projects directly through its CLI. Please read <a href="/docs/projectgenerator">Project Generator</a> for more information about how to create a new project using <b><em>fpg</em></b>.</p>
+            <p>fusion.ssg&#39;s CLI supports the following workflows and options:</p>
             <ul>
-                <li><a href="#fusion-version">fusion version</a></li>
-                <li><a href="#fusion-help">fusion help</a></li>
-                <li><a href="#fusion-build">fusion build</a></li>
-                <li><a href="#fusion-release">fusion release</a></li>
-                <li><a href="#npm-run-development">npm run development</a></li>
-                <li><a href="#npm-run-release">npm run release</a></li>
+                <li><a href="#development-workflows">Development Workflows</a></li>
+                <li><a href="#release-workflows">Release Workflows</a></li>
+                <li><a href="#optional-cache-busting-of-release-builds">Optional Cache Busting Of Release Builds</a></li>
+                <li><a href="#version">Version</a></li>
+                <li><a href="#help">Help</a></li>
             </ul>
-            <h2 id="commands-directly-supported-by-fusionssg">Commands Directly Supported By fusion.ssg</h2>
-            <h3 id="fusion-version">fusion version</h3>
+            <h2 id="development-workflows">Development Workflows</h2>
+            <p>When building for <em>development</em>, the files and folders included in your configuration&#39;s <a href="/docs/configuration/fusionssg-configuration/#wips">wips</a> property are not ignored, and the <a href="/docs/configuration/fusionssg-configuration#baseurl">baseURL</a> property value declared in your project&#39;s configuration file is not applied to all URLs that contain a <em>&lbrace;baseURL&rbrace;</em> token.</p>
+            <p class="info">The following commands must all be run from the project's root folder.</p>
+            <h3 id="watch-build-serve">Watch, Build, Serve</h3>
+            <p>Watches your project&#39;s <em>root/src</em> and <em>root/fusion.json</em> for changes, and runs <code>fusion build</code>, and launches Browsersync.</p>
+            <ul>
+                <li>usage:</li>
+            </ul>
+            <aside>
+                <pre><code class="language-shell">npm run development</code></pre>
+            </aside>
+            <h3 id="one-off-builds">One Off Builds</h3>
+            <ul>
+                <li>usage:</li>
+            </ul>
+            <aside>
+                <pre><code class="language-shell">npm run development:fusion</code></pre>
+            </aside>
+            <p>or</p>
+            <aside>
+                <pre><code class="language-shell">fusion b | build</code></pre>
+            </aside>
+            <h2 id="release-workflows">Release Workflows</h2>
+            <p>When building for <em>release</em>, the files and folders included in your configuration&#39;s <a href="/docs/configuration/fusionssg-configuration#wips">wips</a> property are ignored, and the <a href="/docs/configuration/fusionssg-configuration#baseurl">baseURL</a> property value declared in your project&#39;s configuration file is applied to all URLs that contain a <em>&lbrace;baseURL&rbrace;</em> token.</p>
+            <p class="info">The following commands must all be run from the project's root folder.</p>
+            <h3 id="watch-release-serve">Watch, Release, Serve</h3>
+            <p>Watches your project&#39;s <em>root/src</em> and <em>root/fusion.json</em> for changes, and runs <code>fusion release</code>, and launches Browsersync.</p>
+            <ul>
+                <li>usage:</li>
+            </ul>
+            <aside>
+                <pre><code class="language-shell">npm run release</code></pre>
+            </aside>
+            <h3 id="one-off-releases">One Off Releases</h3>
+            <ul>
+                <li>usage:</li>
+            </ul>
+            <aside>
+                <pre><code class="language-shell">npm run release:fusion</code></pre>
+            </aside>
+            <p>or</p>
+            <aside>
+                <pre><code class="language-shell">fusion r | release</code></pre>
+            </aside>
+            <h2 id="optional-cache-busting-of-release-builds">Optional Cache Busting Of Release Builds</h2>
+            <p class="ver">Introduced in v1.2.0</p>
+            <p>When building for release, fusion.ssg can <em>optionally</em> cache bust your site&#39;s assets (e.g. css, media, scripts, .etc), allowing your site&#39;s visitors to immediately experience its latest changes. fusion.ssg handles all the details, so no additional configuration or changes to your project, other than those described below, are required.</p>
+            <p>To <em>opt in to cache busting</em>, you can do <em>one or both</em> of the following:</p>
+            <ul>
+                <li>
+                    <p>Append <code>--cache-bust</code> to the end of the <em>release:fusion script</em> located in your project&#39;s <em>package.json</em> file, i.e. <code>&quot;release:fusion&quot;: &quot;fusion release --cache-bust&quot;</code>.</p>
+                </li>
+                <li>
+                    <p>Run <code>fusion r | release --cache-bust</code>.</p>
+                </li>
+            </ul>
+            <p class="info">fusion.ssg relies on <a href="https://github.com/4awpawz/buster">Buster</a>, which is a very capable and resilient cache busting tool developed by the same team that brings you fusion.ssg, to implement its cache busting.</p>
+            <h2 id="other-commands-supported-by-the-cli">Other Commands Supported By The CLI</h2>
+            <h3 id="version">Version</h3>
             <p>Displays the version.</p>
             <ul>
                 <li>usage:</li>
@@ -116,57 +172,14 @@
             <aside>
                 <pre><code class="language-shell">fusion -v | --version</code></pre>
             </aside>
-            <h3 id="fusion-help">fusion help</h3>
+            <h3 id="help">Help</h3>
             <p>Displays general and command specific <em>help</em>.</p>
             <ul>
                 <li>usage:</li>
             </ul>
             <aside>
-                <pre><code class="language-shell">fusion -h [optional command] | --help [optional command]</code></pre>
+                <pre><code class="language-shell">fusion -h | --help [optional command]</code></pre>
             </aside>
-            <h3 id="fusion-build">fusion build</h3>
-            <p>Directs fusion.ssg to run a one-off <em>development</em> build.</p>
-            <p>When building for <em>development</em>, the files and folders included in your configuration&#39;s <a href="/docs/configuration/fusionssg-configuration/#wips">wips</a> property are not ignored, and the <a href="/docs/configuration/fusionssg-configuration#baseurl">baseURL</a> property value declared in your project&#39;s configuration file is not applied to all URLs that contain a <em>&lbrace;baseURL&rbrace;</em> token.</p>
-            <ul>
-                <li>usage:</li>
-            </ul>
-            <aside>
-                <pre><code class="language-shell">fusion b | build</code></pre>
-            </aside>
-            <p class="info"> Must be run from project's root folder. </p>
-            <h3 id="fusion-release">fusion release</h3>
-            <p>Directs fusion.ssg to run a one-off <em>release</em> build.</p>
-            <p>When building for <em>release</em>, the files and folders included in your configuration&#39;s <a href="/docs/configuration/fusionssg-configuration/#wips">wips</a> property are ignored, and the <a href="/docs/configuration/fusionssg-configuration#baseurl">baseURL</a> property value declared in your project&#39;s configuration file is applied to all URLs that contain a <em>&lbrace;baseURL&rbrace;</em> token.</p>
-            <ul>
-                <li>usage:</li>
-            </ul>
-            <aside>
-                <pre><code class="language-shell">fusion r | release</code></pre>
-            </aside>
-            <p class="info"> Must be run from project's root folder. </p>
-            <h2 id="commands-supported-through-project-npm-scripts">Commands Supported Through Project NPM Scripts</h2>
-            <h3 id="npm-run-development">npm run development</h3>
-            <p>Watches your project&#39;s <em>root/src</em> and <em>root/fusion.json</em> for changes, and runs <a href="#fusion-build">fusion build</a> for <em>development</em>, and launches Browsersync.</p>
-            <p>When building for <em>development</em>, the files and folders included in your configuration&#39;s <a href="/docs/configuration/fusionssg-configuration/#wips">wips</a> property are not ignored, and the <a href="/docs/configuration/fusionssg-configuration#baseurl">baseURL</a> property value declared in your project&#39;s configuration file is not applied to all URLs that contain a <em>&lbrace;baseURL&rbrace;</em> token.</p>
-            <ul>
-                <li>usage:</li>
-            </ul>
-            <aside>
-                <pre><code class="language-shell">npm run development</code></pre>
-                </footer>
-            </aside>
-            <p class="info"> Must be run from project's root folder. </p>
-            <h3 id="npm-run-release">npm run release</h3>
-            <p>Watches your project&#39;s root/src and root/fusion.json for changes, and runs <a href="#fusion-release">fusion release</a> for <em>release</em>, and launches Browsersync.</p>
-            <p>When building for <em>release</em>, the files and folders included in your configuration&#39;s <a href="/docs/configuration/fusionssg-configuration#wips">wips</a> property are ignored, and the <a href="/docs/configuration/fusionssg-configuration#baseurl">baseURL</a> property value declared in your project&#39;s configuration file is applied to all URLs that contain a <em>&lbrace;baseURL&rbrace;</em> token.</p>
-            <ul>
-                <li>usage:</li>
-            </ul>
-            <aside>
-                <pre><code class="language-shell">npm run release</code></pre>
-                </footer>
-            </aside>
-            <p class="info"> Must be run from project's root folder. </p>
             <footer class="container bottomnav">
                 <div class="navigation">
                     <a href="/docs">Docs | </a>

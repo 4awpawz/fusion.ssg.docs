@@ -47,7 +47,7 @@
     <main class="container">
         <aside>
             <nav class="closed-on-mobile">
-                <p class="version">v1.1.0</p>
+                <p class="version">v1.2.0</p>
                 <details open>
                     <summary>getting started</summary>
                     <ul>
@@ -100,23 +100,14 @@
             <p class="ver">Introduced in v1.0.0</p>
             <p class="info">Beginning with v1.0.0, fusion.ssg no longer includes a project generator in its package and now requires that it be installed separately as a global package. Please read <a href="/docs/installation">Installation</a> for instructions regarding its installation.</p>
             <p class="info">Beginning with v1.0.0, <a href="https://browsersync.io/">Browsersync</a>, which provides synchronized browser testing, has replaced live-server.</p>
-            <p><em>fpg</em>, fusion.ssg&#39;s project generator, relieves you of the burden of having to manually create and configure your projects. When run, it creates your project and also installs all of the project&#39;s dependencies. The most difficult task you will face when creating a new fusion.ssg project is deciding what to name it :).</p>
+            <p><em>fpg</em>, fusion.ssg&#39;s project generator, relieves you of the burden of having to manually create and configure your projects. When run, it <em><strong>creates your project and installs all of the project&#39;s dependencies</strong></em>. The most difficult task you will face when creating a new fusion.ssg project is deciding what to name it :).</p>
             <h2 id="usage">Usage</h2>
             <p>To create a new project, run the following in your terminal in a folder of your choice:</p>
             <pre><code class="language-shell">fpg n | new &lt;target_folder&gt;
 </code></pre>
-            <p>When you run the above, fusion.ssg will generate a new project in the current folder using the name that you provided for <em>target_folder</em>.</p>
-            <h2 id="building-and-serving-your-new-project">Building and Serving Your New Project</h2>
-            <p>Two NPM scripts, <em>development</em> and <em>release</em>, are provided in the project&#39;s package.json file for building and serving your project. To build and serve your project for development, run the following in your terminal</p>
-            <pre><code class="language-shell">cd target_folder
-npm run development
-</code></pre>
-            <p>and to build and serve your project for release, run the following in your terminal.</p>
-            <pre><code class="language-shell">cd target_folder
-npm run release
-</code></pre>
-            <p class="info">Please also see <a href="/docs/cli">CLI</a> for additional CLI features.</p>
-            <p>Now that you have created a project, please open the project in your editor and explore its contents while reading the documentation for <a href="/docs/projectstructure">Project Structure.</a></p>
+            <p>When you run the above, fusion.ssg will generate a new project in the current folder using the name that you provided for <em>target_folder</em> and you can explore its content in your editor while reading the documentation for <a href="/docs/projectstructure">Project Structure.</a></p>
+            <h2 id="building-and-serving-your-project">Building And Serving Your Project</h2>
+            <p>fusion.ssg&#39;s <a href="/docs/cli">CLI</a> provides numerous <em><strong>scripts and commands</strong></em> that you can run when <em>developing your site</em> and when you are ready to <em>release your site</em>. Please read its documentation to familiarize yourself with the commands and options that support the <em><strong>development</strong></em> and <em><strong>release</strong></em> workflows.</p>
             <footer class="container bottomnav">
                 <div class="navigation">
                     <a href="/docs">Docs | </a>

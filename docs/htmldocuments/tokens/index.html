@@ -47,7 +47,7 @@
     <main class="container">
         <aside>
             <nav class="closed-on-mobile">
-                <p class="version">v1.1.0</p>
+                <p class="version">v1.2.0</p>
                 <details>
                     <summary>getting started</summary>
                     <ul>
@@ -105,7 +105,7 @@
             </ol>
             <h2 id="simple-tokens">Simple Tokens</h2>
             <p><em>syntax: &lbrace;token-name&rbrace;</em></p>
-            <p>Simple token declarations like the above are replaced by their respective property values. Simple token property values can be declared in either <a href="/docs/htmldocuments/frontmatter">front matter</a> or in your project&#39;s <a href="/docs/configuration/fusionssg-configuration#tokens">configuration</a> file. If the same token name is used in both, the token&#39;s value declared in front matter takes precedence.</p>
+            <p>Simple token declarations like the above that fusion.ssg finds in your developing HTML documents are replaced by their respective property values. Simple token property values can be declared in either a <em>template&#39;s <a href="/docs/htmldocuments/frontmatter">front matter</a></em> or in <em>fusion.json</em>, your project&#39;s <a href="/docs/configuration/fusionssg-configuration#tokens">configuration</a> file. If the same token name is used in both, the token&#39;s value declared in front matter takes precedence.</p>
             <article>
                 <header>
                     <p class="example">Front matter with three simple token property declarations.</p>
@@ -167,6 +167,15 @@ tokens: {
             <h3 id="unresolved-simple-token-reporting">Unresolved Simple Token Reporting</h3>
             <p class="ver">Introduced in v1.1.0</p>
             <p>At the end of each build cycle, fusion.ssg will report any unresolved simple tokens that it finds in your project&#39;s generated HTML documents. These warnings indicate that either the token name has been misspelled or that its value has not been declared.</p>
+            <img src="/media/posts/v1.3a79a8fa7b00e6b6c5d1e07ab8d264da.1.0-CLI-unresolved-tokens.png" alt="report of unresolved tokens" width="700">
+            <h3 id="auto-generated-simple-tokens">Auto Generated Simple Tokens</h3>
+            <p class="ver">Introduced in v1.2.0</p>
+            <p>Besides the simple tokens that you define in your <em>template&#39;s front matter</em> and globally in your project&#39;s <em>fusion.json</em> file, fusion.ssg also defines the following simple tokens, whose values it has obtained from the meta data associated with your <em>posts</em> templates, that you can use:</p>
+            <ul>
+                <li>&lbrace;postDate&rbrace; - the <em>post date</em> extracted from the post&#39;s <em>file name</em> and converted to a <em>locale date string</em> e.g. &quot;mm/dd/yyyy&quot;.</li>
+                <li>&lbrace;categories&rbrace; - the <em>categories</em> extracted from the post&#39;s <em>front matter post.categories property</em> and converted to a <em>path</em> e.g. &quot;cata/catb/catc&quot;.</li>
+                <li>&lbrace;tags&rbrace; - the <em>tags</em> extracted from the post&#39;s <em>front matter post.tags property</em> and converted to a <em>comma separated list</em> e.g. &quot;taga,tagb,tagc&quot;.</li>
+            </ul>
             <h2 id="template-tokens">Template Tokens</h2>
             <p><em>syntax: &lbrace;&lbrace;template&rbrace;&rbrace;</em></p>
             <p>Template tokens are only relevant in <a href="/docs/htmldocuments/pages">pages</a> and are replaced by the content of their associated <a href="/docs/htmldocuments/templates">templates</a>.</p>

@@ -47,7 +47,7 @@
     <main class="container">
         <aside>
             <nav class="closed-on-mobile">
-                <p class="version">v1.1.0</p>
+                <p class="version">v1.2.0</p>
                 <details>
                     <summary>getting started</summary>
                     <ul>
@@ -98,12 +98,13 @@
             <p><em>CONFIGURATION</em></p>
             <h1 id="fusionsssg-configuration">fusions.ssg Configuration</h1>
             <p>The following <em>configuration options</em> are available for you to override in your project&#39;s <em>src/fusion.json</em> file:</p>
-            <ol>
+            <ul>
                 <li><a href="#postsfolder">postsFolder</a></li>
                 <li><a href="#baseurl">baseURL</a></li>
                 <li><a href="#wips">wips</a></li>
                 <li><a href="#tokens">tokens</a></li>
-            </ol>
+                <li><a href="#conditional-includes">conditional includes</a></li>
+            </ul>
             <h2 id="postsfolder">postsFolder</h2>
             <p>The <em>name</em> to use for the folder that hosts your site&#39;s <a href="/docs/htmldocuments/posts">posts</a>.</p>
             <ul>
@@ -138,7 +139,7 @@
 </code></pre>
             </aside>
             <h2 id="wips">wips</h2>
-            <p>These are <em>files</em> and <em>folders</em> located in the <a href="/docs/htmldocuments/templates">templates</a> folder that are to be <em>ignored</em> during <a href="/docs/cli#npm-run-release">release builds</a>.</p>
+            <p>These are <em>files</em> and <em>folders</em> located in the <em>src/templates</em> folder that are <em>works in progress</em> and that are to be <em>ignored</em> during release builds.</p>
             <ul>
                 <li>default: []</li>
             </ul>
@@ -148,10 +149,11 @@
                 </header>
                 <pre><code class="language-JSON">"wips": ["docs/next-version", "!docs/next-version/index.md"]</code></pre>
                 <p class="info">Files and folders prepended with "!" are <em>negated and will be generated.</em></p>
-                </footer>
             </aside>
+            <p class="ver">Introduced in v1.2.0</p>
+            <p>Beginning with v1.2.0, fusion.ssg will <em>report all works in progress</em> for each release build cycle. These warnings serve to prevent the <em>unintended</em> updating of web sites with missing HTML documents that should have been included but haven&#39;t because they are still marked as works in progress.</p>
+            <img src="/media/posts/WIPS-reporting.07983da1e438b481001057cfc959f0df.png" alt="imgage">
             <h2 id="tokens">tokens</h2>
-            <p class="ver">Introduced in v1.0.0-beta.8</p>
             <p>Simple token property values declared here are global to the project and replace all matching simple tokens declared in <em>all HTML documents</em>. If both a local simple token and a global simple token have the same name <em>the local simple token takes precedence</em>.</p>
             <ul>
                 <li>default: {}</li>
@@ -161,11 +163,26 @@
                     <p><em>Example</em>: Declaring tokens.</p>
                 </header>
                 <pre><code class="language-JSON">"tokens": {"version": "v1.0.0"}</code></pre>
-                </footer>
             </aside>
             <h3 id="unresolved-simple-token-reporting">Unresolved Simple Token Reporting</h3>
             <p class="ver">Introduced in v1.1.0
             <p>At the end of each build cycle, fusion.ssg will report any unresolved simple tokens that it finds in your project&#39;s generated HTML documents. Please see <a href="/docs/htmldocuments/tokens/#simple-tokens">Simple Tokens</a> for more information.</p>
+            <h2 id="conditional-includes">Conditional Includes</h2>
+            <p class="ver">Introduced in v1.2.0</p>
+            <p>These are files located in the <em>src/includes</em> folder that are specifically targeted for either <em>development</em> or <em>release</em> builds, but not for both.</p>
+            <ul>
+                <li>default: conditionalIncludes: &lbrace; developmentOnly: [], releaseOnly: [] &rbrace;</li>
+            </ul>
+            <aside>
+                <header>
+                    <p><em>Example</em>: Declaring conditional includes.</p>
+                </header>
+                <pre><code class="language-JSON">"conditionalIncludes": {
+    "developmentOnly": ["path/to/include/in/src/includes", ...],
+    "releaseOnly": ["path/to/include/in/src/includes", ...]
+}</code></pre>
+            </aside>
+            <p class="info">All paths must be relative to the src/includes folder.</p>
             <footer class="container bottomnav">
                 <div class="navigation">
                     <a href="/docs">Docs | </a>

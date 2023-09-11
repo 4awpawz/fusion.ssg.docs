@@ -47,7 +47,7 @@
     <main class="container">
         <aside>
             <nav class="closed-on-mobile">
-                <p class="version">v1.1.0</p>
+                <p class="version">v1.2.0</p>
                 <details>
                     <summary>getting started</summary>
                     <ul>
@@ -128,6 +128,20 @@
 </code></pre>
                 <footer>
                     <p>This page's include tokens will be replaced by the content from their respective include files'.</p>
+                </footer>
+            </article>
+            <h2 id="conditional-includes">Conditional Includes</h2>
+            <p class="ver">Introduced in v1.2.0</p>
+            <p>A conditional <em>include</em> contains content that is <em>only relevant when building for development or when building for release, but not for both</em>. For example, if an include contributes Google analytics to your site&#39;s HTML documents, you can exclude that content when building your site for development. Please see <a href="/docs/configuration/fusionssg-configuration#conditional-includes">conditional includes</a> for details regarding configuring your site&#39;s conditional includes.</p>
+            <article>
+                <header>
+                    <p class="example">Declaring an include to be only relevant when building for release.</p>
+                </header>
+                <pre><code class="language-JSON">"conditionalIncludes": {
+    "releaseOnly": ["analytics.md"]
+}</code></pre>
+                <footer>
+                    <p>By declaring the <em>analytics.md</em> include for release only, its content will <em>not</em> be included when building for development.</p>
                 </footer>
             </article>
             <footer class="container bottomnav">
