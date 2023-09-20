@@ -22,13 +22,13 @@
     <meta property="og:title" content="A Minimal Framework for Static Websites">
     <meta property="og:type" content="website" />
     <meta property="og:description" content="fusion.ssg propels your static website development to a whole new level!">
-    <meta property="og:image" content="https://fusionssg.com/media/social/640x569-solar-energy.67e7630cb887bd1022c60bc9d6d18011.png">
+    <meta property="og:image" content="https://fusionssg.com/media/social/640x569-solar-energy.a00260380d40e38219a253a07a3adbd6.png">
     <meta property="og:url" content="https://fusionssg.com">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="stylesheet" href="/css/libs/pico/pico.5ab14aff9a410290c276bf63da3095ef.min.css">
-    <link rel="stylesheet" href="/css/libs/highlight/github-dark.4009275e152550dcb97bce1b1b1985a6.min.css">
-    <link rel="stylesheet" href="/css/fusion.c1dc7b04ae071cd58a1c94a9b0884a38.css">
-    <script src="/scripts/libs/highlight/highlight.80470252db72b041dc8f4a699e34cf92.min.js"></script>
+    <link rel="stylesheet" href="/css/libs/pico/pico.6e30cf0269b75b7793b92b74054a1f49.min.css">
+    <link rel="stylesheet" href="/css/libs/highlight/github-dark.087d8559eb8f2a44491209286dac72eb.min.css">
+    <link rel="stylesheet" href="/css/fusion.d8eda209912e8791fce66324a4ee1385.css">
+    <script src="/scripts/libs/highlight/highlight.f2c6a6b6a19fbf520b1614f6b86fdc99.min.js"></script>
     <script>
         hljs.highlightAll();
     </script>
@@ -38,7 +38,7 @@
 <body>
     <nav class="container-fluid topnav">
         <ul>
-            <li><a class="contrast fixed" href="/"><img id="navbar-sol" src="/media/sol.f30634117139e228897cffff781f17ed.png" alt="sol" /></a></li>
+            <li><a class="contrast fixed" href="/"><img id="navbar-sol" src="/media/sol.e57b7b50ce9cd0011ddacf3f0203f63b.png" alt="sol" /></a></li>
             <li><a class="contrast fixed" href="/"><strong>fusion.ssg</strong></a></li>
         </ul>
         <ul>
@@ -64,7 +64,7 @@
             <p class="info">This page has been amended on 9/2/2023 to include the notice that the feature "cache busting" will be included in the next release.</p>
             <p class="info">This page has been amended on 9/5/2023 to include the notice that the implementation for the feature "conditional includes" has changed and will now be using fusion.json for its configuration and not front matter.</p>
             <h3 id="cache-busting">Cache Busting</h3>
-            <img style="float: left; border-radius: 50%; shape-outside: circle(); margin-right: 10px;" src="/media/posts/buster.bb8f8cfb12c191dc1fed61aadc5e152e.png" alt="image" width="100">
+            <img style="float: left; border-radius: 50%; shape-outside: circle(); margin-right: 10px;" src="/media/posts/buster.be899f1c289849365eb03b0e6f50c370.png" alt="image" width="100">
             <p>The next release of fusion.ssg will make cache busting your web sites a snap 🫰🏼. When building for release, fusion.ssg will now <em>optionally</em> cache bust your site's assets (e.g. css, media, scripts, .etc), allowing your site's visitors to immediately experience its latest changes. Specifically, to <em>opt in to cache busting your release builds</em>, you will need to append <code>--cache-bust</code> to the <em>release:fusion</em> script located in your project's <em>package.json</em> file. Once appended, the release:fusion script should look exactly like the following:</p>
             <pre><code class="language-json">&quot;release:fusion&quot;: &quot;fusion release --cache-bust&quot;,
 </code></pre>
@@ -82,7 +82,7 @@
             <p>If an include&#39;s path matches one of these conditions, its content will not be included in the target HTML document.</p>
             <h3 id="wips-reporting-during-release-builds">WIPS Reporting During Release Builds</h3>
             <p>fusion.ssg will now report all WIPS for each release build cycle. These warnings will serve to prevent the <em>unintended</em> updating of web sites with missing HTML documents that should have been included but aren&#39;t because they are still marked as WIPS.</p>
-            <img src="/media/posts/WIPS-reporting.07983da1e438b481001057cfc959f0df.png" alt="imgage">
+            <img src="/media/posts/WIPS-reporting.440d7694171f281cd107d055f86ed75a.png" alt="imgage">
             <h3 id="exposing-more-post-metadata-as-simple-token-values">Exposing More Post Metadata As Simple Token Values</h3>
             <p>When tokenizing a post, fusion.ssg will now expose a post&#39;s <em>post date</em>, <em>categories</em>, and <em>tags</em> as simple token values, allowing them to be used as simple tokens in your templates, pages and includes. This will serve to mitigate the need of having to use a component just to include these in your HTML documents.</p>
             <ul>
