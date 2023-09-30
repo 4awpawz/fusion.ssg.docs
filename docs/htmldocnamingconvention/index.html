@@ -55,8 +55,8 @@
                         <li><a class="secondary" href="/docs/installation" aria-current="false">Installation</a></li>
                         <li><a class="secondary" href="/docs/projectgenerator" aria-current="false">Project Generator</a></li>
                         <li><a class="secondary" href="/docs/projectstructure" aria-current="false">Project Structure</a></li>
-                        <li><a class="secondary" href="/docs/urls" aria-current="false">URLS</a></li>
                         <li><a class="secondary" href="/docs/htmldocnamingconvention" aria-current="page">HTML Document Naming Convention</a></li>
+                        <li><a class="secondary" href="/docs/htmlfilepathsandurls" aria-current="false">HTML File Paths And URLS</a></li>
                     </ul>
                 </details>
                 <details>
@@ -99,9 +99,9 @@
             <p><mark>We are working very hard to bring you the best documentation possible.</mark></p>
             <p><em>GETTING STARTED</em></p>
             <h1 id="html-document-naming-convention">HTML Document Naming Convention</h1>
-            <p>When fusion saves a generated HTML document to the build folder, <em><strong>it doesn&#39;t name it &#39;template file name&#39; + .html</strong></em>. Instead, for templates that aren&#39;t named <em>index.md</em> or <em>index.html</em>, <em><strong>it creates a folder whose name is the name of the template and saves the actual HTML document to that folder with the name of index.html</strong></em>.</p>
-            <p>For example, if you have a template whose path is <em>templates/math.md</em>, fusion.ssg will save the generated HTML document to the build folder as <em><strong>/math/index.html</strong></em>. For a template whose path is <em>templates/subject/spelling.html</em>, fusion.ssg will save the generated HTML document to the build folder as <em><strong>/subject/spelling/index.html</strong></em>.</p>
-            <p>HTML documents generated from templates named <em>index.md</em> or <em>index.html</em>, like <em>templates/index.md</em>, and <em>templates/subject/index.html</em>, are saved to the build folder as <em><strong>/index.html</strong></em>, and <em><strong>/subject/index.html</strong></em>, respectively.</p>
+            <p>When saving a generated HTML document to the build folder, fusion.ssg doesn&#39;t name the HTML document <em><strong>&#39;template file name&#39; + .html</strong></em>. Instead, for templates that aren&#39;t named <em>index.md</em> or <em>index.html</em>, it creates a folder whose name is the <em><strong>name of the template</strong></em> and saves the actual HTML document to that folder with the name of <em><strong>index.html</strong></em>.</p>
+            <p>For example, if you have a template whose path is <em>templates/math.md</em>, fusion.ssg will save the generated HTML document to the build folder as <em><strong>/math/index.html</strong></em>, and its file path would be &quot;<em><strong>/math</strong></em>&quot;. For a template whose path is <em>templates/subject/spelling.html</em>, fusion.ssg will save the generated HTML document to the build folder as <em><strong>/subject/spelling/index.html</strong></em>, and its file path would &quot;<em><strong>/subject/spelling</strong></em>&quot;.</p>
+            <p>For HTML documents generated from templates named <em>index.md</em> or <em>index.html</em>, such as <em>templates/index.md</em>, and <em>templates/subject/index.html</em>, fusion.ssg saves them to the build folder as <em><strong>/index.html</strong></em> (its file path would be &quot;<em><strong>/</strong></em>&quot;), and <em><strong>/subject/index.html</strong></em> (its file path would be &quot;<em><strong>/subject</strong></em>&quot;), respectively.</p>
             <footer class="container bottomnav">
                 <div class="navigation">
                     <a href="/docs">Docs / </a>
