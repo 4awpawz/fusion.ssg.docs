@@ -12,21 +12,25 @@ html {
 body {
     padding-top: 4rem;
 }
+
 @media (min-width: 576px) {
     body {
         padding-top: 4.5rem;
     }
 }
+
 @media (min-width: 768px) {
     body {
         padding-top: 5.5rem;
     }
 }
+
 @media (min-width: 992px) {
     body {
         padding-top: 6rem;
     }
 }
+
 @media (min-width: 1200px) {
     body {
         padding-top: 6rem;
@@ -36,6 +40,7 @@ body {
 mark {
     padding: 0 2ch 0 2ch;
 }
+
 pre {
     white-space: pre-wrap;
 }
@@ -48,25 +53,28 @@ pre {
     right: 0;
     left: 0;
     background: #11191f;
-    border-bottom: 1px solid rgba(187,198,206, 0.2);
+    border-bottom: 1px solid rgba(187, 198, 206, 0.2);
 }
 
 /* site footer */
-
 .bottomnav {
-    border-top: 1px solid rgba(187,198,206, 0.2);
+    border-top: 1px solid rgba(187, 198, 206, 0.2);
     word-spacing: 1.5char;
 }
+
 .bottomnav .navigation {
     margin-bottom: .5rem;
 }
+
 .bottomnav .navigation a {
     text-decoration: underline;
     color: var(--muted-color);
 }
+
 .bottomnav .attribution {
     color: var(--muted-color);
 }
+
 .bottomnav .attribution small:nth-child(2) {
     margin-left: 1rem;
 }
@@ -77,46 +85,59 @@ pre {
     margin-bottom: 1rem;
     color: var(--muted-color);
 }
+
 .docpage details summary::after {
     display: none;
 }
+
 .docpage aside nav {
     border-bottom: none;
     padding-bottom: var(--block-spacing-vertical);
 }
+
 .docpage details {
     border-bottom: none;
     padding-bottom: 0;
     margin-bottom: var(--spacing);
 }
+
 .docpage summary {
     text-transform: uppercase;
     padding-bottom: .5rem;
     font-size: calc(1rem - 2px);
 }
+
 .docpage details li a {
     font-size: 1rem;
 }
+
 .docpage details ul {
     padding-left: .5rem;
 }
-.docpage dtails ul, .docpage details li {
+
+.docpage dtails ul,
+.docpage details li {
     padding-top: 0px;
     padding-bottom: 0px;
     font-size: 1rem;
 }
+
 .docpage details[open] summary {
     margin-bottom: 0;
 }
+
 .docpage .selected-nav-item {
     background-color: var(--selected-nav-item);
 }
+
 .docpage aside nav [aria-current]:not([aria-current="false"]) {
     color: var(--primary-hover);
 }
+
 .docpage footer {
     padding-top: var(--block-spacing-vertical);
 }
+
 @media (min-width: 992px) {
     .docpage aside nav {
         position: fixed;
@@ -125,12 +146,15 @@ pre {
         overflow-x: hidden;
         overflow-y: auto;
     }
+
     .docpage summary {
         font-size: 80%;
     }
+
     .docpage details li a {
         font-size: 16px;
     }
+
     .docpage main {
         display: grid;
         grid-column-gap: calc(var(--block-spacing-horizontal) * 5);
@@ -142,14 +166,17 @@ pre {
     width: 30px;
     height: 30px;
 }
+
 #navbar-github {
     width: var(--font-size);
     height: var(--font-size);
     color: #fff;
 }
+
 nav a {
     font-size: var(--font-size);
 }
+
 @media (min-width: 576px) {
     #navbar-sol {
         width: 38px;
@@ -168,37 +195,45 @@ nav a {
     text-align: center;
     background: var(--demo-background);
 }
+
 .hero h1 {
     font-size: var(--font-size);
     font-weight: var(--font-weight);
 }
+
 @media (min-width: 576px) {
     .hero h1 {
         --font-size: 2.2rem;
         --font-weight: 700;
     }
 }
+
 @media (min-width: 768px) {
     .hero h1 {
         --font-size: 2.5rem;
         --font-weight: 700;
     }
 }
+
 @media (min-width: 992px) {
     .hero h1 {
         --font-size: 2.7rem;
         --font-weight: 700;
     }
 }
+
 @media (min-width: 1200px) {
     .hero h1 {
         --font-size: 3rem;
         --font-weight: 700;
     }
 }
-.hero div p, hero div hgroup p {
+
+.hero div p,
+hero div hgroup p {
     text-align: center;
 }
+
 .hero #version a {
     display: inline-block;
     padding: .25rem;
@@ -209,13 +244,18 @@ nav a {
     color: #000;
 }
 
-p.info, p.info a, p.warn, p.ver{
+p.info,
+p.info a,
+p.warn,
+p.ver {
     font-style: italic;
 }
+
 p.warn {
     color: yellow;
     font-style: uppercase;
 }
+
 p.info::before {
     content: "i";
     background-color: var(--primary);
@@ -226,6 +266,7 @@ p.info::before {
     border-radius: 20%;
     margin-right: .5rem;
 }
+
 p.ver::before {
     content: "ver";
     background-color: var(--primary);
@@ -236,6 +277,7 @@ p.ver::before {
     border-radius: 20%;
     margin-right: .5rem;
 }
+
 p.warn::before {
     content: "🔔";
     background-color: rgb(255 255 0 / .2);
@@ -245,6 +287,7 @@ p.warn::before {
     border-radius: 4px;
     margin-right: .5rem;
 }
+
 /* Youtube video sources */
 .video-container {
     position: relative;
@@ -252,6 +295,7 @@ p.warn::before {
     padding-bottom: 56.25%;
     height: 0;
 }
+
 .video-container iframe {
     position: absolute;
     top: 0;
@@ -271,6 +315,7 @@ article header p.example::before {
     width: 100%;
     margin: 0 auto 0 auto;
 }
+
 .lighter-text {
     color: var(--secondary);
 }
