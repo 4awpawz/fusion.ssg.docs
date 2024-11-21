@@ -19,7 +19,7 @@
     <meta name="description" content="fusion.ssg, a minimal framework for building static websites.">
     <meta name="author" content="4awpaws, Jeffrey Schwartz">
     <meta name="generator" content="fusion.ssg">
-    <title>fusion.ssg: Documentation - Collections</title>
+    <title>fusion.ssg: Documentation - Synopsis</title>
     <link rel="stylesheet" href="/css/libs/pico/pico.6e30cf0269b75b7793b92b74054a1f49.min.css">
     <link rel="stylesheet" href="/css/libs/highlight/github-dark.087d8559eb8f2a44491209286dac72eb.min.css">
     <link rel="stylesheet" href="/css/fusion.2e5de5bd1f1396c33f577457510b6833.css">
@@ -48,10 +48,10 @@
         <aside>
             <nav class="closed-on-mobile">
                 <p class="version"><a href="/docs" class="secondary">v1.3.0</a></p>
-                <details>
+                <details open>
                     <summary>getting started</summary>
                     <ul>
-                        <li><a class="secondary" href="/docs/v1/gettingstarted" aria-current="false">Synopsis</a></li>
+                        <li><a class="secondary" href="/docs/v1/gettingstarted" aria-current="page">Synopsis</a></li>
                         <li><a class="secondary" href="/docs/v1/gettingstarted/installation" aria-current="false">Installation</a></li>
                         <li><a class="secondary" href="/docs/v1/gettingstarted/projectgenerator" aria-current="false">Project Generator</a></li>
                         <li><a class="secondary" href="/docs/v1/gettingstarted/projectstructure" aria-current="false">Project Structure</a></li>
@@ -59,7 +59,7 @@
                         <li><a class="secondary" href="/docs/v1/gettingstarted/htmlfilepathsandurls" aria-current="false">HTML File Paths And URLS</a></li>
                     </ul>
                 </details>
-                <details open>
+                <details>
                     <summary>html documents</summary>
                     <ul>
                         <li><a class="secondary" href="/docs/v1/htmldocuments/frontmatter" aria-current="false">Front Matter</a></li>
@@ -71,7 +71,7 @@
                         <li><a class="secondary" href="/docs/v1/htmldocuments/components" aria-current="false">Components</a></li>
                         <li><a class="secondary" href="/docs/v1/htmldocuments/collections" aria-current="false">Collections</a></li>
                         <li><a class="secondary" href="/docs/v1/htmldocuments/posts" aria-current="false">Posts</a></li>
-                        <li><a class="secondary" href="/docs/v1/htmldocuments/404-pages" aria-current="page">404.html</a></li>
+                        <li><a class="secondary" href="/docs/v1/htmldocuments/404-pages" aria-current="false">404.html</a></li>
                         <li><a class="secondary" href="/docs/v1/htmldocuments/wips" aria-current="false">Works In Progress</a></li>
                     </ul>
                 </details>
@@ -98,21 +98,40 @@
         </aside>
         <div>
             <p><mark>We are working very hard to bring you the best documentation possible.</mark></p>
-            <p><em>HTML DOCUMENTS</em></p>
-            <h1 id="404html">404.html</h1>
-            <p class="ver">Introduced in v1.0.0</p>
-            <section class="container">
-                <div><small>Required: <em>No, but highly suggested.</em></small></div>
-            </section>
-            <p>Every website should have a 404.html page to inform its visitors that the page they are seeking doesn&#39;t exits. As such, fusion.ssg provides supports for the generation and correct placement of <em>404.html documents</em>.</p>
-            <p>During each build cycle, when fusion.ssg finds a <a href="/docs/v1/htmldocuments/templates">template</a> named <em>404.md</em> or <em>404.html</em>, it will serialize the generated 404.html document into the root of the <em>build folder</em> for development builds, and into the root of the <em>build/&lbrace;baseURL&rbrace;</em> folder for release builds when <a href="/docs/v1/configuration/fusionssg-configuration#baseurl">baseURL</a> is defined in <a href="/docs/v1/configuration/fusionssg-configuration">fusion.json</a>, the project&#39;s configuration file.</p>
-            <p class="ver">Introduced in v1.3.0</p>
-            <p>Beginning with v1.3.0, fusion.ssg will issue a warning during each build cycle when it determines that your project doesn&#39;t contain a 404.html document.</p>
-            <img src="/media/no-404-warning.3eb47de1be04abbca538d5bcb3bdfb8f.png" alt="image of no 404 warning" width="500">
+            <p><em>GETTING STARTED</em></p>
+            <h1>Synopsis</h1>
+            <h2>HTML Document Creation - A High Level View</h2>
+            <img src="/media/HTML-Document-Creation-Workflow.dd45811b66e54563af2be99f9bb661aa.png" alt="HTML Document Creation Workflow" />
             <br>
             <br>
-            <p class="warn">Beginning with fusion.ssg v1.3.0 the warning about a missing 404.html file is no longer implemented in browsersync.js, and is handled internally by fusion.ssg. If you are upgrading a project to v1.3.0 or greater then you should remove the following from your project's browsersync.js file which is located in your project's root folder:</p>
-            <p><code>console.log(chalk.yellowBright(&quot;Warning: this site is missing a 404.html doc - using default 404.html.&quot;));</code></p>
+            <p>If you are new to fusion.ssg, it is advantageous for you to have a high level conceptual understanding of how it seamlessly fuses together your project&#39;s templates, pages, components and tokens to create HTML documents.</p>
+            <p>The discussion below focuses on the creation of a single HTML document.</p>
+            <article>
+                <header>
+                    <h2>Step 1 - Template + Page</h2>
+                </header>
+                <p>fusion.ssg looks for <em><strong>a property named page declared in the template&#39;s YAML front matter whose value points to a page file located in the project&#39;s src/pages</strong></em> folder. If fusion.ssg doesn&#39;t find the property, it defaults to using the <em>src/pages/default.html</em> page. The page file provides the overall structure for the generated HTML document as well as any content of its own. <em><strong>If the template has its own content to contribute to the HTML document and the page&#39;s content contains a &lbrace;&lbrace;template&rbrace;&rbrace; token, fusion.ssg will replace the page&#39;s template token with the template&#39;s content</strong></em>. At this point, we have a <em>developing HTML document</em>.</p>
+            </article>
+            <article>
+                <header>
+                    <h2>Step 2 - Components</h2>
+                </header>
+                <p>fusion.ssg then searches the developing HTML document for <em><strong>component tags (e.g., &lt;MyComponent /&gt;)</strong></em> and if found, each component is called and <em><strong>their corresponding tags are replaced by the HTML they return</strong></em>.</p>
+            </article>
+            <article>
+                <header>
+                    <h2>Step 3 - Tokens</h2>
+                </header>
+                <p>fusion.ssg then searches the developing HTML document&#39;s content for <em><strong>simple tokens (e.g., &lbrace;title&rbrace;)</strong></em> and, if found, <em><strong>replaces them with their matching token values</strong></em> found in either the template&#39;s <em>YAML front matter</em> or <em>fusion.json</em>, the project&#39;s configuration file.</p>
+            </article>
+            <article>
+                <header>
+                    <h2>Step 4 - Serialize The HTML Document</h2>
+                </header>
+                <p>The HTML document is now complete and <em><strong>its content is serialized to its respective path in the project&#39;s build folder</strong></em>.</p>
+            </article>
+            <p>While the actual process that fusion.ssg uses is quite a bit more complex than what this high level overview provides, you should now have a very good conceptual understanding of how fusion.ssg goes about its business of producing HTML documents.</p>
+            <p class="info">The remaining documentation relies heavily on examples. It assumes that you have some working knowledge of <b>HTML</b>, <b>markdown</b>, <b>YAML front matter</b> and <b>JavaScript</b> or <b>TypeScript components</b>.</p>
             <footer class="container site-footer">
                 <div class="site-footer-column">
                     <div class="site-footer-column-heading">Site</div>

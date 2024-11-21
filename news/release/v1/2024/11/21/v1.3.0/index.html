@@ -32,7 +32,7 @@
     <script>
         hljs.highlightAll();
     </script>
-    <title>v1.0.0 Development Progress Report</title>
+    <title>v1.3.0 Release Notes</title>
 </head>
 
 <body class="blog">
@@ -52,26 +52,64 @@
     </nav>
     <main class="container">
         <!-- <hgroup> -->
-        <!--     <h1>v1.0.0 Development Progress Report</h1> -->
-        <!--     <p>Posted on <i style="color: #fff; opacity: 0.555;">6/28/2023</i> to -->
-        <!--         <i style="color: #fff; opacity: 0.555;">release</i> -->
+        <!--     <h1>v1.3.0 Release Notes</h1> -->
+        <!--     <p>Posted on <i style="color: #fff; opacity: 0.555;">11/21/2024</i> to -->
+        <!--         <i style="color: #fff; opacity: 0.555;">release/v1</i> -->
         <!--     </p> -->
         <!-- </hgroup> -->
         <article>
             <hgroup>
-                <h1>v1.0.0 Development Progress Report</h1>
-                <p>Posted on <i style="color: #fff; opacity: 0.555;">6/28/2023</i> to <i style="color: #fff; opacity: 0.555;">release</i>
+                <h1>v1.3.0 Release Notes</h1>
+                <p>Posted on <i style="color: #fff; opacity: 0.555;">11/21/2024</i> to <i style="color: #fff; opacity: 0.555;">release/v1</i>
                 </p>
             </hgroup>
-            <p>There are numerous tasks that still need to be addressed.</p>
+            <p>We are very pleased to announce the release of fusion.ssg v1.3.0. This release focusses on the developer experience and includes new features, enhancements, and a number of bug fixes.</p>
             <!-- end -->
-            <p>All these tasks are flagged for delivery in v1.0.0. In addition, as these tasks are addressed, there may be cause to add additional tasks to this list. Therefore, this list is still quite dynamic.</p>
-            <section><img src="/media/posts/2023-06-27-status-report.67db2983ec44a1f4879f09f5c250c1f2.png" alt="2023-06-27 status report"></section>
-            <p>As committed as we are to releasing fusion.ssg v1.0.0, we are equally committed to ensuring that v1.0.0 is truly production ready. This includes not only fusion.ssg, but also the all new stand-alone project generator, fpg, as well as all the accompanying documentation.</p>
-            <p>Way back in the days there was an advertisement for a particular brand of wine in which the commentator stated, &quot;we shall sell no wine before its time&quot;. We share that same passion and philosophy regarding our software.</p>
-            <p>Please bear with us. We believe the wait will be well worth it.</p>
+            <p>Please note that as of this release release notes will now only highlight the most important <em>new features, enhancements, bug fixes, and breaking changes</em>. A <a href="https://github.com/4awpawz/fusion.ssg/blob/main/CHANGELOG.txt">detailed change log</a> that includes all the issues and their associated labels addressed per release is now also separately maintained on <a href="https://github.com/4awpawz/fusion.ssg">https://github.com/4awpawz/fusion.ssg</a>.</p>
             <p>Sincerely,</p>
             <p>The Team</p>
+            <hr>
+            <h2 id="v130-highlights">v1.3.0 Highlights</h2>
+            <h3 id="new-projects-can-now-be-created-without-scaffolding">New projects can now be created without scaffolding.</h3>
+            <p>A new option, <code>--bare</code>, has been added to fusions.ssg&#39;s project generator, <strong>fpg</strong>, that allows you to generate new projects without scaffolding. </p>
+            <p>Example:</p>
+            <pre><code class="language-shell">`fpg n | new --bare &lt;target_folder&gt;`
+</code></pre>
+            <h3 id="tokens-in-inline-scripts-and-code-blocks-are-now-ignored">Tokens in inline scripts and code blocks are now ignored.</h3>
+            <p>You can now safely use tokens in inline scripts and code blocks without fusion.ssg complaining that they are unresolved.</p>
+            <hr>
+            <h3 id="the-reserved-baseurl-token-can-now-be-used-in-your-projects-css-files">The reserved <code>baseURL</code> token can now be used in your project&#39;s css files.</h3>
+            <p>If you are building a site that has background images and your project employs the use of fusion.ssg&#39;s reserved <a href="/docs/v1/configuration/fusionssg-configuration/#baseurl"><code style="text-decoration: underline;">baseURL</code></a> token with a value other than <code>&#39;&#39;</code>, you no longer have to declare 2 URLs for the image, one for development builds, and one for release builds. Instead, you can now prepend the URL with fusion.ssg&#39;s reserved <code>baseURL</code> token and the URL will resolve properly for both development and release builds.</p>
+            <p>Example:</p>
+            <pre><code class="language-css">.hero {
+    background-image: url({baseURL}/media/stretching-cat.png);
+}
+</code></pre>
+            <br>
+            <hr>
+            <h3 id="console-output-related-to-typescript-compilation-now-explicitly-states-if-it-is-for-components-or-for-browser-scripts">Console output related to Typescript compilation now explicitly states if it is for <em>components</em> or for <em>browser scripts</em>.</h3>
+            <p>This distinction was not made in previous versions.</p>
+            <hr>
+            <h3 id="metrics-reporting-to-the-console-after-each-build-cycle-now-defaults-to-a-condensed-set-of-metrics-for-both-development-and-release-builds">Metrics reporting to the console after each build cycle now defaults to a condensed set of metrics for both development and release builds.</h3>
+            <p>The detailed metrics reporting of previous versions is still available via the <code>--verbose</code> option and can be applied to either development or release builds or to both.</p>
+            <p>New default metrics reporting example:</p>
+            <img src="/media/posts/condensedmetricsreporting.f3f504c2fe5c6fa294ff06b5f9e54bd1.png" alt="condensed metrics reporting" width="600">
+            <br>
+            <br> Metrics reporting with the --verbose option example: <br>
+            <br>
+            <img src="/media/posts/verbosemetricsreporting.141e91c3afcbf20d12b4d3304f9bad8a.png" alt="verbose metrics reporting" width="600">
+            <br>
+            <br>
+            <hr>
+            <h3 id="eliminate-multiple-project-does-not-contain-a-404html-document-warnings-when-refreshing-the-browser">Eliminate multiple &quot;project does not contain a 404.html document&quot; warnings when refreshing the browser.</h3>
+            <p>Beginning with fusion.ssg v1.3.0 the warning about a missing 404.html file is no longer implemented in browsersync.js, and is handled internally by fusion.ssg.</p>
+            <p class="warn">If you are upgrading a project to v1.3.0 or greater then you should remove the following from your project's browsersync.js file which is located in your project's root folder:</p>
+            <p><code>console.log(chalk.yellowBright(&quot;Warning: this site is missing a 404.html doc - using default 404.html.&quot;));</code></p>
+            <hr>
+            <h2 id="breaking-changes">Breaking Changes</h2>
+            <ul>
+                <li>None!</li>
+            </ul>
         </article>
     </main>
     <footer class="container site-footer">

@@ -27,12 +27,11 @@
     <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="/css/libs/pico/pico.6e30cf0269b75b7793b92b74054a1f49.min.css">
     <link rel="stylesheet" href="/css/libs/highlight/github-dark.087d8559eb8f2a44491209286dac72eb.min.css">
-    <link rel="stylesheet" href="/css/fusion.a4268812fe8a50cd2127400455939899.css">
+    <link rel="stylesheet" href="/css/fusion.2e5de5bd1f1396c33f577457510b6833.css">
     <script src="/scripts/libs/highlight/highlight.f2c6a6b6a19fbf520b1614f6b86fdc99.min.js"></script>
     <script>
         hljs.highlightAll();
     </script>
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>fusion.ssg: Minimal Framework for Building Static Websites</title>
 </head>
 
@@ -44,7 +43,7 @@
         </ul>
         <ul>
             <li><a class="secondary" href="/#examples">Examples</a></li>
-            <li><a class="secondary" href="/docs/v1">Docs</a></li>
+            <li><a class="secondary" href="/docs/v1/gettingstarted">Docs</a></li>
             <li><a class="secondary" href="/news">News</a></li>
             <li><a aria-label="fusion.ssg Github Repositroy" href="https://github.com/4awpawz/fusion.ssg"><svg id="navbar-github" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" height="16px">
                         <path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path>
@@ -53,100 +52,92 @@
     </nav>
     <header class="hero">
         <div class="container">
+            <a href="/news/release/v1/2024/11/21/v1.3.0/" class="hero-button hero-version" role="button" aria-label="what's new">New in v1.3.0</a>
             <hgroup>
-                <h1><b>Minimal Framework for Static Websites</b></h1>
-                <!-- <p>Simple yet powerful, fusion.ssg propels your static website development to a whole new level by seamlessly fusing together HTML document using familiar technologies into one cohesive development platform.</p> -->
-                <p><code>HTML</code>, <code>Markdown</code>, <code>JSX and TSX Components</code>, <code>JSON Data</code>, <code>YAML Front Matter</code>
+                <h1>The web framework for static content-driven websites</h1>
+                <p>fusion.ssg seamlessly fuses together familiar web-based technologies to propel your static website development to a whole new level.</p>
             </hgroup>
-            <p>
-                <a href="/docs/v1" role="button" class"secondary" aria-label="Documentation" style="margin-right: 10px">Get Started</a>
-                <a href="/docs/v1/installation" role="button" class="contrast outline" aria-label>Install Now</a>
-            </p>
-            <p id="version">
-                <a href="/news/release/v1/2023/09/11/v1.2.0/" role="button" class="secondary" aria-label><small>New in v1.2.0</small></a>
-            </p>
+            <div class="button-group">
+                <a href="/docs/v1/gettingstarted" class="hero-button hero-get-started" role="button" aria-label="get started">Get Started</a>
+                <a href="/docs/v1/gettingstarted/installation" class="hero-button hero-install-now" role="button" aria-label="install now">Install Now</a>
+            </div>
+            <div class="hero-familiar-technologies"><code>HTML</code><code>Markdown</code><code>Front Matter</code><code>JSX/TSX</code><code>JSON</code>
+            </div>
         </div>
     </header>
     <main>
-        <section id="principles" class="container">
-            <hgroup>
-                <h2>Propel your development to a whole new level!</h2>
-                <p>Seamlessly fuse together HTML documents using familiar technologies in one cohesive development platform.</p>
-            </hgroup>
-        </section>
         <section class="container">
-            <article>
+            <div class="why-fusion">
                 <header>
-                    <h2 style="margin: 0; padding: 0;">Why fusion.ssg?</h2>
+                    <h2>Create resilient static websites</h2>
                 </header>
                 <section class="grid">
-                    <hgroup>
-                        <img src="/media/plato-64.12e0b26b972eadf3beb2f1ab78dfc1a6.png" alt="Plato">
-                        <h3>Philosophy</h3>
-                        <p>The most useful tools are those that embrace only those metaphors that directly reflect their utility.</p>
-                    </hgroup>
-                    <hgroup>
-                        <img src="/media/home-64.9316b24e565f41943d742e9963ac313d.png" alt="Home">
-                        <h3>Familiarity</h3>
-                        <p>fusion.ssg seamlessly fuses together familiar concepts, such as templates, pages, includes, markdown, tokens, and JSX/TSX components.</p>
-                    </hgroup>
+                    <article>
+                        <hgroup>
+                            <h3><img src="/media/plato-64.12e0b26b972eadf3beb2f1ab78dfc1a6.png" alt="Plato">Philosophy</h3>
+                            <p>The most useful tools are those that fully embrace the functionality that directly reflects their purpose and ignores all others.</p>
+                        </hgroup>
+                    </article>
+                    <article>
+                        <hgroup>
+                            <h3><img src="/media/tiny-64.7aabbd6e2823369b57d7a61d9d0a9af8.png" alt="Home">Minimalistic</h3>
+                            <p>fusion.ssg is built from the ground up to be just that, making it quick to learn for anyone who already has experience with HTML, JavaScript and CSS.</p>
+                        </hgroup>
+                    </article>
                 </section>
                 <section class="grid">
-                    <hgroup>
-                        <img src="/media/clock-64.c19c45c2bedd72a8d28bd296d773c74f.png" alt="Home">
-                        <h3>Productivity</h3>
-                        <p> No complicated tooling and configuration to stand in the way of your creativity, and the project generator gets you up and creating quickly.</p>
-                    </hgroup>
-                    <hgroup>
-                        <img src="/media/tiny-64.7aabbd6e2823369b57d7a61d9d0a9af8.png" alt="Home">
-                        <h3>Minimalistic</h3>
-                        <p>fusion.ssg is built from the ground up to be <i>just</i> that and very quick too.</p>
-                    </hgroup>
+                    <article>
+                        <hgroup>
+                            <h3><img src="/media/clock-64.c19c45c2bedd72a8d28bd296d773c74f.png" alt="Home">Productivity</h3>
+                            <p> No complicated tooling and configuration to stand in the way of your creativity, and the project generator gets you up and creating quickly.</p>
+                        </hgroup>
+                    </article>
+                    <article>
+                        <hgroup>
+                            <h3><img src="/media/rocket.460415635ddbe1e833cd16a4581ae72f.png" alt="Home"> Fast</h3>
+                            <p>Capable of generating 100s of HTML documents in under a second.</p>
+                        </hgroup>
+                    </article>
                 </section>
-            </article>
-            <article>
+            </div>
+            <div class="features">
                 <header>
-                    <h2 style="margin: 0; padding: 0;">Features</h2>
+                    <h2>Features</h2>
                 </header>
-                <ul>
-                    <li>No initial project configuration is required.</li>
-                    <li>Effortless project creation using fusion.ssg&#39;s project generator.</li>
-                    <li>DOMless and serverless execution produces very quick build times.</li>
-                    <li>HTML document composition from markdown, HTML, tokens, .jsx and .tsx components, JSON data sources and meta data.</li>
-                    <li>.tsx and .jsx compilation and sand-boxed execution.</li>
-                    <li>.ts browser script compilations.</li>
-                    <li>Portfolio (multiple pages) generation via collections.</li>
-                    <li>Generated projects provide package.json scripts for development and release builds.</li>
-                    <li>CLI for one-off development and one-off release builds.</li>
-                    <li>Base URL support for sites hosted in sub folders.</li>
-                    <li>HTML documents that are works in progress can be ignored during release builds.</li>
-                    <li>Blogging support, including multiple categories and tags.</li>
-                    <li>Beautified HTML documents.</li>
-                    <li>Optional cache busting of project assets during release builds <span class="secondary" style="font-size: .7rem; color: black; background-color: #ffe484">(v1.2.0)</span>.</li>
-                    <li>Conditional composition of includes based on build strategy <span style="font-size: .7rem; color: black; background-color:  #ffe484;">(v1.2.0)</span>.</li>
-                    <li>Reporting of works in progress during release builds <span style="font-size: .7rem; color: black; background-color: #ffe484;">(v1.2.0)</span>.</li>
-                    <li>Blog metadata exposed as simple tokens <span style="font-size: .7rem; color: black; background-color: #ffe484;">(v1.2.0)</span>.</li>
-                </ul>
-            </article>
-        </section>
-        <section class="container">
-            <article>
+                <article>
+                    <ul>
+                        <li>Easily create new projects (*** batteries included ***).</li>
+                        <li>Zero initial project configuration.</li>
+                        <li>DOMless and serverless for really fast site generation.</li>
+                        <li>Component compilation and sand-boxed execution.</li>
+                        <li>Bulk HTML document generation.</li>
+                        <li>Fully scripted development and release builds.</li>
+                        <li>Beautified HTML and CSS documents.</li>
+                        <li>Cache busting for release builds (optional).</li>
+                        <li>Blog posts, tags and categories support.</li>
+                        <li>Works In Progress (WIPS) support.</li>
+                        <li>Base URL support for sites hosted in sub folders.</li>
+                        <li>Informative metrics reporting after every build cycle.</li>
+                    </ul>
+                </article>
+            </div>
+            <div id="examples" class="examples">
                 <header>
-                    <h2 id="examples" style="margin: 0; padding: 0;">Examples</h2>
+                    <h2>Examples</h2>
                 </header>
                 <article>
                     <header>
-                        <h3>HTML Document From A Template And Page</h3>
+                        <h3>HTML Document<br>From A Template And A Page</h3>
                     </header>
-                    <p>Template with front matter with two token values:</p>
-                    <pre><code class="language-markdown">---
+                    <h4 id="template-with-token-value-declarations">Template with token value declarations</h4>
+                    <pre><code class="language-html">---
 tokens: {
     pageTitle: Greetings,
     greeting: Hello World
 }
 ---
 </code></pre>
-                    <p>Page with two tokens:</p>
+                    <h4 id="page-using-tokens">Page using tokens</h4>
                     <pre><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
     &lt;head&gt;
@@ -162,7 +153,7 @@ tokens: {
     &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-                    <p>Generated HTML Document:</p>
+                    <h4 id="generated-html-document">Generated HTML document</h4>
                     <pre><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
     &lt;head&gt;
@@ -181,16 +172,16 @@ tokens: {
                 </article>
                 <article>
                     <header>
-                        <h3>HTML Document Using A Component To Generates A List</h3>
+                        <h3>HTML Document<br>With A List<br>From A Component And JSON</h3>
                     </header>
-                    <p>team.json data source:</p>
+                    <h4 id="teamjson-data-source">team.json data source</h4>
                     <pre><code class="language-json">[
 {&quot;name&quot;: { &quot;first&quot;: &quot;John&quot;, &quot;last&quot;: &quot;Doe&quot; }},
 {&quot;name&quot;: { &quot;first&quot;: &quot;Jane&quot;, &quot;last&quot;: &quot;Doe&quot; }},
 {&quot;name&quot;: { &quot;first&quot;: &quot;Julia&quot;, &quot;last&quot;: &quot;Doe&quot; }}
 ]
 </code></pre>
-                    <p>Template with a TeamMembers component tag that consumes team.json as a data source:</p>
+                    <h4 id="template-with-teammembers-component">Template with TeamMembers component</h4>
                     <pre><code class="language-html">---
 tokens: {
     pageTitle: Team Members
@@ -201,7 +192,7 @@ tokens: {
 &lt;h2&gt;Contributors&lt;/h2&gt;
 &lt;TeamMembers datasources=&quot;team.json&quot; /&gt;
 </code></pre>
-                    <p>TeamMembers component implemented in <strong>JavaScript</strong>:</p>
+                    <h4 id="teammembersjsx-component">TeamMembers.jsx component</h4>
                     <pre><code class="language-javascript">function formatName(member) {
     return `${member.name.first} ${member.name.last}`;
 }
@@ -218,7 +209,7 @@ export const TeamMembers = function({ team }) {
     );
 };
 </code></pre>
-                    <p>TeamMembers component implementation in <strong>TypeScript</strong>:</p>
+                    <h4 id="teammemberstsx-component">TeamMembers.tsx component</h4>
                     <pre><code class="language-typescript">interface TeamMember {
     &quot;name&quot;: {
         &quot;first&quot;: string,
@@ -246,7 +237,7 @@ export const TeamMembers = function({ team }: Props): string {
     );
 };
 </code></pre>
-                    <p>Page:</p>
+                    <h4 id="page">Page</h4>
                     <pre><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
@@ -262,7 +253,7 @@ export const TeamMembers = function({ team }: Props): string {
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-                    <p>Generated HTML Document:</p>
+                    <h4 id="generated-html-document">Generated HTML document</h4>
                     <pre><code class="language-html">&lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
     &lt;meta charset=&quot;UTF-8&quot;&gt;
@@ -272,7 +263,7 @@ export const TeamMembers = function({ team }: Props): string {
 &lt;/head&gt;
 &lt;body&gt;
     &lt;main&gt;
-        &lt;h1&gt;team&lt;/h1&gt;
+        &lt;h1&gt;Team&lt;/h1&gt;
         &lt;p&gt;Thanks to our team our rollout has been a huge success.&lt;/p&gt;
         &lt;h2&gt;Contributors&lt;/h2&gt;
         &lt;ul&gt;
@@ -285,10 +276,8 @@ export const TeamMembers = function({ team }: Props): string {
 &lt;/html&gt;
 </code></pre>
                 </article>
-            </article>
-        </section>
-        <section class="container">
-            <article>
+            </div>
+            <div class="show-appreciation">
                 <script async defer src="https://buttons.github.io/buttons.js"></script>
                 <header>
                     <h2>Show Your Appreciation</h2>
@@ -297,23 +286,31 @@ export const TeamMembers = function({ team }: Props): string {
                 <p><a class="github-button" href="https://github.com/4awpawz/fusion.ssg" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star 4awpawz/fusion.ssg on GitHub">Give us a star on GitHub</a></p>
                 <p><a class="github-button" href="https://github.com/4awpawz/fusion.ssg/subscription" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-eye" data-size="large" data-show-count="true" aria-label="Watch 4awpawz/fusion.ssg on GitHub">Watch</a>
                 </p>
-            </article>
+            </div>
         </section>
     </main>
-    <footer class="container bottomnav">
-        <div class="navigation">
-            <a href="/docs/v1">Docs / </a>
-            <a href="/development">Development</a>
+    <footer class="container site-footer">
+        <div class="site-footer-column">
+            <div class="site-footer-column-heading">Site</div>
+            <div class="site-footer-column-item"><a href="/docs">Docs</a></div>
+            <div class="site-footer-column-item"><a href="/development">Development</a></div>
+            <div class="site-footer-column-item">
+                <a href="https://github.com/4awpawz/fusion.ssg.web/blob/main/CHANGELOG.txt">Changelog</a>
+            </div>
         </div>
-        <div class="navigation">
-            <a href="https://github.com/4awpawz/fusion.ssg">GitHub / </a>
-            <a href="https://twitter.com/4awpawz">4awpawz.ssg @ Twitter / </a>
-            <a href="https://twitter.com/fusionssg">fusion.ssg @ Twitter / </a>
-            <a href="https://www.youtube.com/channel/UCzGhKoH-7wbNoFY_adCYvnA">YouTube</a>
+        <div class="site-footer-column">
+            <div class="site-footer-column-heading">Social</div>
+            <div class="site-footer-column-item"><a href="https://github.com/4awpawz/fusion.ssg">GitHub</a></div>
+            <div class="site-footer-column-item"><a href="https://twitter.com/4awpawz">Twitter</a></div>
+            <div class="site-footer-column-item"><a href="https://www.youtube.com/channel/UCzGhKoH-7wbNoFY_adCYvnA">YouTube</a>
+            </div>
         </div>
-        <div class="attribution"><small>Created by <b>Jeffrey Schwartz</b></small></div>
-        <div class="attribution"><small>Code Licensed <b>MIT</b></small></div>
-        <div class="attribution"><small>This site was created using fusion.ssg</small></div>
+        <div class="site-footer-column">
+            <div class="site-footer-column-heading">Attribution</div>
+            <div class="site-footer-column-item">Created by Jeffrey Schwartz</div>
+            <div class="site-footer-column-item">Code licensed MIT</div>
+            <div class="site-footer-column-item">This site was built using fusion.ssg v1.3.0</div>
+        </div>
     </footer>
 </body>
 
