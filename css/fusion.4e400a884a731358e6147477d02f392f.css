@@ -408,7 +408,7 @@ nav a {
 }
 
 .features article ul {
-    margin: 0;
+    mfrgin: 0;
     padding-block: 2rem;
     /* background-color: hsl(0 0% 25%); */
 }
@@ -421,7 +421,7 @@ nav a {
     color: var(--primary);
     padding-bottom: 1rem;
     text-align: center;
-    font-size: 45px;
+    font-size: 2.3rem;
 }
 
 .why-fusion p {
