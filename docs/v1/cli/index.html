@@ -99,7 +99,7 @@
         <div>
             <p><mark>We are working very hard to bring you the best documentation possible.</mark></p>
             <p><em>COMMAND LINE</em></p>
-            <h1 id="cli">CLI</h1>
+            <h1>CLI</h1>
             <p class="info">Beginning with v1.0.0, fusion.ssg no longer includes a project generator in its package and no longer provides the ability to create new projects directly through its CLI. Please read <a href="/docs/v1/projectgenerator">Project Generator</a> for more information about how to create a new project using <b><em>fpg</em></b>.</p>
             <p>fusion.ssg&#39;s CLI supports the following workflows and options:</p>
             <ul>
@@ -109,10 +109,10 @@
                 <li><a href="#version">Version</a></li>
                 <li><a href="#help">Help</a></li>
             </ul>
-            <h2 id="development-workflows">Development Workflows</h2>
+            <h2>Development Workflows</h2>
             <p>When building for <em>development</em>, the files and folders included in your configuration&#39;s <a href="/docs/v1/configuration/fusionssg-configuration/#wips">wips</a> property are not ignored, and the <a href="/docs/v1/configuration/fusionssg-configuration#baseurl">baseURL</a> property value declared in your project&#39;s configuration file is not applied to all URLs that contain a <em>&lbrace;baseURL&rbrace;</em> token.</p>
             <p class="info">The following commands must all be run from the project's root folder.</p>
-            <h3 id="watch-build-serve">Watch, Build, Serve</h3>
+            <h3>Watch, Build, Serve</h3>
             <p>Watches your project&#39;s <em>root/src</em> and <em>root/fusion.json</em> for changes, and runs <code>fusion build</code>, and launches Browsersync.</p>
             <ul>
                 <li>usage:</li>
@@ -120,7 +120,7 @@
             <aside>
                 <pre><code class="language-shell">npm run development</code></pre>
             </aside>
-            <h3 id="one-off-builds">One Off Builds</h3>
+            <h3>One Off Builds</h3>
             <ul>
                 <li>usage:</li>
             </ul>
@@ -131,10 +131,10 @@
             <aside>
                 <pre><code class="language-shell">fusion b | build</code></pre>
             </aside>
-            <h2 id="release-workflows">Release Workflows</h2>
+            <h2>Release Workflows</h2>
             <p>When building for <em>release</em>, the files and folders included in your configuration&#39;s <a href="/docs/v1/configuration/fusionssg-configuration#wips">wips</a> property are ignored, and the <a href="/docs/v1/configuration/fusionssg-configuration#baseurl">baseURL</a> property value declared in your project&#39;s configuration file is applied to all URLs that contain a <em>&lbrace;baseURL&rbrace;</em> token.</p>
             <p class="info">The following commands must all be run from the project's root folder.</p>
-            <h3 id="watch-release-serve">Watch, Release, Serve</h3>
+            <h3>Watch, Release, Serve</h3>
             <p>Watches your project&#39;s <em>root/src</em> and <em>root/fusion.json</em> for changes, and runs <code>fusion release</code>, and launches Browsersync.</p>
             <ul>
                 <li>usage:</li>
@@ -142,7 +142,7 @@
             <aside>
                 <pre><code class="language-shell">npm run release</code></pre>
             </aside>
-            <h3 id="one-off-releases">One Off Releases</h3>
+            <h3>One Off Releases</h3>
             <ul>
                 <li>usage:</li>
             </ul>
@@ -153,10 +153,10 @@
             <aside>
                 <pre><code class="language-shell">fusion r | release</code></pre>
             </aside>
-            <h2 id="optional-verbose-metrics-reporting">Optional Verbose Metrics Reporting</h2>
+            <h2>Optional Verbose Metrics Reporting</h2>
             <p class="ver">Introduced in v1.3.0</p>
             <p>Beginning with v1.3.0, metrics reporting to the console after each build cycle now defaults to a condensed set of metrics for both development and release builds. The detailed metrics reporting of previous versions is still available via the <code>--verbose</code> option and can be applied to either development or release builds or to both.</p>
-            <h2 id="optional-cache-busting-of-release-builds">Optional Cache Busting Of Release Builds</h2>
+            <h2>Optional Cache Busting Of Release Builds</h2>
             <p class="ver">Introduced in v1.2.0</p>
             <p>When building for release, fusion.ssg can <em>optionally</em> cache bust your site&#39;s assets (e.g. css, media, scripts, .etc), allowing your site&#39;s visitors to immediately experience its latest changes. fusion.ssg handles all the details, so no additional configuration or changes to your project, other than those described below, are required.</p>
             <p>To <em>opt in to cache busting</em>, you can do <em>one or both</em> of the following:</p>
@@ -169,8 +169,8 @@
                 </li>
             </ul>
             <p class="info">fusion.ssg relies on <a href="https://github.com/4awpawz/buster">Buster</a>, which is a very capable and resilient cache busting tool developed by the same team that brings you fusion.ssg, to implement its cache busting.</p>
-            <h2 id="other-commands-supported-by-the-cli">Other Commands Supported By The CLI</h2>
-            <h3 id="version">Version</h3>
+            <h2>Other Commands Supported By The CLI</h2>
+            <h3>Version</h3>
             <p>Displays the version.</p>
             <ul>
                 <li>usage:</li>
@@ -178,7 +178,7 @@
             <aside>
                 <pre><code class="language-shell">fusion -v | --version</code></pre>
             </aside>
-            <h3 id="help">Help</h3>
+            <h3>Help</h3>
             <p>Displays general and command specific <em>help</em>.</p>
             <ul>
                 <li>usage:</li>

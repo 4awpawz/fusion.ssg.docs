@@ -99,7 +99,7 @@
         <div>
             <p><mark>We are working very hard to bring you the best documentation possible.</mark></p>
             <p><em>HTML DOCUMENTS</em></p>
-            <h1 id="components">Components</h1>
+            <h1>Components</h1>
             <section class="container">
                 <div><small>Required: <em>No</em></small></div>
                 <div><small>Type: <em>.tsx</em> and <em>.jsx</em></small></div>
@@ -119,14 +119,14 @@
 };
 </code></pre>
             </article>
-            <h3 id="types-of-components">Types Of Components</h3>
+            <h3>Types Of Components</h3>
             <p>fusion.ssg supports <em>two</em> types of components:</p>
             <ul>
                 <li><em>Simple components</em>, also just called &quot;components&quot;, render markup for a <em>single</em> HTML document.</li>
                 <li><em><a href="/docs/v1/htmldocuments/collections">Collection components</a></em> are <b><em>higher order</b></em> components that are called to render <em>multiple</em> HTML documents.</li>
             </ul>
             <p class="info">This document mainly covers simple components.</p>
-            <h2 id="component-tags">Component Tags</h2>
+            <h2>Component Tags</h2>
             <article>
                 <header>
                     <p class="example">A simple component tag.</p>
@@ -134,17 +134,17 @@
                 <pre><code class="language-html">&lt;HelloWorld /&gt;
 </code></pre>
             </article>
-            <h2 id="component-implementation">Component Implementation</h2>
+            <h2>Component Implementation</h2>
             <p class="info">fusion.ssg relieves you of the burden of having to configure TypeScript for your project. When building your project, fusion.ssg compiles your project's components when they are stale and invokes them asynchronously in a sand-boxed environment.</p>
-            <h3 id="properties">Properties</h3>
+            <h3>Properties</h3>
             <p>Component can reference their individual properties using <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment">destructuring</a>, as in <em><code>{[property name]}</code></em> (see <a href="#component-with-datasource">example</a> below).</p>
-            <h4 id="predefined-properties">Predefined Properties</h4>
+            <h4>Predefined Properties</h4>
             <p>fusion.ssg recognizes <em>two predefined component tag properties</em> as having special significance:</p>
             <ul>
                 <li><em>isCollection</em>: <code>boolean</code>, default <code>false</code>. When set to <em>true</em>, component are recognized as being <em>collection components</em>. Please see <a href="/docs/v1/htmldocuments/collections">Collections</a> for details.</li>
                 <li><em>dataSources</em>: <code>string</code>, default <code>&quot;&quot;</code>. A comma separated list of JSON file names. Components that have this property are recognized as being <em>consumers</em> of data sources that are located in your project&#39;s <em>src/data</em> folder. At runtime, fusion.ssg reads each data source, converting them to JavaScript objects, and passes the converted data sources to your component. Data sources passed to your components can be <em>destructured</em> from <em>props</em> using their JSON file name minus the .json extension. Please see <a href="/docs/v1/htmldocuments/jsondatasources">JSON Datasources</a> for details.</li>
             </ul>
-            <h4 id="metadata-properties">Metadata Properties</h4>
+            <h4>Metadata Properties</h4>
             <p class="info">After each build cycle, fusion.ssg serializes its metadata into a file named <b>project root/.assets.json</b>. This file's content can be viewed and analyzed to determine <em>query strategies</em> for retrieving the data needed to satisfy each individual component's particular use case. In most cases, you want to limit your focus on those items that are <b>"assetType": "template"</b>.</p>
             <p>During each build cycle, fusion.ssg extracts <em>metadata</em> from your project that components can easily query using JavaScript&#39;s higher order Array methods, such as filter and map for example, and incorporate the data retrieved from these queries in HTML documents. For more information on this subject, please read <a href="/docs/v1/metadata">Metadata</a>.</p>
             <ul>
@@ -155,9 +155,9 @@
                 </li>
                 <li><em>assets</em>: <code>asset[]</code>.</li>
             </ul>
-            <h3 id="returns">Returns</h3>
+            <h3>Returns</h3>
             <p>Components should always return HTML.</p>
-            <h2 id="a-complete-implementation-example">A Complete Implementation Example</h2>
+            <h2>A Complete Implementation Example</h2>
             <article>
                 <header>
                     <p class="example">A template that contains a simple component tag with a dataSources property.</p>

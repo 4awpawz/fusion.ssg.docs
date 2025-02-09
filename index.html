@@ -129,7 +129,7 @@
                     <header>
                         <h3>HTML Document<br>From A Template And A Page</h3>
                     </header>
-                    <h4 id="template-with-token-value-declarations">Template with token value declarations</h4>
+                    <h4>Template with token value declarations</h4>
                     <pre><code class="language-html">---
 tokens: {
     pageTitle: Greetings,
@@ -137,7 +137,7 @@ tokens: {
 }
 ---
 </code></pre>
-                    <h4 id="page-using-tokens">Page using tokens</h4>
+                    <h4>Page using tokens</h4>
                     <pre><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
     &lt;head&gt;
@@ -153,7 +153,7 @@ tokens: {
     &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-                    <h4 id="generated-html-document">Generated HTML document</h4>
+                    <h4>Generated HTML document</h4>
                     <pre><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
     &lt;head&gt;
@@ -174,14 +174,14 @@ tokens: {
                     <header>
                         <h3>HTML Document<br>With A List<br>From A Component And JSON</h3>
                     </header>
-                    <h4 id="teamjson-data-source">team.json data source</h4>
+                    <h4>team.json data source</h4>
                     <pre><code class="language-json">[
 {&quot;name&quot;: { &quot;first&quot;: &quot;John&quot;, &quot;last&quot;: &quot;Doe&quot; }},
 {&quot;name&quot;: { &quot;first&quot;: &quot;Jane&quot;, &quot;last&quot;: &quot;Doe&quot; }},
 {&quot;name&quot;: { &quot;first&quot;: &quot;Julia&quot;, &quot;last&quot;: &quot;Doe&quot; }}
 ]
 </code></pre>
-                    <h4 id="template-with-teammembers-component">Template with TeamMembers component</h4>
+                    <h4>Template with TeamMembers component</h4>
                     <pre><code class="language-html">---
 tokens: {
     pageTitle: Team Members
@@ -192,7 +192,7 @@ tokens: {
 &lt;h2&gt;Contributors&lt;/h2&gt;
 &lt;TeamMembers datasources=&quot;team.json&quot; /&gt;
 </code></pre>
-                    <h4 id="teammembersjsx-component">TeamMembers.jsx component</h4>
+                    <h4>TeamMembers.jsx component</h4>
                     <pre><code class="language-javascript">function formatName(member) {
     return `${member.name.first} ${member.name.last}`;
 }
@@ -209,7 +209,7 @@ export const TeamMembers = function({ team }) {
     );
 };
 </code></pre>
-                    <h4 id="teammemberstsx-component">TeamMembers.tsx component</h4>
+                    <h4>TeamMembers.tsx component</h4>
                     <pre><code class="language-typescript">interface TeamMember {
     &quot;name&quot;: {
         &quot;first&quot;: string,
@@ -237,7 +237,7 @@ export const TeamMembers = function({ team }: Props): string {
     );
 };
 </code></pre>
-                    <h4 id="page">Page</h4>
+                    <h4>Page</h4>
                     <pre><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
@@ -253,7 +253,7 @@ export const TeamMembers = function({ team }: Props): string {
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-                    <h4 id="generated-html-document">Generated HTML document</h4>
+                    <h4>Generated HTML document</h4>
                     <pre><code class="language-html">&lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
     &lt;meta charset=&quot;UTF-8&quot;&gt;

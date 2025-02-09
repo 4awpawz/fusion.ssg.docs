@@ -68,17 +68,17 @@
             <p> As we continue in our endeavor to provide you with the best tools available for creating resilient static HTML documents and websites, we do so with the great pleasure of knowing that fusions.ssg is being adopted by creators from all over the world ❤️.</p>
             <p>Sincerely,</p>
             <p>The Team</p>
-            <h2 id="breaking-changes">Breaking Changes</h2>
+            <h2>Breaking Changes</h2>
             <ul>
                 <li>None!</li>
             </ul>
-            <h2 id="new-features">New Features</h2>
-            <h3 id="tokenization-metric-reporting">Tokenization Metric Reporting</h3>
+            <h2>New Features</h2>
+            <h3>Tokenization Metric Reporting</h3>
             <ul>
                 <li>Issue# 82: Add metrics reporting to the console for the tokenize service.</li>
             </ul>
             <p>fusion.ssg will now include metrics for tokenization.</p>
-            <h3 id="exposing-more-post-metadata-as-simple-token-values">Exposing More Post Metadata As Simple Token Values</h3>
+            <h3>Exposing More Post Metadata As Simple Token Values</h3>
             <ul>
                 <li>Issue# 84: When tokenizing a post, expose its post date, categories and tags as simple token values.</li>
             </ul>
@@ -88,13 +88,13 @@
                 <li>&lbrace;categories&rbrace;: the post&#39;s categories, declared in the post&#39;s front matter, transformed to a path where multiple categories are separated from each other using &quot;/&quot;.</li>
                 <li>&lbrace;tags&rbrace;: the post&#39;s tags, declared in the post&#39;s front matter, as a comma separated list.</li>
             </ul>
-            <h3 id="wips-reporting-during-release-builds">WIPS Reporting During Release Builds</h3>
+            <h3>WIPS Reporting During Release Builds</h3>
             <ul>
                 <li>Issue# 85: Report all WIPS to the console when building for release.</li>
             </ul>
             <p>fusion.ssg will now report all WIPS for each release build cycle. These warnings will serve to prevent the <em>unintended</em> updating of websites with missing HTML documents that should have been included but aren&#39;t because they are still marked as WIPS.</p>
             <img src="/media/posts/WIPS-reporting.440d7694171f281cd107d055f86ed75a.png" alt="imgage">
-            <h3 id="cache-busting">Cache Busting</h3>
+            <h3>Cache Busting</h3>
             <ul>
                 <li>Issue# 88: Add direct support for cache busting via 4awpawz/buster.</li>
             </ul>
@@ -104,7 +104,7 @@
 </code></pre>
             <p>fusion.ssg handles all the details, so no additional configuration or changes to your projects other than the above change to your package.json file&#39;s release:fusion script is required to enhance your sites with cache busting.</p>
             <p class="info">fusion.ssg relies on <a href="https://github.com/4awpawz/buster">Buster</a>, which is a very capable and resilient cache busting tool developed by the same team that brings you fusion.ssg, to implement its cache busting.</p>
-            <h3 id="conditional-includes">Conditional Includes</h3>
+            <h3>Conditional Includes</h3>
             <ul>
                 <li>Issue# 89: Provide the ability to make the composition of includes conditional based on build strategy using configuration.</li>
             </ul>
@@ -117,7 +117,7 @@
 }
 </code></pre>
             <p>If an include&#39;s path matches one of these conditions, its content will only be included for the targeted build strategy.</p>
-            <h2 id="bug-fixes">Bug Fixes</h2>
+            <h2>Bug Fixes</h2>
             <ul>
                 <li>None!</li>
             </ul>

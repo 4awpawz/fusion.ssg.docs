@@ -99,7 +99,7 @@
         <div>
             <p><mark>We are working very hard to bring you the best documentation possible.</mark></p>
             <p><em>CONFIGURATION</em></p>
-            <h1 id="fusionsssg-configuration">fusions.ssg Configuration</h1>
+            <h1>fusions.ssg Configuration</h1>
             <p>The following <em>configuration options</em> are available for you to override in your project&#39;s <em>src/fusion.json</em> file:</p>
             <ul>
                 <li><a href="#postsfolder">postsFolder</a></li>
@@ -108,7 +108,7 @@
                 <li><a href="#tokens">tokens</a></li>
                 <li><a href="#conditional-includes">conditional includes</a></li>
             </ul>
-            <h2 id="postsfolder">postsFolder</h2>
+            <h2>postsFolder</h2>
             <p>The <em>name</em> to use for the folder that hosts your site&#39;s <a href="/docs/v1/htmldocuments/posts">posts</a>.</p>
             <ul>
                 <li>default: &quot;posts&quot;</li>
@@ -119,7 +119,7 @@
                 </header>
                 <pre><code class="language-JSON">"postsFolder": "blog""</code></pre>
             </aside>
-            <h2 id="baseurl">baseURL</h2>
+            <h2>baseURL</h2>
             <p>The name of the subfolder that your site is served from. Please see <a href="/docs/v1/htmldocuments/tokens#baseurl-tokens">baseURL Tokens</a> for more information.</p>
             <ul>
                 <li>default: &quot;&quot;</li>
@@ -132,7 +132,7 @@
 "baseURL": "/fusion.ssg.docs"
 </code></pre>
             </aside>
-            <h2 id="wips">wips</h2>
+            <h2>wips</h2>
             <p>These are the paths to the <em>files</em> and <em>folders</em> that are located in the <em>src/templates</em> folder that are <em>works in progress</em> and that are to be <em>ignored</em> during release builds. To learn more about <em>wips</em>, please read <a href="/docs/v1/htmldocuments/wips">Works In Progress</a>.</p>
             <ul>
                 <li>default: []</li>
@@ -145,7 +145,7 @@
                 <p class="info">Files and folders prepended with "!" are <em>negated and will be generated</em>.</p>
                 <p class="info">Folders must be appended with <em>"/"</em>.</p>
             </aside>
-            <h2 id="tokens">tokens</h2>
+            <h2>tokens</h2>
             <p>Simple token property values declared here are global to the project and replace all matching simple tokens declared in <em>all HTML documents</em>. If both a local simple token and a global simple token have the same name <em>the local simple token takes precedence</em>. Please see <a href="/docs/v1/htmldocuments/tokens/#simple-tokens">Simple Tokens</a> for more information.</p>
             <ul>
                 <li>default: {}</li>
@@ -156,7 +156,7 @@
                 </header>
                 <pre><code class="language-JSON">"tokens": {"version": "v1.0.0"}</code></pre>
             </aside>
-            <h2 id="conditional-includes">Conditional Includes</h2>
+            <h2>Conditional Includes</h2>
             <p class="ver">Introduced in v1.2.0</p>
             <p>These are files located in the <em>src/includes</em> folder that are specifically targeted for either <em>development</em> or <em>release</em> builds, but not for both.</p>
             <ul>

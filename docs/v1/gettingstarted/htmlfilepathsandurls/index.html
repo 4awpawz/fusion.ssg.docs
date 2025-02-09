@@ -99,14 +99,13 @@
         <div>
             <p><mark>We are working very hard to bring you the best documentation possible.</mark></p>
             <p><em>GETTING STARTED</em></p>
-            <h1 id="html-file-paths-and-urls">HTML File Paths And URLS</h1>
+            <h1>HTML File Paths And URLS</h1>
             <p>Generally speaking, there are three primary formats to use for <em><strong>file paths</strong></em> that point to <em>HTML documents</em> and other website <em>assets</em>:</p>
             <ul>
                 <li>absolute file paths, e.g. &lt;img src=&quot;<a href="https://www.w3schools.com/images/picture.jpg">https://www.w3schools.com/images/picture.jpg</a>&quot; alt=&quot;Mountain&quot;&gt;</li>
                 <li>root relative file paths (sometimes called site relative paths), e.g. &lt;img src=&quot;/images/picture.jpg&quot;&gt;</li>
                 <li>page relative file paths, e.g. &lt;img src=&quot;../picture.jpg&quot;&gt;</li>
             </ul>
-            <p> </p>
             <p class="info">For a more in-depth discussion on this topic, please see <a href="https://www.w3schools.com/html/html_filepaths.asp">HTML File Paths</a> for more information.</p>
             <p class="info"> fusion.ssg supports only <b><em>root relative</em></b> file paths because both its <b><em>&lbrace;baseURL&rbrace;</em></b> and <b><em>cache busting</em></b> features rely on root relative URLS to work correctly. </p>
             <p>So, for example, to link to an HTML document named <strong>/some-folder/document.html</strong> from anywhere in your site, you would use a root relative file path:</p>

@@ -69,16 +69,16 @@
             <p>Sincerely,</p>
             <p>The Team</p>
             <hr>
-            <h2 id="v130-highlights">v1.3.0 Highlights</h2>
-            <h3 id="new-projects-can-now-be-created-without-scaffolding">New projects can now be created without scaffolding.</h3>
+            <h2>v1.3.0 Highlights</h2>
+            <h3>New projects can now be created without scaffolding.</h3>
             <p>A new option, <code>--bare</code>, has been added to fusions.ssg&#39;s project generator, <strong>fpg</strong>, that allows you to generate new projects without scaffolding. </p>
             <p>Example:</p>
             <pre><code class="language-shell">`fpg n | new --bare &lt;target_folder&gt;`
 </code></pre>
-            <h3 id="tokens-in-inline-scripts-and-code-blocks-are-now-ignored">Tokens in inline scripts and code blocks are now ignored.</h3>
+            <h3>Tokens in inline scripts and code blocks are now ignored.</h3>
             <p>You can now safely use tokens in inline scripts and code blocks without fusion.ssg complaining that they are unresolved.</p>
             <hr>
-            <h3 id="the-reserved-baseurl-token-can-now-be-used-in-your-projects-css-files">The reserved <code>baseURL</code> token can now be used in your project&#39;s css files.</h3>
+            <h3>The reserved <code>baseURL</code> token can now be used in your project&#39;s css files.</h3>
             <p>If you are building a site that has background images and your project employs the use of fusion.ssg&#39;s reserved <a href="/docs/v1/configuration/fusionssg-configuration/#baseurl"><code style="text-decoration: underline;">baseURL</code></a> token with a value other than <code>&#39;&#39;</code>, you no longer have to declare 2 URLs for the image, one for development builds, and one for release builds. Instead, you can now prepend the URL with fusion.ssg&#39;s reserved <code>baseURL</code> token and the URL will resolve properly for both development and release builds.</p>
             <p>Example:</p>
             <pre><code class="language-css">.hero {
@@ -87,10 +87,10 @@
 </code></pre>
             <br>
             <hr>
-            <h3 id="console-output-related-to-typescript-compilation-now-explicitly-states-if-it-is-for-components-or-for-browser-scripts">Console output related to Typescript compilation now explicitly states if it is for <em>components</em> or for <em>browser scripts</em>.</h3>
+            <h3>Console output related to Typescript compilation now explicitly states if it is for <em>components</em> or for <em>browser scripts</em>.</h3>
             <p>This distinction was not made in previous versions.</p>
             <hr>
-            <h3 id="metrics-reporting-to-the-console-after-each-build-cycle-now-defaults-to-a-condensed-set-of-metrics-for-both-development-and-release-builds">Metrics reporting to the console after each build cycle now defaults to a condensed set of metrics for both development and release builds.</h3>
+            <h3>Metrics reporting to the console after each build cycle now defaults to a condensed set of metrics for both development and release builds.</h3>
             <p>The detailed metrics reporting of previous versions is still available via the <code>--verbose</code> option and can be applied to either development or release builds or to both.</p>
             <p>New default metrics reporting example:</p>
             <img src="/media/posts/condensedmetricsreporting.f3f504c2fe5c6fa294ff06b5f9e54bd1.png" alt="condensed metrics reporting" width="600">
@@ -101,12 +101,12 @@
             <br>
             <br>
             <hr>
-            <h3 id="eliminate-multiple-project-does-not-contain-a-404html-document-warnings-when-refreshing-the-browser">Eliminate multiple &quot;project does not contain a 404.html document&quot; warnings when refreshing the browser.</h3>
+            <h3>Eliminate multiple &quot;project does not contain a 404.html document&quot; warnings when refreshing the browser.</h3>
             <p>Beginning with fusion.ssg v1.3.0 the warning about a missing 404.html file is no longer implemented in browsersync.js, and is handled internally by fusion.ssg.</p>
             <p class="warn">If you are upgrading a project to v1.3.0 or greater then you should remove the following from your project's browsersync.js file which is located in your project's root folder:</p>
             <p><code>console.log(chalk.yellowBright(&quot;Warning: this site is missing a 404.html doc - using default 404.html.&quot;));</code></p>
             <hr>
-            <h2 id="breaking-changes">Breaking Changes</h2>
+            <h2>Breaking Changes</h2>
             <ul>
                 <li>None!</li>
             </ul>
