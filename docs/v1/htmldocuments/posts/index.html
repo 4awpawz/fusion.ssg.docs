@@ -99,7 +99,7 @@
         <div>
             <p><mark>We are working very hard to bring you the best documentation possible.</mark></p>
             <p><em>HTML DOCUMENTS</em></p>
-            <h1>Posts</h1>
+            <h1 id="posts">Posts</h1>
             <section class="container">
                 <div><small>Required: <em>No</em></small></div>
                 <div><small>Front Matter: <em>Yes</em></small></div>
@@ -108,10 +108,10 @@
             </section>
             <p>Posts are specialized <a href="/docs/v1/htmldocuments/templates">templates</a> that can be useful for creating <em>blog-like</em> HTML documents, or any type of HTML document that would benefit from a <em>chronologically ordered folder structure</em>, <em>tags</em> and <em>categories</em>.</p>
             <p class="info">In metadata, posts can be identified by their <b>"isPost": true</b> property.</p>
-            <h2>Naming Convention</h2>
+            <h2 id="naming-convention">Naming Convention</h2>
             <p>Unlike all other templates, post templates have a strict naming convention, e.g . 2023-02-28-upsidedown-cake.md, which allows fusion.ssg to structure your posts chronologically. Post template names must begin with the year, -, month, -, and day (i.e., YYYY-MM-DD), followed by a dash (i.e., -), and ending with the actual file name, including its type, i.e. [file name].md|html.</p>
             <p>For example, a post without categories (see below) named <em>2023-02-28-upsidedown-cake.md</em> would be rendered to the posts folder as 2003/02/28/upsidedown-cake/index.html, and a post with categories &quot;recipes, cakes&quot; named <em>2023-02-28-upsidedown-cake.md</em> would be rendered to the posts folder as recipes/cakes/2003/02/28/upsidedown-cake/index.html.</p>
-            <h2>Categories</h2>
+            <h2 id="categories">Categories</h2>
             <p>Categories are strictly for rendering posts in a particular <em>folder hierarchy</em>. For example, a post with a single category, such as <em>&quot;recipes&quot;</em>, would be rendered in the &quot;posts/recipes/&quot; folder and a post with two categories, such as <em>&quot;recipes, cakes and pies&quot;</em>, would be rendered in the &quot;posts/recipes/cakes and pies&quot; folder/.</p>
             <p>Categories are declared in a post&#39;s front matter as shown below:</p>
             <pre><code class="laguage-HTML">
@@ -119,7 +119,7 @@ post: {
     categories: "category, ..."
 }
 </code></pre>
-            <h2>Tags</h2>
+            <h2 id="tags">Tags</h2>
             <p>Tags are very useful for associating posts that have similar subject matter. <a href="/docs/v1/htmldocuments/components">Components</a> can query <a href="/docs/v1/htmldocuments/components#metadata-properties">metadata</a> using higher order array functions, such as <em>filter</em> for example, to find all posts with a particular tag.</p>
             <p>Tags are declared in a post&#39;s front matter as shown below:</p>
             <pre><code class="laguage-HTML">
@@ -147,7 +147,7 @@ Yada yada...
 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus quo dolor dolorum, vel temporibus impedit quam animi, aliquam porro assumenda tenetur iure nemo voluptas voluptates quis distinctio, eveniet suscipit aliquid.
 </code></pre>
             </article>
-            <h2>Post Specific Simple Tokens</h2>
+            <h2 id="post-specific-simple-tokens">Post Specific Simple Tokens</h2>
             <p class="ver">Introduced in v1.2.0</p>
             <p>Besides the simple tokens that you define in your <em>template&#39;s front matter</em> and globally in your project&#39;s <em>fusion.json</em> file, fusion.ssg also defines numerous simple tokens, whose values it has obtained from the meta data associated with your posts templates, that you can use. Please see <a href="/docs/v1/htmldocuments/tokens#auto-generated-simple-tokens">Auto Generated Tokens</a> for details.</p>
             <footer class="container site-footer">

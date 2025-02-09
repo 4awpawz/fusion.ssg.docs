@@ -99,7 +99,7 @@
         <div>
             <p><mark>We are working very hard to bring you the best documentation possible.</mark></p>
             <p><em>HTML DOCUMENTS</em></p>
-            <h1>Tokens</h1>
+            <h1 id="tokens">Tokens</h1>
             <p><em>Tokens</em> serve as place holders that are <em>replaced</em> by content intended for the HTML document. fusion.ssg recognizes <em>three</em> types of tokens:</p>
             <ol>
                 <li><a href="/docs/v1/htmldocuments/tokens#simple-tokens"><em>simple tokens</em></a></li>
@@ -107,7 +107,7 @@
                 <li><a href="/docs/v1/htmldocuments/tokens#template-tokens"><em>template tokens</em></a></li>
                 <li><a href="/docs/v1/htmldocuments/tokens#include-tokens"><em>include tokens</em></a></li>
             </ol>
-            <h2>Simple Tokens</h2>
+            <h2 id="simple-tokens">Simple Tokens</h2>
             <p><em>syntax: &lbrace;token-name&rbrace;</em></p>
             <p>Simple token declarations like the above that fusion.ssg finds in your developing HTML documents are replaced by their respective property values. Simple token property values can be declared in either a <em>template&#39;s <a href="/docs/v1/htmldocuments/frontmatter">front matter</a></em> or in <em>fusion.json</em>, your project&#39;s <a href="/docs/v1/configuration/fusionssg-configuration#tokens">configuration</a> file. If the same token name is used in both, the token&#39;s value declared in front matter takes precedence.</p>
             <article>
@@ -168,11 +168,11 @@ tokens: {
 &lt;/html&gt;
 </code></pre>
             </article>
-            <h3>Unresolved Simple Token Reporting</h3>
+            <h3 id="unresolved-simple-token-reporting">Unresolved Simple Token Reporting</h3>
             <p class="ver">Introduced in v1.1.0</p>
             <p>At the end of each build cycle, fusion.ssg will report any unresolved simple tokens that it finds in your project&#39;s generated HTML documents. These warnings indicate that either the token name has been misspelled or that its value has not been declared.</p>
             <img src="/media/posts/v1.ffd81e18cc2af73dc9451eedcd0bb8e1.1.0-CLI-unresolved-tokens.png" alt="report of unresolved tokens" width="700">
-            <h3>Auto Generated Simple Tokens</h3>
+            <h3 id="auto-generated-simple-tokens">Auto Generated Simple Tokens</h3>
             <p class="ver">Introduced in v1.2.0</p>
             <p>Besides the simple tokens that you define in your <em>template&#39;s front matter</em> and globally in your project&#39;s <em>fusion.json</em> file, fusion.ssg also defines the following simple tokens, whose values it has obtained from the meta data associated with your <em>posts</em> templates, that you can use:</p>
             <ul>
@@ -180,7 +180,7 @@ tokens: {
                 <li>&lbrace;categories&rbrace; - the <em>categories</em> extracted from the post&#39;s <em>front matter post.categories property</em> and converted to a <em>path</em> e.g. &quot;cata/catb/catc&quot;.</li>
                 <li>&lbrace;tags&rbrace; - the <em>tags</em> extracted from the post&#39;s <em>front matter post.tags property</em> and converted to a <em>comma separated list</em> e.g. &quot;taga,tagb,tagc&quot;.</li>
             </ul>
-            <h2>baseURL Tokens</h2>
+            <h2 id="baseurl-tokens">baseURL Tokens</h2>
             <p><em>syntax: &lbrace;baseURL&rbrace;</em></p>
             <p>If your site is served from a <em>subfolder</em>, such as are sites that are hosted on <em>github.io</em> that do not include a CNAME file, prepend <em>&lbrace;baseURL&rbrace;</em> to your site&#39;s <a href="https://www.ibm.com/docs/en/eslm/10.0.4?topic=parameters-absolute-root-relative-url">root relative URLs</a> and during <a href="/docs/v1/cli#npm-run-release">release builds</a> <em>&lbrace;baseURL&rbrace;</em> will be replaced by its value, which you define in your project&#39;s configuration file, and during development builds will be removed.</p>
             <p class="warn"><code>{baseURL}</code> is a reserved token and should only be used in this context.</p>
@@ -208,7 +208,7 @@ tokens: {
                 </header>
                 <pre><code class="language-HTML">&lt;a href="/docs"&gt;Docs&lt;/a&gt;</code></pre>
             </article>
-            <h3>CSS File Support For baseURL Tokens</h3>
+            <h3 id="css-file-support-for-baseurl-tokens">CSS File Support For baseURL Tokens</h3>
             <p class="ver">Introduced in v1.3.0</p>
             <p>Beginning with v1.3.0, the use of <em>baseURL</em> tokens is now supported in your project&#39;s CSS files and can be applied to any CSS attribute that takes a URL, such as background images for example.</p>
             <p>So, for example, if you are building a site that has background images you no longer have to declare 2 URLs for the image, one for development builds, and one for release builds.</p>
@@ -221,7 +221,7 @@ tokens: {
     background-image: url({baseURL}/media/stretching-cat.png);
 }</code></pre>
             </article>
-            <h2>Template Tokens</h2>
+            <h2 id="template-tokens">Template Tokens</h2>
             <p><em>syntax: &lbrace;&lbrace;template&rbrace;&rbrace;</em></p>
             <p>Template tokens are only relevant in <a href="/docs/v1/htmldocuments/pages">pages</a> and are replaced by the content of their associated <a href="/docs/v1/htmldocuments/templates">templates</a>.</p>
             <p class="warn"><code>{{template}}</code> is a reserved token and should only be used in this context.</p>
@@ -249,7 +249,7 @@ tokens: {
 &lt;/body&gt;
 </code></pre>
             </article>
-            <h2>Include Tokens</h2>
+            <h2 id="include-tokens">Include Tokens</h2>
             <p><em>syntax: &lbrace;&lbrace;path/to/include&rbrace;&rbrace;</em> minus file type</p>
             <p>Include tokens are relevant in <a href="/docs/v1/htmldocuments/pages">pages</a> and <a href="/docs/v1/htmldocuments/templates">templates</a> and are replaced by their respective <a href="/docs/v1/htmldocuments/includes">include</a> file&#39;s content. The path to the respective include file should not contain its file type.</p>
             <article>
